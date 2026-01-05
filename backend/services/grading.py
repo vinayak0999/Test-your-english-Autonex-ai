@@ -165,20 +165,41 @@ async def grade_reading_question(student_text: str, original_passage: str, refer
 
 async def grade_jumble_question(student_text: str, correct_answer: str, marks: int):
     """
-    Grading Logic for Jumble (Simple Exact/Fuzzy Match)
+    Grading Logic for Jumble (Lenient Match)
+    - Ignores punctuation (periods, commas, etc.)
+    - Ignores capitalization
+    - Ignores extra spaces
+    - Only checks if words are in correct order
     """
+    import re
+    
     if not student_text:
         return {"score": 0, "breakdown": {"result": "Incorrect", "correct_answer": correct_answer}}
 
-    # Normalize: lower case, strip punctuation if needed
-    is_correct = student_text.strip().lower() == correct_answer.strip().lower()
+    def normalize(text: str) -> str:
+        """Normalize text for comparison - remove punctuation, lowercase, single spaces"""
+        # Remove all punctuation
+        text = re.sub(r'[^\w\s]', '', text)
+        # Convert to lowercase
+        text = text.lower()
+        # Normalize whitespace (multiple spaces to single, strip ends)
+        text = ' '.join(text.split())
+        return text
+    
+    # Normalize both answers - only compare the words themselves
+    student_normalized = normalize(student_text)
+    correct_normalized = normalize(correct_answer)
+    
+    is_correct = student_normalized == correct_normalized
     
     score = marks if is_correct else 0
     return {
         "score": score,
         "breakdown": {
             "result": "Correct" if is_correct else "Incorrect",
-            "student_answer": student_text
+            "student_answer": student_text,
+            "expected": correct_answer,
+            "comparison_note": "Compared without punctuation and case"
         }
     }
 
