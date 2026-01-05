@@ -1,0 +1,2802 @@
+[
+  {
+    "passage_id": 1,
+    "question_id": 1,
+    "content": "Arjun loved visiting the library after school. The quiet atmosphere helped him focus, and he enjoyed exploring new topics. One day, he found a book on marine life that fascinated him. As he read more, he realized how little people knew about deep-sea creatures. This discovery sparked his dream of becoming a marine biologist.",
+    "question_text": "What does the word 'fascinated' mean in the passage?",
+    "options": {
+      "A": "deeply interested",
+      "B": "confused",
+      "C": "bored",
+      "D": "annoyed"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 1,
+    "question_id": 2,
+    "content": "Arjun loved visiting the library after school. The quiet atmosphere helped him focus, and he enjoyed exploring new topics. One day, he found a book on marine life that fascinated him. As he read more, he realized how little people knew about deep-sea creatures. This discovery sparked his dream of becoming a marine biologist.",
+    "question_text": "What can be inferred about Arjun?",
+    "options": {
+      "A": "He disliked reading",
+      "B": "He was curious and eager to learn",
+      "C": "He avoided new topics",
+      "D": "He only read comic books"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 1,
+    "question_id": 3,
+    "content": "Arjun loved visiting the library after school. The quiet atmosphere helped him focus, and he enjoyed exploring new topics. One day, he found a book on marine life that fascinated him. As he read more, he realized how little people knew about deep-sea creatures. This discovery sparked his dream of becoming a marine biologist.",
+    "question_text": "What is the tone of the passage?",
+    "options": {
+      "A": "Inspirational",
+      "B": "Sarcastic",
+      "C": "Negative",
+      "D": "Angry"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 1,
+    "question_id": 4,
+    "content": "Arjun loved visiting the library after school. The quiet atmosphere helped him focus, and he enjoyed exploring new topics. One day, he found a book on marine life that fascinated him. As he read more, he realized how little people knew about deep-sea creatures. This discovery sparked his dream of becoming a marine biologist.",
+    "question_text": "Where did Arjun like to go after school?",
+    "options": {
+      "A": "Playground",
+      "B": "Library",
+      "C": "Market",
+      "D": "Cinema"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 1,
+    "question_id": 5,
+    "content": "Arjun loved visiting the library after school. The quiet atmosphere helped him focus, and he enjoyed exploring new topics. One day, he found a book on marine life that fascinated him. As he read more, he realized how little people knew about deep-sea creatures. This discovery sparked his dream of becoming a marine biologist.",
+    "question_text": "What book did Arjun find interesting?",
+    "options": {
+      "A": "A book on animals",
+      "B": "A book on marine life",
+      "C": "A storybook",
+      "D": "A dictionary"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 1,
+    "question_id": 6,
+    "content": "Arjun loved visiting the library after school. The quiet atmosphere helped him focus, and he enjoyed exploring new topics. One day, he found a book on marine life that fascinated him. As he read more, he realized how little people knew about deep-sea creatures. This discovery sparked his dream of becoming a marine biologist.",
+    "question_text": "Why did Arjun enjoy the library?",
+    "options": {
+      "A": "It was noisy",
+      "B": "He liked meeting friends there",
+      "C": "It helped him focus",
+      "D": "He wanted to avoid homework"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "passage_id": 1,
+    "question_id": 7,
+    "content": "Arjun loved visiting the library after school. The quiet atmosphere helped him focus, and he enjoyed exploring new topics. One day, he found a book on marine life that fascinated him. As he read more, he realized how little people knew about deep-sea creatures. This discovery sparked his dream of becoming a marine biologist.",
+    "question_text": "What does 'discovery' refer to in the passage?",
+    "options": {
+      "A": "Finding new friends",
+      "B": "Learning something new about the ocean",
+      "C": "Winning a prize",
+      "D": "Travelling abroad"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 1,
+    "question_id": 8,
+    "content": "Arjun loved visiting the library after school. The quiet atmosphere helped him focus, and he enjoyed exploring new topics. One day, he found a book on marine life that fascinated him. As he read more, he realized how little people knew about deep-sea creatures. This discovery sparked his dream of becoming a marine biologist.",
+    "question_text": "The author's attitude toward Arjun is:",
+    "options": {
+      "A": "Proud",
+      "B": "Disapproving",
+      "C": "Neutral",
+      "D": "Irritated"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 1,
+    "question_id": 9,
+    "content": "Arjun loved visiting the library after school. The quiet atmosphere helped him focus, and he enjoyed exploring new topics. One day, he found a book on marine life that fascinated him. As he read more, he realized how little people knew about deep-sea creatures. This discovery sparked his dream of becoming a marine biologist.",
+    "question_text": "What dream did the book inspire in Arjun?",
+    "options": {
+      "A": "Teacher",
+      "B": "Pilot",
+      "C": "Marine biologist",
+      "D": "Engineer"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "passage_id": 1,
+    "question_id": 10,
+    "content": "Arjun loved visiting the library after school. The quiet atmosphere helped him focus, and he enjoyed exploring new topics. One day, he found a book on marine life that fascinated him. As he read more, he realized how little people knew about deep-sea creatures. This discovery sparked his dream of becoming a marine biologist.",
+    "question_text": "Arjun’s interest in deep-sea creatures suggests he is:",
+    "options": {
+      "A": "Curious",
+      "B": "Afraid of water",
+      "C": "Uncertain",
+      "D": "Lazy"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 2,
+    "question_id": 11,
+    "content": "Ritika woke up earlier than usual because she had an important interview. She prepared her documents, dressed neatly, and left the house with confidence. On the way, her car broke down. Instead of panicking, she quickly booked a cab and reached the venue on time. Her calm reaction impressed the interviewers.",
+    "question_text": "What does 'panicking' mean in the passage?",
+    "options": {
+      "A": "becoming extremely worried",
+      "B": "being very happy",
+      "C": "acting lazy",
+      "D": "thinking slowly"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 2,
+    "question_id": 12,
+    "content": "Ritika woke up earlier than usual because she had an important interview. She prepared her documents, dressed neatly, and left the house with confidence. On the way, her car broke down. Instead of panicking, she quickly booked a cab and reached the venue on time. Her calm reaction impressed the interviewers.",
+    "question_text": "What can we infer about Ritika?",
+    "options": {
+      "A": "She gives up easily",
+      "B": "She handles problems calmly",
+      "C": "She ignores responsibilities",
+      "D": "She oversleeps often"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 2,
+    "question_id": 13,
+    "content": "Ritika woke up earlier than usual because she had an important interview. She prepared her documents, dressed neatly, and left the house with confidence. On the way, her car broke down. Instead of panicking, she quickly booked a cab and reached the venue on time. Her calm reaction impressed the interviewers.",
+    "question_text": "What is the tone of the passage?",
+    "options": {
+      "A": "Encouraging",
+      "B": "Negative",
+      "C": "Humorous",
+      "D": "Angry"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 2,
+    "question_id": 14,
+    "content": "Ritika woke up earlier than usual because she had an important interview. She prepared her documents, dressed neatly, and left the house with confidence. On the way, her car broke down. Instead of panicking, she quickly booked a cab and reached the venue on time. Her calm reaction impressed the interviewers.",
+    "question_text": "Why did Ritika wake up early?",
+    "options": {
+      "A": "To study",
+      "B": "To exercise",
+      "C": "She had an interview",
+      "D": "She was traveling"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "passage_id": 2,
+    "question_id": 15,
+    "content": "Ritika woke up earlier than usual because she had an important interview. She prepared her documents, dressed neatly, and left the house with confidence. On the way, her car broke down. Instead of panicking, she quickly booked a cab and reached the venue on time. Her calm reaction impressed the interviewers.",
+    "question_text": "How did Ritika react when her car broke down?",
+    "options": {
+      "A": "She cried",
+      "B": "She panicked",
+      "C": "She stayed calm",
+      "D": "She canceled the interview"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "passage_id": 2,
+    "question_id": 16,
+    "content": "Ritika woke up earlier than usual because she had an important interview. She prepared her documents, dressed neatly, and left the house with confidence. On the way, her car broke down. Instead of panicking, she quickly booked a cab and reached the venue on time. Her calm reaction impressed the interviewers.",
+    "question_text": "How did Ritika reach her interview?",
+    "options": {
+      "A": "By car",
+      "B": "Walking",
+      "C": "By cab",
+      "D": "By bus"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "passage_id": 2,
+    "question_id": 17,
+    "content": "Ritika woke up earlier than usual because she had an important interview. She prepared her documents, dressed neatly, and left the house with confidence. On the way, her car broke down. Instead of panicking, she quickly booked a cab and reached the venue on time. Her calm reaction impressed the interviewers.",
+    "question_text": "What does 'confidence' mean here?",
+    "options": {
+      "A": "fear",
+      "B": "belief in oneself",
+      "C": "anger",
+      "D": "confusion"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 2,
+    "question_id": 18,
+    "content": "Ritika woke up earlier than usual because she had an important interview. She prepared her documents, dressed neatly, and left the house with confidence. On the way, her car broke down. Instead of panicking, she quickly booked a cab and reached the venue on time. Her calm reaction impressed the interviewers.",
+    "question_text": "The author's attitude toward Ritika's behavior is:",
+    "options": {
+      "A": "Supportive",
+      "B": "Judgmental",
+      "C": "Sarcastic",
+      "D": "Neutral"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 2,
+    "question_id": 19,
+    "content": "Ritika woke up earlier than usual because she had an important interview. She prepared her documents, dressed neatly, and left the house with confidence. On the way, her car broke down. Instead of panicking, she quickly booked a cab and reached the venue on time. Her calm reaction impressed the interviewers.",
+    "question_text": "What impressed the interviewers?",
+    "options": {
+      "A": "Her outfit",
+      "B": "Her documents",
+      "C": "Her calm reaction",
+      "D": "Her jokes"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "passage_id": 2,
+    "question_id": 20,
+    "content": "Ritika woke up earlier than usual because she had an important interview. She prepared her documents, dressed neatly, and left the house with confidence. On the way, her car broke down. Instead of panicking, she quickly booked a cab and reached the venue on time. Her calm reaction impressed the interviewers.",
+    "question_text": "Ritika can be described as:",
+    "options": {
+      "A": "irresponsible",
+      "B": "patient and prepared",
+      "C": "forgetful",
+      "D": "stubborn"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 3,
+    "question_id": 21,
+    "content": "The town’s annual food festival attracted visitors from dozens of nearby villages. Stalls offering traditional dishes lined the streets, and music filled the air. People enjoyed tasting new flavors and learning about different cultures. The festival not only entertained the visitors but also helped local vendors earn a good income.",
+    "question_text": "The word 'attracted' means:",
+    "options": {
+      "A": "pulled in",
+      "B": "ignored",
+      "C": "pushed away",
+      "D": "confused"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 3,
+    "question_id": 22,
+    "content": "The town’s annual food festival attracted visitors from dozens of nearby villages. Stalls offering traditional dishes lined the streets, and music filled the air. People enjoyed tasting new flavors and learning about different cultures. The festival not only entertained the visitors but also helped local vendors earn a good income.",
+    "question_text": "What can be inferred about the festival?",
+    "options": {
+      "A": "It was unpopular",
+      "B": "It was successful",
+      "C": "People were bored",
+      "D": "Vendors avoided it"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 3,
+    "question_id": 23,
+    "content": "The town’s annual food festival attracted visitors from dozens of nearby villages. Stalls offering traditional dishes lined the streets, and music filled the air. People enjoyed tasting new flavors and learning about different cultures. The festival not only entertained the visitors but also helped local vendors earn a good income.",
+    "question_text": "The tone of the passage is:",
+    "options": {
+      "A": "Celebratory",
+      "B": "Angry",
+      "C": "Sad",
+      "D": "Sarcastic"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 3,
+    "question_id": 24,
+    "content": "The town’s annual food festival attracted visitors from dozens of nearby villages. Stalls offering traditional dishes lined the streets, and music filled the air. People enjoyed tasting new flavors and learning about different cultures. The festival not only entertained the visitors but also helped local vendors earn a good income.",
+    "question_text": "What lined the streets?",
+    "options": {
+      "A": "Lights",
+      "B": "Books",
+      "C": "Food stalls",
+      "D": "Cars"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "passage_id": 3,
+    "question_id": 25,
+    "content": "The town’s annual food festival attracted visitors from dozens of nearby villages. Stalls offering traditional dishes lined the streets, and music filled the air. People enjoyed tasting new flavors and learning about different cultures. The festival not only entertained the visitors but also helped local vendors earn a good income.",
+    "question_text": "What did the festival help vendors do?",
+    "options": {
+      "A": "Lose money",
+      "B": "Earn income",
+      "C": "Close shops",
+      "D": "Move away"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 3,
+    "question_id": 26,
+    "content": "The town’s annual food festival attracted visitors from dozens of nearby villages. Stalls offering traditional dishes lined the streets, and music filled the air. People enjoyed tasting new flavors and learning about different cultures. The festival not only entertained the visitors but also helped local vendors earn a good income.",
+    "question_text": "Visitors enjoyed the festival because:",
+    "options": {
+      "A": "There was free food",
+      "B": "They liked exploring new flavors",
+      "C": "They hated music",
+      "D": "They were forced to attend"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 3,
+    "question_id": 27,
+    "content": "The town’s annual food festival attracted visitors from dozens of nearby villages. Stalls offering traditional dishes lined the streets, and music filled the air. People enjoyed tasting new flavors and learning about different cultures. The festival not only entertained the visitors but also helped local vendors earn a good income.",
+    "question_text": "The phrase 'filled the air' refers to:",
+    "options": {
+      "A": "pollution",
+      "B": "music spreading everywhere",
+      "C": "rainfall",
+      "D": "wind blowing"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 3,
+    "question_id": 28,
+    "content": "The town’s annual food festival attracted visitors from dozens of nearby villages. Stalls offering traditional dishes lined the streets, and music filled the air. People enjoyed tasting new flavors and learning about different cultures. The festival not only entertained the visitors but also helped local vendors earn a good income.",
+    "question_text": "The author’s attitude toward the event is:",
+    "options": {
+      "A": "Positive",
+      "B": "Neutral",
+      "C": "Negative",
+      "D": "Disappointed"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 3,
+    "question_id": 29,
+    "content": "The town’s annual food festival attracted visitors from dozens of nearby villages. Stalls offering traditional dishes lined the streets, and music filled the air. People enjoyed tasting new flavors and learning about different cultures. The festival not only entertained the visitors but also helped local vendors earn a good income.",
+    "question_text": "Where did the visitors come from?",
+    "options": {
+      "A": "Distant countries",
+      "B": "Nearby villages",
+      "C": "Other planets",
+      "D": "Only the town itself"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 3,
+    "question_id": 30,
+    "content": "The town’s annual food festival attracted visitors from dozens of nearby villages. Stalls offering traditional dishes lined the streets, and music filled the air. People enjoyed tasting new flavors and learning about different cultures. The festival not only entertained the visitors but also helped local vendors earn a good income.",
+    "question_text": "The festival most likely happens:",
+    "options": {
+      "A": "Every day",
+      "B": "Every year",
+      "C": "Every month",
+      "D": "Once in a decade"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 4,
+    "question_id": 31,
+    "content": "When Priya moved to a new city for college, she felt nervous at first. Everything seemed unfamiliar—the roads, the people, even the weather. But within a few weeks, she made new friends and discovered her favorite study spots. Slowly, the new city began to feel like home.",
+    "question_text": "What does 'unfamiliar' mean?",
+    "options": {
+      "A": "unknown",
+      "B": "comfortable",
+      "C": "easy",
+      "D": "quiet"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 4,
+    "question_id": 32,
+    "content": "When Priya moved to a new city for college, she felt nervous at first. Everything seemed unfamiliar—the roads, the people, even the weather. But within a few weeks, she made new friends and discovered her favorite study spots. Slowly, the new city began to feel like home.",
+    "question_text": "What can we infer about Priya?",
+    "options": {
+      "A": "She adapts quickly",
+      "B": "She hates changes",
+      "C": "She prefers staying alone",
+      "D": "She disliked her college"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 4,
+    "question_id": 33,
+    "content": "When Priya moved to a new city for college, she felt nervous at first. Everything seemed unfamiliar—the roads, the people, even the weather. But within a few weeks, she made new friends and discovered her favorite study spots. Slowly, the new city began to feel like home.",
+    "question_text": "What is the tone of the passage?",
+    "options": {
+      "A": "Hopeful",
+      "B": "Angry",
+      "C": "Fearful",
+      "D": "Confusing"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 4,
+    "question_id": 34,
+    "content": "When Priya moved to a new city for college, she felt nervous at first. Everything seemed unfamiliar—the roads, the people, even the weather. But within a few weeks, she made new friends and discovered her favorite study spots. Slowly, the new city began to feel like home.",
+    "question_text": "Why did Priya move to a new city?",
+    "options": {
+      "A": "Job",
+      "B": "Vacation",
+      "C": "College",
+      "D": "Marriage"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "passage_id": 4,
+    "question_id": 35,
+    "content": "When Priya moved to a new city for college, she felt nervous at first. Everything seemed unfamiliar—the roads, the people, even the weather. But within a few weeks, she made new friends and discovered her favorite study spots. Slowly, the new city began to feel like home.",
+    "question_text": "How did Priya feel at first?",
+    "options": {
+      "A": "Nervous",
+      "B": "Excited",
+      "C": "Angry",
+      "D": "Carefree"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 4,
+    "question_id": 36,
+    "content": "When Priya moved to a new city for college, she felt nervous at first. Everything seemed unfamiliar—the roads, the people, even the weather. But within a few weeks, she made new friends and discovered her favorite study spots. Slowly, the new city began to feel like home.",
+    "question_text": "What helped Priya adjust?",
+    "options": {
+      "A": "Money",
+      "B": "Friends and routines",
+      "C": "Sports",
+      "D": "Teachers"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 4,
+    "question_id": 37,
+    "content": "When Priya moved to a new city for college, she felt nervous at first. Everything seemed unfamiliar—the roads, the people, even the weather. But within a few weeks, she made new friends and discovered her favorite study spots. Slowly, the new city began to feel like home.",
+    "question_text": "What does 'slowly' imply?",
+    "options": {
+      "A": "Very fast",
+      "B": "Over time",
+      "C": "Immediately",
+      "D": "Never"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 4,
+    "question_id": 38,
+    "content": "When Priya moved to a new city for college, she felt nervous at first. Everything seemed unfamiliar—the roads, the people, even the weather. But within a few weeks, she made new friends and discovered her favorite study spots. Slowly, the new city began to feel like home.",
+    "question_text": "The author’s tone can be described as:",
+    "options": {
+      "A": "Encouraging",
+      "B": "Harsh",
+      "C": "Sarcastic",
+      "D": "Depressed"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 4,
+    "question_id": 39,
+    "content": "When Priya moved to a new city for college, she felt nervous at first. Everything seemed unfamiliar—the roads, the people, even the weather. But within a few weeks, she made new friends and discovered her favorite study spots. Slowly, the new city began to feel like home.",
+    "question_text": "What became Priya's favorite places?",
+    "options": {
+      "A": "Study spots",
+      "B": "Malls",
+      "C": "Stadium",
+      "D": "Cafes only"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 4,
+    "question_id": 40,
+    "content": "When Priya moved to a new city for college, she felt nervous at first. Everything seemed unfamiliar—the roads, the people, even the weather. But within a few weeks, she made new friends and discovered her favorite study spots. Slowly, the new city began to feel like home.",
+    "question_text": "The phrase 'felt like home' suggests:",
+    "options": {
+      "A": "She missed her old home",
+      "B": "She grew comfortable and settled",
+      "C": "She wanted to leave",
+      "D": "She disliked the city"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 5,
+    "question_id": 41,
+    "content": "During the summer holidays, Kabir decided to learn painting. At first, his drawings were messy, and he felt discouraged. But his teacher encouraged him to practice every day. Gradually, his strokes became smoother, and his confidence grew. By the end of the course, Kabir painted a beautiful landscape that surprised everyone.",
+    "question_text": "What does 'discouraged' mean in the passage?",
+    "options": {
+      "A": "disappointed",
+      "B": "excited",
+      "C": "angry",
+      "D": "sleepy"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 5,
+    "question_id": 42,
+    "content": "During the summer holidays, Kabir decided to learn painting. At first, his drawings were messy, and he felt discouraged. But his teacher encouraged him to practice every day. Gradually, his strokes became smoother, and his confidence grew. By the end of the course, Kabir painted a beautiful landscape that surprised everyone.",
+    "question_text": "What can we infer about Kabir?",
+    "options": {
+      "A": "He improved through practice",
+      "B": "He gave up quickly",
+      "C": "He disliked painting",
+      "D": "He had natural talent from day one"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 5,
+    "question_id": 43,
+    "content": "During the summer holidays, Kabir decided to learn painting. At first, his drawings were messy, and he felt discouraged. But his teacher encouraged him to practice every day. Gradually, his strokes became smoother, and his confidence grew. By the end of the course, Kabir painted a beautiful landscape that surprised everyone.",
+    "question_text": "What is the tone of the passage?",
+    "options": {
+      "A": "Motivational",
+      "B": "Fearful",
+      "C": "Negative",
+      "D": "Confusing"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 5,
+    "question_id": 44,
+    "content": "During the summer holidays, Kabir decided to learn painting. At first, his drawings were messy, and he felt discouraged. But his teacher encouraged him to practice every day. Gradually, his strokes became smoother, and his confidence grew. By the end of the course, Kabir painted a beautiful landscape that surprised everyone.",
+    "question_text": "What did Kabir learn during the holidays?",
+    "options": {
+      "A": "Music",
+      "B": "Dancing",
+      "C": "Painting",
+      "D": "Cooking"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "passage_id": 5,
+    "question_id": 45,
+    "content": "During the summer holidays, Kabir decided to learn painting. At first, his drawings were messy, and he felt discouraged. But his teacher encouraged him to practice every day. Gradually, his strokes became smoother, and his confidence grew. By the end of the course, Kabir painted a beautiful landscape that surprised everyone.",
+    "question_text": "What happened to Kabir’s drawings at first?",
+    "options": {
+      "A": "They were messy",
+      "B": "They were perfect",
+      "C": "They were stolen",
+      "D": "They were digital"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 5,
+    "question_id": 46,
+    "content": "During the summer holidays, Kabir decided to learn painting. At first, his drawings were messy, and he felt discouraged. But his teacher encouraged him to practice every day. Gradually, his strokes became smoother, and his confidence grew. By the end of the course, Kabir painted a beautiful landscape that surprised everyone.",
+    "question_text": "What helped Kabir improve?",
+    "options": {
+      "A": "Games",
+      "B": "Daily practice",
+      "C": "Online videos",
+      "D": "Luck"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 5,
+    "question_id": 47,
+    "content": "During the summer holidays, Kabir decided to learn painting. At first, his drawings were messy, and he felt discouraged. But his teacher encouraged him to practice every day. Gradually, his strokes became smoother, and his confidence grew. By the end of the course, Kabir painted a beautiful landscape that surprised everyone.",
+    "question_text": "The word 'gradually' suggests:",
+    "options": {
+      "A": "happened slowly",
+      "B": "happened immediately",
+      "C": "never happened",
+      "D": "was unexpected"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 5,
+    "question_id": 48,
+    "content": "During the summer holidays, Kabir decided to learn painting. At first, his drawings were messy, and he felt discouraged. But his teacher encouraged him to practice every day. Gradually, his strokes became smoother, and his confidence grew. By the end of the course, Kabir painted a beautiful landscape that surprised everyone.",
+    "question_text": "The author's attitude toward Kabir is:",
+    "options": {
+      "A": "Praising",
+      "B": "Mocking",
+      "C": "Upset",
+      "D": "Neutral"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 5,
+    "question_id": 49,
+    "content": "During the summer holidays, Kabir decided to learn painting. At first, his drawings were messy, and he felt discouraged. But his teacher encouraged him to practice every day. Gradually, his strokes became smoother, and his confidence grew. By the end of the course, Kabir painted a beautiful landscape that surprised everyone.",
+    "question_text": "What did Kabir paint at the end?",
+    "options": {
+      "A": "A self-portrait",
+      "B": "A landscape",
+      "C": "An animal",
+      "D": "A building"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 5,
+    "question_id": 50,
+    "content": "During the summer holidays, Kabir decided to learn painting. At first, his drawings were messy, and he felt discouraged. But his teacher encouraged him to practice every day. Gradually, his strokes became smoother, and his confidence grew. By the end of the course, Kabir painted a beautiful landscape that surprised everyone.",
+    "question_text": "The reaction of others to Kabir’s final painting was:",
+    "options": {
+      "A": "Surprised",
+      "B": "Bored",
+      "C": "Angry",
+      "D": "Indifferent"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 6,
+    "question_id": 51,
+    "content": "Leena always admired the night sky. Every evening, she would sit on her terrace and watch the stars. One night, she noticed a bright light moving unusually fast across the sky. Excited, she quickly searched online and learned it was a satellite. From that day on, she became deeply interested in astronomy.",
+    "question_text": "What does 'admired' mean?",
+    "options": {
+      "A": "looked up to and appreciated",
+      "B": "ignored",
+      "C": "destroyed",
+      "D": "feared"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 6,
+    "question_id": 52,
+    "content": "Leena always admired the night sky. Every evening, she would sit on her terrace and watch the stars. One night, she noticed a bright light moving unusually fast across the sky. Excited, she quickly searched online and learned it was a satellite. From that day on, she became deeply interested in astronomy.",
+    "question_text": "Where did Leena watch the stars from?",
+    "options": {
+      "A": "Park",
+      "B": "Terrace",
+      "C": "Balcony",
+      "D": "Room"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 6,
+    "question_id": 53,
+    "content": "Leena always admired the night sky. Every evening, she would sit on her terrace and watch the stars. One night, she noticed a bright light moving unusually fast across the sky. Excited, she quickly searched online and learned it was a satellite. From that day on, she became deeply interested in astronomy.",
+    "question_text": "What can we infer about Leena?",
+    "options": {
+      "A": "She was curious",
+      "B": "She disliked science",
+      "C": "She was afraid of lights",
+      "D": "She never used the internet"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 6,
+    "question_id": 54,
+    "content": "Leena always admired the night sky. Every evening, she would sit on her terrace and watch the stars. One night, she noticed a bright light moving unusually fast across the sky. Excited, she quickly searched online and learned it was a satellite. From that day on, she became deeply interested in astronomy.",
+    "question_text": "What is the tone of the passage?",
+    "options": {
+      "A": "Curious",
+      "B": "Angry",
+      "C": "Sad",
+      "D": "Negative"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 6,
+    "question_id": 55,
+    "content": "Leena always admired the night sky. Every evening, she would sit on her terrace and watch the stars. One night, she noticed a bright light moving unusually fast across the sky. Excited, she quickly searched online and learned it was a satellite. From that day on, she became deeply interested in astronomy.",
+    "question_text": "What did Leena see in the sky?",
+    "options": {
+      "A": "A plane",
+      "B": "A satellite",
+      "C": "A balloon",
+      "D": "A bird"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 6,
+    "question_id": 56,
+    "content": "Leena always admired the night sky. Every evening, she would sit on her terrace and watch the stars. One night, she noticed a bright light moving unusually fast across the sky. Excited, she quickly searched online and learned it was a satellite. From that day on, she became deeply interested in astronomy.",
+    "question_text": "Why did Leena search online?",
+    "options": {
+      "A": "To buy a telescope",
+      "B": "To understand the moving light",
+      "C": "To check social media",
+      "D": "To watch videos"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 6,
+    "question_id": 57,
+    "content": "Leena always admired the night sky. Every evening, she would sit on her terrace and watch the stars. One night, she noticed a bright light moving unusually fast across the sky. Excited, she quickly searched online and learned it was a satellite. From that day on, she became deeply interested in astronomy.",
+    "question_text": "What does 'unusually fast' mean?",
+    "options": {
+      "A": "Slower than usual",
+      "B": "Faster than expected",
+      "C": "Not moving",
+      "D": "Invisible"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 6,
+    "question_id": 58,
+    "content": "Leena always admired the night sky. Every evening, she would sit on her terrace and watch the stars. One night, she noticed a bright light moving unusually fast across the sky. Excited, she quickly searched online and learned it was a satellite. From that day on, she became deeply interested in astronomy.",
+    "question_text": "The author's attitude toward Leena’s interest is:",
+    "options": {
+      "A": "Positive",
+      "B": "Annoyed",
+      "C": "Harsh",
+      "D": "Sarcastic"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 6,
+    "question_id": 59,
+    "content": "Leena always admired the night sky. Every evening, she would sit on her terrace and watch the stars. One night, she noticed a bright light moving unusually fast across the sky. Excited, she quickly searched online and learned it was a satellite. From that day on, she became deeply interested in astronomy.",
+    "question_text": "What new subject did Leena become interested in?",
+    "options": {
+      "A": "Cooking",
+      "B": "Astronomy",
+      "C": "Math",
+      "D": "History"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 6,
+    "question_id": 60,
+    "content": "Leena always admired the night sky. Every evening, she would sit on her terrace and watch the stars. One night, she noticed a bright light moving unusually fast across the sky. Excited, she quickly searched online and learned it was a satellite. From that day on, she became deeply interested in astronomy.",
+    "question_text": "Leena likely enjoys:",
+    "options": {
+      "A": "Observing nature",
+      "B": "Sleeping early",
+      "C": "Loud music",
+      "D": "Crowded places"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 7,
+    "question_id": 61,
+    "content": "During the winter, the lake near Rohan's house would freeze completely. Children from the village gathered there to skate and play. Although Rohan didn't know how to skate, he enjoyed watching his friends glide effortlessly on the ice. One day, he decided to learn, and after weeks of practice, he finally mastered it.",
+    "question_text": "The word 'effortlessly' means:",
+    "options": {
+      "A": "easily",
+      "B": "with great difficulty",
+      "C": "slowly",
+      "D": "angrily"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 7,
+    "question_id": 62,
+    "content": "During the winter, the lake near Rohan's house would freeze completely. Children from the village gathered there to skate and play. Although Rohan didn't know how to skate, he enjoyed watching his friends glide effortlessly on the ice. One day, he decided to learn, and after weeks of practice, he finally mastered it.",
+    "question_text": "What happened to the lake during winter?",
+    "options": {
+      "A": "It dried",
+      "B": "It froze",
+      "C": "It overflowed",
+      "D": "It disappeared"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 7,
+    "question_id": 63,
+    "content": "During the winter, the lake near Rohan's house would freeze completely. Children from the village gathered there to skate and play. Although Rohan didn't know how to skate, he enjoyed watching his friends glide effortlessly on the ice. One day, he decided to learn, and after weeks of practice, he finally mastered it.",
+    "question_text": "Why did Rohan start learning to skate?",
+    "options": {
+      "A": "He was forced",
+      "B": "He wanted to join his friends",
+      "C": "He disliked skating",
+      "D": "He was bored"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 7,
+    "question_id": 64,
+    "content": "During the winter, the lake near Rohan's house would freeze completely. Children from the village gathered there to skate and play. Although Rohan didn't know how to skate, he enjoyed watching his friends glide effortlessly on the ice. One day, he decided to learn, and after weeks of practice, he finally mastered it.",
+    "question_text": "What is the tone of the passage?",
+    "options": {
+      "A": "Encouraging",
+      "B": "Sad",
+      "C": "Critical",
+      "D": "Scary"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 7,
+    "question_id": 65,
+    "content": "During the winter, the lake near Rohan's house would freeze completely. Children from the village gathered there to skate and play. Although Rohan didn't know how to skate, he enjoyed watching his friends glide effortlessly on the ice. One day, he decided to learn, and after weeks of practice, he finally mastered it.",
+    "question_text": "What did Rohan do after weeks of practice?",
+    "options": {
+      "A": "Quit",
+      "B": "Got injured",
+      "C": "Mastered skating",
+      "D": "Lost interest"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "passage_id": 7,
+    "question_id": 66,
+    "content": "During the winter, the lake near Rohan's house would freeze completely. Children from the village gathered there to skate and play. Although Rohan didn't know how to skate, he enjoyed watching his friends glide effortlessly on the ice. One day, he decided to learn, and after weeks of practice, he finally mastered it.",
+    "question_text": "What does 'mastered' mean here?",
+    "options": {
+      "A": "became very good at",
+      "B": "forgot",
+      "C": "started disliking",
+      "D": "avoided"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 7,
+    "question_id": 67,
+    "content": "During the winter, the lake near Rohan's house would freeze completely. Children from the village gathered there to skate and play. Although Rohan didn't know how to skate, he enjoyed watching his friends glide effortlessly on the ice. One day, he decided to learn, and after weeks of practice, he finally mastered it.",
+    "question_text": "Where did the children gather?",
+    "options": {
+      "A": "School",
+      "B": "Park",
+      "C": "Lake",
+      "D": "Market"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "passage_id": 7,
+    "question_id": 68,
+    "content": "During the winter, the lake near Rohan's house would freeze completely. Children from the village gathered there to skate and play. Although Rohan didn't know how to skate, he enjoyed watching his friends glide effortlessly on the ice. One day, he decided to learn, and after weeks of practice, he finally mastered it.",
+    "question_text": "Rohan’s first reaction to skating was:",
+    "options": {
+      "A": "Fear",
+      "B": "Disinterest",
+      "C": "Enjoyment watching others",
+      "D": "Immediate mastery"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "passage_id": 7,
+    "question_id": 69,
+    "content": "During the winter, the lake near Rohan's house would freeze completely. Children from the village gathered there to skate and play. Although Rohan didn't know how to skate, he enjoyed watching his friends glide effortlessly on the ice. One day, he decided to learn, and after weeks of practice, he finally mastered it.",
+    "question_text": "The author portrays skating as:",
+    "options": {
+      "A": "Fun and rewarding",
+      "B": "Dangerous",
+      "C": "Unnecessary",
+      "D": "Confusing"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 7,
+    "question_id": 70,
+    "content": "During the winter, the lake near Rohan's house would freeze completely. Children from the village gathered there to skate and play. Although Rohan didn't know how to skate, he enjoyed watching his friends glide effortlessly on the ice. One day, he decided to learn, and after weeks of practice, he finally mastered it.",
+    "question_text": "What quality does Rohan show?",
+    "options": {
+      "A": "Laziness",
+      "B": "Determination",
+      "C": "Fear",
+      "D": "Irresponsibility"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 8,
+    "question_id": 71,
+    "content": "Neeta worked at a bakery where she prepared fresh bread every morning. One day, a customer complimented her saying her bread tasted better than any he had eaten before. Neeta felt proud and motivated to improve her skills even further.",
+    "question_text": "What does 'complimented' mean?",
+    "options": {
+      "A": "praised",
+      "B": "scolded",
+      "C": "ignored",
+      "D": "ordered"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 8,
+    "question_id": 72,
+    "content": "Neeta worked at a bakery where she prepared fresh bread every morning. One day, a customer complimented her saying her bread tasted better than any he had eaten before. Neeta felt proud and motivated to improve her skills even further.",
+    "question_text": "Where did Neeta work?",
+    "options": {
+      "A": "A school",
+      "B": "A bakery",
+      "C": "A shop",
+      "D": "A factory"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 8,
+    "question_id": 73,
+    "content": "Neeta worked at a bakery where she prepared fresh bread every morning. One day, a customer complimented her saying her bread tasted better than any he had eaten before. Neeta felt proud and motivated to improve her skills even further.",
+    "question_text": "What can we infer about Neeta?",
+    "options": {
+      "A": "She was proud of her work",
+      "B": "She disliked her job",
+      "C": "She was careless",
+      "D": "She was uninterested"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 8,
+    "question_id": 74,
+    "content": "Neeta worked at a bakery where she prepared fresh bread every morning. One day, a customer complimented her saying her bread tasted better than any he had eaten before. Neeta felt proud and motivated to improve her skills even further.",
+    "question_text": "What is the tone of the passage?",
+    "options": {
+      "A": "Positive",
+      "B": "Negative",
+      "C": "Neutral",
+      "D": "Suspenseful"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 8,
+    "question_id": 75,
+    "content": "Neeta worked at a bakery where she prepared fresh bread every morning. One day, a customer complimented her saying her bread tasted better than any he had eaten before. Neeta felt proud and motivated to improve her skills even further.",
+    "question_text": "What did the customer say about Neeta’s bread?",
+    "options": {
+      "A": "It was average",
+      "B": "It was the best he'd eaten",
+      "C": "It was burnt",
+      "D": "It was expensive"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 8,
+    "question_id": 76,
+    "content": "Neeta worked at a bakery where she prepared fresh bread every morning. One day, a customer complimented her saying her bread tasted better than any he had eaten before. Neeta felt proud and motivated to improve her skills even further.",
+    "question_text": "What does 'motivated' mean?",
+    "options": {
+      "A": "encouraged",
+      "B": "confused",
+      "C": "annoyed",
+      "D": "tired"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 8,
+    "question_id": 77,
+    "content": "Neeta worked at a bakery where she prepared fresh bread every morning. One day, a customer complimented her saying her bread tasted better than any he had eaten before. Neeta felt proud and motivated to improve her skills even further.",
+    "question_text": "Neeta’s future actions will likely include:",
+    "options": {
+      "A": "Improving her baking skills",
+      "B": "Quitting her job",
+      "C": "Stopping baking",
+      "D": "Ignoring feedback"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 8,
+    "question_id": 78,
+    "content": "Neeta worked at a bakery where she prepared fresh bread every morning. One day, a customer complimented her saying her bread tasted better than any he had eaten before. Neeta felt proud and motivated to improve her skills even further.",
+    "question_text": "The author’s attitude toward Neeta is:",
+    "options": {
+      "A": "Admiring",
+      "B": "Critical",
+      "C": "Angry",
+      "D": "Sarcastic"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 8,
+    "question_id": 79,
+    "content": "Neeta worked at a bakery where she prepared fresh bread every morning. One day, a customer complimented her saying her bread tasted better than any he had eaten before. Neeta felt proud and motivated to improve her skills even further.",
+    "question_text": "What did Neeta bake every morning?",
+    "options": {
+      "A": "Cookies",
+      "B": "Bread",
+      "C": "Cakes",
+      "D": "Pizza"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 8,
+    "question_id": 80,
+    "content": "Neeta worked at a bakery where she prepared fresh bread every morning. One day, a customer complimented her saying her bread tasted better than any he had eaten before. Neeta felt proud and motivated to improve her skills even further.",
+    "question_text": "The compliment made Neeta feel:",
+    "options": {
+      "A": "proud and encouraged",
+      "B": "afraid",
+      "C": "bored",
+      "D": "angry"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 9,
+    "question_id": 81,
+    "content": "As part of a school project, Ayaan planted a small seed in a pot and watered it daily. After a few days, he saw a tiny green shoot emerging from the soil. He felt thrilled and started taking even more care of the plant. Over months, the plant grew tall and healthy.",
+    "question_text": "What does 'emerging' mean?",
+    "options": {
+      "A": "coming out",
+      "B": "disappearing",
+      "C": "breaking",
+      "D": "falling over"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 9,
+    "question_id": 82,
+    "content": "As part of a school project, Ayaan planted a small seed in a pot and watered it daily. After a few days, he saw a tiny green shoot emerging from the soil. He felt thrilled and started taking even more care of the plant. Over months, the plant grew tall and healthy.",
+    "question_text": "What did Ayaan plant?",
+    "options": {
+      "A": "A flower",
+      "B": "A seed",
+      "C": "A tree",
+      "D": "A leaf"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 9,
+    "question_id": 83,
+    "content": "As part of a school project, Ayaan planted a small seed in a pot and watered it daily. After a few days, he saw a tiny green shoot emerging from the soil. He felt thrilled and started taking even more care of the plant. Over months, the plant grew tall and healthy.",
+    "question_text": "How did Ayaan feel when he saw the shoot?",
+    "options": {
+      "A": "Thrilled",
+      "B": "Scared",
+      "C": "Upset",
+      "D": "Uninterested"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 9,
+    "question_id": 84,
+    "content": "As part of a school project, Ayaan planted a small seed in a pot and watered it daily. After a few days, he saw a tiny green shoot emerging from the soil. He felt thrilled and started taking even more care of the plant. Over months, the plant grew tall and healthy.",
+    "question_text": "What is the tone of the passage?",
+    "options": {
+      "A": "Joyful",
+      "B": "Negative",
+      "C": "Confusing",
+      "D": "Fearful"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 9,
+    "question_id": 85,
+    "content": "As part of a school project, Ayaan planted a small seed in a pot and watered it daily. After a few days, he saw a tiny green shoot emerging from the soil. He felt thrilled and started taking even more care of the plant. Over months, the plant grew tall and healthy.",
+    "question_text": "What helped the plant grow?",
+    "options": {
+      "A": "Daily watering",
+      "B": "Music",
+      "C": "Wind",
+      "D": "Sun alone"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 9,
+    "question_id": 86,
+    "content": "As part of a school project, Ayaan planted a small seed in a pot and watered it daily. After a few days, he saw a tiny green shoot emerging from the soil. He felt thrilled and started taking even more care of the plant. Over months, the plant grew tall and healthy.",
+    "question_text": "What does 'thrilled' mean?",
+    "options": {
+      "A": "very excited",
+      "B": "very sick",
+      "C": "confused",
+      "D": "angry"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 9,
+    "question_id": 87,
+    "content": "As part of a school project, Ayaan planted a small seed in a pot and watered it daily. After a few days, he saw a tiny green shoot emerging from the soil. He felt thrilled and started taking even more care of the plant. Over months, the plant grew tall and healthy.",
+    "question_text": "What does Ayaan’s behavior show?",
+    "options": {
+      "A": "Responsibility",
+      "B": "Laziness",
+      "C": "Fear",
+      "D": "Forgetfulness"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 9,
+    "question_id": 88,
+    "content": "As part of a school project, Ayaan planted a small seed in a pot and watered it daily. After a few days, he saw a tiny green shoot emerging from the soil. He felt thrilled and started taking even more care of the plant. Over months, the plant grew tall and healthy.",
+    "question_text": "The author’s attitude toward the project is:",
+    "options": {
+      "A": "Positive",
+      "B": "Negative",
+      "C": "Neutral",
+      "D": "Critical"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 9,
+    "question_id": 89,
+    "content": "As part of a school project, Ayaan planted a small seed in a pot and watered it daily. After a few days, he saw a tiny green shoot emerging from the soil. He felt thrilled and started taking even more care of the plant. Over months, the plant grew tall and healthy.",
+    "question_text": "What appeared after a few days?",
+    "options": {
+      "A": "A big tree",
+      "B": "A green shoot",
+      "C": "Flowers",
+      "D": "Nothing"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 9,
+    "question_id": 90,
+    "content": "As part of a school project, Ayaan planted a small seed in a pot and watered it daily. After a few days, he saw a tiny green shoot emerging from the soil. He felt thrilled and started taking even more care of the plant. Over months, the plant grew tall and healthy.",
+    "question_text": "Ayaan is likely to:",
+    "options": {
+      "A": "Continue taking care of the plant",
+      "B": "Stop watering it",
+      "C": "Forget about it",
+      "D": "Replace it"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 10,
+    "question_id": 91,
+    "content": "During a field trip to the museum, Asha was amazed by the ancient artifacts on display. She particularly loved the pottery section, where each piece told a story of life hundreds of years ago. Inspired, Asha decided to research more about early civilizations.",
+    "question_text": "What does 'artifacts' mean?",
+    "options": {
+      "A": "old objects made by humans",
+      "B": "natural rocks",
+      "C": "modern machines",
+      "D": "fictional items"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 10,
+    "question_id": 92,
+    "content": "During a field trip to the museum, Asha was amazed by the ancient artifacts on display. She particularly loved the pottery section, where each piece told a story of life hundreds of years ago. Inspired, Asha decided to research more about early civilizations.",
+    "question_text": "Where did Asha go for the field trip?",
+    "options": {
+      "A": "Zoo",
+      "B": "Park",
+      "C": "Museum",
+      "D": "Library"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "passage_id": 10,
+    "question_id": 93,
+    "content": "During a field trip to the museum, Asha was amazed by the ancient artifacts on display. She particularly loved the pottery section, where each piece told a story of life hundreds of years ago. Inspired, Asha decided to research more about early civilizations.",
+    "question_text": "What can we infer about Asha?",
+    "options": {
+      "A": "She likes history",
+      "B": "She dislikes studying",
+      "C": "She avoids museums",
+      "D": "She prefers sports"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 10,
+    "question_id": 94,
+    "content": "During a field trip to the museum, Asha was amazed by the ancient artifacts on display. She particularly loved the pottery section, where each piece told a story of life hundreds of years ago. Inspired, Asha decided to research more about early civilizations.",
+    "question_text": "What is the tone of the passage?",
+    "options": {
+      "A": "Enthusiastic",
+      "B": "Sad",
+      "C": "Scary",
+      "D": "Harsh"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 10,
+    "question_id": 95,
+    "content": "During a field trip to the museum, Asha was amazed by the ancient artifacts on display. She particularly loved the pottery section, where each piece told a story of life hundreds of years ago. Inspired, Asha decided to research more about early civilizations.",
+    "question_text": "What section did Asha like most?",
+    "options": {
+      "A": "Weapons",
+      "B": "Pottery",
+      "C": "Coins",
+      "D": "Maps"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 10,
+    "question_id": 96,
+    "content": "During a field trip to the museum, Asha was amazed by the ancient artifacts on display. She particularly loved the pottery section, where each piece told a story of life hundreds of years ago. Inspired, Asha decided to research more about early civilizations.",
+    "question_text": "What does 'ancient' mean?",
+    "options": {
+      "A": "very old",
+      "B": "very new",
+      "C": "broken",
+      "D": "fake"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 10,
+    "question_id": 97,
+    "content": "During a field trip to the museum, Asha was amazed by the ancient artifacts on display. She particularly loved the pottery section, where each piece told a story of life hundreds of years ago. Inspired, Asha decided to research more about early civilizations.",
+    "question_text": "Why did Asha want to research further?",
+    "options": {
+      "A": "She felt inspired",
+      "B": "She was bored",
+      "C": "She disliked the trip",
+      "D": "She wanted to skip homework"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 10,
+    "question_id": 98,
+    "content": "During a field trip to the museum, Asha was amazed by the ancient artifacts on display. She particularly loved the pottery section, where each piece told a story of life hundreds of years ago. Inspired, Asha decided to research more about early civilizations.",
+    "question_text": "The author’s attitude toward the museum visit is:",
+    "options": {
+      "A": "Positive",
+      "B": "Negative",
+      "C": "Neutral",
+      "D": "Angry"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 10,
+    "question_id": 99,
+    "content": "During a field trip to the museum, Asha was amazed by the ancient artifacts on display. She particularly loved the pottery section, where each piece told a story of life hundreds of years ago. Inspired, Asha decided to research more about early civilizations.",
+    "question_text": "What did each pottery piece tell?",
+    "options": {
+      "A": "A story of past life",
+      "B": "A joke",
+      "C": "A recipe",
+      "D": "A secret code"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 10,
+    "question_id": 100,
+    "content": "During a field trip to the museum, Asha was amazed by the ancient artifacts on display. She particularly loved the pottery section, where each piece told a story of life hundreds of years ago. Inspired, Asha decided to research more about early civilizations.",
+    "question_text": "Asha’s reaction to artifacts suggests she is:",
+    "options": {
+      "A": "curious",
+      "B": "afraid",
+      "C": "lazy",
+      "D": "uninterested"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 11,
+    "question_id": 101,
+    "content": "Zoya had always been afraid of public speaking. When her teacher announced a class presentation, she felt nervous. However, she practiced her speech multiple times at home. On the day of the presentation, Zoya spoke confidently, surprising both her classmates and herself.",
+    "question_text": "What does 'nervous' mean?",
+    "options": {
+      "A": "anxious",
+      "B": "excited",
+      "C": "angry",
+      "D": "relaxed"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 11,
+    "question_id": 102,
+    "content": "Zoya had always been afraid of public speaking. When her teacher announced a class presentation, she felt nervous. However, she practiced her speech multiple times at home. On the day of the presentation, Zoya spoke confidently, surprising both her classmates and herself.",
+    "question_text": "What was Zoya afraid of?",
+    "options": {
+      "A": "Writing",
+      "B": "Public speaking",
+      "C": "Sports",
+      "D": "Music"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 11,
+    "question_id": 103,
+    "content": "Zoya had always been afraid of public speaking. When her teacher announced a class presentation, she felt nervous. However, she practiced her speech multiple times at home. On the day of the presentation, Zoya spoke confidently, surprising both her classmates and herself.",
+    "question_text": "What can be inferred about Zoya?",
+    "options": {
+      "A": "She overcame her fear",
+      "B": "She avoided the presentation",
+      "C": "She didn’t practice",
+      "D": "She became more nervous"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 11,
+    "question_id": 104,
+    "content": "Zoya had always been afraid of public speaking. When her teacher announced a class presentation, she felt nervous. However, she practiced her speech multiple times at home. On the day of the presentation, Zoya spoke confidently, surprising both her classmates and herself.",
+    "question_text": "What is the tone of the passage?",
+    "options": {
+      "A": "Encouraging",
+      "B": "Negative",
+      "C": "Sad",
+      "D": "Critical"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 11,
+    "question_id": 105,
+    "content": "Zoya had always been afraid of public speaking. When her teacher announced a class presentation, she felt nervous. However, she practiced her speech multiple times at home. On the day of the presentation, Zoya spoke confidently, surprising both her classmates and herself.",
+    "question_text": "Where did Zoya practice her speech?",
+    "options": {
+      "A": "School",
+      "B": "Home",
+      "C": "Park",
+      "D": "Library"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 11,
+    "question_id": 106,
+    "content": "Zoya had always been afraid of public speaking. When her teacher announced a class presentation, she felt nervous. However, she practiced her speech multiple times at home. On the day of the presentation, Zoya spoke confidently, surprising both her classmates and herself.",
+    "question_text": "What does 'confidently' mean?",
+    "options": {
+      "A": "with self-assurance",
+      "B": "silently",
+      "C": "angrily",
+      "D": "slowly"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 11,
+    "question_id": 107,
+    "content": "Zoya had always been afraid of public speaking. When her teacher announced a class presentation, she felt nervous. However, she practiced her speech multiple times at home. On the day of the presentation, Zoya spoke confidently, surprising both her classmates and herself.",
+    "question_text": "Why were her classmates surprised?",
+    "options": {
+      "A": "She sang a song",
+      "B": "She spoke confidently",
+      "C": "She refused to speak",
+      "D": "She missed school"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 11,
+    "question_id": 108,
+    "content": "Zoya had always been afraid of public speaking. When her teacher announced a class presentation, she felt nervous. However, she practiced her speech multiple times at home. On the day of the presentation, Zoya spoke confidently, surprising both her classmates and herself.",
+    "question_text": "The author’s attitude toward Zoya is:",
+    "options": {
+      "A": "Proud",
+      "B": "Angry",
+      "C": "Confused",
+      "D": "Distant"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 11,
+    "question_id": 109,
+    "content": "Zoya had always been afraid of public speaking. When her teacher announced a class presentation, she felt nervous. However, she practiced her speech multiple times at home. On the day of the presentation, Zoya spoke confidently, surprising both her classmates and herself.",
+    "question_text": "Who announced the presentation?",
+    "options": {
+      "A": "Principal",
+      "B": "Teacher",
+      "C": "Friend",
+      "D": "Parent"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 11,
+    "question_id": 110,
+    "content": "Zoya had always been afraid of public speaking. When her teacher announced a class presentation, she felt nervous. However, she practiced her speech multiple times at home. On the day of the presentation, Zoya spoke confidently, surprising both her classmates and herself.",
+    "question_text": "Zoya’s improvement came from:",
+    "options": {
+      "A": "Practice",
+      "B": "Skipping class",
+      "C": "Luck",
+      "D": "Copying others"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 12,
+    "question_id": 111,
+    "content": "Every year, the local park hosted a kite festival. Families arrived early to find good spots. Children ran across the open field, trying to keep their colorful kites in the air. The sky soon filled with bright shapes dancing in the wind. It became the most joyful day of the year for the community.",
+    "question_text": "What does 'joyful' mean?",
+    "options": {
+      "A": "full of happiness",
+      "B": "angry",
+      "C": "silent",
+      "D": "boring"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 12,
+    "question_id": 112,
+    "content": "Every year, the local park hosted a kite festival. Families arrived early to find good spots. Children ran across the open field, trying to keep their colorful kites in the air. The sky soon filled with bright shapes dancing in the wind. It became the most joyful day of the year for the community.",
+    "question_text": "Who attended the kite festival?",
+    "options": {
+      "A": "Only kids",
+      "B": "Only tourists",
+      "C": "Families",
+      "D": "Strangers"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "passage_id": 12,
+    "question_id": 113,
+    "content": "Every year, the local park hosted a kite festival. Families arrived early to find good spots. Children ran across the open field, trying to keep their colorful kites in the air. The sky soon filled with bright shapes dancing in the wind. It became the most joyful day of the year for the community.",
+    "question_text": "Why did families arrive early?",
+    "options": {
+      "A": "To build kites",
+      "B": "To find a good spot",
+      "C": "To avoid rain",
+      "D": "To leave early"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 12,
+    "question_id": 114,
+    "content": "Every year, the local park hosted a kite festival. Families arrived early to find good spots. Children ran across the open field, trying to keep their colorful kites in the air. The sky soon filled with bright shapes dancing in the wind. It became the most joyful day of the year for the community.",
+    "question_text": "The tone of the passage is:",
+    "options": {
+      "A": "Cheerful",
+      "B": "Serious",
+      "C": "Sad",
+      "D": "Fearful"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 12,
+    "question_id": 115,
+    "content": "Every year, the local park hosted a kite festival. Families arrived early to find good spots. Children ran across the open field, trying to keep their colorful kites in the air. The sky soon filled with bright shapes dancing in the wind. It became the most joyful day of the year for the community.",
+    "question_text": "What filled the sky?",
+    "options": {
+      "A": "Clouds",
+      "B": "Birds",
+      "C": "Kites",
+      "D": "Smoke"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "passage_id": 12,
+    "question_id": 116,
+    "content": "Every year, the local park hosted a kite festival. Families arrived early to find good spots. Children ran across the open field, trying to keep their colorful kites in the air. The sky soon filled with bright shapes dancing in the wind. It became the most joyful day of the year for the community.",
+    "question_text": "What does 'dancing in the wind' refer to?",
+    "options": {
+      "A": "Kites moving gracefully",
+      "B": "Kids dancing",
+      "C": "Birds flying",
+      "D": "Leaves falling"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 12,
+    "question_id": 117,
+    "content": "Every year, the local park hosted a kite festival. Families arrived early to find good spots. Children ran across the open field, trying to keep their colorful kites in the air. The sky soon filled with bright shapes dancing in the wind. It became the most joyful day of the year for the community.",
+    "question_text": "How did the children feel?",
+    "options": {
+      "A": "Excited",
+      "B": "Afraid",
+      "C": "Tired",
+      "D": "Angry"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 12,
+    "question_id": 118,
+    "content": "Every year, the local park hosted a kite festival. Families arrived early to find good spots. Children ran across the open field, trying to keep their colorful kites in the air. The sky soon filled with bright shapes dancing in the wind. It became the most joyful day of the year for the community.",
+    "question_text": "The author’s attitude toward the festival is:",
+    "options": {
+      "A": "Positive",
+      "B": "Negative",
+      "C": "Uninterested",
+      "D": "Sarcastic"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 12,
+    "question_id": 119,
+    "content": "Every year, the local park hosted a kite festival. Families arrived early to find good spots. Children ran across the open field, trying to keep their colorful kites in the air. The sky soon filled with bright shapes dancing in the wind. It became the most joyful day of the year for the community.",
+    "question_text": "Where was the festival held?",
+    "options": {
+      "A": "Stadium",
+      "B": "Park",
+      "C": "School",
+      "D": "Beach"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 12,
+    "question_id": 120,
+    "content": "Every year, the local park hosted a kite festival. Families arrived early to find good spots. Children ran across the open field, trying to keep their colorful kites in the air. The sky soon filled with bright shapes dancing in the wind. It became the most joyful day of the year for the community.",
+    "question_text": "How important is the festival to the community?",
+    "options": {
+      "A": "Not important",
+      "B": "Most joyful event",
+      "C": "Confusing event",
+      "D": "Dangerous event"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 13,
+    "question_id": 121,
+    "content": "Mehul volunteered at an animal shelter every weekend. He cleaned cages, fed the animals, and played with the puppies. Although the work was tiring, he found it meaningful. Over time, he developed a special bond with a stray dog who followed him everywhere.",
+    "question_text": "What does 'volunteered' mean?",
+    "options": {
+      "A": "worked without pay",
+      "B": "worked for money",
+      "C": "forced to work",
+      "D": "studied"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 13,
+    "question_id": 122,
+    "content": "Mehul volunteered at an animal shelter every weekend. He cleaned cages, fed the animals, and played with the puppies. Although the work was tiring, he found it meaningful. Over time, he developed a special bond with a stray dog who followed him everywhere.",
+    "question_text": "Where did Mehul volunteer?",
+    "options": {
+      "A": "Hospital",
+      "B": "Animal shelter",
+      "C": "Library",
+      "D": "School"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 13,
+    "question_id": 123,
+    "content": "Mehul volunteered at an animal shelter every weekend. He cleaned cages, fed the animals, and played with the puppies. Although the work was tiring, he found it meaningful. Over time, he developed a special bond with a stray dog who followed him everywhere.",
+    "question_text": "Why did Mehul find the work meaningful?",
+    "options": {
+      "A": "He earned money",
+      "B": "He helped animals",
+      "C": "He played games",
+      "D": "He met celebrities"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 13,
+    "question_id": 124,
+    "content": "Mehul volunteered at an animal shelter every weekend. He cleaned cages, fed the animals, and played with the puppies. Although the work was tiring, he found it meaningful. Over time, he developed a special bond with a stray dog who followed him everywhere.",
+    "question_text": "What is the tone of the passage?",
+    "options": {
+      "A": "Warm",
+      "B": "Scary",
+      "C": "Sarcastic",
+      "D": "Cold"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 13,
+    "question_id": 125,
+    "content": "Mehul volunteered at an animal shelter every weekend. He cleaned cages, fed the animals, and played with the puppies. Although the work was tiring, he found it meaningful. Over time, he developed a special bond with a stray dog who followed him everywhere.",
+    "question_text": "Which animal bonded with Mehul?",
+    "options": {
+      "A": "Cat",
+      "B": "Parrot",
+      "C": "Stray dog",
+      "D": "Rabbit"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "passage_id": 13,
+    "question_id": 126,
+    "content": "Mehul volunteered at an animal shelter every weekend. He cleaned cages, fed the animals, and played with the puppies. Although the work was tiring, he found it meaningful. Over time, he developed a special bond with a stray dog who followed him everywhere.",
+    "question_text": "The word 'tiring' means:",
+    "options": {
+      "A": "exhausting",
+      "B": "funny",
+      "C": "strange",
+      "D": "unplanned"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 13,
+    "question_id": 127,
+    "content": "Mehul volunteered at an animal shelter every weekend. He cleaned cages, fed the animals, and played with the puppies. Although the work was tiring, he found it meaningful. Over time, he developed a special bond with a stray dog who followed him everywhere.",
+    "question_text": "What does the dog's behavior show?",
+    "options": {
+      "A": "It trusted Mehul",
+      "B": "It disliked Mehul",
+      "C": "It was lost",
+      "D": "It was hungry"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 13,
+    "question_id": 128,
+    "content": "Mehul volunteered at an animal shelter every weekend. He cleaned cages, fed the animals, and played with the puppies. Although the work was tiring, he found it meaningful. Over time, he developed a special bond with a stray dog who followed him everywhere.",
+    "question_text": "The author's attitude toward Mehul’s actions is:",
+    "options": {
+      "A": "Admiring",
+      "B": "Angry",
+      "C": "Negative",
+      "D": "Sarcastic"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 13,
+    "question_id": 129,
+    "content": "Mehul volunteered at an animal shelter every weekend. He cleaned cages, fed the animals, and played with the puppies. Although the work was tiring, he found it meaningful. Over time, he developed a special bond with a stray dog who followed him everywhere.",
+    "question_text": "What tasks did Mehul do at the shelter?",
+    "options": {
+      "A": "Cleaned, fed animals, played",
+      "B": "Cooked food",
+      "C": "Painted walls",
+      "D": "Drove cars"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 13,
+    "question_id": 130,
+    "content": "Mehul volunteered at an animal shelter every weekend. He cleaned cages, fed the animals, and played with the puppies. Although the work was tiring, he found it meaningful. Over time, he developed a special bond with a stray dog who followed him everywhere.",
+    "question_text": "Mehul likely volunteered because:",
+    "options": {
+      "A": "He cared about animals",
+      "B": "He needed money",
+      "C": "He wanted attention",
+      "D": "He was punished"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 14,
+    "question_id": 131,
+    "content": "The science fair at Ananya’s school was filled with innovative projects. Students displayed models, experiments, and research work. Ananya submitted a project about renewable energy. Her model explained how wind turbines generate electricity. The judges praised her clarity and creativity.",
+    "question_text": "What does 'innovative' mean?",
+    "options": {
+      "A": "creative and new",
+      "B": "boring",
+      "C": "old-fashioned",
+      "D": "unclear"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 14,
+    "question_id": 132,
+    "content": "The science fair at Ananya’s school was filled with innovative projects. Students displayed models, experiments, and research work. Ananya submitted a project about renewable energy. Her model explained how wind turbines generate electricity. The judges praised her clarity and creativity.",
+    "question_text": "What was the event?",
+    "options": {
+      "A": "Music competition",
+      "B": "Science fair",
+      "C": "Sports event",
+      "D": "Drama show"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 14,
+    "question_id": 133,
+    "content": "The science fair at Ananya’s school was filled with innovative projects. Students displayed models, experiments, and research work. Ananya submitted a project about renewable energy. Her model explained how wind turbines generate electricity. The judges praised her clarity and creativity.",
+    "question_text": "What topic did Ananya choose?",
+    "options": {
+      "A": "Cooking",
+      "B": "Wind energy",
+      "C": "Robots",
+      "D": "Plants"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 14,
+    "question_id": 134,
+    "content": "The science fair at Ananya’s school was filled with innovative projects. Students displayed models, experiments, and research work. Ananya submitted a project about renewable energy. Her model explained how wind turbines generate electricity. The judges praised her clarity and creativity.",
+    "question_text": "What is the tone of the passage?",
+    "options": {
+      "A": "Appreciative",
+      "B": "Negative",
+      "C": "Angry",
+      "D": "Fearful"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 14,
+    "question_id": 135,
+    "content": "The science fair at Ananya’s school was filled with innovative projects. Students displayed models, experiments, and research work. Ananya submitted a project about renewable energy. Her model explained how wind turbines generate electricity. The judges praised her clarity and creativity.",
+    "question_text": "What did the judges praise?",
+    "options": {
+      "A": "Her handwriting",
+      "B": "Her clarity and creativity",
+      "C": "Her uniform",
+      "D": "Her attendance"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 14,
+    "question_id": 136,
+    "content": "The science fair at Ananya’s school was filled with innovative projects. Students displayed models, experiments, and research work. Ananya submitted a project about renewable energy. Her model explained how wind turbines generate electricity. The judges praised her clarity and creativity.",
+    "question_text": "What does 'renewable energy' refer to?",
+    "options": {
+      "A": "Energy that can be replaced naturally",
+      "B": "Energy from fuel",
+      "C": "Energy from batteries",
+      "D": "Energy from noise"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 14,
+    "question_id": 137,
+    "content": "The science fair at Ananya’s school was filled with innovative projects. Students displayed models, experiments, and research work. Ananya submitted a project about renewable energy. Her model explained how wind turbines generate electricity. The judges praised her clarity and creativity.",
+    "question_text": "How did Ananya prepare for the fair?",
+    "options": {
+      "A": "By making a working model",
+      "B": "By copying others",
+      "C": "By reading newspapers",
+      "D": "By guessing"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 14,
+    "question_id": 138,
+    "content": "The science fair at Ananya’s school was filled with innovative projects. Students displayed models, experiments, and research work. Ananya submitted a project about renewable energy. Her model explained how wind turbines generate electricity. The judges praised her clarity and creativity.",
+    "question_text": "The judges’ reaction was:",
+    "options": {
+      "A": "Positive",
+      "B": "Harsh",
+      "C": "Neutral",
+      "D": "Confused"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 14,
+    "question_id": 139,
+    "content": "The science fair at Ananya’s school was filled with innovative projects. Students displayed models, experiments, and research work. Ananya submitted a project about renewable energy. Her model explained how wind turbines generate electricity. The judges praised her clarity and creativity.",
+    "question_text": "What did Ananya’s model explain?",
+    "options": {
+      "A": "Water cycle",
+      "B": "Wind turbines",
+      "C": "Solar heaters",
+      "D": "Volcanoes"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 14,
+    "question_id": 140,
+    "content": "The science fair at Ananya’s school was filled with innovative projects. Students displayed models, experiments, and research work. Ananya submitted a project about renewable energy. Her model explained how wind turbines generate electricity. The judges praised her clarity and creativity.",
+    "question_text": "Ananya can be described as:",
+    "options": {
+      "A": "Creative and hardworking",
+      "B": "Lazy",
+      "C": "Uninterested",
+      "D": "Careless"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 15,
+    "question_id": 141,
+    "content": "Every morning, Tarun went for a walk in the nearby park. He enjoyed the fresh air and the sound of birds. One day, he noticed an injured sparrow lying under a bench. Tarun gently picked it up and took it to his home. He cared for the bird until it healed and flew away.",
+    "question_text": "What does 'injured' mean?",
+    "options": {
+      "A": "hurt",
+      "B": "lost",
+      "C": "sleepy",
+      "D": "angry"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 15,
+    "question_id": 142,
+    "content": "Every morning, Tarun went for a walk in the nearby park. He enjoyed the fresh air and the sound of birds. One day, he noticed an injured sparrow lying under a bench. Tarun gently picked it up and took it to his home. He cared for the bird until it healed and flew away.",
+    "question_text": "Where did Tarun find the sparrow?",
+    "options": {
+      "A": "On a tree",
+      "B": "Under a bench",
+      "C": "On the road",
+      "D": "Inside his house"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 15,
+    "question_id": 143,
+    "content": "Every morning, Tarun went for a walk in the nearby park. He enjoyed the fresh air and the sound of birds. One day, he noticed an injured sparrow lying under a bench. Tarun gently picked it up and took it to his home. He cared for the bird until it healed and flew away.",
+    "question_text": "What does Tarun’s action show?",
+    "options": {
+      "A": "Kindness",
+      "B": "Fear",
+      "C": "Anger",
+      "D": "Carelessness"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 15,
+    "question_id": 144,
+    "content": "Every morning, Tarun went for a walk in the nearby park. He enjoyed the fresh air and the sound of birds. One day, he noticed an injured sparrow lying under a bench. Tarun gently picked it up and took it to his home. He cared for the bird until it healed and flew away.",
+    "question_text": "What is the tone of the passage?",
+    "options": {
+      "A": "Compassionate",
+      "B": "Negative",
+      "C": "Harsh",
+      "D": "Humorous"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 15,
+    "question_id": 145,
+    "content": "Every morning, Tarun went for a walk in the nearby park. He enjoyed the fresh air and the sound of birds. One day, he noticed an injured sparrow lying under a bench. Tarun gently picked it up and took it to his home. He cared for the bird until it healed and flew away.",
+    "question_text": "Where did Tarun usually go every morning?",
+    "options": {
+      "A": "Gym",
+      "B": "Park",
+      "C": "School",
+      "D": "Market"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 15,
+    "question_id": 146,
+    "content": "Every morning, Tarun went for a walk in the nearby park. He enjoyed the fresh air and the sound of birds. One day, he noticed an injured sparrow lying under a bench. Tarun gently picked it up and took it to his home. He cared for the bird until it healed and flew away.",
+    "question_text": "What does 'gently' mean?",
+    "options": {
+      "A": "softly",
+      "B": "angrily",
+      "C": "quickly",
+      "D": "carelessly"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 15,
+    "question_id": 147,
+    "content": "Every morning, Tarun went for a walk in the nearby park. He enjoyed the fresh air and the sound of birds. One day, he noticed an injured sparrow lying under a bench. Tarun gently picked it up and took it to his home. He cared for the bird until it healed and flew away.",
+    "question_text": "Why did the sparrow fly away later?",
+    "options": {
+      "A": "It healed",
+      "B": "It got scared",
+      "C": "Tarun forced it",
+      "D": "It was hungry"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 15,
+    "question_id": 148,
+    "content": "Every morning, Tarun went for a walk in the nearby park. He enjoyed the fresh air and the sound of birds. One day, he noticed an injured sparrow lying under a bench. Tarun gently picked it up and took it to his home. He cared for the bird until it healed and flew away.",
+    "question_text": "The author’s attitude toward Tarun’s behavior is:",
+    "options": {
+      "A": "Approving",
+      "B": "Angry",
+      "C": "Confused",
+      "D": "Indifferent"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 15,
+    "question_id": 149,
+    "content": "Every morning, Tarun went for a walk in the nearby park. He enjoyed the fresh air and the sound of birds. One day, he noticed an injured sparrow lying under a bench. Tarun gently picked it up and took it to his home. He cared for the bird until it healed and flew away.",
+    "question_text": "What sound did Tarun enjoy in the mornings?",
+    "options": {
+      "A": "Cars",
+      "B": "Birds",
+      "C": "Music",
+      "D": "Dogs"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 15,
+    "question_id": 150,
+    "content": "Every morning, Tarun went for a walk in the nearby park. He enjoyed the fresh air and the sound of birds. One day, he noticed an injured sparrow lying under a bench. Tarun gently picked it up and took it to his home. He cared for the bird until it healed and flew away.",
+    "question_text": "Tarun’s personality can be described as:",
+    "options": {
+      "A": "Caring",
+      "B": "Selfish",
+      "C": "Lazy",
+      "D": "Aggressive"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 16,
+    "question_id": 151,
+    "content": "Shaan loved riding his bicycle around the neighborhood. One afternoon, he noticed a group of volunteers cleaning the streets. Inspired, he joined them and helped pick up litter. By the end of the day, the neighborhood looked much cleaner, and Shaan felt proud of contributing to the community.",
+    "question_text": "What does 'volunteers' mean?",
+    "options": {
+      "A": "people who work willingly without pay",
+      "B": "people who demand money",
+      "C": "people who are forced to work",
+      "D": "people who are tired"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 16,
+    "question_id": 152,
+    "content": "Shaan loved riding his bicycle around the neighborhood. One afternoon, he noticed a group of volunteers cleaning the streets. Inspired, he joined them and helped pick up litter. By the end of the day, the neighborhood looked much cleaner, and Shaan felt proud of contributing to the community.",
+    "question_text": "What were the volunteers doing?",
+    "options": {
+      "A": "Painting walls",
+      "B": "Cleaning streets",
+      "C": "Cleaning houses",
+      "D": "Fixing bikes"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 16,
+    "question_id": 153,
+    "content": "Shaan loved riding his bicycle around the neighborhood. One afternoon, he noticed a group of volunteers cleaning the streets. Inspired, he joined them and helped pick up litter. By the end of the day, the neighborhood looked much cleaner, and Shaan felt proud of contributing to the community.",
+    "question_text": "Why did Shaan join the volunteers?",
+    "options": {
+      "A": "He was bored",
+      "B": "He felt inspired",
+      "C": "He wanted money",
+      "D": "He was forced"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 16,
+    "question_id": 154,
+    "content": "Shaan loved riding his bicycle around the neighborhood. One afternoon, he noticed a group of volunteers cleaning the streets. Inspired, he joined them and helped pick up litter. By the end of the day, the neighborhood looked much cleaner, and Shaan felt proud of contributing to the community.",
+    "question_text": "What is the tone of the passage?",
+    "options": {
+      "A": "Positive",
+      "B": "Scary",
+      "C": "Negative",
+      "D": "Upset"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 16,
+    "question_id": 155,
+    "content": "Shaan loved riding his bicycle around the neighborhood. One afternoon, he noticed a group of volunteers cleaning the streets. Inspired, he joined them and helped pick up litter. By the end of the day, the neighborhood looked much cleaner, and Shaan felt proud of contributing to the community.",
+    "question_text": "What did Shaan enjoy doing?",
+    "options": {
+      "A": "Riding his bicycle",
+      "B": "Playing games",
+      "C": "Cooking",
+      "D": "Reading"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 16,
+    "question_id": 156,
+    "content": "Shaan loved riding his bicycle around the neighborhood. One afternoon, he noticed a group of volunteers cleaning the streets. Inspired, he joined them and helped pick up litter. By the end of the day, the neighborhood looked much cleaner, and Shaan felt proud of contributing to the community.",
+    "question_text": "What does 'contributing' mean?",
+    "options": {
+      "A": "helping",
+      "B": "arguing",
+      "C": "avoiding",
+      "D": "complaining"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 16,
+    "question_id": 157,
+    "content": "Shaan loved riding his bicycle around the neighborhood. One afternoon, he noticed a group of volunteers cleaning the streets. Inspired, he joined them and helped pick up litter. By the end of the day, the neighborhood looked much cleaner, and Shaan felt proud of contributing to the community.",
+    "question_text": "How did Shaan feel at the end?",
+    "options": {
+      "A": "Proud",
+      "B": "Angry",
+      "C": "Sad",
+      "D": "Confused"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 16,
+    "question_id": 158,
+    "content": "Shaan loved riding his bicycle around the neighborhood. One afternoon, he noticed a group of volunteers cleaning the streets. Inspired, he joined them and helped pick up litter. By the end of the day, the neighborhood looked much cleaner, and Shaan felt proud of contributing to the community.",
+    "question_text": "The author’s attitude toward Shaan’s action is:",
+    "options": {
+      "A": "Approving",
+      "B": "Neutral",
+      "C": "Critical",
+      "D": "Indifferent"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 16,
+    "question_id": 159,
+    "content": "Shaan loved riding his bicycle around the neighborhood. One afternoon, he noticed a group of volunteers cleaning the streets. Inspired, he joined them and helped pick up litter. By the end of the day, the neighborhood looked much cleaner, and Shaan felt proud of contributing to the community.",
+    "question_text": "What did Shaan help pick up?",
+    "options": {
+      "A": "Leaves",
+      "B": "Litter",
+      "C": "Flowers",
+      "D": "Stones"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 16,
+    "question_id": 160,
+    "content": "Shaan loved riding his bicycle around the neighborhood. One afternoon, he noticed a group of volunteers cleaning the streets. Inspired, he joined them and helped pick up litter. By the end of the day, the neighborhood looked much cleaner, and Shaan felt proud of contributing to the community.",
+    "question_text": "The neighborhood looked cleaner because:",
+    "options": {
+      "A": "People moved out",
+      "B": "Volunteers cleaned it",
+      "C": "It rained",
+      "D": "Shops closed"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 17,
+    "question_id": 161,
+    "content": "Aanya enjoyed solving puzzles in her free time. One day, she came across a puzzle that was more challenging than the others. Instead of giving up, she spent hours trying different approaches. When she finally solved it, she felt a strong sense of accomplishment.",
+    "question_text": "What does 'approaches' mean?",
+    "options": {
+      "A": "methods",
+      "B": "mistakes",
+      "C": "shortcuts",
+      "D": "complaints"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 17,
+    "question_id": 162,
+    "content": "Aanya enjoyed solving puzzles in her free time. One day, she came across a puzzle that was more challenging than the others. Instead of giving up, she spent hours trying different approaches. When she finally solved it, she felt a strong sense of accomplishment.",
+    "question_text": "What did Aanya enjoy doing?",
+    "options": {
+      "A": "Singing",
+      "B": "Solving puzzles",
+      "C": "Dancing",
+      "D": "Cooking"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 17,
+    "question_id": 163,
+    "content": "Aanya enjoyed solving puzzles in her free time. One day, she came across a puzzle that was more challenging than the others. Instead of giving up, she spent hours trying different approaches. When she finally solved it, she felt a strong sense of accomplishment.",
+    "question_text": "Why was this puzzle special?",
+    "options": {
+      "A": "It was colourful",
+      "B": "It was more challenging",
+      "C": "It was missing pieces",
+      "D": "It was already solved"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 17,
+    "question_id": 164,
+    "content": "Aanya enjoyed solving puzzles in her free time. One day, she came across a puzzle that was more challenging than the others. Instead of giving up, she spent hours trying different approaches. When she finally solved it, she felt a strong sense of accomplishment.",
+    "question_text": "What is the tone of the passage?",
+    "options": {
+      "A": "Motivational",
+      "B": "Negative",
+      "C": "Confusing",
+      "D": "Harsh"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 17,
+    "question_id": 165,
+    "content": "Aanya enjoyed solving puzzles in her free time. One day, she came across a puzzle that was more challenging than the others. Instead of giving up, she spent hours trying different approaches. When she finally solved it, she felt a strong sense of accomplishment.",
+    "question_text": "How long did she spend on the puzzle?",
+    "options": {
+      "A": "A few seconds",
+      "B": "Hours",
+      "C": "Days",
+      "D": "She didn’t try"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 17,
+    "question_id": 166,
+    "content": "Aanya enjoyed solving puzzles in her free time. One day, she came across a puzzle that was more challenging than the others. Instead of giving up, she spent hours trying different approaches. When she finally solved it, she felt a strong sense of accomplishment.",
+    "question_text": "What is the meaning of 'accomplishment'?",
+    "options": {
+      "A": "achievement",
+      "B": "failure",
+      "C": "confusion",
+      "D": "fear"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 17,
+    "question_id": 167,
+    "content": "Aanya enjoyed solving puzzles in her free time. One day, she came across a puzzle that was more challenging than the others. Instead of giving up, she spent hours trying different approaches. When she finally solved it, she felt a strong sense of accomplishment.",
+    "question_text": "Aanya’s behavior shows she is:",
+    "options": {
+      "A": "Persistent",
+      "B": "Lazy",
+      "C": "Afraid",
+      "D": "Uninterested"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 17,
+    "question_id": 168,
+    "content": "Aanya enjoyed solving puzzles in her free time. One day, she came across a puzzle that was more challenging than the others. Instead of giving up, she spent hours trying different approaches. When she finally solved it, she felt a strong sense of accomplishment.",
+    "question_text": "The author’s attitude toward Aanya is:",
+    "options": {
+      "A": "Proud",
+      "B": "Angry",
+      "C": "Sarcastic",
+      "D": "Disappointed"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 17,
+    "question_id": 169,
+    "content": "Aanya enjoyed solving puzzles in her free time. One day, she came across a puzzle that was more challenging than the others. Instead of giving up, she spent hours trying different approaches. When she finally solved it, she felt a strong sense of accomplishment.",
+    "question_text": "What did Aanya do when the puzzle became difficult?",
+    "options": {
+      "A": "She gave up",
+      "B": "She destroyed it",
+      "C": "She tried harder",
+      "D": "She asked no one"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "passage_id": 17,
+    "question_id": 170,
+    "content": "Aanya enjoyed solving puzzles in her free time. One day, she came across a puzzle that was more challenging than the others. Instead of giving up, she spent hours trying different approaches. When she finally solved it, she felt a strong sense of accomplishment.",
+    "question_text": "How did she feel after solving it?",
+    "options": {
+      "A": "Proud",
+      "B": "Guilty",
+      "C": "Bored",
+      "D": "Afraid"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 18,
+    "question_id": 171,
+    "content": "Vivek’s school organized a charity marathon to raise funds for a children's hospital. Many students participated, including Vivek, who trained hard for weeks. During the marathon, he encouraged his friends who felt tired. In the end, everyone finished the race together, feeling proud of their teamwork.",
+    "question_text": "What does 'charity' mean?",
+    "options": {
+      "A": "helping others",
+      "B": "competing for money",
+      "C": "buying gifts",
+      "D": "playing games"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 18,
+    "question_id": 172,
+    "content": "Vivek’s school organized a charity marathon to raise funds for a children's hospital. Many students participated, including Vivek, who trained hard for weeks. During the marathon, he encouraged his friends who felt tired. In the end, everyone finished the race together, feeling proud of their teamwork.",
+    "question_text": "What was the purpose of the marathon?",
+    "options": {
+      "A": "To win medals",
+      "B": "To raise funds",
+      "C": "To break records",
+      "D": "To skip classes"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 18,
+    "question_id": 173,
+    "content": "Vivek’s school organized a charity marathon to raise funds for a children's hospital. Many students participated, including Vivek, who trained hard for weeks. During the marathon, he encouraged his friends who felt tired. In the end, everyone finished the race together, feeling proud of their teamwork.",
+    "question_text": "What does Vivek’s behavior show?",
+    "options": {
+      "A": "Leadership",
+      "B": "Selfishness",
+      "C": "Anger",
+      "D": "Distraction"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 18,
+    "question_id": 174,
+    "content": "Vivek’s school organized a charity marathon to raise funds for a children's hospital. Many students participated, including Vivek, who trained hard for weeks. During the marathon, he encouraged his friends who felt tired. In the end, everyone finished the race together, feeling proud of their teamwork.",
+    "question_text": "What is the tone of the passage?",
+    "options": {
+      "A": "Uplifting",
+      "B": "Negative",
+      "C": "Hopeless",
+      "D": "Fearful"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 18,
+    "question_id": 175,
+    "content": "Vivek’s school organized a charity marathon to raise funds for a children's hospital. Many students participated, including Vivek, who trained hard for weeks. During the marathon, he encouraged his friends who felt tired. In the end, everyone finished the race together, feeling proud of their teamwork.",
+    "question_text": "Who trained for weeks?",
+    "options": {
+      "A": "Teachers",
+      "B": "Parents",
+      "C": "Vivek",
+      "D": "Doctors"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "passage_id": 18,
+    "question_id": 176,
+    "content": "Vivek’s school organized a charity marathon to raise funds for a children's hospital. Many students participated, including Vivek, who trained hard for weeks. During the marathon, he encouraged his friends who felt tired. In the end, everyone finished the race together, feeling proud of their teamwork.",
+    "question_text": "What does 'encouraged' mean?",
+    "options": {
+      "A": "motivated",
+      "B": "ignored",
+      "C": "criticized",
+      "D": "shouted at"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 18,
+    "question_id": 177,
+    "content": "Vivek’s school organized a charity marathon to raise funds for a children's hospital. Many students participated, including Vivek, who trained hard for weeks. During the marathon, he encouraged his friends who felt tired. In the end, everyone finished the race together, feeling proud of their teamwork.",
+    "question_text": "Why did everyone feel proud?",
+    "options": {
+      "A": "They won money",
+      "B": "They cheated",
+      "C": "They finished the race together",
+      "D": "They left early"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "passage_id": 18,
+    "question_id": 178,
+    "content": "Vivek’s school organized a charity marathon to raise funds for a children's hospital. Many students participated, including Vivek, who trained hard for weeks. During the marathon, he encouraged his friends who felt tired. In the end, everyone finished the race together, feeling proud of their teamwork.",
+    "question_text": "The author’s attitude toward the students is:",
+    "options": {
+      "A": "Supportive",
+      "B": "Critical",
+      "C": "Indifferent",
+      "D": "Negative"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 18,
+    "question_id": 179,
+    "content": "Vivek’s school organized a charity marathon to raise funds for a children's hospital. Many students participated, including Vivek, who trained hard for weeks. During the marathon, he encouraged his friends who felt tired. In the end, everyone finished the race together, feeling proud of their teamwork.",
+    "question_text": "What were they raising funds for?",
+    "options": {
+      "A": "Old age home",
+      "B": "Children's hospital",
+      "C": "Sports event",
+      "D": "Picnic"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 18,
+    "question_id": 180,
+    "content": "Vivek’s school organized a charity marathon to raise funds for a children's hospital. Many students participated, including Vivek, who trained hard for weeks. During the marathon, he encouraged his friends who felt tired. In the end, everyone finished the race together, feeling proud of their teamwork.",
+    "question_text": "The overall message of the passage is:",
+    "options": {
+      "A": "Teamwork matters",
+      "B": "Competition is everything",
+      "C": "Winning is important",
+      "D": "Health does not matter"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 19,
+    "question_id": 181,
+    "content": "On a rainy evening, Mira found a kitten shivering near the bus stop. She immediately took off her jacket and wrapped the kitten to keep it warm. After reaching home, she dried the kitten, gave it food, and made a small bed for it. Her family admired her kindness.",
+    "question_text": "What does 'shivering' mean?",
+    "options": {
+      "A": "trembling",
+      "B": "jumping",
+      "C": "laughing",
+      "D": "sleeping"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 19,
+    "question_id": 182,
+    "content": "On a rainy evening, Mira found a kitten shivering near the bus stop. She immediately took off her jacket and wrapped the kitten to keep it warm. After reaching home, she dried the kitten, gave it food, and made a small bed for it. Her family admired her kindness.",
+    "question_text": "Where did Mira find the kitten?",
+    "options": {
+      "A": "Park",
+      "B": "Bus stop",
+      "C": "School",
+      "D": "Restaurant"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 19,
+    "question_id": 183,
+    "content": "On a rainy evening, Mira found a kitten shivering near the bus stop. She immediately took off her jacket and wrapped the kitten to keep it warm. After reaching home, she dried the kitten, gave it food, and made a small bed for it. Her family admired her kindness.",
+    "question_text": "Why did Mira wrap the kitten in her jacket?",
+    "options": {
+      "A": "To warm it",
+      "B": "To hide it",
+      "C": "To scare it",
+      "D": "To clean it"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 19,
+    "question_id": 184,
+    "content": "On a rainy evening, Mira found a kitten shivering near the bus stop. She immediately took off her jacket and wrapped the kitten to keep it warm. After reaching home, she dried the kitten, gave it food, and made a small bed for it. Her family admired her kindness.",
+    "question_text": "What is the tone of the passage?",
+    "options": {
+      "A": "Compassionate",
+      "B": "Angry",
+      "C": "Careless",
+      "D": "Confusing"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 19,
+    "question_id": 185,
+    "content": "On a rainy evening, Mira found a kitten shivering near the bus stop. She immediately took off her jacket and wrapped the kitten to keep it warm. After reaching home, she dried the kitten, gave it food, and made a small bed for it. Her family admired her kindness.",
+    "question_text": "What did Mira do after reaching home?",
+    "options": {
+      "A": "Left the kitten outside",
+      "B": "Dried and fed it",
+      "C": "Gave it away",
+      "D": "Scolded it"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 19,
+    "question_id": 186,
+    "content": "On a rainy evening, Mira found a kitten shivering near the bus stop. She immediately took off her jacket and wrapped the kitten to keep it warm. After reaching home, she dried the kitten, gave it food, and made a small bed for it. Her family admired her kindness.",
+    "question_text": "What does 'admired' mean?",
+    "options": {
+      "A": "respected",
+      "B": "ignored",
+      "C": "hated",
+      "D": "feared"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 19,
+    "question_id": 187,
+    "content": "On a rainy evening, Mira found a kitten shivering near the bus stop. She immediately took off her jacket and wrapped the kitten to keep it warm. After reaching home, she dried the kitten, gave it food, and made a small bed for it. Her family admired her kindness.",
+    "question_text": "What does Mira’s behavior show?",
+    "options": {
+      "A": "Kindness",
+      "B": "Selfishness",
+      "C": "Fear",
+      "D": "Confusion"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 19,
+    "question_id": 188,
+    "content": "On a rainy evening, Mira found a kitten shivering near the bus stop. She immediately took off her jacket and wrapped the kitten to keep it warm. After reaching home, she dried the kitten, gave it food, and made a small bed for it. Her family admired her kindness.",
+    "question_text": "The family's attitude toward Mira was:",
+    "options": {
+      "A": "Proud",
+      "B": "Annoyed",
+      "C": "Confused",
+      "D": "Negative"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 19,
+    "question_id": 189,
+    "content": "On a rainy evening, Mira found a kitten shivering near the bus stop. She immediately took off her jacket and wrapped the kitten to keep it warm. After reaching home, she dried the kitten, gave it food, and made a small bed for it. Her family admired her kindness.",
+    "question_text": "What did Mira use to wrap the kitten?",
+    "options": {
+      "A": "A towel",
+      "B": "A jacket",
+      "C": "A blanket",
+      "D": "A shirt"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 19,
+    "question_id": 190,
+    "content": "On a rainy evening, Mira found a kitten shivering near the bus stop. She immediately took off her jacket and wrapped the kitten to keep it warm. After reaching home, she dried the kitten, gave it food, and made a small bed for it. Her family admired her kindness.",
+    "question_text": "The passage suggests that Mira is:",
+    "options": {
+      "A": "Compassionate",
+      "B": "Lazy",
+      "C": "Aggressive",
+      "D": "Rude"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 20,
+    "question_id": 191,
+    "content": "Rehan loved reading mystery novels. One night, he stayed up late finishing a book with an unexpected twist. Inspired, he decided to write his own mystery story. He carefully planned his plot and characters, hoping one day to publish a novel of his own.",
+    "question_text": "What does 'twist' mean?",
+    "options": {
+      "A": "surprising change",
+      "B": "boring ending",
+      "C": "slow section",
+      "D": "happy moment"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 20,
+    "question_id": 192,
+    "content": "Rehan loved reading mystery novels. One night, he stayed up late finishing a book with an unexpected twist. Inspired, he decided to write his own mystery story. He carefully planned his plot and characters, hoping one day to publish a novel of his own.",
+    "question_text": "What genre did Rehan enjoy reading?",
+    "options": {
+      "A": "Romance",
+      "B": "Mystery",
+      "C": "Comedy",
+      "D": "Science fiction"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 20,
+    "question_id": 193,
+    "content": "Rehan loved reading mystery novels. One night, he stayed up late finishing a book with an unexpected twist. Inspired, he decided to write his own mystery story. He carefully planned his plot and characters, hoping one day to publish a novel of his own.",
+    "question_text": "Why did Rehan stay up late?",
+    "options": {
+      "A": "He couldn’t sleep",
+      "B": "He wanted to finish the book",
+      "C": "He was studying",
+      "D": "He was watching TV"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 20,
+    "question_id": 194,
+    "content": "Rehan loved reading mystery novels. One night, he stayed up late finishing a book with an unexpected twist. Inspired, he decided to write his own mystery story. He carefully planned his plot and characters, hoping one day to publish a novel of his own.",
+    "question_text": "What is the tone of the passage?",
+    "options": {
+      "A": "Inspirational",
+      "B": "Angry",
+      "C": "Fearful",
+      "D": "Hopeless"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 20,
+    "question_id": 195,
+    "content": "Rehan loved reading mystery novels. One night, he stayed up late finishing a book with an unexpected twist. Inspired, he decided to write his own mystery story. He carefully planned his plot and characters, hoping one day to publish a novel of his own.",
+    "question_text": "What did the book have?",
+    "options": {
+      "A": "A comedy ending",
+      "B": "An unexpected twist",
+      "C": "No ending",
+      "D": "A sad ending"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 20,
+    "question_id": 196,
+    "content": "Rehan loved reading mystery novels. One night, he stayed up late finishing a book with an unexpected twist. Inspired, he decided to write his own mystery story. He carefully planned his plot and characters, hoping one day to publish a novel of his own.",
+    "question_text": "What does 'publish' mean?",
+    "options": {
+      "A": "print and release",
+      "B": "hide",
+      "C": "erase",
+      "D": "copy"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 20,
+    "question_id": 197,
+    "content": "Rehan loved reading mystery novels. One night, he stayed up late finishing a book with an unexpected twist. Inspired, he decided to write his own mystery story. He carefully planned his plot and characters, hoping one day to publish a novel of his own.",
+    "question_text": "What does Rehan hope to do one day?",
+    "options": {
+      "A": "Publish a mystery novel",
+      "B": "Start a business",
+      "C": "Write poems",
+      "D": "Become a singer"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 20,
+    "question_id": 198,
+    "content": "Rehan loved reading mystery novels. One night, he stayed up late finishing a book with an unexpected twist. Inspired, he decided to write his own mystery story. He carefully planned his plot and characters, hoping one day to publish a novel of his own.",
+    "question_text": "The author's attitude toward Rehan is:",
+    "options": {
+      "A": "Encouraging",
+      "B": "Harsh",
+      "C": "Uninterested",
+      "D": "Confused"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "passage_id": 20,
+    "question_id": 199,
+    "content": "Rehan loved reading mystery novels. One night, he stayed up late finishing a book with an unexpected twist. Inspired, he decided to write his own mystery story. He carefully planned his plot and characters, hoping one day to publish a novel of his own.",
+    "question_text": "What did Rehan plan carefully?",
+    "options": {
+      "A": "Trip",
+      "B": "Plot and characters",
+      "C": "Exams",
+      "D": "Games"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "passage_id": 20,
+    "question_id": 200,
+    "content": "Rehan loved reading mystery novels. One night, he stayed up late finishing a book with an unexpected twist. Inspired, he decided to write his own mystery story. He carefully planned his plot and characters, hoping one day to publish a novel of his own.",
+    "question_text": "Rehan can be best described as:",
+    "options": {
+      "A": "Creative",
+      "B": "Lazy",
+      "C": "Angry",
+      "D": "Forgetful"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  }
+]

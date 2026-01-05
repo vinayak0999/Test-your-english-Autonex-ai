@@ -1,0 +1,1506 @@
+[
+    {
+        "id": "video_001",
+        "question_number": 1,
+        "type": "video",
+        "marks": 15,
+        "video_url": "/static/videos/video_001_Video 1.f298.mp4",
+        "video_thumbnail": "/static/videos/video_001_Video 1.f298.mp4",
+        "video_duration_seconds": 5,
+        "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'walk to', 'turn right to', or 'turn left to'.",
+        "required_prefix": [
+            "walk to",
+            "turn right to",
+            "turn left to"
+        ],
+        "correct_answer": "walk toward the pile of dead leaves in the garden",
+        "alternative_answers": [
+            "walk to the pile of dead leaves in the garden",
+            "walk to the heap of fallen leaves in the yard",
+            "walk toward the dry leaves in the garden"
+        ],
+        "key_elements": {
+            "action": "walk",
+            "main_object": "pile of dead leaves",
+            "location": "garden"
+        },
+        "acceptable_synonyms": {
+            "pile": [
+                "heap",
+                "mound"
+            ],
+            "dead": [
+                "fallen",
+                "dry",
+                "withered"
+            ],
+            "garden": [
+                "yard",
+                "outdoor area"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "outdoor",
+            "nature",
+            "walking"
+        ]
+    },
+    {
+        "id": "video_002",
+        "question_number": 2,
+        "type": "video",
+        "marks": 15,
+        "video_url": "/static/videos/video_002_video 2.f298.mp4",
+        "video_thumbnail": "/static/videos/video_002_video 2.f298.mp4",
+        "video_duration_seconds": 5,
+        "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'walk to', 'turn right to', or 'turn left to'.",
+        "required_prefix": [
+            "walk to",
+            "turn right to",
+            "turn left to"
+        ],
+        "correct_answer": "Turn right toward the seated people",
+        "alternative_answers": [
+            "turn right to the seated people",
+            "turn right toward the group sitting down",
+            "turn right to face the seated individuals"
+        ],
+        "key_elements": {
+            "action": "turn right",
+            "main_object": "seated people",
+            "location": "indoor room"
+        },
+        "acceptable_synonyms": {
+            "seated": [
+                "sitting",
+                "resting"
+            ],
+            "people": [
+                "individuals",
+                "persons",
+                "group"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "indoor",
+            "social",
+            "turning"
+        ]
+    },
+    {
+        "id": "video_003",
+        "question_number": 3,
+        "type": "video",
+        "marks": 15,
+        "video_url": "/static/videos/video_003_video 3.f298.mp4",
+        "video_thumbnail": "/static/videos/video_003_video 3.f298.mp4",
+        "video_duration_seconds": 5,
+        "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'walk to', 'turn right to', or 'turn left to'.",
+        "required_prefix": [
+            "walk to",
+            "turn right to",
+            "turn left to"
+        ],
+        "correct_answer": "turn left toward the white bottle on the kitchen counter",
+        "alternative_answers": [
+            "turn left to the white bottle on the kitchen counter",
+            "turn left toward the container on the counter",
+            "turn left to the bottle in the kitchen"
+        ],
+        "key_elements": {
+            "action": "turn left",
+            "main_object": "white bottle",
+            "location": "kitchen counter"
+        },
+        "acceptable_synonyms": {
+            "bottle": [
+                "container",
+                "flask"
+            ],
+            "counter": [
+                "worktop",
+                "surface"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "indoor",
+            "kitchen",
+            "turning"
+        ]
+    },
+    {
+        "id": "video_004",
+        "question_number": 4,
+        "type": "video",
+        "marks": 15,
+        "video_url": "/static/videos/video_004_video 4.f298.mp4",
+        "video_thumbnail": "/static/videos/video_004_video 4.f298.mp4",
+        "video_duration_seconds": 5,
+        "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'walk to', 'turn right to', or 'turn left to'.",
+        "required_prefix": [
+            "walk to",
+            "turn right to",
+            "turn left to"
+        ],
+        "correct_answer": "walk toward the person in white shirt",
+        "alternative_answers": [
+            "walk to the person in a white shirt",
+            "walk toward the individual wearing white",
+            "walk to the man in the white shirt"
+        ],
+        "key_elements": {
+            "action": "walk",
+            "main_object": "person in white shirt",
+            "location": "unspecified"
+        },
+        "acceptable_synonyms": {
+            "person": [
+                "individual",
+                "man",
+                "woman"
+            ],
+            "shirt": [
+                "top",
+                "tee"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "walking",
+            "human interaction"
+        ]
+    },
+    {
+        "id": "video_005",
+        "question_number": 5,
+        "type": "video",
+        "marks": 15,
+        "video_url": "/static/videos/video_005_video 5.f298.mp4",
+        "video_thumbnail": "/static/videos/video_005_video 5.f298.mp4",
+        "video_duration_seconds": 5,
+        "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'walk to', 'turn right to', or 'turn left to'.",
+        "required_prefix": [
+            "walk to",
+            "turn right to",
+            "turn left to"
+        ],
+        "correct_answer": "walk toward the pyramid like structure on the floor",
+        "alternative_answers": [
+            "walk to the pyramid-shaped object on the floor",
+            "walk toward the triangle structure on the ground",
+            "walk to the pyramid object"
+        ],
+        "key_elements": {
+            "action": "walk",
+            "main_object": "pyramid like structure",
+            "location": "floor"
+        },
+        "acceptable_synonyms": {
+            "structure": [
+                "object",
+                "item",
+                "shape"
+            ],
+            "floor": [
+                "ground",
+                "surface"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "walking",
+            "indoor",
+            "navigation"
+        ]
+    },
+    {
+        "id": "video_006",
+        "question_number": 6,
+        "type": "video",
+        "marks": 15,
+        "video_url": "/static/videos/video_006_video 6.f298.mp4",
+        "video_thumbnail": "/static/videos/video_006_video 6.f298.mp4",
+        "video_duration_seconds": 5,
+        "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'walk to', 'turn right to', or 'turn left to'.",
+        "required_prefix": [
+            "walk to",
+            "turn right to",
+            "turn left to"
+        ],
+        "correct_answer": "walk toward the open space",
+        "alternative_answers": [
+            "walk to the open area",
+            "walk toward the clear space",
+            "walk to the empty area ahead"
+        ],
+        "key_elements": {
+            "action": "walk",
+            "main_object": "open space",
+            "location": "unspecified"
+        },
+        "acceptable_synonyms": {
+            "space": [
+                "area",
+                "region",
+                "spot"
+            ],
+            "open": [
+                "clear",
+                "empty",
+                "unobstructed"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "walking",
+            "navigation"
+        ]
+    },
+    {
+        "id": "video_007",
+        "question_number": 7,
+        "type": "video",
+        "marks": 15,
+        "video_url": "/static/videos/video_007_video 7.f298.mp4",
+        "video_thumbnail": "/static/videos/video_007_video 7.f298.mp4",
+        "video_duration_seconds": 5,
+        "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'walk to', 'turn right to', or 'turn left to'.",
+        "required_prefix": [
+            "walk to",
+            "turn right to",
+            "turn left to"
+        ],
+        "correct_answer": "walk through the hallway",
+        "alternative_answers": [
+            "walk to the end of the hallway",
+            "walk toward the corridor",
+            "walk through the passage"
+        ],
+        "key_elements": {
+            "action": "walk",
+            "main_object": "hallway",
+            "location": "hallway"
+        },
+        "acceptable_synonyms": {
+            "hallway": [
+                "corridor",
+                "passage",
+                "aisle"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "walking",
+            "indoor",
+            "corridor"
+        ]
+    },
+    {
+        "id": "video_008",
+        "question_number": 8,
+        "type": "video",
+        "marks": 15,
+        "video_url": "/static/videos/video_008_video 8.f298.mp4",
+        "video_thumbnail": "/static/videos/video_008_video 8.f298.mp4",
+        "video_duration_seconds": 5,
+        "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'walk to', 'turn right to', or 'turn left to'.",
+        "required_prefix": [
+            "walk to",
+            "turn right to",
+            "turn left to"
+        ],
+        "correct_answer": "walk toward the railings near the staircase",
+        "alternative_answers": [
+            "walk to the railings by the stairs",
+            "walk toward the bannister of the staircase",
+            "walk to the handrail near the stairs"
+        ],
+        "key_elements": {
+            "action": "walk",
+            "main_object": "railings",
+            "location": "near the staircase"
+        },
+        "acceptable_synonyms": {
+            "railings": [
+                "handrail",
+                "bannister",
+                "guardrail"
+            ],
+            "staircase": [
+                "stairs",
+                "steps"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "walking",
+            "indoor",
+            "stairs"
+        ]
+    },
+    {
+        "id": "video_009",
+        "question_number": 9,
+        "type": "video",
+        "marks": 15,
+        "video_url": "/static/videos/video_009_video 9.f298.mp4",
+        "video_thumbnail": "/static/videos/video_009_video 9.f298.mp4",
+        "video_duration_seconds": 5,
+        "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'walk to', 'turn right to', or 'turn left to'.",
+        "required_prefix": [
+            "walk to",
+            "turn right to",
+            "turn left to"
+        ],
+        "correct_answer": "walk toward the dishwasher behind the coffee table",
+        "alternative_answers": [
+            "walk to the dishwasher past the coffee table",
+            "walk toward the kitchen appliance behind the table",
+            "walk to the dishwasher in the background"
+        ],
+        "key_elements": {
+            "action": "walk",
+            "main_object": "dishwasher",
+            "location": "behind the coffee table"
+        },
+        "acceptable_synonyms": {
+            "dishwasher": [
+                "dishwashing machine",
+                "appliance"
+            ],
+            "coffee table": [
+                "low table",
+                "small table"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "walking",
+            "indoor",
+            "kitchen"
+        ]
+    },
+    {
+        "id": "video_010",
+        "question_number": 10,
+        "type": "video",
+        "marks": 15,
+        "video_url": "/static/videos/video_010_video 10.f298.mp4",
+        "video_thumbnail": "/static/videos/video_010_video 10.f298.mp4",
+        "video_duration_seconds": 5,
+        "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'walk to', 'turn right to', or 'turn left to'.",
+        "required_prefix": [
+            "walk to",
+            "turn right to",
+            "turn left to"
+        ],
+        "correct_answer": "Turn left toward the man sitting on the chair",
+        "alternative_answers": [
+            "turn left to the man in the chair",
+            "turn left toward the seated person",
+            "turn left to face the sitting man"
+        ],
+        "key_elements": {
+            "action": "turn left",
+            "main_object": "man sitting on the chair",
+            "location": "indoor"
+        },
+        "acceptable_synonyms": {
+            "man": [
+                "person",
+                "individual"
+            ],
+            "chair": [
+                "seat",
+                "armchair"
+            ],
+            "sitting": [
+                "seated",
+                "resting"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "turning",
+            "indoor",
+            "human interaction"
+        ]
+    },
+    {
+        "id": "video_011",
+        "question_number": 11,
+        "type": "video",
+        "marks": 15,
+        "video_url": "/static/videos/video_011_video 1.f298.mp4",
+        "video_thumbnail": "/static/videos/video_011_video 1.f298.mp4",
+        "video_duration_seconds": 5,
+        "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'walk to', 'turn right to', or 'turn left to'.",
+        "required_prefix": [
+            "walk to",
+            "turn right to",
+            "turn left to"
+        ],
+        "correct_answer": "walk towards the space between the fridge and kitchen island",
+        "alternative_answers": [
+            "walk to the space between the refrigerator and the kitchen island",
+            "walk toward the gap between the fridge and the island",
+            "walk to the area separating the fridge and island"
+        ],
+        "key_elements": {
+            "action": "walk",
+            "main_object": "space",
+            "location": "between fridge and kitchen island"
+        },
+        "acceptable_synonyms": {
+            "fridge": [
+                "refrigerator"
+            ],
+            "space": [
+                "gap",
+                "area",
+                "passage"
+            ],
+            "kitchen island": [
+                "island",
+                "counter"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "indoor",
+            "kitchen",
+            "navigation"
+        ]
+    },
+    {
+        "id": "video_012",
+        "question_number": 12,
+        "type": "video",
+        "marks": 15,
+        "video_url": "/static/videos/video_012_Video 8.f135.mp4",
+        "video_thumbnail": "/static/videos/video_012_Video 8.f135.mp4",
+        "video_duration_seconds": 5,
+        "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'walk to', 'turn right to', or 'turn left to'.",
+        "required_prefix": [
+            "walk to",
+            "turn right to",
+            "turn left to"
+        ],
+        "correct_answer": "turn left to face the laptop on the wooden cabinet",
+        "alternative_answers": [
+            "turn left toward the laptop on the wooden cabinet",
+            "turn left to the computer sitting on the cabinet",
+            "turn left towards the laptop on the wood console"
+        ],
+        "key_elements": {
+            "action": "turn left",
+            "main_object": "laptop",
+            "location": "wooden cabinet"
+        },
+        "acceptable_synonyms": {
+            "laptop": [
+                "computer",
+                "notebook"
+            ],
+            "cabinet": [
+                "console",
+                "cupboard",
+                "stand"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "indoor",
+            "turning",
+            "object interaction"
+        ]
+    },
+    {
+        "id": "video_013",
+        "question_number": 13,
+        "type": "video",
+        "marks": 15,
+        "video_url": "/static/videos/video_013_Video 2.f135.mp4",
+        "video_thumbnail": "/static/videos/video_013_Video 2.f135.mp4",
+        "video_duration_seconds": 5,
+        "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'walk to', 'turn right to', or 'turn left to'.",
+        "required_prefix": [
+            "walk to",
+            "turn right to",
+            "turn left to"
+        ],
+        "correct_answer": "walk towards the person sitting on the white sofa",
+        "alternative_answers": [
+            "walk to the person on the white couch",
+            "walk toward the individual sitting on the sofa",
+            "walk to the person seated on the white sofa"
+        ],
+        "key_elements": {
+            "action": "walk",
+            "main_object": "person",
+            "location": "white sofa"
+        },
+        "acceptable_synonyms": {
+            "person": [
+                "individual",
+                "someone"
+            ],
+            "sofa": [
+                "couch",
+                "settee"
+            ],
+            "sitting": [
+                "seated"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "indoor",
+            "human interaction",
+            "walking"
+        ]
+    },
+    {
+        "id": "video_014",
+        "question_number": 14,
+        "type": "video",
+        "marks": 15,
+        "video_url": "/static/videos/video_014_Video 7.f135.mp4",
+        "video_thumbnail": "/static/videos/video_014_Video 7.f135.mp4",
+        "video_duration_seconds": 5,
+        "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'walk to', 'turn right to', or 'turn left to'.",
+        "required_prefix": [
+            "walk to",
+            "turn right to",
+            "turn left to"
+        ],
+        "correct_answer": "turn left towards the black door",
+        "alternative_answers": [
+            "turn left to the black door",
+            "turn left to face the dark door",
+            "turn left toward the black entryway"
+        ],
+        "key_elements": {
+            "action": "turn left",
+            "main_object": "black door",
+            "location": "unspecified"
+        },
+        "acceptable_synonyms": {
+            "door": [
+                "entryway",
+                "entrance"
+            ],
+            "black": [
+                "dark"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "indoor",
+            "turning",
+            "navigation"
+        ]
+    },
+    {
+        "id": "video_015",
+        "question_number": 15,
+        "type": "video",
+        "marks": 15,
+        "video_url": "/static/videos/video_015_Video 1.f134.mp4",
+        "video_thumbnail": "/static/videos/video_015_Video 1.f134.mp4",
+        "video_duration_seconds": 5,
+        "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'walk to', 'turn right to', or 'turn left to'.",
+        "required_prefix": [
+            "walk to",
+            "turn right to",
+            "turn left to"
+        ],
+        "correct_answer": "walk toward the wooden shoe rack near the door",
+        "alternative_answers": [
+            "walk to the wooden shoe rack by the door",
+            "walk towards the shoe shelf near the entrance",
+            "walk to the wooden rack for shoes"
+        ],
+        "key_elements": {
+            "action": "walk",
+            "main_object": "wooden shoe rack",
+            "location": "near the door"
+        },
+        "acceptable_synonyms": {
+            "shoe rack": [
+                "shoe shelf",
+                "shoe organizer",
+                "shoe stand"
+            ],
+            "door": [
+                "entrance",
+                "entryway"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "indoor",
+            "furniture",
+            "walking"
+        ]
+    },
+    {
+        "id": "video_016",
+        "question_number": 16,
+        "type": "video",
+        "marks": 15,
+        "video_url": "/static/videos/video_016_Video 4.f135.mp4",
+        "video_thumbnail": "/static/videos/video_016_Video 4.f135.mp4",
+        "video_duration_seconds": 5,
+        "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'walk to', 'turn right to', or 'turn left to'.",
+        "required_prefix": [
+            "walk to",
+            "turn right to",
+            "turn left to"
+        ],
+        "correct_answer": "walk towards the black closed door",
+        "alternative_answers": [
+            "walk to the closed black door",
+            "walk toward the dark door that is shut",
+            "walk to the black door"
+        ],
+        "key_elements": {
+            "action": "walk",
+            "main_object": "black closed door",
+            "location": "unspecified"
+        },
+        "acceptable_synonyms": {
+            "door": [
+                "entryway"
+            ],
+            "closed": [
+                "shut"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "indoor",
+            "navigation",
+            "walking"
+        ]
+    },
+    {
+        "id": "video_017",
+        "question_number": 17,
+        "type": "video",
+        "marks": 15,
+        "video_url": "/static/videos/video_017_Video 6.f135.mp4",
+        "video_thumbnail": "/static/videos/video_017_Video 6.f135.mp4",
+        "video_duration_seconds": 5,
+        "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'walk to', 'turn right to', or 'turn left to'.",
+        "required_prefix": [
+            "walk to",
+            "turn right to",
+            "turn left to"
+        ],
+        "correct_answer": "turn left towards the fridge",
+        "alternative_answers": [
+            "turn left to the fridge",
+            "turn left toward the refrigerator",
+            "turn left to face the fridge"
+        ],
+        "key_elements": {
+            "action": "turn left",
+            "main_object": "fridge",
+            "location": "kitchen"
+        },
+        "acceptable_synonyms": {
+            "fridge": [
+                "refrigerator",
+                "icebox"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "indoor",
+            "kitchen",
+            "turning"
+        ]
+    },
+    {
+        "id": "video_018",
+        "question_number": 18,
+        "type": "video",
+        "marks": 15,
+        "video_url": "/static/videos/video_018_Video 5.f135.mp4",
+        "video_thumbnail": "/static/videos/video_018_Video 5.f135.mp4",
+        "video_duration_seconds": 5,
+        "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'walk to', 'turn right to', or 'turn left to'.",
+        "required_prefix": [
+            "walk to",
+            "turn right to",
+            "turn left to"
+        ],
+        "correct_answer": "turn right towards the living room",
+        "alternative_answers": [
+            "turn right to the living room",
+            "turn right into the living area",
+            "turn right toward the lounge"
+        ],
+        "key_elements": {
+            "action": "turn right",
+            "main_object": "living room",
+            "location": "indoor"
+        },
+        "acceptable_synonyms": {
+            "living room": [
+                "living area",
+                "lounge",
+                "sitting room"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "indoor",
+            "navigation",
+            "turning"
+        ]
+    },
+    {
+        "id": "video_019",
+        "question_number": 19,
+        "type": "video",
+        "marks": 15,
+        "video_url": "/static/videos/video_019_Video 3.f135.mp4",
+        "video_thumbnail": "/static/videos/video_019_Video 3.f135.mp4",
+        "video_duration_seconds": 5,
+        "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'walk to', 'turn right to', or 'turn left to'.",
+        "required_prefix": [
+            "walk to",
+            "turn right to",
+            "turn left to"
+        ],
+        "correct_answer": "walk towards the metal frame near the white sofa",
+        "alternative_answers": [
+            "walk to the metal frame by the white sofa",
+            "walk toward the metal structure near the white couch",
+            "walk to the steel frame near the sofa"
+        ],
+        "key_elements": {
+            "action": "walk",
+            "main_object": "metal frame",
+            "location": "near the white sofa"
+        },
+        "acceptable_synonyms": {
+            "metal frame": [
+                "metal structure",
+                "steel frame",
+                "stand"
+            ],
+            "sofa": [
+                "couch"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "indoor",
+            "object interaction",
+            "walking"
+        ]
+    },
+    {
+        "id": "video_020",
+        "question_number": 20,
+        "type": "video",
+        "marks": 15,
+        "video_url": "/static/videos/video_020_video 2.f298.mp4",
+        "video_thumbnail": "/static/videos/video_020_video 2.f298.mp4",
+        "video_duration_seconds": 5,
+        "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'walk to', 'turn right to', or 'turn left to'.",
+        "required_prefix": [
+            "walk to",
+            "turn right to",
+            "turn left to"
+        ],
+        "correct_answer": "walk towards the space between the kitchen island and oven",
+        "alternative_answers": [
+            "walk to the space between the island and the oven",
+            "walk toward the gap between the kitchen island and the stove",
+            "walk to the area between the island and oven"
+        ],
+        "key_elements": {
+            "action": "walk",
+            "main_object": "space",
+            "location": "between kitchen island and oven"
+        },
+        "acceptable_synonyms": {
+            "kitchen island": [
+                "island",
+                "counter"
+            ],
+            "oven": [
+                "stove",
+                "range",
+                "cooker"
+            ],
+            "space": [
+                "gap",
+                "area",
+                "passage"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "indoor",
+            "kitchen",
+            "navigation"
+        ]
+    },
+    {
+        "id": "video_021",
+        "question_number": 21,
+        "type": "video",
+        "marks": 15,
+        "video_url": "/static/videos/video_021_video 3.f298.mp4",
+        "video_thumbnail": "/static/videos/video_021_video 3.f298.mp4",
+        "video_duration_seconds": 5,
+        "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'walk to', 'turn right to', or 'turn left to'.",
+        "required_prefix": [
+            "walk to",
+            "turn right to",
+            "turn left to"
+        ],
+        "correct_answer": "walk towards the space between bar stools and sofa",
+        "alternative_answers": [
+            "walk to the space between the bar stools and the sofa",
+            "walk toward the gap between the stools and the couch",
+            "walk to the area separating the bar stools and sofa"
+        ],
+        "key_elements": {
+            "action": "walk",
+            "main_object": "space",
+            "location": "between bar stools and sofa"
+        },
+        "acceptable_synonyms": {
+            "space": [
+                "gap",
+                "area",
+                "opening"
+            ],
+            "sofa": [
+                "couch",
+                "settee"
+            ],
+            "bar stools": [
+                "tall chairs",
+                "stools"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "indoor",
+            "living room",
+            "navigation"
+        ]
+    },
+    {
+        "id": "video_022",
+        "question_number": 22,
+        "type": "video",
+        "marks": 15,
+        "video_url": "/static/videos/video_022_video 4.f298.mp4",
+        "video_thumbnail": "/static/videos/video_022_video 4.f298.mp4",
+        "video_duration_seconds": 5,
+        "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'walk to', 'turn right to', or 'turn left to'.",
+        "required_prefix": [
+            "walk to",
+            "turn right to",
+            "turn left to"
+        ],
+        "correct_answer": "turn left towards the person wearing a headset",
+        "alternative_answers": [
+            "turn left to the person with a headset",
+            "turn left toward the individual wearing headphones",
+            "turn left to face the person in the headset"
+        ],
+        "key_elements": {
+            "action": "turn left",
+            "main_object": "person wearing a headset",
+            "location": "unspecified"
+        },
+        "acceptable_synonyms": {
+            "person": [
+                "individual",
+                "human"
+            ],
+            "headset": [
+                "headphones"
+            ],
+            "wearing": [
+                "with",
+                "sporting"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "indoor",
+            "human interaction",
+            "turning"
+        ]
+    },
+    {
+        "id": "video_023",
+        "question_number": 23,
+        "type": "video",
+        "marks": 15,
+        "video_url": "/static/videos/video_023_video 5.f298.mp4",
+        "video_thumbnail": "/static/videos/video_023_video 5.f298.mp4",
+        "video_duration_seconds": 5,
+        "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'walk to', 'turn right to', or 'turn left to'.",
+        "required_prefix": [
+            "walk to",
+            "turn right to",
+            "turn left to"
+        ],
+        "correct_answer": "walk towards the grey pillow on sofa",
+        "alternative_answers": [
+            "walk to the grey pillow on the sofa",
+            "walk toward the gray cushion on the couch",
+            "walk to the pillow sitting on the sofa"
+        ],
+        "key_elements": {
+            "action": "walk",
+            "main_object": "grey pillow",
+            "location": "on sofa"
+        },
+        "acceptable_synonyms": {
+            "pillow": [
+                "cushion"
+            ],
+            "sofa": [
+                "couch",
+                "settee"
+            ],
+            "grey": [
+                "gray"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "indoor",
+            "furniture",
+            "walking"
+        ]
+    },
+    {
+        "id": "video_024",
+        "question_number": 24,
+        "type": "video",
+        "marks": 15,
+        "video_url": "/static/videos/video_024_video 6.f298.mp4",
+        "video_thumbnail": "/static/videos/video_024_video 6.f298.mp4",
+        "video_duration_seconds": 5,
+        "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'walk to', 'turn right to', or 'turn left to'.",
+        "required_prefix": [
+            "walk to",
+            "turn right to",
+            "turn left to"
+        ],
+        "correct_answer": "walk towards the space in front of the bookshelf",
+        "alternative_answers": [
+            "walk to the space in front of the bookcase",
+            "walk toward the area before the bookshelf",
+            "walk to the open space by the shelves"
+        ],
+        "key_elements": {
+            "action": "walk",
+            "main_object": "space",
+            "location": "in front of the bookshelf"
+        },
+        "acceptable_synonyms": {
+            "bookshelf": [
+                "bookcase",
+                "shelves",
+                "shelving unit"
+            ],
+            "space": [
+                "area",
+                "spot"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "indoor",
+            "navigation",
+            "walking"
+        ]
+    },
+    {
+        "id": "video_025",
+        "question_number": 25,
+        "type": "video",
+        "marks": 15,
+        "video_url": "/static/videos/video_025_walk towards the far end of the grey rug.f136.mp4",
+        "video_thumbnail": "/static/videos/video_025_walk towards the far end of the grey rug.f136.mp4",
+        "video_duration_seconds": 5,
+        "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'walk to', 'turn right to', or 'turn left to'.",
+        "required_prefix": [
+            "walk to",
+            "turn right to",
+            "turn left to"
+        ],
+        "correct_answer": "walk towards the far end of the grey rug",
+        "alternative_answers": [
+            "walk to the far end of the gray rug",
+            "walk toward the other side of the carpet",
+            "walk to the end of the mat"
+        ],
+        "key_elements": {
+            "action": "walk",
+            "main_object": "far end of the grey rug",
+            "location": "floor"
+        },
+        "acceptable_synonyms": {
+            "rug": [
+                "carpet",
+                "mat"
+            ],
+            "far end": [
+                "other side",
+                "edge"
+            ],
+            "grey": [
+                "gray"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "indoor",
+            "floor",
+            "walking"
+        ]
+    },
+    {
+        "id": "video_026",
+        "question_number": 26,
+        "type": "video",
+        "marks": 15,
+        "video_url": "/static/videos/video_026_turn left to face the robot.f136.mp4",
+        "video_thumbnail": "/static/videos/video_026_turn left to face the robot.f136.mp4",
+        "video_duration_seconds": 5,
+        "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'walk to', 'turn right to', or 'turn left to'.",
+        "required_prefix": [
+            "walk to",
+            "turn right to",
+            "turn left to"
+        ],
+        "correct_answer": "turn left to face the robot",
+        "alternative_answers": [
+            "turn left toward the robot",
+            "turn left to look at the machine",
+            "turn left to face the android"
+        ],
+        "key_elements": {
+            "action": "turn left",
+            "main_object": "robot",
+            "location": "unspecified"
+        },
+        "acceptable_synonyms": {
+            "robot": [
+                "machine",
+                "bot",
+                "android"
+            ],
+            "face": [
+                "look at",
+                "orient towards"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "indoor",
+            "technology",
+            "turning"
+        ]
+    },
+    {
+        "id": "video_027",
+        "question_number": 27,
+        "type": "video",
+        "marks": 15,
+        "video_url": "/static/videos/video_027_turn left to face the round rug on the floor.f136.mp4",
+        "video_thumbnail": "/static/videos/video_027_turn left to face the round rug on the floor.f136.mp4",
+        "video_duration_seconds": 5,
+        "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'walk to', 'turn right to', or 'turn left to'.",
+        "required_prefix": [
+            "walk to",
+            "turn right to",
+            "turn left to"
+        ],
+        "correct_answer": "turn left to face the round rug on the floor",
+        "alternative_answers": [
+            "turn left toward the round rug on the floor",
+            "turn left to face the circular carpet",
+            "turn left towards the round mat"
+        ],
+        "key_elements": {
+            "action": "turn left",
+            "main_object": "round rug",
+            "location": "on the floor"
+        },
+        "acceptable_synonyms": {
+            "round": [
+                "circular"
+            ],
+            "rug": [
+                "carpet",
+                "mat"
+            ],
+            "floor": [
+                "ground"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "indoor",
+            "floor",
+            "turning"
+        ]
+    },
+    {
+        "id": "video_028",
+        "question_number": 28,
+        "type": "video",
+        "marks": 15,
+        "video_url": "/static/videos/video_028_turn right to face the open doorway.f136.mp4",
+        "video_thumbnail": "/static/videos/video_028_turn right to face the open doorway.f136.mp4",
+        "video_duration_seconds": 5,
+        "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'walk to', 'turn right to', or 'turn left to'.",
+        "required_prefix": [
+            "walk to",
+            "turn right to",
+            "turn left to"
+        ],
+        "correct_answer": "turn right to face the open doorway",
+        "alternative_answers": [
+            "turn right toward the open doorway",
+            "turn right to face the open entrance",
+            "turn right towards the open door"
+        ],
+        "key_elements": {
+            "action": "turn right",
+            "main_object": "open doorway",
+            "location": "unspecified"
+        },
+        "acceptable_synonyms": {
+            "doorway": [
+                "entrance",
+                "door",
+                "entry"
+            ],
+            "open": [
+                "ajar",
+                "unclosed"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "indoor",
+            "navigation",
+            "turning"
+        ]
+    },
+    {
+        "id": "video_029",
+        "question_number": 29,
+        "type": "video",
+        "marks": 15,
+        "video_url": "/static/videos/video_029_turn right to face the kitchen counter.f136.mp4",
+        "video_thumbnail": "/static/videos/video_029_turn right to face the kitchen counter.f136.mp4",
+        "video_duration_seconds": 5,
+        "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'walk to', 'turn right to', or 'turn left to'.",
+        "required_prefix": [
+            "walk to",
+            "turn right to",
+            "turn left to"
+        ],
+        "correct_answer": "turn right to face the kitchen counter",
+        "alternative_answers": [
+            "turn right toward the kitchen counter",
+            "turn right to face the countertop",
+            "turn right towards the kitchen worktop"
+        ],
+        "key_elements": {
+            "action": "turn right",
+            "main_object": "kitchen counter",
+            "location": "kitchen"
+        },
+        "acceptable_synonyms": {
+            "counter": [
+                "countertop",
+                "worktop",
+                "surface"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "indoor",
+            "kitchen",
+            "turning"
+        ]
+    },
+    {
+        "id": "video_030",
+        "question_number": 30,
+        "type": "video",
+        "marks": 15,
+        "video_url": "/static/videos/video_030_walk towards the grey placement on the kitchen island.f136.mp4",
+        "video_thumbnail": "/static/videos/video_030_walk towards the grey placement on the kitchen island.f136.mp4",
+        "video_duration_seconds": 5,
+        "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'walk to', 'turn right to', or 'turn left to'.",
+        "required_prefix": [
+            "walk to",
+            "turn right to",
+            "turn left to"
+        ],
+        "correct_answer": "walk towards the grey placement on the kitchen island",
+        "alternative_answers": [
+            "walk to the grey placemat on the kitchen island",
+            "walk toward the gray placement on the counter",
+            "walk to the grey mat on the island"
+        ],
+        "key_elements": {
+            "action": "walk",
+            "main_object": "grey placement",
+            "location": "kitchen island"
+        },
+        "acceptable_synonyms": {
+            "placement": [
+                "placemat",
+                "mat",
+                "setting"
+            ],
+            "kitchen island": [
+                "island",
+                "counter"
+            ],
+            "grey": [
+                "gray"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "indoor",
+            "kitchen",
+            "walking"
+        ]
+    }
+]

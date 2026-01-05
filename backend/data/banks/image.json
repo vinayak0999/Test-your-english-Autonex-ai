@@ -1,0 +1,51 @@
+[
+    {
+        "id": "image_001",
+        "question_number": 1,
+        "type": "image",
+        "marks": 15,
+        "image_url": "/static/images/kitchen_scene.jpg",
+        "image_thumbnail": "/static/thumbnails/kitchen_scene.jpg",
+        "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
+        "correct_answer": "A modern kitchen with white cabinets, a stainless steel refrigerator on the right, and a marble countertop with fresh fruits in a wooden bowl.",
+        "alternative_answers": [
+            "The image shows a contemporary kitchen featuring white cabinets, a fridge made of stainless steel, and a marble counter with a fruit bowl."
+        ],
+        "key_elements": {
+            "main_object": "kitchen",
+            "furniture": "white cabinets",
+            "appliance": "stainless steel refrigerator",
+            "surface": "marble countertop",
+            "items": "fresh fruits in wooden bowl"
+        },
+        "acceptable_synonyms": {
+            "refrigerator": [
+                "fridge"
+            ],
+            "countertop": [
+                "counter",
+                "worktop"
+            ],
+            "modern": [
+                "contemporary"
+            ],
+            "fruits": [
+                "apples",
+                "oranges"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "indoor",
+            "kitchen",
+            "household"
+        ]
+    }
+]

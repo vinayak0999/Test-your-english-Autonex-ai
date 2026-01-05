@@ -1,0 +1,36 @@
+[
+    {
+        "id": "reading_001",
+        "question_number": 1,
+        "type": "reading",
+        "marks": 15,
+        "title": "The Future of Remote Work",
+        "passage": "The COVID-19 pandemic has fundamentally changed how we work. Many companies have adopted hybrid models, allowing employees to work from home part of the week. Studies show that remote workers often report higher job satisfaction and better work-life balance. However, challenges remain, including maintaining team cohesion and ensuring effective communication across distributed teams.",
+        "prompt": "Read the passage above and write a summary in your own words. Your summary should capture the main points without copying directly from the passage.",
+        "reference_summary": "The pandemic transformed work culture, leading to hybrid models. Remote work offers benefits like satisfaction and balance, but presents challenges in team cohesion and communication.",
+        "alternative_summaries": [
+            "COVID-19 changed the workplace by introducing hybrid work. Remote work has positives such as job satisfaction and work-life balance, but struggles with team unity and communication."
+        ],
+        "key_ideas": [
+            "pandemic changed work",
+            "hybrid models",
+            "remote work benefits",
+            "work-life balance",
+            "team cohesion challenges",
+            "communication issues"
+        ],
+        "marks_distribution": {
+            "key_idea_coverage": 5,
+            "paraphrasing_quality": 4,
+            "grammar_structure": 3,
+            "coherence_flow": 2,
+            "vocabulary_precision": 1
+        },
+        "difficulty": "medium",
+        "tags": [
+            "workplace",
+            "pandemic",
+            "remote"
+        ]
+    }
+]

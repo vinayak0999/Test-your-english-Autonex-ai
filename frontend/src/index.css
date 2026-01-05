@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Logo Colors - Deep Navy Blue Theme */
+  --primary: #0F1A4D; /* Deep Navy from logo */
+  --primary-light: #1E3A8A; /* Lighter navy */
+  --primary-dark: #0A1230; /* Darker navy */
+  --accent: #3B82F6; /* Blue accent */
+  --background: #f8fafc; /* Slate 50 */
+}
+
+body {
+  background-color: var(--background);
+  color: #1e293b;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom "Glass" Effect for Cards */
+.glass-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Smooth Transitions - Updated to Navy theme */
+.btn-primary {
+  @apply bg-[#0F1A4D] text-white px-6 py-2 rounded-lg font-medium transition-all duration-200 hover:bg-[#1E3A8A] hover:shadow-lg active:scale-95;
+}
+
+.input-field {
+  @apply w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0F1A4D] focus:border-[#0F1A4D] outline-none transition-all duration-200;
+}
