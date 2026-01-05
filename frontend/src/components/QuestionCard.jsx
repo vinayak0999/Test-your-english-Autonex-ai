@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const API_URL = 'http://localhost:8000';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
 const QuestionCard = ({ question, answer, onAnswerChange }) => {
     // Helper to safely get content fields (handles both legacy string and new object)
@@ -101,8 +101,8 @@ const QuestionCard = ({ question, answer, onAnswerChange }) => {
                         onChange={(e) => onAnswerChange(e.target.value)}
                         placeholder={question.type === 'jumble' ? "Type the correct sentence order..." : "Type your detailed answer here..."}
                         className={`w-full p-4 rounded-xl border focus:ring-2 outline-none transition-all ${question.type === 'jumble'
-                                ? 'h-24 font-mono text-lg border-indigo-200 focus:ring-indigo-500 focus:border-indigo-500'
-                                : 'h-40 border-slate-300 focus:ring-blue-500 focus:border-blue-500'
+                            ? 'h-24 font-mono text-lg border-indigo-200 focus:ring-indigo-500 focus:border-indigo-500'
+                            : 'h-40 border-slate-300 focus:ring-blue-500 focus:border-blue-500'
                             }`}
                         spellCheck={false}
                         onPaste={(e) => {
@@ -120,8 +120,8 @@ const QuestionCard = ({ question, answer, onAnswerChange }) => {
                                 key={key}
                                 onClick={() => onAnswerChange(key)}
                                 className={`p-4 rounded-xl border-2 text-left transition-all flex items-center gap-3 ${answer === key
-                                        ? 'border-indigo-600 bg-indigo-50 text-indigo-900 shadow-sm'
-                                        : 'border-slate-200 hover:border-indigo-300 hover:bg-slate-50 text-slate-600'
+                                    ? 'border-indigo-600 bg-indigo-50 text-indigo-900 shadow-sm'
+                                    : 'border-slate-200 hover:border-indigo-300 hover:bg-slate-50 text-slate-600'
                                     }`}
                             >
                                 <span className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${answer === key ? 'bg-indigo-600 text-white' : 'bg-slate-100 text-slate-500'
@@ -155,8 +155,8 @@ const QuestionCard = ({ question, answer, onAnswerChange }) => {
                                                     onAnswerChange(JSON.stringify(newAns));
                                                 }}
                                                 className={`w-full p-3 rounded-lg border text-left text-sm transition-all ${isSelected
-                                                        ? 'bg-indigo-600 text-white border-indigo-600'
-                                                        : 'bg-white border-slate-200 text-slate-700 hover:border-indigo-300'
+                                                    ? 'bg-indigo-600 text-white border-indigo-600'
+                                                    : 'bg-white border-slate-200 text-slate-700 hover:border-indigo-300'
                                                     }`}
                                             >
                                                 <b>{optKey}.</b> {optVal}
