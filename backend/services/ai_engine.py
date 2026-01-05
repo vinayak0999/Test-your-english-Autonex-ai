@@ -1,6 +1,5 @@
 import asyncio
 from concurrent.futures import ThreadPoolExecutor
-from sentence_transformers import SentenceTransformer, util
 import google.generativeai as genai
 import json
 import re
@@ -10,22 +9,32 @@ from config import settings
 ai_executor = ThreadPoolExecutor(max_workers=3)
 
 print("Loading AI Models... (This happens once)")
-# Load model on startup
-similarity_model = SentenceTransformer('all-MiniLM-L6-v2') 
 
 # Configure Gemini (without response_mime_type - not supported in this library version)
 genai.configure(api_key=settings.GEMINI_API_KEY)
 model = genai.GenerativeModel('gemini-2.5-flash')
 
-# --- Optimized Non-Blocking Functions ---
+# --- Lightweight Similarity Functions (No Heavy ML Dependencies) ---
+
+def _normalize_text(text: str) -> set:
+    """Normalize text to set of words for comparison"""
+    if not text:
+        return set()
+    # Remove punctuation and convert to lowercase
+    text = re.sub(r'[^\w\s]', '', text.lower())
+    return set(text.split())
 
 def _sync_get_vector_similarity(text1: str, text2: str) -> float:
-    """The heavy CPU calculation (Synchronous)"""
+    """Lightweight word overlap similarity (Jaccard similarity)"""
     if not text1 or not text2:
         return 0.0
-    embeddings = similarity_model.encode([text1, text2])
-    score = util.cos_sim(embeddings[0], embeddings[1])
-    return float(score[0][0])
+    words1 = _normalize_text(text1)
+    words2 = _normalize_text(text2)
+    if not words1 or not words2:
+        return 0.0
+    intersection = len(words1 & words2)
+    union = len(words1 | words2)
+    return intersection / union if union > 0 else 0.0
 
 async def get_vector_similarity(text1: str, text2: str) -> float:
     """The Async Wrapper (Non-Blocking)"""
@@ -33,18 +42,22 @@ async def get_vector_similarity(text1: str, text2: str) -> float:
     return await loop.run_in_executor(ai_executor, _sync_get_vector_similarity, text1, text2)
 
 def _sync_check_key_ideas(student_text: str, key_ideas: list) -> float:
-    if not key_ideas: return 1.0
+    """Check if student text contains key ideas using word matching"""
+    if not key_ideas: 
+        return 1.0
+    student_words = _normalize_text(student_text)
     match_count = 0
-    student_embedding = similarity_model.encode(student_text)
     for idea in key_ideas:
-        idea_embedding = similarity_model.encode(idea)
-        if util.cos_sim(student_embedding, idea_embedding) > 0.6:
+        idea_words = _normalize_text(idea)
+        # If 50%+ of idea words are in student text, count as match
+        if idea_words and len(student_words & idea_words) / len(idea_words) > 0.5:
             match_count += 1
     return min(match_count / len(key_ideas), 1.0)
 
 async def check_key_ideas(student_text: str, key_ideas: list) -> float:
     loop = asyncio.get_event_loop()
     return await loop.run_in_executor(ai_executor, _sync_check_key_ideas, student_text, key_ideas)
+
 
 def _call_gemini(prompt: str) -> dict:
     """Thread-safe Gemini Call"""

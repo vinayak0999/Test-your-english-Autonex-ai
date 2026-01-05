@@ -1,0 +1,20 @@
+# Ignore video files - they're too large for Railway
+# Videos should be hosted on cloud storage (e.g., Cloudinary, S3)
+public/videos/
+
+# Development files
+*.pyc
+__pycache__/
+.env
+*.db
+*.sqlite
+.venv/
+venv/
+
+# IDE
+.idea/
+.vscode/
+
+# Temp
+*.log
+tmp/
