@@ -28,7 +28,7 @@ const Login = () => {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-5xl font-bold mb-6"
                     >
-                        Test Your English with AUTONEX AI.
+                        Test Your English with this tool.
                     </motion.h1>
                     <p className="text-slate-300 text-xl leading-relaxed">
                         Take tests, get instant AI grading, and track your progress with our advanced evaluation engine.

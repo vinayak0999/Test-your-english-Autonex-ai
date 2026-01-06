@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import useAuthStore from '../../store/authStore';
 import Logo from '../../components/Logo';
-import { Loader2, ShieldCheck, Lock } from 'lucide-react';
+import { Loader2, ShieldCheck, Lock, BrainCircuit } from 'lucide-react';
 
 const AdminLogin = () => {
     const [email, setEmail] = useState('');
@@ -49,11 +49,9 @@ const AdminLogin = () => {
                 className="w-full max-w-md bg-[#0F1A4D]/80 backdrop-blur-sm border border-[#1E3A8A] p-8 rounded-2xl shadow-2xl relative z-10"
             >
                 <div className="flex flex-col items-center mb-8">
-                    <img
-                        src="/logo.jpg"
-                        alt="Autonex Logo"
-                        className="h-16 w-16 rounded-xl mb-4 shadow-lg"
-                    />
+                    <div className="h-16 w-16 rounded-xl mb-4 shadow-lg bg-white/10 flex items-center justify-center">
+                        <BrainCircuit className="h-10 w-10 text-white" />
+                    </div>
                     <h1 className="text-2xl font-bold text-white">Admin Portal</h1>
                     <p className="text-slate-400 text-sm mt-1">Restricted Access Only</p>
                 </div>
