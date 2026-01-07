@@ -53,12 +53,21 @@ async def get_available_tests(db: AsyncSession = Depends(get_db), user: User = D
     response = []
     for t in tests:
         is_completed = t.id in completed_map
+        
+        # Calculate question count - from stored questions or template config
+        if t.questions:
+            q_count = len(t.questions)
+        elif t.template_config:
+            q_count = sum(section.get("count", 0) for section in t.template_config)
+        else:
+            q_count = 0
+            
         response.append({
             "id": t.id,
             "title": t.title,
             "duration": t.duration_minutes,
             "total_marks": t.total_marks,
-            "question_count": len(t.questions) if t.questions else 0,
+            "question_count": q_count,
             "completed": is_completed,
             "result_id": completed_map.get(t.id) if is_completed else None
         })
@@ -303,6 +312,7 @@ class ExamSubmission(BaseModel):
     flags: int = 0  # Tab switch count (default 0)
     tab_switches: int = 0  # Explicit tab switch count
     session_id: Optional[int] = None  # For template-based tests with random questions
+    disqualified: bool = False  # Whether user was auto-disqualified for violations
 
 @router.post("/tests/{test_id}/finish")
 async def finish_exam(

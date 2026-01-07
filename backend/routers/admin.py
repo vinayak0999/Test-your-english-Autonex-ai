@@ -150,17 +150,29 @@ async def list_all_tests(
     )
     tests = result.scalars().all()
     
-    return [{
-        "id": t.id,
-        "title": t.title,
-        "duration_minutes": t.duration_minutes,
-        "total_marks": t.total_marks,
-        "is_active": t.is_active,
-        "organization_id": t.organization_id,
-        "organization_name": t.organization.name if t.organization else "All Organizations",
-        "question_count": len(t.questions) if t.questions else 0,
-        "created_at": t.created_at.isoformat() if t.created_at else None
-    } for t in tests]
+    response = []
+    for t in tests:
+        # Calculate question count - from stored questions or template config
+        if t.questions:
+            q_count = len(t.questions)
+        elif t.template_config:
+            q_count = sum(section.get("count", 0) for section in t.template_config)
+        else:
+            q_count = 0
+            
+        response.append({
+            "id": t.id,
+            "title": t.title,
+            "duration_minutes": t.duration_minutes,
+            "total_marks": t.total_marks,
+            "is_active": t.is_active,
+            "organization_id": t.organization_id,
+            "organization_name": t.organization.name if t.organization else "All Organizations",
+            "question_count": q_count,
+            "created_at": t.created_at.isoformat() if t.created_at else None
+        })
+    
+    return response
 
 @router.patch("/tests/{test_id}")
 async def update_test(
