@@ -97,7 +97,9 @@ const AdminDashboard = () => {
                                 <div className="p-3 bg-indigo-50 text-indigo-600 rounded-lg group-hover:bg-indigo-600 group-hover:text-white transition-colors">
                                     <FileText size={24} />
                                 </div>
-                                <span className="text-xs font-bold px-3 py-1 bg-green-100 text-green-700 rounded-full">Active</span>
+                                <span className={`text-xs font-bold px-3 py-1 rounded-full ${test.is_active ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+                                    {test.is_active ? 'Active' : 'Inactive'}
+                                </span>
                             </div>
 
                             <h3 className="text-lg font-bold text-slate-800 mb-2">{test.title}</h3>
