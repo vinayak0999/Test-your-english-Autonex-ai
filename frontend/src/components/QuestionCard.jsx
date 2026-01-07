@@ -33,27 +33,41 @@ const QuestionCard = ({ question, answer, onAnswerChange }) => {
 
                 {/* 1. VIDEO */}
                 {question.type === 'video' && (
-                    <div className="rounded-xl overflow-hidden bg-black aspect-video shadow-md relative group">
-                        <video
-                            controls
-                            controlsList="nodownload"
-                            className="w-full h-full object-contain"
-                            src={contentData.url ? (contentData.url.startsWith('http') ? contentData.url : `${API_URL}${contentData.url}`) : ''}
-                        >
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
+                    <>
+                        <div className="rounded-xl overflow-hidden bg-black aspect-video shadow-md relative group">
+                            <video
+                                controls
+                                controlsList="nodownload"
+                                className="w-full h-full object-contain"
+                                src={contentData.url ? (contentData.url.startsWith('http') ? contentData.url : `${API_URL}${contentData.url}`) : ''}
+                            >
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                            <p className="text-slate-700 font-medium">
+                                Assign a label to the video clip above. The caption should begin with one of the following: "walk to," "turn right to," or "turn left to."
+                            </p>
+                        </div>
+                    </>
                 )}
 
                 {/* 2. IMAGE */}
                 {question.type === 'image' && (
-                    <div className="rounded-xl overflow-hidden bg-slate-50 border border-slate-200">
-                        <img
-                            src={contentData.url ? (contentData.url.startsWith('http') ? contentData.url : `${API_URL}${contentData.url}`) : ''}
-                            alt="Question Visual"
-                            className="w-full h-auto max-h-[400px] object-contain mx-auto"
-                        />
-                    </div>
+                    <>
+                        <div className="rounded-xl overflow-hidden bg-slate-50 border border-slate-200">
+                            <img
+                                src={contentData.url ? (contentData.url.startsWith('http') ? contentData.url : `${API_URL}${contentData.url}`) : ''}
+                                alt="Question Visual"
+                                className="w-full h-auto max-h-[400px] object-contain mx-auto"
+                            />
+                        </div>
+                        <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
+                            <p className="text-slate-700 font-medium">
+                                Analyze the image shown above and provide a detailed explanation of all visible elements.
+                            </p>
+                        </div>
+                    </>
                 )}
 
                 {/* 3. READING & JUMBLE & MCQ Text */}

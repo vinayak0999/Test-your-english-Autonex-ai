@@ -241,7 +241,7 @@
         "image_url": "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcS7WDche3ArnTLTNKX7arBU4eLnhLyimfA-4WxvIjl6DBzSAiXenn2bQlTqokOB8rp__0mesu3B-gBJBvsVsMRnumT6K3igWm4jKZQOkzwYZ1qagkU",
         "image_thumbnail": "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcS7WDche3ArnTLTNKX7arBU4eLnhLyimfA-4WxvIjl6DBzSAiXenn2bQlTqokOB8rp__0mesu3B-gBJBvsVsMRnumT6K3igWm4jKZQOkzwYZ1qagkU",
         "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
-        "correct_answer": "A basketball player in a white jersey jumping high to shoot the orange ball into the hoop on an outdoor court.",
+        "correct_answer": "A basketball player in a grey jersey jumping high to shoot the orange ball into the hoop on an outdoor court.",
         "alternative_answers": [
             "The image depicts an athlete taking a shot at the basket on an outside court.",
             "A person is in mid-air throwing a basketball towards the net."
