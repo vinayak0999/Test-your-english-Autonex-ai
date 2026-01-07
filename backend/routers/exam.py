@@ -1,3 +1,4 @@
+from typing import Optional
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
@@ -299,9 +300,9 @@ async def submit_single_answer(
 # 3. Finish Exam & Compile Score
 class ExamSubmission(BaseModel):
     answers: dict # { question_id: "student text" }
-    flags: int  # Tab switch count
+    flags: int = 0  # Tab switch count (default 0)
     tab_switches: int = 0  # Explicit tab switch count
-    session_id: int = None  # For template-based tests with random questions
+    session_id: Optional[int] = None  # For template-based tests with random questions
 
 @router.post("/tests/{test_id}/finish")
 async def finish_exam(
