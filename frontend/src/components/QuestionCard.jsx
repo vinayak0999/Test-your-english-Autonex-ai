@@ -45,6 +45,7 @@ const QuestionCard = ({ question, answer, onAnswerChange }) => {
                             </video>
                         </div>
                         <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                            <p className="text-sm font-bold text-blue-600 uppercase tracking-wider mb-2">Question</p>
                             <p className="text-slate-700 font-medium">
                                 Assign a label to the video clip above. The caption should begin with one of the following: "walk to," "turn right to," or "turn left to."
                             </p>
@@ -63,6 +64,7 @@ const QuestionCard = ({ question, answer, onAnswerChange }) => {
                             />
                         </div>
                         <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
+                            <p className="text-sm font-bold text-amber-600 uppercase tracking-wider mb-2">Question</p>
                             <p className="text-slate-700 font-medium">
                                 Analyze the image shown above and provide a detailed explanation of all visible elements.
                             </p>
