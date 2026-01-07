@@ -79,11 +79,15 @@ async def grade_image_question(student_text: str, reference_caption: str, key_id
         }
     
     # Use strict evaluation
-    eval_result = await evaluate_image_strict(
-        user_answer=student_text,
-        correct_answer=reference_caption or "",
-        image_context=image_context or "Image description task"
-    )
+    try:
+        eval_result = await evaluate_image_strict(
+            user_answer=student_text,
+            correct_answer=reference_caption or "",
+            image_context=image_context or "Image description task"
+        )
+    except Exception as e:
+        print(f"Image Eval Error: {e}")
+        eval_result = {"total_score": 0, "passed": False, "feedback": f"Evaluation Error: {str(e)}"}
     
     # Extract score and breakdown
     total_score = eval_result.get('total_score', 0)
@@ -136,12 +140,16 @@ async def grade_reading_question(student_text: str, original_passage: str, refer
         }
 
     # 2. Use strict evaluation
-    eval_result = await evaluate_reading_strict(
-        user_summary=student_text,
-        original_passage=original_passage or "",
-        reference_summary=reference_summary or "",
-        key_ideas=key_ideas or []
-    )
+    try:
+        eval_result = await evaluate_reading_strict(
+            user_summary=student_text,
+            original_passage=original_passage or "",
+            reference_summary=reference_summary or "",
+            key_ideas=key_ideas or []
+        )
+    except Exception as e:
+        print(f"Reading Eval Error: {e}")
+        eval_result = {"total_score": 0, "passed": False, "feedback": f"Evaluation Error: {str(e)}"}
     
     # Extract score and breakdown
     total_score = eval_result.get('total_score', 0)

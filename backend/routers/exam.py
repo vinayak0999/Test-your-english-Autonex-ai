@@ -417,12 +417,13 @@ async def finish_exam(
             total_score += question_score
             
             correct_answer = grading_config.get("reference", grading_config.get("correct_answer", "N/A"))
-            question_text = q["content"].get("passage", q["content"].get("question", q["content"].get("text", q["content"].get("url", ""))))
+            content = q.get("content") or {}
+            question_text = content.get("passage", content.get("question", content.get("text", content.get("url", ""))))
             
             breakdown.append({
                 "question_id": q["temp_id"],
                 "type": question_type,
-                "question_text": question_text[:200] + "..." if len(str(question_text)) > 200 else str(question_text),
+                "question_text": (str(question_text)[:200] + "...") if question_text and len(str(question_text)) > 200 else str(question_text or ""),
                 "correct_answer": correct_answer[:500] if isinstance(correct_answer, str) else str(correct_answer),
                 "student_answer": student_text[:500] if student_text else "No answer provided",
                 "max_marks": q["marks"],
@@ -438,6 +439,13 @@ async def finish_exam(
         # LEGACY MODE: Fetch all questions from database
         result = await db.execute(select(Question).where(Question.test_id == test_id))
         questions = result.scalars().all()
+        
+        # If no questions found, check if this is a template test that needs session_id
+        if not questions and test.template_config:
+            raise HTTPException(
+                status_code=400, 
+                detail="This test requires a session_id. Please start the test from the dashboard."
+            )
 
         for q in questions:
             max_score += q.marks
@@ -501,7 +509,7 @@ async def finish_exam(
             breakdown.append({
                 "question_id": q.id,
                 "type": q.question_type,
-                "question_text": question_text[:200] + "..." if len(question_text) > 200 else question_text,
+                "question_text": (question_text[:200] + "...") if question_text and len(question_text) > 200 else (question_text or ""),
                 "correct_answer": correct_answer[:500] if isinstance(correct_answer, str) else str(correct_answer),
                 "student_answer": student_text[:500] if student_text else "No answer provided",
                 "max_marks": q.marks,
