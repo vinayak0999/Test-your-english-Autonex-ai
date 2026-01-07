@@ -94,6 +94,13 @@ const QuestionCard = ({ question, answer, onAnswerChange }) => {
                             </div>
                         )}
 
+                        {/* MCQ-Reading: Show passage first, then question */}
+                        {question.type === 'mcq-reading' && contentData.passage && (
+                            <div className="bg-slate-50 p-6 rounded-xl border border-slate-200 text-slate-700 leading-relaxed mb-4">
+                                {contentData.passage}
+                            </div>
+                        )}
+
                         {/* MCQ Question Text */}
                         {question.type.includes('mcq') && (
                             <p className="text-lg font-medium text-slate-800">

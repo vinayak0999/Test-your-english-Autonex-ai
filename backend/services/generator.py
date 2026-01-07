@@ -116,10 +116,20 @@ class QuestionBankService:
             
             # 5. MCQ (Grammar / Reading / Context)
             elif section_type.startswith("mcq"):
-                q_structure["content"] = {
-                    "question": item.get("content") or item.get("question_text"), # mcq_reading uses question_text
-                    "options": item.get("options")
-                }
+                # MCQ-reading has: content (passage), question_text, options
+                # MCQ-grammar has: content (question), options
+                if section_type == "mcq-reading":
+                    q_structure["content"] = {
+                        "passage": item.get("content"),  # The reading passage
+                        "question": item.get("question_text"),  # The actual question
+                        "options": item.get("options")
+                    }
+                else:
+                    # mcq-grammar, mcq-context: content IS the question
+                    q_structure["content"] = {
+                        "question": item.get("content") or item.get("question_text"),
+                        "options": item.get("options")
+                    }
                 q_structure["grading_config"] = {
                     "correct_answer": item.get("correct_answer")
                 }

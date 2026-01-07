@@ -210,7 +210,11 @@ async def grade_mcq_question(student_answer: str, correct_answer: str, marks: in
     Handles both single string "A" and JSON string '{"blank1": "A", ...}'
     """
     if not student_answer:
-        return {"score": 0, "breakdown": {"result": "Incorrect"}}
+        return {"score": 0, "breakdown": {"result": "Incorrect", "reason": "No answer provided"}}
+    
+    # Defensive: If correct_answer is missing, return incorrect
+    if not correct_answer:
+        return {"score": 0, "breakdown": {"result": "Error", "reason": "Missing correct answer in grading config"}}
 
     # Handle JSON matching (for Contextual Fill-in-blanks)
     try:
@@ -230,7 +234,8 @@ async def grade_mcq_question(student_answer: str, correct_answer: str, marks: in
         "score": score,
         "breakdown": {
             "result": "Correct" if is_correct else "Incorrect",
-            "selected": student_answer
+            "selected": student_answer,
+            "expected": correct_answer
         }
     }
 
