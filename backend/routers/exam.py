@@ -94,10 +94,13 @@ async def get_my_results(db: AsyncSession = Depends(get_db), user: User = Depend
         for r in results
     ]
 
-# 1. Get Exam Paper (Start Test) - WITH SECURITY CHECKS
+# 1. Get Exam Paper (Start Test) - WITH SECURITY CHECKS & RANDOM QUESTIONS
 @router.get("/tests/{test_id}")
 async def get_test_paper(test_id: int, db: AsyncSession = Depends(get_db), user: User = Depends(get_current_user)):
     from sqlalchemy import or_
+    from models import ExamSession
+    from services.generator import QuestionBankService
+    from datetime import datetime, timedelta
     
     # Fetch test with questions
     result = await db.execute(
@@ -133,8 +136,90 @@ async def get_test_paper(test_id: int, db: AsyncSession = Depends(get_db), user:
             "result_id": already_attempted.id,
             "message": "You have already completed this test"
         }
+    
+    # Check for existing active exam session (in case user refreshed page)
+    existing_session = await db.execute(
+        select(ExamSession).where(
+            ExamSession.user_id == user.id,
+            ExamSession.test_id == test_id,
+            ExamSession.is_completed == False
+        )
+    )
+    session = existing_session.scalars().first()
+    
+    # If session exists, return the same questions (consistency on refresh)
+    if session:
+        safe_questions = []
+        for q in session.generated_questions:
+            safe_questions.append({
+                "id": q["temp_id"],
+                "type": q["type"],
+                "content": q["content"],
+                "marks": q["marks"]
+            })
+        return {
+            "already_completed": False,
+            "session_id": session.id,
+            "title": test.title,
+            "duration": test.duration_minutes,
+            "questions": safe_questions
+        }
+    
+    # TEMPLATE MODE: Generate random questions for this user
+    if test.template_config:
+        generated_questions = []
+        temp_id = 1
         
-    # Security: Don't send grading_config (answers) to the frontend!
+        for section in test.template_config:
+            section_type = section.get("type")
+            count = section.get("count", 1)
+            marks = section.get("marks", 5)
+            
+            # Generate random questions from bank
+            section_questions = QuestionBankService.generate_questions(
+                section_type=section_type,
+                count=count,
+                marks_per_question=marks
+            )
+            
+            # Add temp_id for tracking
+            for q in section_questions:
+                q["temp_id"] = temp_id
+                q["type"] = section_type
+                generated_questions.append(q)
+                temp_id += 1
+        
+        # Create exam session with the generated questions
+        new_session = ExamSession(
+            user_id=user.id,
+            test_id=test_id,
+            generated_questions=generated_questions,
+            answers={},
+            expires_at=datetime.now() + timedelta(minutes=test.duration_minutes + 5)
+        )
+        db.add(new_session)
+        await db.commit()
+        await db.refresh(new_session)
+        
+        # Return safe questions (without grading config)
+        safe_questions = []
+        for q in generated_questions:
+            safe_questions.append({
+                "id": q["temp_id"],
+                "type": q["type"],
+                "content": q["content"],
+                "marks": q["marks"]
+            })
+        
+        return {
+            "already_completed": False,
+            "session_id": new_session.id,
+            "title": test.title,
+            "duration": test.duration_minutes,
+            "questions": safe_questions
+        }
+    
+    # LEGACY MODE: Use fixed questions stored in database
     safe_questions = []
     for q in test.questions:
         question_content = q.content_data if q.content else {
@@ -216,6 +301,7 @@ class ExamSubmission(BaseModel):
     answers: dict # { question_id: "student text" }
     flags: int  # Tab switch count
     tab_switches: int = 0  # Explicit tab switch count
+    session_id: int = None  # For template-based tests with random questions
 
 @router.post("/tests/{test_id}/finish")
 async def finish_exam(
@@ -226,9 +312,11 @@ async def finish_exam(
 ):
     """
     1. Validates test is active and user has access.
-    2. Grades ALL answers.
+    2. Grades ALL answers (from session or fixed questions).
     3. Stores complete record with answers for admin review.
     """
+    from models import ExamSession
+    
     # SECURITY: Fetch and validate test
     test_result = await db.execute(select(Test).where(Test.id == test_id))
     test = test_result.scalars().first()
@@ -246,89 +334,169 @@ async def finish_exam(
     total_score = 0
     max_score = 0
     breakdown = []
+    
+    # Check if this is a session-based test (template mode)
+    if submission.session_id:
+        # TEMPLATE MODE: Get questions from session
+        session_result = await db.execute(
+            select(ExamSession).where(
+                ExamSession.id == submission.session_id,
+                ExamSession.user_id == user.id
+            )
+        )
+        session = session_result.scalars().first()
+        
+        if not session:
+            raise HTTPException(status_code=404, detail="Exam session not found")
+        
+        if session.is_completed:
+            raise HTTPException(status_code=400, detail="This exam has already been submitted")
+        
+        # Grade each question from generated_questions
+        for q in session.generated_questions:
+            max_score += q["marks"]
+            temp_id = str(q["temp_id"])
+            student_text = submission.answers.get(temp_id, "")
+            
+            grading_config = q.get("grading_config", {})
+            question_type = q["type"]
+            
+            # --- AI GRADING LOGIC ---
+            grade_data = {}
+            if question_type == 'video':
+                video_context = q["content"].get("title", "Video description task")
+                grade_data = await grade_video_question(
+                    student_text, 
+                    grading_config.get("reference", ""),
+                    grading_config.get("key_ideas", []),
+                    video_context
+                )
+            elif question_type == 'image':
+                image_context = q["content"].get("title", "Image description task")
+                grade_data = await grade_image_question(
+                    student_text, 
+                    grading_config.get("reference", ""),
+                    grading_config.get("key_ideas", []),
+                    image_context
+                )
+            elif question_type == 'reading':
+                passage = q["content"].get("passage", "")
+                grade_data = await grade_reading_question(
+                    student_text, 
+                    passage,
+                    grading_config.get("reference", ""),
+                    grading_config.get("key_ideas", [])
+                )
+            elif question_type == 'jumble':
+                grade_data = await grade_jumble_question(
+                    student_text,
+                    grading_config.get("correct_answer", ""),
+                    q["marks"]
+                )
+            elif question_type.startswith('mcq'):
+                grade_data = await grade_mcq_question(
+                    student_text,
+                    grading_config.get("correct_answer", ""),
+                    q["marks"]
+                )
+            else:
+                grade_data = {"score": 0, "breakdown": {"error": "Manual review needed"}}
 
-    # Fetch all questions for this test
-    result = await db.execute(select(Question).where(Question.test_id == test_id))
-    questions = result.scalars().all()
+            question_score = grade_data.get('score', 0)
+            total_score += question_score
+            
+            correct_answer = grading_config.get("reference", grading_config.get("correct_answer", "N/A"))
+            question_text = q["content"].get("passage", q["content"].get("question", q["content"].get("text", q["content"].get("url", ""))))
+            
+            breakdown.append({
+                "question_id": q["temp_id"],
+                "type": question_type,
+                "question_text": question_text[:200] + "..." if len(str(question_text)) > 200 else str(question_text),
+                "correct_answer": correct_answer[:500] if isinstance(correct_answer, str) else str(correct_answer),
+                "student_answer": student_text[:500] if student_text else "No answer provided",
+                "max_marks": q["marks"],
+                "student_score": question_score,
+                "ai_feedback": grade_data.get('breakdown', {})
+            })
+        
+        # Mark session as completed
+        session.is_completed = True
+        session.answers = submission.answers
+        
+    else:
+        # LEGACY MODE: Fetch all questions from database
+        result = await db.execute(select(Question).where(Question.test_id == test_id))
+        questions = result.scalars().all()
 
-    for q in questions:
-        max_score += q.marks
-        student_text = submission.answers.get(str(q.id), "")  # answers sent as string keys
-        
-        # Get grading config (uses hybrid property with legacy fallback)
-        grading = q.grading_data if q.grading_config else {
-            "reference": q.reference_context,
-            "key_ideas": q.key_ideas or []
-        }
-        
-        # --- AI GRADING LOGIC ---
-        grade_data = {}
-        if q.question_type == 'video':
-            # Get video context from content field
-            video_context = q.content.get("title", "Video description task") if q.content else "Video description task"
-            grade_data = await grade_video_question(
-                student_text, 
-                grading.get("reference", q.reference_context),
-                grading.get("key_ideas", q.key_ideas or []),
-                video_context
-            )
-        elif q.question_type == 'image':
-            # Get image context from content field
-            image_context = q.content.get("title", "Image description task") if q.content else "Image description task"
-            grade_data = await grade_image_question(
-                student_text, 
-                grading.get("reference", q.reference_context),
-                grading.get("key_ideas", q.key_ideas or []),
-                image_context
-            )
-        elif q.question_type == 'reading':
-            # Get passage from new content field or legacy field
-            passage = q.content.get("passage", q.content_url_or_text) if q.content else q.content_url_or_text
-            grade_data = await grade_reading_question(
-                student_text, 
-                passage,
-                grading.get("reference", q.reference_context),
-                grading.get("key_ideas", q.key_ideas or [])
-            )
-        elif q.question_type == 'jumble':
-            grade_data = await grade_jumble_question(
-                student_text,
-                grading.get("correct_answer", ""),
-                q.marks
-            )
-        elif q.question_type.startswith('mcq'):
-            grade_data = await grade_mcq_question(
-                student_text,
-                grading.get("correct_answer", ""),
-                q.marks
-            )
-        else:
-            # Fallback for unsupported types
-            grade_data = {"score": 0, "breakdown": {"error": "Manual review needed"}}
+        for q in questions:
+            max_score += q.marks
+            student_text = submission.answers.get(str(q.id), "")
+            
+            grading = q.grading_data if q.grading_config else {
+                "reference": q.reference_context,
+                "key_ideas": q.key_ideas or []
+            }
+            
+            grade_data = {}
+            if q.question_type == 'video':
+                video_context = q.content.get("title", "Video description task") if q.content else "Video description task"
+                grade_data = await grade_video_question(
+                    student_text, 
+                    grading.get("reference", q.reference_context),
+                    grading.get("key_ideas", q.key_ideas or []),
+                    video_context
+                )
+            elif q.question_type == 'image':
+                image_context = q.content.get("title", "Image description task") if q.content else "Image description task"
+                grade_data = await grade_image_question(
+                    student_text, 
+                    grading.get("reference", q.reference_context),
+                    grading.get("key_ideas", q.key_ideas or []),
+                    image_context
+                )
+            elif q.question_type == 'reading':
+                passage = q.content.get("passage", q.content_url_or_text) if q.content else q.content_url_or_text
+                grade_data = await grade_reading_question(
+                    student_text, 
+                    passage,
+                    grading.get("reference", q.reference_context),
+                    grading.get("key_ideas", q.key_ideas or [])
+                )
+            elif q.question_type == 'jumble':
+                grade_data = await grade_jumble_question(
+                    student_text,
+                    grading.get("correct_answer", ""),
+                    q.marks
+                )
+            elif q.question_type.startswith('mcq'):
+                grade_data = await grade_mcq_question(
+                    student_text,
+                    grading.get("correct_answer", ""),
+                    q.marks
+                )
+            else:
+                grade_data = {"score": 0, "breakdown": {"error": "Manual review needed"}}
 
-        question_score = grade_data.get('score', 0)
-        total_score += question_score
-        
-        # Get correct answer from grading config for admin report
-        correct_answer = grading.get("reference", grading.get("correct_answer", "N/A"))
-        
-        # Get question text/prompt for display
-        question_text = ""
-        if q.content:
-            question_text = q.content.get("passage", q.content.get("question", q.content.get("text", "")))
-        else:
-            question_text = q.content_url_or_text or ""
-        
-        breakdown.append({
-            "question_id": q.id,
-            "type": q.question_type,
-            "question_text": question_text[:200] + "..." if len(question_text) > 200 else question_text,
-            "correct_answer": correct_answer[:500] if isinstance(correct_answer, str) else str(correct_answer),
-            "student_answer": student_text[:500] if student_text else "No answer provided",
-            "max_marks": q.marks,
-            "student_score": question_score,
-            "ai_feedback": grade_data.get('breakdown', {})
-        })
+            question_score = grade_data.get('score', 0)
+            total_score += question_score
+            
+            correct_answer = grading.get("reference", grading.get("correct_answer", "N/A"))
+            question_text = ""
+            if q.content:
+                question_text = q.content.get("passage", q.content.get("question", q.content.get("text", "")))
+            else:
+                question_text = q.content_url_or_text or ""
+            
+            breakdown.append({
+                "question_id": q.id,
+                "type": q.question_type,
+                "question_text": question_text[:200] + "..." if len(question_text) > 200 else question_text,
+                "correct_answer": correct_answer[:500] if isinstance(correct_answer, str) else str(correct_answer),
+                "student_answer": student_text[:500] if student_text else "No answer provided",
+                "max_marks": q.marks,
+                "student_score": question_score,
+                "ai_feedback": grade_data.get('breakdown', {})
+            })
 
     # Save to Database (prevent duplicates)
     existing_result = await db.execute(
@@ -344,7 +512,7 @@ async def finish_exam(
         existing.total_score = total_score
         existing.ai_breakdown = breakdown
         existing.status = "graded"
-        existing.flags = submission.flags or submission.tab_switches  # Tab switch count
+        existing.flags = submission.flags or submission.tab_switches
         final_result = existing
     else:
         # Create new result
@@ -354,7 +522,7 @@ async def finish_exam(
             total_score=total_score,
             ai_breakdown=breakdown,
             status="graded",
-            flags=submission.flags or submission.tab_switches  # Tab switch count
+            flags=submission.flags or submission.tab_switches
         )
         db.add(final_result)
 

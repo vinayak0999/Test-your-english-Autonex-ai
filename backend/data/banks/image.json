@@ -1,37 +1,34 @@
 [
     {
         "id": "image_001",
-        "question_number": 1,
+        "question_number": 5,
         "type": "image",
         "marks": 15,
-        "image_url": "/static/images/kitchen_scene.jpg",
-        "image_thumbnail": "/static/thumbnails/kitchen_scene.jpg",
+        "image_url": "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcSVLbSYAlAbe7rXG5rjwpJHAOuUfILqMPs4qwq6OG28kfpMb4UScwbG_NIdzzjhP85om53yu1HIrx8lqAIq4ZgCU8UwGiYNNYYjZxNsWnS0wTEzgrM",
+        "image_thumbnail": "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcSVLbSYAlAbe7rXG5rjwpJHAOuUfILqMPs4qwq6OG28kfpMb4UScwbG_NIdzzjhP85om53yu1HIrx8lqAIq4ZgCU8UwGiYNNYYjZxNsWnS0wTEzgrM",
         "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
-        "correct_answer": "A modern kitchen with white cabinets, a stainless steel refrigerator on the right, and a marble countertop with fresh fruits in a wooden bowl.",
+        "correct_answer": "A modern living room featuring a large blue sofa in the center, a wooden coffee table placed in front of it, and bright lighting.",
         "alternative_answers": [
-            "The image shows a contemporary kitchen featuring white cabinets, a fridge made of stainless steel, and a marble counter with a fruit bowl."
+            "The image shows a contemporary lounge area with a blue couch, a wood table in the middle, and light décor."
         ],
         "key_elements": {
-            "main_object": "kitchen",
-            "furniture": "white cabinets",
-            "appliance": "stainless steel refrigerator",
-            "surface": "marble countertop",
-            "items": "fresh fruits in wooden bowl"
+            "main_object": "living room",
+            "furniture_1": "blue sofa",
+            "furniture_2": "wooden coffee table",
+            "style": "modern/contemporary"
         },
         "acceptable_synonyms": {
-            "refrigerator": [
-                "fridge"
+            "sofa": [
+                "couch",
+                "settee"
             ],
-            "countertop": [
-                "counter",
-                "worktop"
+            "coffee table": [
+                "low table",
+                "center table"
             ],
-            "modern": [
-                "contemporary"
-            ],
-            "fruits": [
-                "apples",
-                "oranges"
+            "wooden": [
+                "wood",
+                "timber"
             ]
         },
         "marks_distribution": {
@@ -44,8 +41,438 @@
         "difficulty": "intermediate",
         "tags": [
             "indoor",
-            "kitchen",
-            "household"
+            "home",
+            "furniture"
+        ]
+    },
+    {
+        "id": "image_002",
+        "question_number": 6,
+        "type": "image",
+        "marks": 15,
+        "image_url": "https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQWGC_VpHvUwLB7XwWGd88P_D0KJ2q01o9hI7aV4b-ndm8ruB-hY4phrTZmBajXi8Z2WMuIU9PTAmu2ilpOMzo_FIXsWvmhAOUfrpfk1gmwbh5Xj7E",
+        "image_thumbnail": "https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQWGC_VpHvUwLB7XwWGd88P_D0KJ2q01o9hI7aV4b-ndm8ruB-hY4phrTZmBajXi8Z2WMuIU9PTAmu2ilpOMzo_FIXsWvmhAOUfrpfk1gmwbh5Xj7E",
+        "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
+        "correct_answer": "A bright red double-decker bus driving along a busy city street, with buildings visible in the background.",
+        "alternative_answers": [
+            "The photo depicts a red two-story bus moving on the road, surrounded by an urban environment."
+        ],
+        "key_elements": {
+            "main_object": "red double-decker bus",
+            "location": "city street",
+            "background": "buildings"
+        },
+        "acceptable_synonyms": {
+            "bus": [
+                "coach",
+                "vehicle"
+            ],
+            "street": [
+                "road",
+                "avenue"
+            ],
+            "driving": [
+                "moving",
+                "travelling"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "beginner",
+        "tags": [
+            "outdoor",
+            "transport",
+            "city"
+        ]
+    },
+    {
+        "id": "image_003",
+        "question_number": 8,
+        "type": "image",
+        "marks": 15,
+        "image_url": "https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQuiBMghVfGfIrR9NxV4quZrApEA7JEbpPp9J2s1zCHRn634MR6DzZFfkZmjA39LmqoVB_dgJz-O9DKrdTrzx07u6bM4hW_JcHqbtVfHOxljLR6A4c",
+        "image_thumbnail": "https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQuiBMghVfGfIrR9NxV4quZrApEA7JEbpPp9J2s1zCHRn634MR6DzZFfkZmjA39LmqoVB_dgJz-O9DKrdTrzx07u6bM4hW_JcHqbtVfHOxljLR6A4c",
+        "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
+        "correct_answer": "A stack of golden-brown pancakes served on a white plate, topped with red strawberries and drizzled with syrup.",
+        "alternative_answers": [
+            "The picture displays a breakfast plate with pancakes, fruit, and syrup.",
+            "There is a pile of pancakes with strawberries on top sitting on a white dish."
+        ],
+        "key_elements": {
+            "main_object": "stack of pancakes",
+            "container": "white plate",
+            "topping_fruit": "red strawberries",
+            "topping_liquid": "syrup"
+        },
+        "acceptable_synonyms": {
+            "pancakes": [
+                "hotcakes",
+                "breakfast"
+            ],
+            "syrup": [
+                "honey",
+                "maple syrup"
+            ],
+            "stack": [
+                "pile"
+            ],
+            "plate": [
+                "dish"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "food",
+            "indoor",
+            "breakfast"
+        ]
+    },
+    {
+        "id": "image_004",
+        "question_number": 9,
+        "type": "image",
+        "marks": 15,
+        "image_url": "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTvMUn9le6Dxhi4x9EDEfbQXWH6U5PIh6QZN0QmaeNqzBscyMfk9yKduQOnxmyZxlmoYZwhCOTkefM8OBdMtC5hMqMZDdyARIVp0tzBbw4iGQOmBXQ",
+        "image_thumbnail": "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTvMUn9le6Dxhi4x9EDEfbQXWH6U5PIh6QZN0QmaeNqzBscyMfk9yKduQOnxmyZxlmoYZwhCOTkefM8OBdMtC5hMqMZDdyARIVp0tzBbw4iGQOmBXQ",
+        "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
+        "correct_answer": "A diverse group of professional people standing together in an office, smiling and looking at a document or tablet, dressed in business casual attire.",
+        "alternative_answers": [
+            "The image depicts a team of colleagues having a meeting while standing up.",
+            "A group of business people are gathered together looking happy."
+        ],
+        "key_elements": {
+            "main_object": "group of people",
+            "action": "meeting/standing together",
+            "clothing": "business attire",
+            "expression": "smiling/happy"
+        },
+        "acceptable_synonyms": {
+            "group": [
+                "team",
+                "colleagues",
+                "coworkers"
+            ],
+            "standing": [
+                "gathered"
+            ],
+            "attire": [
+                "clothes",
+                "outfits"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "indoor",
+            "people",
+            "business"
+        ]
+    },
+    {
+        "id": "image_005",
+        "question_number": 10,
+        "type": "image",
+        "marks": 15,
+        "image_url": "https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTGgK5fGhHUv_EixegdWWBc7SnBrAOaL3ebl3kVz-oBWwbvXf7Spqt-Rtv5zeT35ssCfIy1ZD-J6Qi8VZpKcoE4OpkzKXXb76afS46DEHAsE7jo0SQ",
+        "image_thumbnail": "https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTGgK5fGhHUv_EixegdWWBc7SnBrAOaL3ebl3kVz-oBWwbvXf7Spqt-Rtv5zeT35ssCfIy1ZD-J6Qi8VZpKcoE4OpkzKXXb76afS46DEHAsE7jo0SQ",
+        "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
+        "correct_answer": "A majestic snowy mountain peak under a clear blue sky, with its reflection clearly visible in the calm blue lake below.",
+        "alternative_answers": [
+            "The picture shows a snow-covered mountain reflected in a body of water.",
+            "There is a large mountain with snow on top and a lake at the bottom mirroring the view."
+        ],
+        "key_elements": {
+            "main_object": "snowy mountain",
+            "water_body": "lake",
+            "phenomenon": "reflection",
+            "sky": "blue sky"
+        },
+        "acceptable_synonyms": {
+            "mountain": [
+                "peak",
+                "alp"
+            ],
+            "lake": [
+                "water",
+                "pond"
+            ],
+            "snowy": [
+                "white",
+                "ice-covered"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "advanced",
+        "tags": [
+            "outdoor",
+            "nature",
+            "landscape"
+        ]
+    },
+    {
+        "id": "image_006",
+        "question_number": 11,
+        "type": "image",
+        "marks": 15,
+        "image_url": "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcS7WDche3ArnTLTNKX7arBU4eLnhLyimfA-4WxvIjl6DBzSAiXenn2bQlTqokOB8rp__0mesu3B-gBJBvsVsMRnumT6K3igWm4jKZQOkzwYZ1qagkU",
+        "image_thumbnail": "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcS7WDche3ArnTLTNKX7arBU4eLnhLyimfA-4WxvIjl6DBzSAiXenn2bQlTqokOB8rp__0mesu3B-gBJBvsVsMRnumT6K3igWm4jKZQOkzwYZ1qagkU",
+        "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
+        "correct_answer": "A basketball player in a white jersey jumping high to shoot the orange ball into the hoop on an outdoor court.",
+        "alternative_answers": [
+            "The image depicts an athlete taking a shot at the basket on an outside court.",
+            "A person is in mid-air throwing a basketball towards the net."
+        ],
+        "key_elements": {
+            "main_object": "basketball player",
+            "action": "jumping/shooting",
+            "equipment": "orange basketball",
+            "setting": "outdoor court"
+        },
+        "acceptable_synonyms": {
+            "player": [
+                "athlete",
+                "sportsman"
+            ],
+            "hoop": [
+                "basket",
+                "net",
+                "rim"
+            ],
+            "jersey": [
+                "uniform",
+                "shirt"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "outdoor",
+            "sports",
+            "people"
+        ]
+    },
+    {
+        "id": "image_007",
+        "question_number": 12,
+        "type": "image",
+        "marks": 15,
+        "image_url": "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcTFZjpQzlLS_F4rx9wsAkjXTgbLATRHYO8Elh004OBs3mw5C8susrDqPL3cfiQBTk54XYM1uDkVp2qk-GC5PPt3LQf5a47DdoxuaaZCQmCW-nNYryU",
+        "image_thumbnail": "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcTFZjpQzlLS_F4rx9wsAkjXTgbLATRHYO8Elh004OBs3mw5C8susrDqPL3cfiQBTk54XYM1uDkVp2qk-GC5PPt3LQf5a47DdoxuaaZCQmCW-nNYryU",
+        "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
+        "correct_answer": "A colorful market stall displaying a wide variety of fresh vegetables and fruits, arranged neatly in crates and baskets.",
+        "alternative_answers": [
+            "The photo shows a grocery display full of colorful produce like peppers and greens.",
+            "There is a vegetable stand with many different types of fresh food for sale."
+        ],
+        "key_elements": {
+            "main_object": "market stall",
+            "items": "vegetables and fruits",
+            "arrangement": "crates/baskets",
+            "attribute": "colorful/fresh"
+        },
+        "acceptable_synonyms": {
+            "stall": [
+                "stand",
+                "display",
+                "shop"
+            ],
+            "vegetables": [
+                "produce",
+                "greens",
+                "veggies"
+            ],
+            "crates": [
+                "boxes",
+                "containers"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "advanced",
+        "tags": [
+            "indoor/outdoor",
+            "food",
+            "shopping"
+        ]
+    },
+    {
+        "id": "image_008",
+        "question_number": 15,
+        "type": "image",
+        "marks": 15,
+        "image_url": "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcT21Vy1R9YSVjf3bsrsnx6AgvhyKFSR8HOI1_A9YLSI9fSj05OGFY_AFWylwv8WcXx-aM628-B6YFrMNxWjrb-mx6c_OjkYeWP9VMB6XbHDvHym4sU",
+        "image_thumbnail": "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcT21Vy1R9YSVjf3bsrsnx6AgvhyKFSR8HOI1_A9YLSI9fSj05OGFY_AFWylwv8WcXx-aM628-B6YFrMNxWjrb-mx6c_OjkYeWP9VMB6XbHDvHym4sU",
+        "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
+        "correct_answer": "A female scientist wearing a white lab coat and blue gloves is looking intently through a microscope in a laboratory setting.",
+        "alternative_answers": [
+            "The image shows a researcher using a microscope in a lab while wearing safety gear.",
+            "A woman in a white coat is examining something under a microscope."
+        ],
+        "key_elements": {
+            "main_object": "scientist/researcher",
+            "equipment": "microscope",
+            "clothing": "white lab coat",
+            "accessory": "blue gloves"
+        },
+        "acceptable_synonyms": {
+            "scientist": [
+                "researcher",
+                "biologist",
+                "chemist"
+            ],
+            "lab coat": [
+                "coat",
+                "uniform"
+            ],
+            "looking": [
+                "examining",
+                "peering"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "indoor",
+            "science",
+            "profession"
+        ]
+    },
+    {
+        "id": "image_009",
+        "question_number": 16,
+        "type": "image",
+        "marks": 15,
+        "image_url": "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcSOMKeWODVxJGpX3f4ETkMqaAoJA-INzDjySB-78UISeIuCCWg7_8G7IV8EGoyF5pwRHLUDMOo1ujo6Fjatm_n7Vd9He1VYEp2RIvcEcqzMPoVHCQI",
+        "image_thumbnail": "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcSOMKeWODVxJGpX3f4ETkMqaAoJA-INzDjySB-78UISeIuCCWg7_8G7IV8EGoyF5pwRHLUDMOo1ujo6Fjatm_n7Vd9He1VYEp2RIvcEcqzMPoVHCQI",
+        "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
+        "correct_answer": "A person sitting outdoors playing an acoustic wooden guitar, wearing a hat and a light-colored shirt.",
+        "alternative_answers": [
+            "The photo depicts a musician strumming a guitar outside.",
+            "Someone is playing a wooden instrument while sitting in the open air."
+        ],
+        "key_elements": {
+            "main_object": "person/musician",
+            "instrument": "acoustic guitar",
+            "action": "playing/strumming",
+            "clothing_head": "hat"
+        },
+        "acceptable_synonyms": {
+            "guitar": [
+                "instrument"
+            ],
+            "playing": [
+                "strumming",
+                "practicing"
+            ],
+            "person": [
+                "man",
+                "musician"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "beginner",
+        "tags": [
+            "outdoor",
+            "music",
+            "hobbies"
+        ]
+    },
+    {
+        "id": "image_010",
+        "question_number": 18,
+        "type": "image",
+        "marks": 15,
+        "image_url": "https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcS8Uj-jdIO3zF35-E35EwqHw7CWW4BcYAWdQRJm8Cmlwn-s3GhIJieXuau4zaYDnDQamc11kbv2_wZMcQ7XYWyiSZIRvzlkTZrzM5h6dUpIoLWrwaY",
+        "image_thumbnail": "https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcS8Uj-jdIO3zF35-E35EwqHw7CWW4BcYAWdQRJm8Cmlwn-s3GhIJieXuau4zaYDnDQamc11kbv2_wZMcQ7XYWyiSZIRvzlkTZrzM5h6dUpIoLWrwaY",
+        "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
+        "correct_answer": "A professional chef wearing a white uniform and hat is cooking in a kitchen, skillfully managing a large flame rising from a frying pan.",
+        "alternative_answers": [
+            "The photo depicts a cook in a white coat sautéing food with a large fire in the pan.",
+            "A chef is preparing food in a restaurant kitchen with flames coming out of the skillet."
+        ],
+        "key_elements": {
+            "main_object": "chef",
+            "action": "cooking/sautéing",
+            "phenomenon": "fire/flame",
+            "clothing": "white uniform/hat"
+        },
+        "acceptable_synonyms": {
+            "chef": [
+                "cook"
+            ],
+            "pan": [
+                "skillet",
+                "wok"
+            ],
+            "flame": [
+                "fire",
+                "blaze"
+            ],
+            "uniform": [
+                "apron",
+                "coat",
+                "whites"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "advanced",
+        "tags": [
+            "indoor",
+            "profession",
+            "food"
         ]
     }
 ]

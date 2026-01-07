@@ -58,9 +58,14 @@ class Test(Base):
     organization_id = Column(Integer, ForeignKey("organizations.id"), nullable=True)
     organization = relationship("Organization", back_populates="tests")
     
+    # Template config for random question generation per user
+    # Format: [{"type": "video", "count": 2, "marks": 15}, {"type": "reading", "count": 3, "marks": 10}, ...]
+    template_config = Column(JSON, nullable=True)
+    
     # Relationships with CASCADE DELETE
     questions = relationship("Question", back_populates="test", lazy="selectin", cascade="all, delete-orphan")
     results = relationship("TestResult", backref="test", cascade="all, delete-orphan")
+    exam_sessions = relationship("ExamSession", back_populates="test", cascade="all, delete-orphan")
 
 
 class Question(Base):
@@ -143,3 +148,31 @@ class TestResult(Base):
     # Relationships
     user = relationship("User", back_populates="results")
     # Note: 'test' relationship defined in Test model with cascade
+
+
+class ExamSession(Base):
+    """
+    Stores per-user exam state with randomly generated questions.
+    Each user gets a unique set of questions when starting a test.
+    """
+    __tablename__ = "exam_sessions"
+    
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"), index=True)
+    test_id = Column(Integer, ForeignKey("tests.id"), index=True)
+    
+    # The randomly generated questions for this specific user
+    # Format: [{"temp_id": 1, "type": "video", "content": {...}, "grading_config": {...}, "marks": 15}, ...]
+    generated_questions = Column(JSON)
+    
+    # Student answers stored here during exam
+    # Format: {"temp_id_1": "answer text", "temp_id_2": "answer text", ...}
+    answers = Column(JSON, default={})
+    
+    started_at = Column(DateTime(timezone=True), server_default=func.now())
+    expires_at = Column(DateTime(timezone=True), nullable=True)
+    is_completed = Column(Boolean, default=False)
+    
+    # Relationships
+    user = relationship("User")
+    test = relationship("Test", back_populates="exam_sessions")

@@ -232,46 +232,40 @@ async def generate_test_from_template(
     admin: User = Depends(require_admin)
 ):
     """
-    Generates a full test by picking random questions from banks based on config.
+    Creates a test TEMPLATE. Questions are NOT pre-generated.
+    Each user gets uniquely randomized questions when they start the exam.
+    
+    The sections config is stored in template_config, and questions
+    are generated dynamically per user from the question banks.
     """
-    # 1. Create Test Metadata
+    # Calculate total marks from sections
+    total_marks = 0
+    template_sections = []
+    
+    for section in config.sections:
+        q_type = section.get("type")
+        count = section.get("count", 0)
+        marks = section.get("marks", 0)
+        total_marks += count * marks
+        template_sections.append({
+            "type": q_type,
+            "count": count,
+            "marks": marks
+        })
+    
+    # Create Test with template_config (no fixed questions stored)
     new_test = Test(
         title=config.title,
         duration_minutes=config.duration_minutes,
-        total_marks=config.total_marks,
+        total_marks=total_marks,  # Calculated from sections
         instructions=config.instructions,
-        organization_id=config.organization_id
+        organization_id=config.organization_id,
+        template_config=template_sections  # Store the template for dynamic question generation
     )
     db.add(new_test)
     await db.commit()
     await db.refresh(new_test)
-
-    # 2. Generate Random Questions
-    all_questions = []
     
-    for section in config.sections:
-        # e.g. section = {"type": "jumble", "count": 20, "marks": 1}
-        q_type = section.get("type")
-        count = section.get("count", 0)
-        marks = section.get("marks", 0)
-        
-        generated = QuestionBankService.generate_questions(q_type, count, marks)
-        
-        for q_data in generated:
-            new_q = Question(
-                test_id=new_test.id,
-                question_type=q_data["question_type"],
-                marks=q_data["marks"],
-                content=q_data["content"],
-                grading_config=q_data["grading_config"]
-            )
-            all_questions.append(new_q)
-    
-    # 3. Bulk Insert Questions
-    if all_questions:
-        db.add_all(all_questions)
-        await db.commit()
-        
     return new_test
 
 # 2. Upload Video (Self-Hosted Logic)

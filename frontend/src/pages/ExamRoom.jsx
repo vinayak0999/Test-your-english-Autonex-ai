@@ -19,6 +19,7 @@ const ExamRoom = () => {
     const [showFullscreenPrompt, setShowFullscreenPrompt] = useState(true);
     const [violations, setViolations] = useState(0);
     const [showViolationWarning, setShowViolationWarning] = useState(false);
+    const [sessionId, setSessionId] = useState(null);  // For template-based random questions
     const violationRef = useRef(0);
 
     // Zustand Store
@@ -80,6 +81,9 @@ const ExamRoom = () => {
                 }
                 setQuestions(res.data.questions);
                 setDuration(res.data.duration);
+                if (res.data.session_id) {
+                    setSessionId(res.data.session_id);  // Save session_id for template-based tests
+                }
                 setLoading(false);
             })
             .catch(err => {
@@ -189,7 +193,9 @@ const ExamRoom = () => {
         const payload = {
             answers: answers,
             flags: violationRef.current,
-            disqualified: isDisqualified
+            tab_switches: violationRef.current,
+            disqualified: isDisqualified,
+            session_id: sessionId  // Include session_id for template-based tests
         };
 
         try {

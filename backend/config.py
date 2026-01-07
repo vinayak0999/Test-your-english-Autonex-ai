@@ -19,7 +19,7 @@ class Settings(BaseSettings):
     DATABASE_URL: str = "sqlite+aiosqlite:///./test_english.db"
     
     # CORS Configuration
-    CORS_ORIGINS: str = "http://localhost:5173,http://localhost:3000"
+    CORS_ORIGINS: str = "http://localhost:5173,http://localhost:5174,http://localhost:5175,http://localhost:3000"
     
     # AI Config
     OPENAI_API_KEY: str = "sk-placeholder"
