@@ -375,7 +375,8 @@ async def finish_exam(
             # --- AI GRADING LOGIC ---
             grade_data = {}
             if question_type == 'video':
-                video_context = q["content"].get("title", "Video description task")
+                content = q.get("content") or {}
+                video_context = content.get("title", "Video description task")
                 grade_data = await grade_video_question(
                     student_text, 
                     grading_config.get("reference", ""),
@@ -383,7 +384,8 @@ async def finish_exam(
                     video_context
                 )
             elif question_type == 'image':
-                image_context = q["content"].get("title", "Image description task")
+                content = q.get("content") or {}
+                image_context = content.get("title", "Image description task")
                 grade_data = await grade_image_question(
                     student_text, 
                     grading_config.get("reference", ""),
@@ -391,7 +393,8 @@ async def finish_exam(
                     image_context
                 )
             elif question_type == 'reading':
-                passage = q["content"].get("passage", "")
+                content = q.get("content") or {}
+                passage = content.get("passage", "")
                 grade_data = await grade_reading_question(
                     student_text, 
                     passage,
