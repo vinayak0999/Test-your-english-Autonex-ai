@@ -1,33 +1,32 @@
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import sessionmaker, declarative_base
+from sqlalchemy.pool import NullPool
 from config import settings
 
 # Database URL Logic for Railway vs Local
 database_url = settings.DATABASE_URL
 
-# Handle PostgreSQL URL format (Railway uses postgres://)
+# Handle PostgreSQL URL format - ensure asyncpg driver is used
 if database_url.startswith("postgres://"):
     database_url = database_url.replace("postgres://", "postgresql+asyncpg://", 1)
+elif database_url.startswith("postgresql://") and "+asyncpg" not in database_url:
+    database_url = database_url.replace("postgresql://", "postgresql+asyncpg://", 1)
 
 # Determine if using PostgreSQL or SQLite
 is_postgres = "postgresql" in database_url
 
 # Create Async Engine with appropriate settings
 if is_postgres:
-    # PostgreSQL with connection pooling (optimized for Supabase)
-    # Works with both Session (port 5432) and Transaction (port 6543) pooler
+    # PostgreSQL with NullPool and disabled prepared statements for pgbouncer
+    # Use server_settings to disable prepared statement caching
     engine = create_async_engine(
         database_url,
         echo=False,
         future=True,
-        pool_size=2,          # Keep only 2 connections
-        max_overflow=3,       # Allow 3 more under load (total max 5)
-        pool_pre_ping=True,   # Verify connections before use
-        pool_recycle=60,      # Recycle connections after 1 min
-        pool_timeout=30,      # Wait max 30 sec for connection
-        # IMPORTANT: Disable prepared statements for Supabase Transaction pooler
+        poolclass=NullPool,  # No pooling - pgbouncer handles this
         connect_args={
-            "statement_cache_size": 0,  # Required for pgbouncer/pooler
+            "server_settings": {"plan_cache_mode": "force_custom_plan"},
+            "prepared_statement_cache_size": 0,  # Disable prepared statements
         }
     )
 else:
