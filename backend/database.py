@@ -27,7 +27,7 @@ if is_postgres:
         pool_timeout=30,      # Wait max 30 sec for connection
         # IMPORTANT: Disable prepared statements for Supabase Transaction pooler
         connect_args={
-            "prepared_statement_cache_size": 0,  # Required for pgbouncer/pooler
+            "statement_cache_size": 0,  # Required for pgbouncer/pooler
         }
     )
 else:
