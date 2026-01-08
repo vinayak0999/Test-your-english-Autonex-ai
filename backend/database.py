@@ -15,16 +15,30 @@ elif database_url.startswith("postgresql://") and "+asyncpg" not in database_url
 # Determine if using PostgreSQL or SQLite
 is_postgres = "postgresql" in database_url
 
+# Check if using Transaction pooler (port 6543) - needs special handling
+is_transaction_pooler = ":6543/" in database_url
+
 # Create Async Engine with appropriate settings  
 if is_postgres:
-    # PostgreSQL with NullPool - each request gets fresh connection
-    # NullPool avoids connection caching issues with pgbouncer
-    engine = create_async_engine(
-        database_url,
-        echo=False,
-        future=True,
-        poolclass=NullPool,  # No local pooling - pgbouncer handles this
-    )
+    if is_transaction_pooler:
+        # Transaction pooler (6543) - MUST disable prepared statements
+        engine = create_async_engine(
+            database_url,
+            echo=False,
+            future=True,
+            poolclass=NullPool,
+            connect_args={
+                "prepared_statement_cache_size": 0,  # REQUIRED for transaction pooler
+            }
+        )
+    else:
+        # Session pooler (5432) or Direct connection - prepared statements OK
+        engine = create_async_engine(
+            database_url,
+            echo=False,
+            future=True,
+            poolclass=NullPool,
+        )
 else:
     # SQLite for local development
     engine = create_async_engine(
