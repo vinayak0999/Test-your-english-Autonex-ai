@@ -2,9 +2,12 @@ from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import sessionmaker, declarative_base
 from sqlalchemy.pool import NullPool
 from config import settings
+import asyncpg
+from urllib.parse import urlparse, unquote
 
 # Database URL Logic for Railway vs Local
 database_url = settings.DATABASE_URL
+original_url = database_url
 
 # Handle PostgreSQL URL format - ensure asyncpg driver is used
 if database_url.startswith("postgres://"):
@@ -21,15 +24,27 @@ is_transaction_pooler = ":6543/" in database_url
 # Create Async Engine with appropriate settings  
 if is_postgres:
     if is_transaction_pooler:
-        # Transaction pooler (6543) - MUST disable prepared statements
+        # Transaction pooler (6543) - use async_creator with statement_cache_size=0
+        # Parse the URL for asyncpg direct connection
+        parsed = urlparse(original_url.replace("postgres://", "postgresql://"))
+        
+        async def create_connection():
+            """Create asyncpg connection with statement_cache_size=0 for pgbouncer"""
+            return await asyncpg.connect(
+                host=parsed.hostname,
+                port=parsed.port or 6543,
+                user=parsed.username,
+                password=unquote(parsed.password) if parsed.password else None,
+                database=parsed.path.lstrip("/"),
+                statement_cache_size=0,  # CRITICAL: Disable for pgbouncer transaction mode
+            )
+        
         engine = create_async_engine(
             database_url,
             echo=False,
             future=True,
             poolclass=NullPool,
-            connect_args={
-                "prepared_statement_cache_size": 0,  # REQUIRED for transaction pooler
-            }
+            async_creator=create_connection,  # Use custom creator
         )
     else:
         # Session pooler (5432) or Direct connection - prepared statements OK
