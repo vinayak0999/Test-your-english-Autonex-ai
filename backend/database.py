@@ -14,17 +14,21 @@ is_postgres = "postgresql" in database_url
 
 # Create Async Engine with appropriate settings
 if is_postgres:
-    # PostgreSQL with connection pooling (LOW limits for Supabase free tier)
-    # Supabase free tier has very low connection limits!
+    # PostgreSQL with connection pooling (optimized for Supabase)
+    # Works with both Session (port 5432) and Transaction (port 6543) pooler
     engine = create_async_engine(
         database_url,
         echo=False,
         future=True,
-        pool_size=2,          # Keep only 2 connections (Supabase limit is ~13-15)
+        pool_size=2,          # Keep only 2 connections
         max_overflow=3,       # Allow 3 more under load (total max 5)
         pool_pre_ping=True,   # Verify connections before use
-        pool_recycle=60,      # Recycle connections after 1 min (faster cleanup)
+        pool_recycle=60,      # Recycle connections after 1 min
         pool_timeout=30,      # Wait max 30 sec for connection
+        # IMPORTANT: Disable prepared statements for Supabase Transaction pooler
+        connect_args={
+            "prepared_statement_cache_size": 0,  # Required for pgbouncer/pooler
+        }
     )
 else:
     # SQLite for local development (no pooling)
