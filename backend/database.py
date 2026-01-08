@@ -1,13 +1,10 @@
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import sessionmaker, declarative_base
-from sqlalchemy.pool import QueuePool, NullPool
+from sqlalchemy.pool import NullPool
 from config import settings
-import asyncpg
-from urllib.parse import urlparse, unquote
 
 # Database URL Logic for Railway vs Local
 database_url = settings.DATABASE_URL
-original_url = database_url
 
 # Handle PostgreSQL URL format - ensure asyncpg driver is used
 if database_url.startswith("postgres://"):
@@ -23,45 +20,21 @@ is_transaction_pooler = ":6543/" in database_url
 
 # Create Async Engine with appropriate settings  
 if is_postgres:
+    # Add prepared_statement_cache_size=0 to URL for pgbouncer compatibility
+    # This MUST be in the URL query string, not connect_args
     if is_transaction_pooler:
-        # Transaction pooler (6543) - use async_creator with statement_cache_size=0
-        # Parse the URL for asyncpg direct connection
-        parsed = urlparse(original_url.replace("postgres://", "postgresql://"))
-        
-        async def create_connection():
-            """Create asyncpg connection with statement_cache_size=0 for pgbouncer"""
-            return await asyncpg.connect(
-                host=parsed.hostname,
-                port=parsed.port or 6543,
-                user=parsed.username,
-                password=unquote(parsed.password) if parsed.password else None,
-                database=parsed.path.lstrip("/"),
-                statement_cache_size=0,  # CRITICAL: Disable for pgbouncer transaction mode
-                command_timeout=60,  # 60 second timeout for grading operations
-            )
-        
-        # For transaction pooler, use NullPool (let pgbouncer handle pooling)
-        engine = create_async_engine(
-            database_url,
-            echo=False,
-            future=True,
-            poolclass=NullPool,  # pgbouncer handles pooling
-            async_creator=create_connection,
-        )
-    else:
-        # Session pooler (5432) or Direct connection
-        # With Supabase Pro, use connection pooling for better performance
-        engine = create_async_engine(
-            database_url,
-            echo=False,
-            future=True,
-            # Connection pool settings for 200 concurrent users
-            pool_size=10,           # Base connections
-            max_overflow=20,        # Extra connections under load (total max: 30)
-            pool_pre_ping=True,     # Verify connections before use
-            pool_recycle=300,       # Recycle connections after 5 min
-            pool_timeout=30,        # Wait max 30 sec for connection
-        )
+        if "?" in database_url:
+            database_url += "&prepared_statement_cache_size=0"
+        else:
+            database_url += "?prepared_statement_cache_size=0"
+    
+    # Use NullPool for serverless - let pgbouncer/Supabase handle pooling
+    engine = create_async_engine(
+        database_url,
+        echo=False,
+        future=True,
+        poolclass=NullPool,  # No local pooling - Supabase handles this
+    )
 else:
     # SQLite for local development
     engine = create_async_engine(
