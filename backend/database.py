@@ -15,27 +15,23 @@ elif database_url.startswith("postgresql://") and "+asyncpg" not in database_url
 # Determine if using PostgreSQL or SQLite
 is_postgres = "postgresql" in database_url
 
-# Create Async Engine with appropriate settings
+# Create Async Engine with appropriate settings  
 if is_postgres:
-    # PostgreSQL with NullPool and disabled prepared statements for pgbouncer
-    # Use server_settings to disable prepared statement caching
+    # PostgreSQL with NullPool - each request gets fresh connection
+    # NullPool avoids connection caching issues with pgbouncer
     engine = create_async_engine(
         database_url,
         echo=False,
         future=True,
-        poolclass=NullPool,  # No pooling - pgbouncer handles this
-        connect_args={
-            "server_settings": {"plan_cache_mode": "force_custom_plan"},
-            "prepared_statement_cache_size": 0,  # Disable prepared statements
-        }
+        poolclass=NullPool,  # No local pooling - pgbouncer handles this
     )
 else:
-    # SQLite for local development (no pooling)
+    # SQLite for local development
     engine = create_async_engine(
         database_url,
         echo=False,
         future=True,
-        connect_args={"check_same_thread": False}  # SQLite specific
+        connect_args={"check_same_thread": False}
     )
 
 # Create Session Factory
