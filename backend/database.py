@@ -1,6 +1,6 @@
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import sessionmaker, declarative_base
-from sqlalchemy.pool import NullPool
+from sqlalchemy.pool import QueuePool, NullPool
 from config import settings
 import asyncpg
 from urllib.parse import urlparse, unquote
@@ -37,22 +37,30 @@ if is_postgres:
                 password=unquote(parsed.password) if parsed.password else None,
                 database=parsed.path.lstrip("/"),
                 statement_cache_size=0,  # CRITICAL: Disable for pgbouncer transaction mode
+                command_timeout=60,  # 60 second timeout for grading operations
             )
         
+        # For transaction pooler, use NullPool (let pgbouncer handle pooling)
         engine = create_async_engine(
             database_url,
             echo=False,
             future=True,
-            poolclass=NullPool,
-            async_creator=create_connection,  # Use custom creator
+            poolclass=NullPool,  # pgbouncer handles pooling
+            async_creator=create_connection,
         )
     else:
-        # Session pooler (5432) or Direct connection - prepared statements OK
+        # Session pooler (5432) or Direct connection
+        # With Supabase Pro, use connection pooling for better performance
         engine = create_async_engine(
             database_url,
             echo=False,
             future=True,
-            poolclass=NullPool,
+            # Connection pool settings for 200 concurrent users
+            pool_size=10,           # Base connections
+            max_overflow=20,        # Extra connections under load (total max: 30)
+            pool_pre_ping=True,     # Verify connections before use
+            pool_recycle=300,       # Recycle connections after 5 min
+            pool_timeout=30,        # Wait max 30 sec for connection
         )
 else:
     # SQLite for local development
