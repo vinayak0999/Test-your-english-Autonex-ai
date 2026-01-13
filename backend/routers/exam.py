@@ -342,6 +342,46 @@ async def finish_exam(
     if test.organization_id and user.organization_id != test.organization_id:
         raise HTTPException(status_code=403, detail="You are not authorized for this test")
     
+    # =====================================================
+    # STEP 1: SAVE ANSWERS FIRST (PREVENT DATA LOSS)
+    # =====================================================
+    # Check for existing result or create new one with status="submitted"
+    existing_result = await db.execute(
+        select(TestResult).where(
+            TestResult.user_id == user.id,
+            TestResult.test_id == test_id
+        )
+    )
+    existing = existing_result.scalars().first()
+    
+    if existing and existing.status == "graded":
+        # Already graded, return existing result
+        return {"result_id": existing.id}
+    
+    # Save answers immediately (before any grading)
+    if existing:
+        existing.flags = submission.flags or submission.tab_switches
+        existing.status = "submitted"  # Mark as submitted, grading pending
+        final_result = existing
+    else:
+        final_result = TestResult(
+            user_id=user.id,
+            test_id=test_id,
+            total_score=0,  # Will update after grading
+            ai_breakdown=[],  # Will update after grading
+            status="submitted",  # Not yet graded
+            flags=submission.flags or submission.tab_switches
+        )
+        db.add(final_result)
+    
+    # COMMIT ANSWERS FIRST - This ensures data is saved even if grading fails
+    await db.commit()
+    await db.refresh(final_result)
+    saved_result_id = final_result.id
+    
+    # =====================================================
+    # STEP 2: NOW GRADE (safe - answers already saved)
+    # =====================================================
     total_score = 0
     max_score = 0
     breakdown = []
@@ -520,36 +560,29 @@ async def finish_exam(
                 "ai_feedback": grade_data.get('breakdown', {})
             })
 
-    # Save to Database (prevent duplicates)
-    existing_result = await db.execute(
-        select(TestResult).where(
-            TestResult.user_id == user.id,
-            TestResult.test_id == test_id
+    # =====================================================
+    # STEP 3: UPDATE RESULT WITH GRADES (answers already safe)
+    # =====================================================
+    try:
+        # Fetch the result we saved in Step 1
+        result_to_update = await db.execute(
+            select(TestResult).where(TestResult.id == saved_result_id)
         )
-    )
-    existing = existing_result.scalars().first()
-    
-    if existing:
-        # Update existing result
-        existing.total_score = total_score
-        existing.ai_breakdown = breakdown
-        existing.status = "graded"
-        existing.flags = submission.flags or submission.tab_switches
-        final_result = existing
-    else:
-        # Create new result
-        final_result = TestResult(
-            user_id=user.id,
-            test_id=test_id,
-            total_score=total_score,
-            ai_breakdown=breakdown,
-            status="graded",
-            flags=submission.flags or submission.tab_switches
-        )
-        db.add(final_result)
-
-    await db.commit()
-    await db.refresh(final_result)
+        final_result = result_to_update.scalars().first()
+        
+        # Update with grading results
+        final_result.total_score = total_score
+        final_result.ai_breakdown = breakdown
+        final_result.status = "graded"
+        
+        await db.commit()
+        await db.refresh(final_result)
+    except Exception as e:
+        # Grading failed but answers are already saved!
+        # Log the error and return the result ID (user can view partial result)
+        print(f"[GRADING ERROR] Result {saved_result_id}: {str(e)}")
+        # Don't raise - answers are safe, just grading failed
+        return {"result_id": saved_result_id, "warning": "Grading encountered an issue, please contact admin"}
 
     return {"result_id": final_result.id}
 

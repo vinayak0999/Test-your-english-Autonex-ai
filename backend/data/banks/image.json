@@ -474,5 +474,347 @@
             "profession",
             "food"
         ]
+    },
+    {
+        "id": "image_011",
+        "question_number": 19,
+        "type": "image",
+        "marks": 15,
+        "image_url": "https://images.unsplash.com/photo-1768158984380-5071c359070f?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "image_thumbnail": "https://images.unsplash.com/photo-1768158984380-5071c359070f?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
+        "correct_answer": "A hand wears a grey glove and holds a black Nikon camera. In the blurry background, there is a frozen river with snowy banks under a grey sky.",
+        "alternative_answers": [
+            "A gloved hand is holding a black compact camera against a backdrop of a frozen, snowy body of water.",
+            "A person's hand in a grey winter glove grips a black Nikon camera, with an icy, snow-lined river visible behind it.",
+            "A grey-gloved hand presents a black camera over a frozen, snowy landscape."
+        ],
+        "key_elements": {
+            "main_object": "hand",
+            "clothing": "grey glove",
+            "object_held": "black Nikon camera",
+            "background_scene": "frozen river/water",
+            "weather_element": "snow",
+            "overall_setting": "winter"
+        },
+        "acceptable_synonyms": {
+            "glove": [
+                "mitten",
+                "winter glove"
+            ],
+            "camera": [
+                "compact camera",
+                "Nikon"
+            ],
+            "frozen river": [
+                "icy water",
+                "frozen stream"
+            ],
+            "snowy": [
+                "snow-covered",
+                "wintery"
+            ],
+            "blurry": [
+                "out-of-focus",
+                "indistinct"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "outdoor",
+            "winter",
+            "objects",
+            "hand",
+            "camera"
+        ]
+    },
+    {
+        "id": "image_012",
+        "question_number": 20,
+        "type": "image",
+        "marks": 15,
+        "image_url": "https://plus.unsplash.com/premium_photo-1767883340125-faa5b9f8b5c0?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "image_thumbnail": "https://plus.unsplash.com/premium_photo-1767883340125-faa5b9f8b5c0?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
+        "correct_answer": "A cozy restaurant corner featuring wooden tables set with glasses, blue napkins, and a candle. The space has warm lighting, wooden booth seating with reddish cushions, and decorative lattice windows.",
+        "alternative_answers": [
+            "The image depicts a warm dining area with wood furniture, where tables are arranged with silverware and blue folded napkins near a lattice window.",
+            "An interior view of a cafe showing wooden tables prepared for dinner with glasses and napkins, illuminated by warm ambient light.",
+            "A restaurant booth with wooden seats and red cushions, set against a wall with intricate wooden window screens."
+        ],
+        "key_elements": {
+            "main_object": "restaurant table setting",
+            "furniture": "wooden tables and booth",
+            "items": "glasses, blue napkins, candle",
+            "architectural_detail": "lattice windows/screens",
+            "lighting": "warm/amber"
+        },
+        "acceptable_synonyms": {
+            "restaurant": [
+                "cafe",
+                "dining room",
+                "eatery"
+            ],
+            "lattice": [
+                "grid",
+                "screen",
+                "patterned"
+            ],
+            "napkins": [
+                "serviettes",
+                "cloths"
+            ],
+            "warm": [
+                "cozy",
+                "amber-lit"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "advanced",
+        "tags": [
+            "indoor",
+            "interior design",
+            "restaurant",
+            "atmosphere"
+        ]
+    },
+    {
+        "id": "image_013",
+        "question_number": 21,
+        "type": "image",
+        "marks": 15,
+        "image_url": "https://images.unsplash.com/photo-1761839258289-72f12b0de058?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "image_thumbnail": "https://images.unsplash.com/photo-1761839258289-72f12b0de058?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
+        "correct_answer": "Two young children are riding in a green wagon in the foreground with red baskets, while a woman in a blue shirt pulls another wagon along a gravel path in the background.",
+        "alternative_answers": [
+            "The scene shows a family outdoors; two kids sit in a trailer holding red baskets while a woman walks on a path behind them pulling a cart.",
+            "In the foreground, a boy and a girl are seated in a green utility wagon, and a woman walks away on a gravel road in the distance.",
+            "An outdoor setting featuring children in a wagon with apple baskets and an adult pulling a separate cart near large green trees."
+        ],
+        "key_elements": {
+            "foreground_subjects": "two children in green wagon",
+            "background_subject": "woman pulling wagon",
+            "objects": "red baskets",
+            "setting": "gravel path/park/orchard",
+            "colors": "green (wagon/grass), red (baskets), blue (shirts)"
+        },
+        "acceptable_synonyms": {
+            "wagon": [
+                "cart",
+                "trailer",
+                "carrier"
+            ],
+            "baskets": [
+                "buckets",
+                "containers"
+            ],
+            "path": [
+                "road",
+                "driveway",
+                "trail"
+            ],
+            "pulling": [
+                "dragging",
+                "towing"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "outdoor",
+            "family",
+            "activity",
+            "people"
+        ]
+    },
+    {
+        "id": "image_014",
+        "question_number": 22,
+        "type": "image",
+        "marks": 15,
+        "image_url": "https://images.unsplash.com/photo-1761839271800-f44070ff0eb9?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "image_thumbnail": "https://images.unsplash.com/photo-1761839271800-f44070ff0eb9?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
+        "correct_answer": "Two men are hiking on a dirt trail, each carrying a child on their shoulders. The man on the left wears a blue striped shirt and carries a girl, while the man on the right wears a black shirt and carries a boy. A steep forested hill rises to their left, and a valley view is visible to their right.",
+        "alternative_answers": [
+            "The image shows a hiking scene with two adults carrying children on their shoulders along a gravel path, with pine trees on one side and a valley on the other.",
+            "Two fathers are walking on a mountain trail, giving shoulder rides to a young girl and boy, set against a backdrop of green trees and a blue sky.",
+            "A group of four is hiking; a man in a striped shirt carries a girl, and a man in a black shirt carries a boy, walking along a sunny trail."
+        ],
+        "key_elements": {
+            "people": "two men, two children",
+            "action": "hiking/carrying on shoulders",
+            "clothing_man_1": "blue striped shirt, cap",
+            "clothing_man_2": "black shirt",
+            "setting": "dirt trail",
+            "background": "forested hill, valley view"
+        },
+        "acceptable_synonyms": {
+            "trail": [
+                "path",
+                "track",
+                "road"
+            ],
+            "shoulders": [
+                "piggyback"
+            ],
+            "hill": [
+                "mountain",
+                "slope"
+            ],
+            "valley": [
+                "landscape",
+                "scenery"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "outdoor",
+            "family",
+            "hiking",
+            "nature"
+        ]
+    },
+    {
+        "id": "image_015",
+        "question_number": 23,
+        "type": "image",
+        "marks": 15,
+        "image_url": "https://images.unsplash.com/photo-1762245832988-149462a4a8cc?q=80&w=946&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "image_thumbnail": "https://images.unsplash.com/photo-1762245832988-149462a4a8cc?q=80&w=946&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
+        "correct_answer": "A cream-colored multi-story apartment building features a prominent metal fire escape on its facade and a blue banner reading 'Studio For Rent'. On the ground floor, there is a business named 'Sayu Hair Salon', and a white car is parked on the street in front.",
+        "alternative_answers": [
+            "The photo depicts a pale yellow building with a ladder and a hair salon on the bottom floor, with a white car parked outside.",
+            "A residential building painted cream/yellow has a 'Studio For Rent' sign, a fire escape, and a storefront labeled 'Sayu Hair Salon' at street level.",
+            "An urban street scene showing a beige apartment block with an external staircase, a salon, and a white vehicle parked at the curb."
+        ],
+        "key_elements": {
+            "main_object": "apartment building",
+            "color": "cream/pale yellow",
+            "architectural_detail": "fire escape",
+            "signage_1": "Studio For Rent",
+            "signage_2": "Sayu Hair Salon",
+            "vehicle": "white car"
+        },
+        "acceptable_synonyms": {
+            "fire escape": [
+                "metal stairs",
+                "ladder",
+                "external staircase"
+            ],
+            "cream": [
+                "beige",
+                "light yellow",
+                "tan"
+            ],
+            "car": [
+                "vehicle",
+                "sedan",
+                "automobile"
+            ],
+            "salon": [
+                "shop",
+                "storefront"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "urban",
+            "architecture",
+            "city",
+            "building"
+        ]
+    },
+    {
+        "id": "image_016",
+        "question_number": 24,
+        "type": "image",
+        "marks": 15,
+        "image_url": "https://images.unsplash.com/photo-1761872936156-9a41f014754e?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "image_thumbnail": "https://images.unsplash.com/photo-1761872936156-9a41f014754e?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
+        "correct_answer": "A man wearing a large fur hat and a yellow tunic sits cross-legged in a dry grass field, playing a long-necked wooden string instrument. In the background, blurred snowy mountains rise against a blue sky.",
+        "alternative_answers": [
+            "The image shows a musician in traditional dress, including a fur hat, sitting in a field playing a string instrument with snow-capped mountains behind him.",
+            "A person wearing a yellow shirt and a fluffy hat is playing a lute-like instrument in a grassy meadow with a mountain backdrop.",
+            "A man sits in dry grass performing music on a traditional wooden instrument, wearing a distinctive fur headdress."
+        ],
+        "key_elements": {
+            "person": "musician/man",
+            "clothing_head": "large fur hat",
+            "clothing_body": "yellow tunic/shirt",
+            "object": "string instrument",
+            "setting": "dry grass field",
+            "background": "snowy mountains"
+        },
+        "acceptable_synonyms": {
+            "fur hat": [
+                "headdress",
+                "cap"
+            ],
+            "string instrument": [
+                "lute",
+                "guitar",
+                "traditional instrument"
+            ],
+            "tunic": [
+                "shirt",
+                "garment",
+                "robe"
+            ],
+            "mountains": [
+                "peaks",
+                "ranges"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "advanced",
+        "tags": [
+            "culture",
+            "music",
+            "outdoor",
+            "portrait"
+        ]
     }
 ]
