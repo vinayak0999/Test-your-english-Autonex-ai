@@ -1,31 +1,36 @@
 import React, { useEffect, useState } from 'react';
 import api from '../../api';
+import useAdminStore from '../../store/adminStore';
+import { AdminPageSkeleton } from '../../components/Skeleton';
 import {
     Building, Plus, Edit2, Trash2, ToggleLeft, ToggleRight,
     RefreshCw, X, Check, AlertTriangle
 } from 'lucide-react';
 
 const OrganizationManagement = () => {
-    const [organizations, setOrganizations] = useState([]);
-    const [loading, setLoading] = useState(true);
+    // Use cached data from store
+    const {
+        organizations,
+        orgsLoaded,
+        orgsLoading,
+        fetchOrganizations,
+        updateOrg,
+        removeOrg
+    } = useAdminStore();
+
     const [showModal, setShowModal] = useState(false);
     const [editingOrg, setEditingOrg] = useState(null);
     const [formData, setFormData] = useState({ name: '', slug: '' });
     const [error, setError] = useState('');
 
     useEffect(() => {
+        // Fetch without force - will use cache if available
         fetchOrganizations();
     }, []);
 
-    const fetchOrganizations = async () => {
-        try {
-            const res = await api.get('/admin/organizations');
-            setOrganizations(res.data);
-        } catch (err) {
-            console.error("Failed to fetch organizations", err);
-        } finally {
-            setLoading(false);
-        }
+    const handleRefresh = () => {
+        // Force refresh - bypass cache
+        fetchOrganizations(true);
     };
 
     const handleSubmit = async (e) => {
@@ -35,10 +40,12 @@ const OrganizationManagement = () => {
         try {
             if (editingOrg) {
                 await api.patch(`/admin/organizations/${editingOrg.id}`, formData);
+                updateOrg(editingOrg.id, formData);
             } else {
-                await api.post('/admin/organizations', formData);
+                const res = await api.post('/admin/organizations', formData);
+                // Force refresh to get the new org with ID
+                fetchOrganizations(true);
             }
-            fetchOrganizations();
             closeModal();
         } catch (err) {
             setError(err.response?.data?.detail || 'Operation failed');
@@ -46,22 +53,29 @@ const OrganizationManagement = () => {
     };
 
     const toggleActive = async (org) => {
+        // Optimistic update
+        updateOrg(org.id, { is_active: !org.is_active });
+
         try {
             await api.patch(`/admin/organizations/${org.id}`, { is_active: !org.is_active });
-            setOrganizations(orgs => orgs.map(o =>
-                o.id === org.id ? { ...o, is_active: !o.is_active } : o
-            ));
         } catch (err) {
+            // Revert on failure
+            updateOrg(org.id, { is_active: org.is_active });
             console.error("Toggle failed", err);
         }
     };
 
     const deleteOrg = async (org) => {
         if (!confirm(`Delete "${org.name}"? This cannot be undone.`)) return;
+
+        // Optimistic update
+        removeOrg(org.id);
+
         try {
             await api.delete(`/admin/organizations/${org.id}`);
-            setOrganizations(orgs => orgs.filter(o => o.id !== org.id));
         } catch (err) {
+            // Revert on failure
+            fetchOrganizations(true);
             alert(err.response?.data?.detail || 'Delete failed');
         }
     };
@@ -89,7 +103,10 @@ const OrganizationManagement = () => {
         return name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
     };
 
-    if (loading) return <div className="p-8 text-center text-slate-500">Loading organizations...</div>;
+    // Show skeleton only on first load (no cached data)
+    if (!orgsLoaded && organizations.length === 0) {
+        return <AdminPageSkeleton title="Organization Management" />;
+    }
 
     return (
         <div className="max-w-5xl mx-auto pb-20 px-4">
@@ -105,10 +122,12 @@ const OrganizationManagement = () => {
 
                 <div className="flex gap-3">
                     <button
-                        onClick={fetchOrganizations}
-                        className="flex items-center gap-2 px-4 py-2 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors"
+                        onClick={handleRefresh}
+                        disabled={orgsLoading}
+                        className={`flex items-center gap-2 px-4 py-2 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors ${orgsLoading ? 'opacity-50' : ''}`}
                     >
-                        <RefreshCw size={18} /> Refresh
+                        <RefreshCw size={18} className={orgsLoading ? 'animate-spin' : ''} />
+                        {orgsLoading ? 'Refreshing...' : 'Refresh'}
                     </button>
                     <button
                         onClick={openCreateModal}
@@ -163,8 +182,8 @@ const OrganizationManagement = () => {
                                     <button
                                         onClick={() => toggleActive(org)}
                                         className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold transition-colors ${org.is_active
-                                                ? 'bg-green-100 text-green-700 hover:bg-green-200'
-                                                : 'bg-slate-100 text-slate-500 hover:bg-slate-200'
+                                            ? 'bg-green-100 text-green-700 hover:bg-green-200'
+                                            : 'bg-slate-100 text-slate-500 hover:bg-slate-200'
                                             }`}
                                     >
                                         {org.is_active ? <ToggleRight size={14} /> : <ToggleLeft size={14} />}

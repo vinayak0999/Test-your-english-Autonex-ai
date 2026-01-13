@@ -1,102 +1,2002 @@
 [
-  { "content": "She ___ going to the office.", "options": {"A": "is", "B": "are", "C": "am"}, "correct_answer": "A", "marks": 1 },
-  { "content": "They ___ not finished their work yet.", "options": {"A": "have", "B": "has", "C": "had"}, "correct_answer": "A", "marks": 1 },
-  { "content": "I ___ a book when he called.", "options": {"A": "was reading", "B": "am reading", "C": "read"}, "correct_answer": "A", "marks": 1 },
-  { "content": "He ___ to school every day.", "options": {"A": "goes", "B": "go", "C": "going"}, "correct_answer": "A", "marks": 1 },
-  { "content": "We ___ dinner by 9 PM yesterday.", "options": {"A": "had finished", "B": "finished", "C": "finish"}, "correct_answer": "A", "marks": 1 },
-  { "content": "The cat is hiding ___ the table.", "options": {"A": "under", "B": "above", "C": "into"}, "correct_answer": "A", "marks": 1 },
-  { "content": "He will arrive ___ Monday.", "options": {"A": "on", "B": "in", "C": "at"}, "correct_answer": "A", "marks": 1 },
-  { "content": "She walked ___ the room quietly.", "options": {"A": "into", "B": "onto", "C": "above"}, "correct_answer": "A", "marks": 1 },
-  { "content": "The shop is ___ the street.", "options": {"A": "across", "B": "between", "C": "among"}, "correct_answer": "A", "marks": 1 },
-  { "content": "He sat ___ his best friend.", "options": {"A": "beside", "B": "beneath", "C": "among"}, "correct_answer": "A", "marks": 1 },
-  { "content": "He is ___ honest man.", "options": {"A": "an", "B": "a", "C": "the"}, "correct_answer": "A", "marks": 1 },
-  { "content": "Please close ___ door.", "options": {"A": "the", "B": "a", "C": "an"}, "correct_answer": "A", "marks": 1 },
-  { "content": "She adopted ___ dog yesterday.", "options": {"A": "a", "B": "the", "C": "an"}, "correct_answer": "A", "marks": 1 },
-  { "content": "___ Earth revolves around the Sun.", "options": {"A": "The", "B": "A", "C": "An"}, "correct_answer": "A", "marks": 1 },
-  { "content": "He wants to buy ___ umbrella.", "options": {"A": "an", "B": "the", "C": "a"}, "correct_answer": "A", "marks": 1 },
-  { "content": "I was tired, ___ I went to sleep early.", "options": {"A": "so", "B": "but", "C": "and"}, "correct_answer": "A", "marks": 1 },
-  { "content": "He tried hard, ___ he failed.", "options": {"A": "but", "B": "and", "C": "so"}, "correct_answer": "A", "marks": 1 },
-  { "content": "You can come with us ___ stay here.", "options": {"A": "or", "B": "but", "C": "and"}, "correct_answer": "A", "marks": 1 },
-  { "content": "She is smart ___ hardworking.", "options": {"A": "and", "B": "but", "C": "or"}, "correct_answer": "A", "marks": 1 },
-  { "content": "I will help you ___ you ask me.", "options": {"A": "if", "B": "and", "C": "but"}, "correct_answer": "A", "marks": 1 },
-  { "content": "Choose the synonym of 'happy'.", "options": {"A": "joyful", "B": "angry", "C": "sad"}, "correct_answer": "A", "marks": 1 },
-  { "content": "Choose the antonym of 'strong'.", "options": {"A": "weak", "B": "powerful", "C": "tall"}, "correct_answer": "A", "marks": 1 },
-  { "content": "Choose the synonym of 'calm'.", "options": {"A": "peaceful", "B": "wild", "C": "angry"}, "correct_answer": "A", "marks": 1 },
-  { "content": "Choose the antonym of 'begin'.", "options": {"A": "end", "B": "start", "C": "open"}, "correct_answer": "A", "marks": 1 },
-  { "content": "Choose the synonym of 'brave'.", "options": {"A": "courageous", "B": "fearful", "C": "shy"}, "correct_answer": "A", "marks": 1 },
-  { "content": "The ___ of the story is interesting.", "options": {"A": "moral", "B": "morale"}, "correct_answer": "A", "marks": 1 },
-  { "content": "Please ___ your seatbelt.", "options": {"A": "wear", "B": "where"}, "correct_answer": "A", "marks": 1 },
-  { "content": "The teacher asked us to ___ quietly.", "options": {"A": "sit", "B": "set"}, "correct_answer": "A", "marks": 1 },
-  { "content": "He will ___ the meeting tomorrow.", "options": {"A": "lead", "B": "led"}, "correct_answer": "A", "marks": 1 },
-  { "content": "I want to ___ my handwriting.", "options": {"A": "improve", "B": "improvise"}, "correct_answer": "A", "marks": 1 },
-  { "content": "He ___ TV every evening.", "options": {"A": "watches", "B": "watch", "C": "watched"}, "correct_answer": "A", "marks": 1 },
-  { "content": "The train ___ before we reached the station.", "options": {"A": "had left", "B": "left", "C": "leaves"}, "correct_answer": "A", "marks": 1 },
-  { "content": "By next year, I ___ my degree.", "options": {"A": "will complete", "B": "completed", "C": "complete"}, "correct_answer": "A", "marks": 1 },
-  { "content": "She ___ here since morning.", "options": {"A": "has been", "B": "have been", "C": "was"}, "correct_answer": "A", "marks": 1 },
-  { "content": "They ___ football tomorrow.", "options": {"A": "will play", "B": "played", "C": "play"}, "correct_answer": "A", "marks": 1 },
-  { "content": "We walked ___ the bridge.", "options": {"A": "over", "B": "under", "C": "into"}, "correct_answer": "A", "marks": 1 },
-  { "content": "I was born ___ 2001.", "options": {"A": "in", "B": "on", "C": "at"}, "correct_answer": "A", "marks": 1 },
-  { "content": "My birthday is ___ June 5th.", "options": {"A": "on", "B": "in", "C": "at"}, "correct_answer": "A", "marks": 1 },
-  { "content": "He lives ___ Mumbai.", "options": {"A": "in", "B": "on", "C": "at"}, "correct_answer": "A", "marks": 1 },
-  { "content": "She will meet us ___ the airport.", "options": {"A": "at", "B": "in", "C": "on"}, "correct_answer": "A", "marks": 1 },
-  { "content": "___ sun rises in the east.", "options": {"A": "The", "B": "A", "C": "An"}, "correct_answer": "A", "marks": 1 },
-  { "content": "I saw ___ elephant in the zoo.", "options": {"A": "an", "B": "a", "C": "the"}, "correct_answer": "A", "marks": 1 },
-  { "content": "She is ___ best dancer in school.", "options": {"A": "the", "B": "a", "C": "an"}, "correct_answer": "A", "marks": 1 },
-  { "content": "He wants to buy ___ laptop.", "options": {"A": "a", "B": "an", "C": "the"}, "correct_answer": "A", "marks": 1 },
-  { "content": "___ Taj Mahal is a famous monument.", "options": {"A": "The", "B": "A", "C": "An"}, "correct_answer": "A", "marks": 1 },
-  { "content": "I like tea ___ coffee.", "options": {"A": "and", "B": "but", "C": "so"}, "correct_answer": "A", "marks": 1 },
-  { "content": "He is rich ___ unhappy.", "options": {"A": "but", "B": "and", "C": "so"}, "correct_answer": "A", "marks": 1 },
-  { "content": "We can go out ___ it stops raining.", "options": {"A": "when", "B": "but", "C": "or"}, "correct_answer": "A", "marks": 1 },
-  { "content": "I studied hard ___ I passed the exam.", "options": {"A": "so", "B": "but", "C": "or"}, "correct_answer": "A", "marks": 1 },
-  { "content": "You must try harder, ___ you will fail.", "options": {"A": "or", "B": "but", "C": "so"}, "correct_answer": "A", "marks": 1 },
-  { "content": "Choose the synonym of 'bright'.", "options": {"A": "shiny", "B": "dark", "C": "weak"}, "correct_answer": "A", "marks": 1 },
-  { "content": "Choose the antonym of 'slow'.", "options": {"A": "fast", "B": "lazy", "C": "calm"}, "correct_answer": "A", "marks": 1 },
-  { "content": "Choose the synonym of 'angry'.", "options": {"A": "furious", "B": "happy", "C": "calm"}, "correct_answer": "A", "marks": 1 },
-  { "content": "Choose the antonym of 'light'.", "options": {"A": "heavy", "B": "bright", "C": "soft"}, "correct_answer": "A", "marks": 1 },
-  { "content": "Choose the antonym of 'victory'.", "options": {"A": "defeat", "B": "win", "C": "success"}, "correct_answer": "A", "marks": 1 },
-  { "content": "He will ___ the prize.", "options": {"A": "accept", "B": "except"}, "correct_answer": "A", "marks": 1 },
-  { "content": "Everyone was present ___ John.", "options": {"A": "except", "B": "accept"}, "correct_answer": "A", "marks": 1 },
-  { "content": "This dress ___ me perfectly.", "options": {"A": "fits", "B": "fix"}, "correct_answer": "A", "marks": 1 },
-  { "content": "Please ___ the lights.", "options": {"A": "switch", "B": "swatch"}, "correct_answer": "A", "marks": 1 },
-  { "content": "The weather will ___ our plans.", "options": {"A": "affect", "B": "effect"}, "correct_answer": "A", "marks": 1 },
-  { "content": "They ___ in the park now.", "options": {"A": "are playing", "B": "play", "C": "played"}, "correct_answer": "A", "marks": 1 },
-  { "content": "She ___ him yesterday.", "options": {"A": "met", "B": "meet", "C": "meets"}, "correct_answer": "A", "marks": 1 },
-  { "content": "We ___ here for two hours.", "options": {"A": "have been waiting", "B": "waited", "C": "wait"}, "correct_answer": "A", "marks": 1 },
-  { "content": "He ___ his homework already.", "options": {"A": "has done", "B": "have done", "C": "did"}, "correct_answer": "A", "marks": 1 },
-  { "content": "The show ___ at 7 PM.", "options": {"A": "starts", "B": "started", "C": "starting"}, "correct_answer": "A", "marks": 1 },
-  { "content": "The keys are ___ the drawer.", "options": {"A": "in", "B": "on", "C": "at"}, "correct_answer": "A", "marks": 1 },
-  { "content": "He walked ___ the street.", "options": {"A": "across", "B": "among", "C": "above"}, "correct_answer": "A", "marks": 1 },
-  { "content": "The book is ___ the shelf.", "options": {"A": "on", "B": "in", "C": "between"}, "correct_answer": "A", "marks": 1 },
-  { "content": "They arrived ___ the right time.", "options": {"A": "at", "B": "in", "C": "on"}, "correct_answer": "A", "marks": 1 },
-  { "content": "The teacher stood ___ the class.", "options": {"A": "before", "B": "after", "C": "behind"}, "correct_answer": "A", "marks": 1 },
-  { "content": "She is ___ engineer by profession.", "options": {"A": "an", "B": "a", "C": "the"}, "correct_answer": "A", "marks": 1 },
-  { "content": "I saw ___ rainbow today.", "options": {"A": "a", "B": "an", "C": "the"}, "correct_answer": "A", "marks": 1 },
-  { "content": "___ Ganga is a holy river.", "options": {"A": "The", "B": "A", "C": "An"}, "correct_answer": "A", "marks": 1 },
-  { "content": "He bought ___ orange shirt.", "options": {"A": "an", "B": "the", "C": "a"}, "correct_answer": "A", "marks": 1 },
-  { "content": "I need ___ hour to finish this.", "options": {"A": "an", "B": "a", "C": "the"}, "correct_answer": "A", "marks": 1 },
-  { "content": "He works hard ___ earns well.", "options": {"A": "and", "B": "but", "C": "or"}, "correct_answer": "A", "marks": 1 },
-  { "content": "She is tired, ___ she will continue.", "options": {"A": "but", "B": "so", "C": "or"}, "correct_answer": "A", "marks": 1 },
-  { "content": "I will wait ___ you return.", "options": {"A": "until", "B": "and", "C": "but"}, "correct_answer": "A", "marks": 1 },
-  { "content": "We can go to the park ___ the mall.", "options": {"A": "or", "B": "and", "C": "so"}, "correct_answer": "A", "marks": 1 },
-  { "content": "He failed, ___ he didn't study.", "options": {"A": "because", "B": "and", "C": "but"}, "correct_answer": "A", "marks": 1 },
-  { "content": "Choose the synonym of 'big'.", "options": {"A": "large", "B": "small", "C": "tiny"}, "correct_answer": "A", "marks": 1 },
-  { "content": "Choose the antonym of 'early'.", "options": {"A": "late", "B": "fast", "C": "quick"}, "correct_answer": "A", "marks": 1 },
-  { "content": "Choose the synonym of 'quick'.", "options": {"A": "fast", "B": "slow", "C": "weak"}, "correct_answer": "A", "marks": 1 },
-  { "content": "Choose the antonym of 'hot'.", "options": {"A": "cold", "B": "warm", "C": "boiling"}, "correct_answer": "A", "marks": 1 },
-  { "content": "Choose the synonym of 'hardworking'.", "options": {"A": "diligent", "B": "lazy", "C": "slow"}, "correct_answer": "A", "marks": 1 },
-  { "content": "He will ___ his car tomorrow.", "options": {"A": "sell", "B": "sale"}, "correct_answer": "A", "marks": 1 },
-  { "content": "This medicine has no side ___.", "options": {"A": "effect", "B": "affect"}, "correct_answer": "A", "marks": 1 },
-  { "content": "I will ___ you later.", "options": {"A": "see", "B": "sea"}, "correct_answer": "A", "marks": 1 },
-  { "content": "He ___ the ball.", "options": {"A": "threw", "B": "through"}, "correct_answer": "A", "marks": 1 },
-  { "content": "He walked ___ the door.", "options": {"A": "through", "B": "threw"}, "correct_answer": "A", "marks": 1 },
-  { "content": "I ___ breakfast already.", "options": {"A": "have eaten", "B": "ate", "C": "eat"}, "correct_answer": "A", "marks": 1 },
-  { "content": "They ___ movies on weekends.", "options": {"A": "watch", "B": "watched", "C": "watching"}, "correct_answer": "A", "marks": 1 },
-  { "content": "He ___ here yesterday.", "options": {"A": "came", "B": "come", "C": "comes"}, "correct_answer": "A", "marks": 1 },
-  { "content": "She ___ lunch when I arrived.", "options": {"A": "was eating", "B": "eats", "C": "ate"}, "correct_answer": "A", "marks": 1 },
-  { "content": "By noon, they ___ half the work.", "options": {"A": "had completed", "B": "completed", "C": "complete"}, "correct_answer": "A", "marks": 1 },
-  { "content": "He jumped ___ the pool.", "options": {"A": "into", "B": "onto", "C": "over"}, "correct_answer": "A", "marks": 1 },
-  { "content": "She sat ___ the window.", "options": {"A": "near", "B": "under", "C": "over"}, "correct_answer": "A", "marks": 1 },
-  { "content": "He walked ___ the stairs.", "options": {"A": "up", "B": "on", "C": "for"}, "correct_answer": "A", "marks": 1 },
-  { "content": "The gift is ___ the box.", "options": {"A": "inside", "B": "outside", "C": "among"}, "correct_answer": "A", "marks": 1 },
-  { "content": "The school is ___ the corner.", "options": {"A": "around", "B": "between", "C": "under"}, "correct_answer": "A", "marks": 1 }
+  {
+    "content": "Choose the grammatically correct sentence.",
+    "options": {
+      "A": "Neither of the proposals have been accepted.",
+      "B": "Neither of the proposals has been accepted.",
+      "C": "Neither of the proposals were accepted."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Select the correct verb form.",
+    "options": {
+      "A": "She insisted that he apologizes immediately.",
+      "B": "She insisted that he apologized immediately.",
+      "C": "She insisted that he apologize immediately."
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "content": "Identify the sentence without error.",
+    "options": {
+      "A": "Hardly had he entered the room when the phone rang.",
+      "B": "Hardly he had entered the room when the phone rang.",
+      "C": "Hardly did he entered the room when the phone rang."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct option.",
+    "options": {
+      "A": "The number of applicants have increased.",
+      "B": "A number of applicants has increased.",
+      "C": "The number of applicants has increased."
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "content": "Select the correct sentence.",
+    "options": {
+      "A": "Each of the managers are responsible.",
+      "B": "Each of the managers is responsible.",
+      "C": "Each of the managers were responsible."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct tense consistency.",
+    "options": {
+      "A": "She said she will complete the task.",
+      "B": "She said she would complete the task.",
+      "C": "She says she would complete the task."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Identify the grammatically correct option.",
+    "options": {
+      "A": "No sooner did the train arrive than it departed.",
+      "B": "No sooner had the train arrived than it departed.",
+      "C": "No sooner the train had arrived than it departed."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct article usage.",
+    "options": {
+      "A": "She is an MBA graduate.",
+      "B": "She is a MBA graduate.",
+      "C": "She is the MBA graduate."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Select the correct sentence.",
+    "options": {
+      "A": "He is senior than me in experience.",
+      "B": "He is senior to me in experience.",
+      "C": "He is senior over me in experience."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the sentence with correct parallelism.",
+    "options": {
+      "A": "She likes reading, writing, and to paint.",
+      "B": "She likes reading, writing, and painting.",
+      "C": "She likes to read, writing, and painting."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct sentence.",
+    "options": {
+      "A": "Scarcely had we reached when it started raining.",
+      "B": "Scarcely did we reached when it started raining.",
+      "C": "Scarcely had we reached when it started raining."
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct option.",
+    "options": {
+      "A": "The jury has delivered their verdict.",
+      "B": "The jury have delivered its verdict.",
+      "C": "The jury has delivered its verdict."
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "content": "Select the grammatically correct sentence.",
+    "options": {
+      "A": "More you practice, better you perform.",
+      "B": "The more you practice, the better you perform.",
+      "C": "More you practice, the better you perform."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct conditional form.",
+    "options": {
+      "A": "If he would listen, he could improve.",
+      "B": "If he listens, he could improve.",
+      "C": "If he listened, he could improve."
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct usage of preposition.",
+    "options": {
+      "A": "She is proficient at mathematics.",
+      "B": "She is proficient in mathematics.",
+      "C": "She is proficient on mathematics."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the grammatically correct sentence.",
+    "options": {
+      "A": "He suggested that she goes home early.",
+      "B": "He suggested that she go home early.",
+      "C": "He suggested that she went home early."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Select the correct option.",
+    "options": {
+      "A": "The news are shocking.",
+      "B": "The news were shocking.",
+      "C": "The news was shocking."
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct sentence.",
+    "options": {
+      "A": "He is one of those people who believes in fate.",
+      "B": "He is one of those people who believe in fate.",
+      "C": "He is one of those people who believing in fate."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct form.",
+    "options": {
+      "A": "Not only she was late but also unprepared.",
+      "B": "Not only was she late but also unprepared.",
+      "C": "Not only she late but also unprepared."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Select the grammatically correct sentence.",
+    "options": {
+      "A": "Between you and I, this is confidential.",
+      "B": "Between you and me, this is confidential.",
+      "C": "Between yourself and me, this is confidential."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct sentence.",
+    "options": {
+      "A": "He denied to take the documents.",
+      "B": "He denied having taken the documents.",
+      "C": "He denied to have taken the documents."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct option.",
+    "options": {
+      "A": "The teacher along with the students were present.",
+      "B": "The teacher along with the students was present.",
+      "C": "The teacher along with the students are present."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Select the correct usage.",
+    "options": {
+      "A": "She is accustomed to wake up early.",
+      "B": "She is accustomed to waking up early.",
+      "C": "She is accustomed with waking up early."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct sentence.",
+    "options": {
+      "A": "Few people know the truth.",
+      "B": "A few people knows the truth.",
+      "C": "The few people know the truth."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Identify the grammatically correct sentence.",
+    "options": {
+      "A": "She had scarcely finished when he arrived.",
+      "B": "She scarcely had finished when he arrived.",
+      "C": "She had finished scarcely when he arrived."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct option.",
+    "options": {
+      "A": "He is capable to solve the problem.",
+      "B": "He is capable of solving the problem.",
+      "C": "He is capable for solving the problem."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Select the correct sentence.",
+    "options": {
+      "A": "She prefers tea than coffee.",
+      "B": "She prefers tea over coffee.",
+      "C": "She prefers tea from coffee."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct form.",
+    "options": {
+      "A": "The work will be completed by tomorrow.",
+      "B": "The work will complete by tomorrow.",
+      "C": "The work has been complete by tomorrow."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Choose the grammatically correct sentence.",
+    "options": {
+      "A": "He is too intelligent to not understand this.",
+      "B": "He is so intelligent to not understand this.",
+      "C": "He is too intelligent to misunderstand this."
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "content": "Select the correct option.",
+    "options": {
+      "A": "She explained me the procedure.",
+      "B": "She explained the procedure to me.",
+      "C": "She explained about the procedure to me."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct sentence.",
+    "options": {
+      "A": "The manager as well as his assistants were late.",
+      "B": "The manager as well as his assistants was late.",
+      "C": "The manager as well as his assistants are late."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct option.",
+    "options": {
+      "A": "I look forward to meet you.",
+      "B": "I look forward to meeting you.",
+      "C": "I look forward for meeting you."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Select the grammatically correct sentence.",
+    "options": {
+      "A": "The furniture were damaged during transit.",
+      "B": "The furniture has been damaged during transit.",
+      "C": "The furniture are damaged during transit."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct usage.",
+    "options": {
+      "A": "He is addicted with smoking.",
+      "B": "He is addicted to smoking.",
+      "C": "He is addicted for smoking."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct sentence.",
+    "options": {
+      "A": "She is more smarter than her sister.",
+      "B": "She is smarter than her sister.",
+      "C": "She is more smart than her sister."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct option.",
+    "options": {
+      "A": "He did not knew the answer.",
+      "B": "He did not know the answer.",
+      "C": "He does not knew the answer."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Select the correct sentence.",
+    "options": {
+      "A": "The police is investigating the case.",
+      "B": "The police are investigating the case.",
+      "C": "The police was investigating the case."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct option.",
+    "options": {
+      "A": "He is married with a doctor.",
+      "B": "He is married to a doctor.",
+      "C": "He is married by a doctor."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Identify the grammatically correct sentence.",
+    "options": {
+      "A": "She ran quick to catch the bus.",
+      "B": "She ran quickly to catch the bus.",
+      "C": "She ran quickest to catch the bus."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct form.",
+    "options": {
+      "A": "The project is comprised of five modules.",
+      "B": "The project comprises of five modules.",
+      "C": "The project comprises five modules."
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "content": "Select the correct sentence.",
+    "options": {
+      "A": "She has less friends than before.",
+      "B": "She has fewer friends than before.",
+      "C": "She has lesser friends than before."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct option.",
+    "options": {
+      "A": "He has been working here since 2018.",
+      "B": "He is working here since 2018.",
+      "C": "He was working here since 2018."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct sentence.",
+    "options": {
+      "A": "She accused him for the mistake.",
+      "B": "She accused him of the mistake.",
+      "C": "She accused him about the mistake."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Select the grammatically correct option.",
+    "options": {
+      "A": "The reason why he left is unknown.",
+      "B": "The reason because he left is unknown.",
+      "C": "The reason for why he left is unknown."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct form.",
+    "options": {
+      "A": "She is as intelligent if not more than her peers.",
+      "B": "She is as intelligent as if not more than her peers.",
+      "C": "She is as intelligent as, if not more intelligent than, her peers."
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct sentence.",
+    "options": {
+      "A": "He warned me not touching the wire.",
+      "B": "He warned me not to touch the wire.",
+      "C": "He warned me to not touching the wire."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct option.",
+    "options": {
+      "A": "She succeeded in spite of many obstacles.",
+      "B": "She succeeded despite of many obstacles.",
+      "C": "She succeeded in despite many obstacles."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Select the grammatically correct sentence.",
+    "options": {
+      "A": "The company laid off fifty employees.",
+      "B": "The company lay off fifty employees.",
+      "C": "The company has lay off fifty employees."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct usage.",
+    "options": {
+      "A": "She is responsible of managing the team.",
+      "B": "She is responsible for managing the team.",
+      "C": "She is responsible to manage the team."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct sentence.",
+    "options": {
+      "A": "He had better to leave now.",
+      "B": "He had better leave now.",
+      "C": "He had better leaving now."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the grammatically correct sentence.",
+    "options": {
+      "A": "He is too weak that he cannot walk.",
+      "B": "He is so weak that he cannot walk.",
+      "C": "He is very weak so that he cannot walk."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Select the correct usage.",
+    "options": {
+      "A": "She insisted on me attending the meeting.",
+      "B": "She insisted me to attend the meeting.",
+      "C": "She insisted for me attending the meeting."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct sentence.",
+    "options": {
+      "A": "The ship sank because of a storm.",
+      "B": "The ship sank due to a storm.",
+      "C": "The ship sank owing a storm."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct verb agreement.",
+    "options": {
+      "A": "Politics is a complicated subject.",
+      "B": "Politics are a complicated subject.",
+      "C": "Politics were a complicated subject."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Select the grammatically correct option.",
+    "options": {
+      "A": "He objected my proposal.",
+      "B": "He objected against my proposal.",
+      "C": "He objected to my proposal."
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct sentence.",
+    "options": {
+      "A": "She has little patience for delays.",
+      "B": "She has a little patience for delays.",
+      "C": "She has the little patience for delays."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct form.",
+    "options": {
+      "A": "He behaves as if he was the boss.",
+      "B": "He behaves as if he were the boss.",
+      "C": "He behaves as if he is the boss."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct usage of infinitive.",
+    "options": {
+      "A": "She was made to apologize publicly.",
+      "B": "She was made apologize publicly.",
+      "C": "She was made for apologizing publicly."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Select the grammatically correct sentence.",
+    "options": {
+      "A": "The book is based in a true story.",
+      "B": "The book is based on a true story.",
+      "C": "The book is based at a true story."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct option.",
+    "options": {
+      "A": "He succeeded to convince them.",
+      "B": "He succeeded in convincing them.",
+      "C": "He succeeded for convincing them."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct sentence.",
+    "options": {
+      "A": "She was too exhausted to continue.",
+      "B": "She was too exhausted for continuing.",
+      "C": "She was so exhausted to continue."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct sentence.",
+    "options": {
+      "A": "The company is planning to expand its operations.",
+      "B": "The company are planning to expand its operations.",
+      "C": "The company were planning to expand its operations."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Select the grammatically correct option.",
+    "options": {
+      "A": "She is confident to pass the exam.",
+      "B": "She is confident of passing the exam.",
+      "C": "She is confident for passing the exam."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct form.",
+    "options": {
+      "A": "He had his car repair yesterday.",
+      "B": "He had his car repaired yesterday.",
+      "C": "He had repaired his car yesterday."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct sentence.",
+    "options": {
+      "A": "She complained about the noise.",
+      "B": "She complained for the noise.",
+      "C": "She complained on the noise."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct option.",
+    "options": {
+      "A": "He is interested in learning French.",
+      "B": "He is interested to learn French.",
+      "C": "He is interested for learning French."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Select the correct sentence.",
+    "options": {
+      "A": "The children were afraid of the dark.",
+      "B": "The children were afraid from the dark.",
+      "C": "The children were afraid at the dark."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Choose the grammatically correct sentence.",
+    "options": {
+      "A": "She was hardly able to finish on time.",
+      "B": "She hardly was able to finish on time.",
+      "C": "She was able hardly to finish on time."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct usage.",
+    "options": {
+      "A": "He is good in mathematics.",
+      "B": "He is good at mathematics.",
+      "C": "He is good on mathematics."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct sentence.",
+    "options": {
+      "A": "She has no objection to working late.",
+      "B": "She has no objection for working late.",
+      "C": "She has no objection of working late."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Select the grammatically correct option.",
+    "options": {
+      "A": "He prevented me to enter the room.",
+      "B": "He prevented me from entering the room.",
+      "C": "He prevented me entering the room."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct sentence.",
+    "options": {
+      "A": "She apologized for being late.",
+      "B": "She apologized to being late.",
+      "C": "She apologized on being late."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct form.",
+    "options": {
+      "A": "He has been absent since two days.",
+      "B": "He has been absent for two days.",
+      "C": "He was absent since two days."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct usage.",
+    "options": {
+      "A": "She is fond for classical music.",
+      "B": "She is fond with classical music.",
+      "C": "She is fond of classical music."
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "content": "Select the correct sentence.",
+    "options": {
+      "A": "He was late because the traffic.",
+      "B": "He was late because of the traffic.",
+      "C": "He was late due the traffic."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the grammatically correct option.",
+    "options": {
+      "A": "She takes pride of her work.",
+      "B": "She takes pride in her work.",
+      "C": "She takes pride for her work."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct sentence.",
+    "options": {
+      "A": "He is capable to doing this task.",
+      "B": "He is capable of doing this task.",
+      "C": "He is capable for doing this task."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct usage.",
+    "options": {
+      "A": "She insisted that the meeting be postponed.",
+      "B": "She insisted that the meeting is postponed.",
+      "C": "She insisted that the meeting was postponed."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Select the grammatically correct sentence.",
+    "options": {
+      "A": "The team is confident of victory.",
+      "B": "The team are confident of victory.",
+      "C": "The team were confident of victory."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct sentence.",
+    "options": {
+      "A": "She congratulated him for his success.",
+      "B": "She congratulated him on his success.",
+      "C": "She congratulated him about his success."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct usage.",
+    "options": {
+      "A": "He is responsible of the outcome.",
+      "B": "He is responsible to the outcome.",
+      "C": "He is responsible for the outcome."
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "content": "Choose the grammatically correct sentence.",
+    "options": {
+      "A": "She warned him not to be careless.",
+      "B": "She warned him to not be careless.",
+      "C": "She warned him not being careless."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Select the correct sentence.",
+    "options": {
+      "A": "The teacher as well as the students was present.",
+      "B": "The teacher as well as the students were present.",
+      "C": "The teacher as well as the students are present."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct option.",
+    "options": {
+      "A": "She is married with a lawyer.",
+      "B": "She is married to a lawyer.",
+      "C": "She is married by a lawyer."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct sentence.",
+    "options": {
+      "A": "He did not know where was she going.",
+      "B": "He did not know where she was going.",
+      "C": "He did not know where is she going."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the grammatically correct sentence.",
+    "options": {
+      "A": "She has been working here from 2019.",
+      "B": "She has been working here since 2019.",
+      "C": "She is working here since 2019."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Select the correct usage.",
+    "options": {
+      "A": "He insisted on paying the bill.",
+      "B": "He insisted to pay the bill.",
+      "C": "He insisted for paying the bill."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct sentence.",
+    "options": {
+      "A": "She is accustomed to the heat.",
+      "B": "She is accustomed with the heat.",
+      "C": "She is accustomed for the heat."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct option.",
+    "options": {
+      "A": "He has little knowledge about the subject.",
+      "B": "He has a little knowledge about the subject.",
+      "C": "He has the little knowledge about the subject."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct sentence.",
+    "options": {
+      "A": "She was too tired that she slept immediately.",
+      "B": "She was so tired to sleep immediately.",
+      "C": "She was so tired that she slept immediately."
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "content": "Select the grammatically correct option.",
+    "options": {
+      "A": "The house needs repairing.",
+      "B": "The house needs to be repaired.",
+      "C": "Both A and B"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct usage.",
+    "options": {
+      "A": "He is confident to winning the match.",
+      "B": "He is confident of winning the match.",
+      "C": "He is confident for winning the match."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct sentence.",
+    "options": {
+      "A": "She has no interest to join the club.",
+      "B": "She has no interest in joining the club.",
+      "C": "She has no interest for joining the club."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct sentence.",
+    "options": {
+      "A": "He succeeded despite of the difficulties.",
+      "B": "He succeeded in spite the difficulties.",
+      "C": "He succeeded despite the difficulties."
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "content": "Select the grammatically correct option.",
+    "options": {
+      "A": "She is keen on learning new skills.",
+      "B": "She is keen for learning new skills.",
+      "C": "She is keen to learning new skills."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct sentence.",
+    "options": {
+      "A": "He is superior than his colleagues.",
+      "B": "He is superior to his colleagues.",
+      "C": "He is superior over his colleagues."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct usage.",
+    "options": {
+      "A": "She was anxious of the result.",
+      "B": "She was anxious about the result.",
+      "C": "She was anxious for the result."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the grammatically correct sentence.",
+    "options": {
+      "A": "He was prevented from entering the hall.",
+      "B": "He was prevented to enter the hall.",
+      "C": "He was prevented entering the hall."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Select the correct sentence.",
+    "options": {
+      "A": "She is aware about the consequences.",
+      "B": "She is aware of the consequences.",
+      "C": "She is aware for the consequences."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct option.",
+    "options": {
+      "A": "He refrained from making any comment.",
+      "B": "He refrained to make any comment.",
+      "C": "He refrained for making any comment."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Choose the grammatically correct sentence.",
+    "options": {
+      "A": "He is accustomed with working under pressure.",
+      "B": "He is accustomed to working under pressure.",
+      "C": "He is accustomed for working under pressure."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct sentence.",
+    "options": {
+      "A": "She has been living here from ten years.",
+      "B": "She has been living here since ten years.",
+      "C": "She has been living here for ten years."
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct usage.",
+    "options": {
+      "A": "He is married with a foreign national.",
+      "B": "He is married to a foreign national.",
+      "C": "He is married by a foreign national."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Select the grammatically correct option.",
+    "options": {
+      "A": "She insisted to seeing the manager.",
+      "B": "She insisted on seeing the manager.",
+      "C": "She insisted for seeing the manager."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct sentence.",
+    "options": {
+      "A": "The furniture were delivered yesterday.",
+      "B": "The furniture has been delivered yesterday.",
+      "C": "The furniture was delivered yesterday."
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct sentence.",
+    "options": {
+      "A": "He is senior than his brother.",
+      "B": "He is senior to his brother.",
+      "C": "He is senior over his brother."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the grammatically correct option.",
+    "options": {
+      "A": "She is confident to handling the situation.",
+      "B": "She is confident of handling the situation.",
+      "C": "She is confident for handling the situation."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Select the correct usage.",
+    "options": {
+      "A": "He prevented me to speaking to her.",
+      "B": "He prevented me from speaking to her.",
+      "C": "He prevented me speaking to her."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct sentence.",
+    "options": {
+      "A": "She apologized for the inconvenience caused.",
+      "B": "She apologized of the inconvenience caused.",
+      "C": "She apologized about the inconvenience caused."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct sentence.",
+    "options": {
+      "A": "The committee have reached its decision.",
+      "B": "The committee has reached its decision.",
+      "C": "The committee have reached their decision."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the grammatically correct sentence.",
+    "options": {
+      "A": "He has no objection in lending you money.",
+      "B": "He has no objection to lending you money.",
+      "C": "He has no objection for lending you money."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Select the correct option.",
+    "options": {
+      "A": "She congratulated him for winning the prize.",
+      "B": "She congratulated him about winning the prize.",
+      "C": "She congratulated him on winning the prize."
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct sentence.",
+    "options": {
+      "A": "The police is investigating the matter.",
+      "B": "The police are investigating the matter.",
+      "C": "The police was investigating the matter."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct usage.",
+    "options": {
+      "A": "She was anxious for her exam results.",
+      "B": "She was anxious about her exam results.",
+      "C": "She was anxious of her exam results."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Select the grammatically correct sentence.",
+    "options": {
+      "A": "He refrained to comment on the issue.",
+      "B": "He refrained from commenting on the issue.",
+      "C": "He refrained for commenting on the issue."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct sentence.",
+    "options": {
+      "A": "She accused him for the negligence.",
+      "B": "She accused him of negligence.",
+      "C": "She accused him about negligence."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct form.",
+    "options": {
+      "A": "He had his house paint last year.",
+      "B": "He had his house painted last year.",
+      "C": "He had painted his house last year."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the grammatically correct option.",
+    "options": {
+      "A": "She is interested to learning photography.",
+      "B": "She is interested in learning photography.",
+      "C": "She is interested for learning photography."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Select the correct sentence.",
+    "options": {
+      "A": "He is capable for handling complex tasks.",
+      "B": "He is capable to handle complex tasks.",
+      "C": "He is capable of handling complex tasks."
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct usage.",
+    "options": {
+      "A": "She insisted that he should resign.",
+      "B": "She insisted that he resign.",
+      "C": "She insisted that he resigned."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct sentence.",
+    "options": {
+      "A": "The team is composed of five members.",
+      "B": "The team is comprised of five members.",
+      "C": "The team comprises of five members."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Choose the grammatically correct option.",
+    "options": {
+      "A": "She is fond for gardening.",
+      "B": "She is fond of gardening.",
+      "C": "She is fond with gardening."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Select the correct sentence.",
+    "options": {
+      "A": "He succeeded despite of all odds.",
+      "B": "He succeeded in spite all odds.",
+      "C": "He succeeded despite all odds."
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct option.",
+    "options": {
+      "A": "She was too confident that she ignored advice.",
+      "B": "She was so confident to ignore advice.",
+      "C": "She was too confident to ignore advice."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct sentence.",
+    "options": {
+      "A": "He is senior than all his colleagues.",
+      "B": "He is senior to all his colleagues.",
+      "C": "He is senior over all his colleagues."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct usage.",
+    "options": {
+      "A": "She has been working here from 2020.",
+      "B": "She has been working here since 2020.",
+      "C": "She is working here since 2020."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Select the grammatically correct sentence.",
+    "options": {
+      "A": "He objected her decision strongly.",
+      "B": "He objected to her decision strongly.",
+      "C": "He objected against her decision strongly."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct option.",
+    "options": {
+      "A": "She is keen on improve her skills.",
+      "B": "She is keen to improve her skills.",
+      "C": "She is keen for improving her skills."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct sentence.",
+    "options": {
+      "A": "He warned her to not disclose the information.",
+      "B": "He warned her not to disclose the information.",
+      "C": "He warned her not disclosing the information."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the grammatically correct option.",
+    "options": {
+      "A": "The reason why he failed is unclear.",
+      "B": "The reason because he failed is unclear.",
+      "C": "The reason for why he failed is unclear."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Select the correct sentence.",
+    "options": {
+      "A": "She has no intention to resign.",
+      "B": "She has no intention of resigning.",
+      "C": "She has no intention for resigning."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct usage.",
+    "options": {
+      "A": "He is proficient at coding.",
+      "B": "He is proficient in coding.",
+      "C": "He is proficient on coding."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Identify the grammatically correct sentence.",
+    "options": {
+      "A": "She is afraid from dogs.",
+      "B": "She is afraid of dogs.",
+      "C": "She is afraid with dogs."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct option.",
+    "options": {
+      "A": "He is capable to finishing the task.",
+      "B": "He is capable of finishing the task.",
+      "C": "He is capable for finishing the task."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Select the grammatically correct sentence.",
+    "options": {
+      "A": "She insisted that he should be present.",
+      "B": "She insisted that he be present.",
+      "C": "She insisted that he was present."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct sentence.",
+    "options": {
+      "A": "The teacher along with the students were late.",
+      "B": "The teacher along with the students was late.",
+      "C": "The teacher along with the students are late."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct usage.",
+    "options": {
+      "A": "She has been absent since three days.",
+      "B": "She has been absent for three days.",
+      "C": "She was absent since three days."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the grammatically correct sentence.",
+    "options": {
+      "A": "He succeeded in spite the resistance.",
+      "B": "He succeeded despite the resistance.",
+      "C": "He succeeded despite of the resistance."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Select the correct sentence.",
+    "options": {
+      "A": "She was too confident to seek help.",
+      "B": "She was so confident that she refused help.",
+      "C": "She was too confident that she refused help."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct option.",
+    "options": {
+      "A": "He is addicted with social media.",
+      "B": "He is addicted to social media.",
+      "C": "He is addicted for social media."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Identify the grammatically correct sentence.",
+    "options": {
+      "A": "She explained me the problem clearly.",
+      "B": "She explained the problem to me clearly.",
+      "C": "She explained about the problem to me clearly."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct usage.",
+    "options": {
+      "A": "He is responsible to managing the project.",
+      "B": "He is responsible for managing the project.",
+      "C": "He is responsible of managing the project."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Select the grammatically correct sentence.",
+    "options": {
+      "A": "She is keen to learning new languages.",
+      "B": "She is keen on learning new languages.",
+      "C": "She is keen for learning new languages."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct sentence.",
+    "options": {
+      "A": "He warned me not touching the wire.",
+      "B": "He warned me not to touch the wire.",
+      "C": "He warned me to not touch the wire."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct option.",
+    "options": {
+      "A": "She is confident to pass the interview.",
+      "B": "She is confident of passing the interview.",
+      "C": "She is confident for passing the interview."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the grammatically correct sentence.",
+    "options": {
+      "A": "The team are planning their strategy.",
+      "B": "The team is planning their strategy.",
+      "C": "The team were planning their strategy."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Select the correct sentence.",
+    "options": {
+      "A": "He refrained to making any promises.",
+      "B": "He refrained from making any promises.",
+      "C": "He refrained for making any promises."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct usage.",
+    "options": {
+      "A": "She is aware about the implications.",
+      "B": "She is aware of the implications.",
+      "C": "She is aware for the implications."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct sentence.",
+    "options": {
+      "A": "He is capable to solve the issue.",
+      "B": "He is capable of solving the issue.",
+      "C": "He is capable for solving the issue."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the grammatically correct sentence.",
+    "options": {
+      "A": "She has little patience with inefficiency.",
+      "B": "She has a little patience with inefficiency.",
+      "C": "She has the little patience with inefficiency."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Choose the grammatically correct sentence.",
+    "options": {
+      "A": "She is accustomed with the climate here.",
+      "B": "She is accustomed to the climate here.",
+      "C": "She is accustomed for the climate here."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct usage.",
+    "options": {
+      "A": "He is confident to handle the situation.",
+      "B": "He is confident of handling the situation.",
+      "C": "He is confident for handling the situation."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct sentence.",
+    "options": {
+      "A": "The police has arrested the suspect.",
+      "B": "The police have arrested the suspect.",
+      "C": "The police was arrested the suspect."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Select the grammatically correct option.",
+    "options": {
+      "A": "She insisted that he should attend the meeting.",
+      "B": "She insisted that he attends the meeting.",
+      "C": "She insisted that he attend the meeting."
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct sentence.",
+    "options": {
+      "A": "He succeeded despite the heavy opposition.",
+      "B": "He succeeded despite of the heavy opposition.",
+      "C": "He succeeded in spite the heavy opposition."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct usage.",
+    "options": {
+      "A": "She has been absent since a week.",
+      "B": "She has been absent for a week.",
+      "C": "She was absent since a week."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the grammatically correct sentence.",
+    "options": {
+      "A": "He is married with a teacher.",
+      "B": "He is married to a teacher.",
+      "C": "He is married by a teacher."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Select the correct sentence.",
+    "options": {
+      "A": "She apologized about the delay.",
+      "B": "She apologized for the delay.",
+      "C": "She apologized of the delay."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct option.",
+    "options": {
+      "A": "The team is confident of success.",
+      "B": "The team are confident of success.",
+      "C": "The team were confident of success."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Identify the grammatically correct sentence.",
+    "options": {
+      "A": "She warned him not disclosing the secret.",
+      "B": "She warned him not to disclose the secret.",
+      "C": "She warned him to not disclose the secret."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct usage.",
+    "options": {
+      "A": "He refrained to speak during the meeting.",
+      "B": "He refrained from speaking during the meeting.",
+      "C": "He refrained for speaking during the meeting."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Select the correct sentence.",
+    "options": {
+      "A": "She has no objection in working overtime.",
+      "B": "She has no objection to working overtime.",
+      "C": "She has no objection for working overtime."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the grammatically correct option.",
+    "options": {
+      "A": "He accused her for the mistake.",
+      "B": "He accused her of the mistake.",
+      "C": "He accused her about the mistake."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct sentence.",
+    "options": {
+      "A": "She is keen on improving her communication skills.",
+      "B": "She is keen to improving her communication skills.",
+      "C": "She is keen for improving her communication skills."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct usage.",
+    "options": {
+      "A": "He is capable to perform under pressure.",
+      "B": "He is capable for performing under pressure.",
+      "C": "He is capable of performing under pressure."
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "content": "Select the grammatically correct sentence.",
+    "options": {
+      "A": "The teacher along with the students are present.",
+      "B": "The teacher along with the students was present.",
+      "C": "The teacher along with the students were present."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct sentence.",
+    "options": {
+      "A": "She is confident to winning the competition.",
+      "B": "She is confident of winning the competition.",
+      "C": "She is confident for winning the competition."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct usage.",
+    "options": {
+      "A": "He succeeded in spite of all difficulties.",
+      "B": "He succeeded despite of all difficulties.",
+      "C": "He succeeded in spite all difficulties."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Choose the grammatically correct sentence.",
+    "options": {
+      "A": "She has little tolerance for inefficiency.",
+      "B": "She has a little tolerance for inefficiency.",
+      "C": "She has the little tolerance for inefficiency."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Select the correct sentence.",
+    "options": {
+      "A": "He warned me not touching the equipment.",
+      "B": "He warned me not to touch the equipment.",
+      "C": "He warned me to not touching the equipment."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct usage.",
+    "options": {
+      "A": "She is fond for classical literature.",
+      "B": "She is fond of classical literature.",
+      "C": "She is fond with classical literature."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct sentence.",
+    "options": {
+      "A": "He is married with his college sweetheart.",
+      "B": "He is married to his college sweetheart.",
+      "C": "He is married by his college sweetheart."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the grammatically correct option.",
+    "options": {
+      "A": "She insisted that the report is submitted today.",
+      "B": "She insisted that the report be submitted today.",
+      "C": "She insisted that the report was submitted today."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Select the correct sentence.",
+    "options": {
+      "A": "The team is planning its next move.",
+      "B": "The team are planning its next move.",
+      "C": "The team were planning its next move."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct usage.",
+    "options": {
+      "A": "She is aware about the risks involved.",
+      "B": "She is aware of the risks involved.",
+      "C": "She is aware for the risks involved."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Identify the grammatically correct sentence.",
+    "options": {
+      "A": "He refrained to give his opinion.",
+      "B": "He refrained from giving his opinion.",
+      "C": "He refrained for giving his opinion."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct sentence.",
+    "options": {
+      "A": "She is confident to face the challenge.",
+      "B": "She is confident of facing the challenge.",
+      "C": "She is confident for facing the challenge."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Select the correct usage.",
+    "options": {
+      "A": "He accused her for negligence.",
+      "B": "He accused her of negligence.",
+      "C": "He accused her about negligence."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the grammatically correct sentence.",
+    "options": {
+      "A": "She has no intention to change her decision.",
+      "B": "She has no intention of changing her decision.",
+      "C": "She has no intention for changing her decision."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct sentence.",
+    "options": {
+      "A": "He succeeded despite the odds.",
+      "B": "He succeeded despite of the odds.",
+      "C": "He succeeded in spite the odds."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct usage.",
+    "options": {
+      "A": "She is keen to learning advanced analytics.",
+      "B": "She is keen on learning advanced analytics.",
+      "C": "She is keen for learning advanced analytics."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Select the grammatically correct sentence.",
+    "options": {
+      "A": "The manager as well as his assistants were present.",
+      "B": "The manager as well as his assistants was present.",
+      "C": "The manager as well as his assistants are present."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct sentence.",
+    "options": {
+      "A": "She warned him to not enter the restricted area.",
+      "B": "She warned him not to enter the restricted area.",
+      "C": "She warned him not entering the restricted area."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct usage.",
+    "options": {
+      "A": "He is capable to doing multiple tasks.",
+      "B": "He is capable of doing multiple tasks.",
+      "C": "He is capable for doing multiple tasks."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the grammatically correct sentence.",
+    "options": {
+      "A": "She is confident to present the proposal.",
+      "B": "She is confident of presenting the proposal.",
+      "C": "She is confident for presenting the proposal."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Select the correct sentence.",
+    "options": {
+      "A": "He refrained from making any assumptions.",
+      "B": "He refrained to make any assumptions.",
+      "C": "He refrained for making any assumptions."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct usage.",
+    "options": {
+      "A": "She is fond with contemporary art.",
+      "B": "She is fond of contemporary art.",
+      "C": "She is fond for contemporary art."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Identify the grammatically correct sentence.",
+    "options": {
+      "A": "He accused the manager for bias.",
+      "B": "He accused the manager of bias.",
+      "C": "He accused the manager about bias."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct sentence.",
+    "options": {
+      "A": "She has little experience in leadership roles.",
+      "B": "She has a little experience in leadership roles.",
+      "C": "She has the little experience in leadership roles."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Select the correct usage.",
+    "options": {
+      "A": "He is aware about the implications of the decision.",
+      "B": "He is aware of the implications of the decision.",
+      "C": "He is aware for the implications of the decision."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the grammatically correct sentence.",
+    "options": {
+      "A": "She insisted that the policy be revised.",
+      "B": "She insisted that the policy is revised.",
+      "C": "She insisted that the policy was revised."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct sentence.",
+    "options": {
+      "A": "The team is confident about achieving its targets.",
+      "B": "The team are confident about achieving its targets.",
+      "C": "The team were confident about achieving its targets."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct usage.",
+    "options": {
+      "A": "She refrained to comment further.",
+      "B": "She refrained from commenting further.",
+      "C": "She refrained for commenting further."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Select the grammatically correct sentence.",
+    "options": {
+      "A": "He is capable to manage large teams.",
+      "B": "He is capable of managing large teams.",
+      "C": "He is capable for managing large teams."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct sentence.",
+    "options": {
+      "A": "She is keen to learning new frameworks.",
+      "B": "She is keen on learning new frameworks.",
+      "C": "She is keen for learning new frameworks."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Identify the correct usage.",
+    "options": {
+      "A": "He accused her for mismanagement.",
+      "B": "He accused her of mismanagement.",
+      "C": "He accused her about mismanagement."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the grammatically correct sentence.",
+    "options": {
+      "A": "She has no objection in accepting the offer.",
+      "B": "She has no objection to accepting the offer.",
+      "C": "She has no objection for accepting the offer."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Select the correct sentence.",
+    "options": {
+      "A": "He succeeded in spite the criticism.",
+      "B": "He succeeded despite the criticism.",
+      "C": "He succeeded despite of the criticism."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Choose the correct usage.",
+    "options": {
+      "A": "She is confident to handling negotiations.",
+      "B": "She is confident of handling negotiations.",
+      "C": "She is confident for handling negotiations."
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "content": "Identify the grammatically correct sentence.",
+    "options": {
+      "A": "She has little tolerance for incompetence.",
+      "B": "She has a little tolerance for incompetence.",
+      "C": "She has the little tolerance for incompetence."
+    },
+    "correct_answer": "A",
+    "marks": 1
+  }
 ]

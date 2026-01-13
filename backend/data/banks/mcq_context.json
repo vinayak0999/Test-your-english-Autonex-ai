@@ -1,52 +1,2202 @@
 [
-  { "content": "Ravi was feeling {blank1} because he had finally completed his project on {blank2}.", "options": {"blank1": {"A":"happy", "B":"sad", "C":"confused"}, "blank2": {"A":"time", "B":"accident", "C":"delay"}}, "correct_answer": "{\"blank1\": \"A\", \"blank2\": \"A\"}", "marks": 1 },
-  { "content": "The weather was extremely {blank1}, so everyone decided to stay {blank2}.", "options": {"blank1": {"A":"cold", "B":"brave", "C":"silent"}, "blank2": {"A":"indoors", "B":"outside", "C":"away"}}, "correct_answer": "{\"blank1\": \"A\", \"blank2\": \"A\"}", "marks": 1 },
-  { "content": "Meera rushed early to the airport to {blank1} her flight.", "options": {"blank1": {"A":"catch", "B":"throw", "C":"avoid"}}, "correct_answer": "{\"blank1\": \"A\"}", "marks": 1 },
-  { "content": "The teacher praised Rohan for his {blank1} work and his {blank2} attitude.", "options": {"blank1": {"A":"excellent", "B":"careless", "C":"slow"}, "blank2": {"A":"positive", "B":"negative", "C":"silent"}}, "correct_answer": "{\"blank1\": \"A\", \"blank2\": \"A\"}", "marks": 1 },
-  { "content": "During the storm, the lights {blank1} suddenly.", "options": {"blank1": {"A":"went out", "B":"appeared", "C":"rose"}}, "correct_answer": "{\"blank1\": \"A\"}", "marks": 1 },
-  { "content": "Rohit wanted to buy a new phone, but it was too {blank1} for his budget.", "options": {"blank1": {"A":"expensive", "B":"small", "C":"quiet"}}, "correct_answer": "{\"blank1\": \"A\"}", "marks": 1 },
-  { "content": "The children were excited to go on a school trip, and they {blank1} the bus early in the morning.", "options": {"blank1": {"A":"boarded", "B":"ignored", "C":"missed"}}, "correct_answer": "{\"blank1\": \"A\"}", "marks": 1 },
-  { "content": "Although the task seemed difficult, Priya was {blank1} that she could complete it on time.", "options": {"blank1": {"A":"confident", "B":"sleepy", "C":"silent"}}, "correct_answer": "{\"blank1\": \"A\"}", "marks": 1 },
-  { "content": "The restaurant was famous for its delicious food, so it was always {blank1} with customers.", "options": {"blank1": {"A":"crowded", "B":"empty", "C":"broken"}}, "correct_answer": "{\"blank1\": \"A\"}", "marks": 1 },
-  { "content": "Arjun forgot to bring an umbrella, so he got completely {blank1} in the rain.", "options": {"blank1": {"A":"soaked", "B":"dry", "C":"calm"}}, "correct_answer": "{\"blank1\": \"A\"}", "marks": 1 },
-  { "content": "Neha practiced singing every day, and her hard work {blank1}.", "options": {"blank1": {"A":"paid off", "B":"fell apart", "C":"gave up"}}, "correct_answer": "{\"blank1\": \"A\"}", "marks": 1 },
-  { "content": "The scientist carefully recorded the {blank1} of the experiment in his notebook.", "options": {"blank1": {"A":"results", "B":"accidents", "C":"holidays"}}, "correct_answer": "{\"blank1\": \"A\"}", "marks": 1 },
-  { "content": "During the festival, the streets were beautifully {blank1} with colorful lights.", "options": {"blank1": {"A":"decorated", "B":"broken", "C":"washed"}}, "correct_answer": "{\"blank1\": \"A\"}", "marks": 1 },
-  { "content": "Aman was {blank1} because he misplaced an important document.", "options": {"blank1": {"A":"worried", "B":"excited", "C":"bored"}}, "correct_answer": "{\"blank1\": \"A\"}", "marks": 1 },
-  { "content": "The coach advised the players to {blank1} regularly to improve their stamina.", "options": {"blank1": {"A":"exercise", "B":"sleep", "C":"argue"}}, "correct_answer": "{\"blank1\": \"A\"}", "marks": 1 },
-  { "content": "The students were asked to {blank1} their projects before the final date.", "options": {"blank1": {"A":"submit", "B":"forget", "C":"freeze"}}, "correct_answer": "{\"blank1\": \"A\"}", "marks": 1 },
-  { "content": "Sneha bought a gift for her friend because it was her birthday {blank1}.", "options": {"blank1": {"A":"today", "B":"never", "C":"yesterday"}}, "correct_answer": "{\"blank1\": \"A\"}", "marks": 1 },
-  { "content": "The doctor advised Ramesh to drink plenty of water to stay {blank1} during summer.", "options": {"blank1": {"A":"hydrated", "B":"hungry", "C":"sleepy"}}, "correct_answer": "{\"blank1\": \"A\"}", "marks": 1 },
-  { "content": "Traffic was heavy in the morning, so it took them longer than usual to {blank1} the office.", "options": {"blank1": {"A":"reach", "B":"avoid", "C":"break"}}, "correct_answer": "{\"blank1\": \"A\"}", "marks": 1 },
-  { "content": "Although the team was losing, they continued to play with great {blank1} and teamwork.", "options": {"blank1": {"A":"determination", "B":"fear", "C":"confusion"}}, "correct_answer": "{\"blank1\": \"A\"}", "marks": 1 },
-  { "content": "The manager appreciated the {blank1} effort put in by the entire {blank2}.", "options": {"blank1": {"A":"collective", "B":"lazy", "C":"random"}, "blank2": {"A":"team", "B":"crowd", "C":"street"}}, "correct_answer": "{\"blank1\": \"A\", \"blank2\": \"A\"}", "marks": 1 },
-  { "content": "Riya packed her lunch because she knew she wouldn't have {blank1} to go out during the {blank2}.", "options": {"blank1": {"A":"time", "B":"money", "C":"reason"}, "blank2": {"A":"break", "B":"storm", "C":"night"}}, "correct_answer": "{\"blank1\": \"A\", \"blank2\": \"A\"}", "marks": 1 },
-  { "content": "The old man walked slowly because he was feeling {blank1} after the long journey.", "options": {"blank1": {"A":"tired", "B":"excited", "C":"powerful"}}, "correct_answer": "{\"blank1\": \"A\"}", "marks": 1 },
-  { "content": "The museum was filled with {blank1} artifacts from different {blank2}.", "options": {"blank1": {"A":"ancient", "B":"broken", "C":"fake"}, "blank2": {"A":"cultures", "B":"restaurants", "C":"animals"}}, "correct_answer": "{\"blank1\": \"A\", \"blank2\": \"A\"}", "marks": 1 },
-  { "content": "The new employee impressed everyone with her {blank1} manners and {blank2} communication skills.", "options": {"blank1": {"A":"polite", "B":"rude", "C":"loud"}, "blank2": {"A":"excellent", "B":"boring", "C":"weak"}}, "correct_answer": "{\"blank1\": \"A\", \"blank2\": \"A\"}", "marks": 1 },
-  { "content": "Karan decided to take a short {blank1} because he had been working continuously for {blank2} hours.", "options": {"blank1": {"A":"break", "B":"meal", "C":"walk"}, "blank2": {"A":"five", "B":"fifteen", "C":"one"}}, "correct_answer": "{\"blank1\": \"A\", \"blank2\": \"A\"}", "marks": 1 },
-  { "content": "When the bell rang, the students quickly {blank1} their books and left the classroom.", "options": {"blank1": {"A":"packed", "B":"threw", "C":"hid"}}, "correct_answer": "{\"blank1\": \"A\"}", "marks": 1 },
-  { "content": "The chef prepared a {blank1} meal using fresh ingredients from the {blank2}.", "options": {"blank1": {"A":"delicious", "B":"boring", "C":"cold"}, "blank2": {"A":"market", "B":"garage", "C":"office"}}, "correct_answer": "{\"blank1\": \"A\", \"blank2\": \"A\"}", "marks": 1 },
-  { "content": "Before leaving the house, Tanya made sure to {blank1} all the windows.", "options": {"blank1": {"A":"close", "B":"break", "C":"paint"}}, "correct_answer": "{\"blank1\": \"A\"}", "marks": 1 },
-  { "content": "The puppy looked {blank1} at the children who were playing in the garden.", "options": {"blank1": {"A":"curiously", "B":"angrily", "C":"silently"}}, "correct_answer": "{\"blank1\": \"A\"}", "marks": 1 },
-  { "content": "Rohan couldn't find his keys because he had {blank1} them in his other bag.", "options": {"blank1": {"A":"kept", "B":"lost", "C":"sold"}}, "correct_answer": "{\"blank1\": \"A\"}", "marks": 1 },
-  { "content": "The exam was {blank1}, but most students were able to {blank2} it.", "options": {"blank1": {"A":"difficult", "B":"easy", "C":"short"}, "blank2": {"A":"finish", "B":"cancel", "C":"forget"}}, "correct_answer": "{\"blank1\": \"A\", \"blank2\": \"A\"}", "marks": 1 },
-  { "content": "The festival was {blank1} by people from all across the {blank2}.", "options": {"blank1": {"A":"attended", "B":"ignored", "C":"avoided"}, "blank2": {"A":"city", "B":"planet", "C":"ocean"}}, "correct_answer": "{\"blank1\": \"A\", \"blank2\": \"A\"}", "marks": 1 },
-  { "content": "The librarian asked the students to remain {blank1} while inside the {blank2}.", "options": {"blank1": {"A":"quiet", "B":"noisy", "C":"excited"}, "blank2": {"A":"library", "B":"forest", "C":"kitchen"}}, "correct_answer": "{\"blank1\": \"A\", \"blank2\": \"A\"}", "marks": 1 },
-  { "content": "Sanjay was feeling {blank1} after running for {blank2} minutes.", "options": {"blank1": {"A":"exhausted", "B":"joyful", "C":"confused"}, "blank2": {"A":"20", "B":"2", "C":"1"}}, "correct_answer": "{\"blank1\": \"A\", \"blank2\": \"A\"}", "marks": 1 },
-  { "content": "The artist carefully {blank1} each stroke to bring the painting to life.", "options": {"blank1": {"A":"added", "B":"erased", "C":"ignored"}}, "correct_answer": "{\"blank1\": \"A\"}", "marks": 1 },
-  { "content": "After months of training, the team felt fully {blank1} for the national championship.", "options": {"blank1": {"A":"prepared", "B":"afraid", "C":"distracted"}}, "correct_answer": "{\"blank1\": \"A\"}", "marks": 1 },
-  { "content": "Due to heavy rainfall, the match was {blank1} for safety reasons.", "options": {"blank1": {"A":"postponed", "B":"started", "C":"celebrated"}}, "correct_answer": "{\"blank1\": \"A\"}", "marks": 1 },
-  { "content": "Rita looked at the sky and noticed dark clouds {blank1}.", "options": {"blank1": {"A":"forming", "B":"melting", "C":"flying"}}, "correct_answer": "{\"blank1\": \"A\"}", "marks": 1 },
-  { "content": "The children were {blank1} to hear that a magic show was arranged at the school.", "options": {"blank1": {"A":"thrilled", "B":"bored", "C":"angry"}}, "correct_answer": "{\"blank1\": \"A\"}", "marks": 1 },
-  { "content": "The farmer woke up early to {blank1} the crops before sunrise.", "options": {"blank1": {"A":"water", "B":"burn", "C":"ignore"}}, "correct_answer": "{\"blank1\": \"A\"}", "marks": 1 },
-  { "content": "The meeting was {blank1} by the CEO, who made several important {blank2}.", "options": {"blank1": {"A":"attended", "B":"interrupted", "C":"abandoned"}, "blank2": {"A":"announcements", "B":"cookies", "C":"guesses"}}, "correct_answer": "{\"blank1\": \"A\", \"blank2\": \"A\"}", "marks": 1 },
-  { "content": "The roads were slippery, so drivers had to be extremely {blank1}.", "options": {"blank1": {"A":"careful", "B":"fast", "C":"angry"}}, "correct_answer": "{\"blank1\": \"A\"}", "marks": 1 },
-  { "content": "Mohan finally {blank1} the puzzle after trying for several hours.", "options": {"blank1": {"A":"solved", "B":"forgot", "C":"broke"}}, "correct_answer": "{\"blank1\": \"A\"}", "marks": 1 },
-  { "content": "The players celebrated their victory with great {blank1} and {blank2}.", "options": {"blank1": {"A":"joy", "B":"fear", "C":"silence"}, "blank2": {"A":"excitement", "B":"loss", "C":"confusion"}}, "correct_answer": "{\"blank1\": \"A\", \"blank2\": \"A\"}", "marks": 1 },
-  { "content": "The shopkeeper offered a {blank1} discount to attract more customers.", "options": {"blank1": {"A":"special", "B":"tiny", "C":"random"}}, "correct_answer": "{\"blank1\": \"A\"}", "marks": 1 },
-  { "content": "The doctor advised the patient to take the medicine {blank1} times a day.", "options": {"blank1": {"A":"two", "B":"ten", "C":"zero"}}, "correct_answer": "{\"blank1\": \"A\"}", "marks": 1 },
-  { "content": "The detective looked for clues at the crime scene but found {blank1}.", "options": {"blank1": {"A":"nothing", "B":"everything", "C":"money"}}, "correct_answer": "{\"blank1\": \"A\"}", "marks": 1 },
-  { "content": "Everyone appreciated the {blank1} speech given by the young {blank2}.", "options": {"blank1": {"A":"powerful", "B":"boring", "C":"empty"}, "blank2": {"A":"leader", "B":"painter", "C":"driver"}}, "correct_answer": "{\"blank1\": \"A\", \"blank2\": \"A\"}", "marks": 1 },
-  { "content": "The new software update promises to {blank1} performance and reduce {blank2}.", "options": {"blank1": {"A":"improve", "B":"destroy", "C":"weaken"}, "blank2": {"A":"errors", "B":"speed", "C":"colors"}}, "correct_answer": "{\"blank1\": \"A\", \"blank2\": \"A\"}", "marks": 1 }
+  {
+    "id": 1,
+    "content": "Choose the option that best fits the context: \"Her explanation was so _____ that even experts struggled to follow it.\"",
+    "options": {
+      "A": "lucid",
+      "B": "opaque",
+      "C": "methodical"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 2,
+    "content": "Select the most appropriate word: \"The manager's _____ response diffused the tense situation.\"",
+    "options": {
+      "A": "abrasive",
+      "B": "measured",
+      "C": "impulsive"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 3,
+    "content": "Choose the correct option: \"His apology sounded _____, as if rehearsed multiple times.\"",
+    "options": {
+      "A": "contrite",
+      "B": "perfunctory",
+      "C": "earnest"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 4,
+    "content": "Select the word that best fits: \"The committee's decision was met with _____ criticism from all sides.\"",
+    "options": {
+      "A": "sporadic",
+      "B": "vehement",
+      "C": "tentative"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 5,
+    "content": "Choose the option that completes the sentence logically: \"She remained _____ about the outcome, refusing to speculate.\"",
+    "options": {
+      "A": "reticent",
+      "B": "elated",
+      "C": "vociferous"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 6,
+    "content": "Pick the best fit: \"The proposal was rejected not for its ambition, but for its _____ assumptions.\"",
+    "options": {
+      "A": "tenuous",
+      "B": "robust",
+      "C": "pragmatic"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 7,
+    "content": "Choose the correct word: \"His sudden generosity seemed _____, given his earlier indifference.\"",
+    "options": {
+      "A": "congruent",
+      "B": "anomalous",
+      "C": "predictable"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 8,
+    "content": "Select the most appropriate option: \"The journalist's tone was _____, subtly questioning the official narrative.\"",
+    "options": {
+      "A": "credulous",
+      "B": "incisive",
+      "C": "apathetic"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 9,
+    "content": "Choose the word that best completes the sentence: \"Her argument gained strength from its _____ reasoning.\"",
+    "options": {
+      "A": "circuitous",
+      "B": "specious",
+      "C": "coherent"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "id": 10,
+    "content": "Select the correct option: \"The CEO's silence was interpreted as _____ rather than uncertainty.\"",
+    "options": {
+      "A": "calculation",
+      "B": "confusion",
+      "C": "hesitation"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 11,
+    "content": "Choose the best fit: \"The team's success was _____ by internal disagreements.\"",
+    "options": {
+      "A": "undermined",
+      "B": "facilitated",
+      "C": "accelerated"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 12,
+    "content": "Pick the appropriate word: \"His praise felt _____, lacking genuine enthusiasm.\"",
+    "options": {
+      "A": "effusive",
+      "B": "tepid",
+      "C": "exuberant"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 13,
+    "content": "Choose the correct option: \"The policy was intended to be flexible, but proved _____ in practice.\"",
+    "options": {
+      "A": "adaptable",
+      "B": "rigid",
+      "C": "elastic"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 14,
+    "content": "Select the word that fits the context: \"She offered a _____ rebuttal, addressing each point calmly.\"",
+    "options": {
+      "A": "measured",
+      "B": "haphazard",
+      "C": "erratic"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 15,
+    "content": "Choose the most appropriate option: \"The evidence was _____, leaving room for doubt.\"",
+    "options": {
+      "A": "conclusive",
+      "B": "ambiguous",
+      "C": "definitive"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 16,
+    "content": "Pick the correct word: \"His remarks were intended as humor but came across as _____.\"",
+    "options": {
+      "A": "acerbic",
+      "B": "endearing",
+      "C": "lighthearted"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 17,
+    "content": "Select the best fit: \"The startup adopted a _____ approach, prioritizing speed over perfection.\"",
+    "options": {
+      "A": "cautious",
+      "B": "tentative",
+      "C": "expedient"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "id": 18,
+    "content": "Choose the correct option: \"Her decision was driven more by _____ than by logic.\"",
+    "options": {
+      "A": "impulse",
+      "B": "deliberation",
+      "C": "foresight"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 19,
+    "content": "Select the most appropriate word: \"The lecture was informative but overly _____, losing the audience.\"",
+    "options": {
+      "A": "concise",
+      "B": "prolix",
+      "C": "succinct"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 20,
+    "content": "Choose the option that best fits: \"His optimism seemed _____ in light of the recent setbacks.\"",
+    "options": {
+      "A": "justified",
+      "B": "misplaced",
+      "C": "prudent"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 21,
+    "content": "Pick the correct word: \"The diplomat's response was deliberately _____ to avoid escalation.\"",
+    "options": {
+      "A": "provocative",
+      "B": "neutral",
+      "C": "incendiary"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 22,
+    "content": "Choose the best fit: \"The novel offers a _____ critique of modern society.\"",
+    "options": {
+      "A": "scathing",
+      "B": "superficial",
+      "C": "incidental"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 23,
+    "content": "Select the correct option: \"Her explanation clarified the issue without being _____.\"",
+    "options": {
+      "A": "verbose",
+      "B": "concise",
+      "C": "elliptical"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 24,
+    "content": "Choose the most appropriate word: \"The decision was made in a _____ manner, ignoring dissent.\"",
+    "options": {
+      "A": "collaborative",
+      "B": "unilateral",
+      "C": "consultative"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 25,
+    "content": "Pick the best fit: \"The report's conclusions were _____ by insufficient data.\"",
+    "options": {
+      "A": "reinforced",
+      "B": "compromised",
+      "C": "validated"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 26,
+    "content": "Choose the correct option: \"His response was _____, revealing more than intended.\"",
+    "options": {
+      "A": "guarded",
+      "B": "candid",
+      "C": "circumspect"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 27,
+    "content": "Select the word that fits best: \"The project advanced in a _____ fashion, without a clear plan.\"",
+    "options": {
+      "A": "systematic",
+      "B": "haphazard",
+      "C": "methodical"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 28,
+    "content": "Choose the most appropriate option: \"Her silence was _____ as disapproval.\"",
+    "options": {
+      "A": "construed",
+      "B": "obscured",
+      "C": "mitigated"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 29,
+    "content": "Pick the correct word: \"The agreement was reached after _____ negotiations.\"",
+    "options": {
+      "A": "protracted",
+      "B": "fleeting",
+      "C": "perfunctory"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 30,
+    "content": "Choose the best fit: \"The candidate's answer was technically correct but _____ to the question.\"",
+    "options": {
+      "A": "pertinent",
+      "B": "tangential",
+      "C": "applicable"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 31,
+    "content": "Select the correct option: \"The initiative was praised for its _____ impact.\"",
+    "options": {
+      "A": "negligible",
+      "B": "incremental",
+      "C": "transformative"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "id": 32,
+    "content": "Choose the appropriate word: \"His confidence bordered on _____.\"",
+    "options": {
+      "A": "humility",
+      "B": "arrogance",
+      "C": "caution"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 33,
+    "content": "Pick the best fit: \"The clarification helped _____ the misunderstanding.\"",
+    "options": {
+      "A": "exacerbate",
+      "B": "perpetuate",
+      "C": "resolve"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "id": 34,
+    "content": "Choose the correct option: \"The plan was ambitious but _____ given the constraints.\"",
+    "options": {
+      "A": "feasible",
+      "B": "improbable",
+      "C": "untenable"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 35,
+    "content": "Select the word that fits best: \"Her remarks were _____, avoiding direct criticism.\"",
+    "options": {
+      "A": "blunt",
+      "B": "circumspect",
+      "C": "caustic"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 36,
+    "content": "Choose the most appropriate option: \"The decision was _____ by short-term considerations.\"",
+    "options": {
+      "A": "guided",
+      "B": "undermined",
+      "C": "derailed"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 37,
+    "content": "Pick the correct word: \"The speaker's argument was _____ by contradictory evidence.\"",
+    "options": {
+      "A": "bolstered",
+      "B": "invalidated",
+      "C": "supported"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 38,
+    "content": "Choose the best fit: \"The proposal was dismissed as _____ and impractical.\"",
+    "options": {
+      "A": "visionary",
+      "B": "utopian",
+      "C": "workable"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 39,
+    "content": "Select the correct option: \"Her response was _____, leaving little room for misinterpretation.\"",
+    "options": {
+      "A": "ambiguous",
+      "B": "unequivocal",
+      "C": "vague"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 40,
+    "content": "Choose the word that fits the context: \"The company's decline was _____, the result of years of mismanagement.\"",
+    "options": {
+      "A": "sudden",
+      "B": "inevitable",
+      "C": "fortuitous"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 41,
+    "content": "Pick the best option: \"His criticism, though harsh, was _____ fair.\"",
+    "options": {
+      "A": "nonetheless",
+      "B": "therefore",
+      "C": "otherwise"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 42,
+    "content": "Choose the correct word: \"The judge's ruling was based on a _____ interpretation of the law.\"",
+    "options": {
+      "A": "literal",
+      "B": "capricious",
+      "C": "arbitrary"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 43,
+    "content": "Select the most appropriate option: \"The artist's work was praised for its _____ originality.\"",
+    "options": {
+      "A": "derivative",
+      "B": "ostensible",
+      "C": "unmistakable"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "id": 44,
+    "content": "Choose the best fit: \"The meeting ended without a _____ resolution.\"",
+    "options": {
+      "A": "decisive",
+      "B": "tentative",
+      "C": "provisional"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 45,
+    "content": "Pick the correct option: \"Her enthusiasm was _____ by repeated setbacks.\"",
+    "options": {
+      "A": "rekindled",
+      "B": "dampened",
+      "C": "amplified"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 46,
+    "content": "Choose the word that fits best: \"The explanation was clear, _____, and persuasive.\"",
+    "options": {
+      "A": "concise",
+      "B": "rambling",
+      "C": "diffuse"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 47,
+    "content": "Select the correct option: \"His behavior was _____ with the company's stated values.\"",
+    "options": {
+      "A": "aligned",
+      "B": "discordant",
+      "C": "incompatible"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 48,
+    "content": "Choose the best fit: \"The policy change was met with _____ approval.\"",
+    "options": {
+      "A": "lukewarm",
+      "B": "enthusiastic",
+      "C": "unanimous"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 49,
+    "content": "Pick the correct word: \"The solution appeared elegant but proved _____ in execution.\"",
+    "options": {
+      "A": "effective",
+      "B": "impractical",
+      "C": "efficient"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 50,
+    "content": "Choose the most appropriate option: \"Her caution was _____, given the uncertain circumstances.\"",
+    "options": {
+      "A": "warranted",
+      "B": "misguided",
+      "C": "excessive"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 51,
+    "content": "Choose the word that best fits the context: \"The committee reached a _____ consensus after hours of debate.\"",
+    "options": {
+      "A": "fragile",
+      "B": "fractured",
+      "C": "discordant"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 52,
+    "content": "Select the most appropriate option: \"His explanation was _____, addressing the issue without unnecessary detail.\"",
+    "options": {
+      "A": "verbose",
+      "B": "concise",
+      "C": "diffuse"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 53,
+    "content": "Choose the correct word: \"The CEO's remarks were _____, carefully avoiding commitment.\"",
+    "options": {
+      "A": "equivocal",
+      "B": "emphatic",
+      "C": "categorical"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 54,
+    "content": "Pick the best fit: \"The project failed due to _____ planning rather than lack of resources.\"",
+    "options": {
+      "A": "meticulous",
+      "B": "inadequate",
+      "C": "deliberate"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 55,
+    "content": "Choose the option that completes the sentence logically: \"Her reaction was _____, revealing genuine surprise.\"",
+    "options": {
+      "A": "feigned",
+      "B": "spontaneous",
+      "C": "calculated"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 56,
+    "content": "Select the most appropriate word: \"The report offers a _____ assessment of the situation.\"",
+    "options": {
+      "A": "balanced",
+      "B": "partisan",
+      "C": "skewed"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 57,
+    "content": "Choose the correct option: \"His reluctance to speak was _____ as guilt.\"",
+    "options": {
+      "A": "misread",
+      "B": "interpreted",
+      "C": "confounded"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 58,
+    "content": "Pick the best fit: \"The argument rested on a _____ distinction between correlation and causation.\"",
+    "options": {
+      "A": "subtle",
+      "B": "trivial",
+      "C": "negligible"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 59,
+    "content": "Choose the most appropriate option: \"The policy was introduced as a _____ measure until further review.\"",
+    "options": {
+      "A": "temporary",
+      "B": "definitive",
+      "C": "permanent"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 60,
+    "content": "Select the correct word: \"Her optimism was _____ by the steadily worsening data.\"",
+    "options": {
+      "A": "bolstered",
+      "B": "eroded",
+      "C": "validated"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 61,
+    "content": "Choose the best fit: \"The diplomat issued a _____ statement to avoid provoking tensions.\"",
+    "options": {
+      "A": "measured",
+      "B": "incendiary",
+      "C": "provocative"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 62,
+    "content": "Pick the correct option: \"The plan was criticized as _____ and lacking originality.\"",
+    "options": {
+      "A": "innovative",
+      "B": "derivative",
+      "C": "novel"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 63,
+    "content": "Choose the word that best fits: \"The witness gave a _____ account, omitting key details.\"",
+    "options": {
+      "A": "comprehensive",
+      "B": "selective",
+      "C": "thorough"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 64,
+    "content": "Select the most appropriate option: \"His enthusiasm was _____ by repeated criticism.\"",
+    "options": {
+      "A": "rekindled",
+      "B": "sustained",
+      "C": "diminished"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "id": 65,
+    "content": "Choose the correct word: \"The proposal was met with _____ skepticism.\"",
+    "options": {
+      "A": "guarded",
+      "B": "unquestioning",
+      "C": "naive"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 66,
+    "content": "Pick the best fit: \"The manager's silence was _____ consent.\"",
+    "options": {
+      "A": "assumed to be",
+      "B": "mistaken for",
+      "C": "dismissed as"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 67,
+    "content": "Choose the most appropriate option: \"The explanation was technically accurate but _____ to the audience.\"",
+    "options": {
+      "A": "accessible",
+      "B": "opaque",
+      "C": "illuminating"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 68,
+    "content": "Select the correct word: \"The research findings were _____ by subsequent studies.\"",
+    "options": {
+      "A": "corroborated",
+      "B": "contradicted",
+      "C": "undermined"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 69,
+    "content": "Choose the best fit: \"Her tone was _____, neither hostile nor overly friendly.\"",
+    "options": {
+      "A": "neutral",
+      "B": "caustic",
+      "C": "effusive"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 70,
+    "content": "Pick the correct option: \"The policy change was _____ received by stakeholders.\"",
+    "options": {
+      "A": "enthusiastically",
+      "B": "uniformly",
+      "C": "cautiously"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "id": 71,
+    "content": "Choose the word that fits best: \"The decision was _____ by external pressure.\"",
+    "options": {
+      "A": "precipitated",
+      "B": "delayed",
+      "C": "neutralized"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 72,
+    "content": "Select the most appropriate option: \"The novel's ending was intentionally _____, inviting interpretation.\"",
+    "options": {
+      "A": "conclusive",
+      "B": "ambiguous",
+      "C": "explicit"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 73,
+    "content": "Choose the correct word: \"His claim was dismissed as _____ speculation.\"",
+    "options": {
+      "A": "groundless",
+      "B": "substantiated",
+      "C": "empirical"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 74,
+    "content": "Pick the best fit: \"The committee adopted a _____ stance, refusing to compromise.\"",
+    "options": {
+      "A": "flexible",
+      "B": "unyielding",
+      "C": "conciliatory"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 75,
+    "content": "Choose the most appropriate option: \"The explanation was _____ and lacked coherence.\"",
+    "options": {
+      "A": "lucid",
+      "B": "rambling",
+      "C": "structured"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 76,
+    "content": "Select the correct word: \"Her efforts were _____ by circumstances beyond her control.\"",
+    "options": {
+      "A": "thwarted",
+      "B": "assisted",
+      "C": "expedited"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 77,
+    "content": "Choose the best fit: \"The candidate gave a _____ performance, exceeding expectations.\"",
+    "options": {
+      "A": "mediocre",
+      "B": "stellar",
+      "C": "adequate"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 78,
+    "content": "Pick the correct option: \"The criticism was harsh but _____ fair.\"",
+    "options": {
+      "A": "therefore",
+      "B": "nonetheless",
+      "C": "otherwise"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 79,
+    "content": "Choose the word that fits best: \"The agreement was reached after _____ deliberation.\"",
+    "options": {
+      "A": "hasty",
+      "B": "prolonged",
+      "C": "cursory"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 80,
+    "content": "Select the most appropriate option: \"His remarks were _____, revealing a lack of preparation.\"",
+    "options": {
+      "A": "improvised",
+      "B": "polished",
+      "C": "rehearsed"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 81,
+    "content": "Choose the correct word: \"The study provides _____ evidence supporting the theory.\"",
+    "options": {
+      "A": "anecdotal",
+      "B": "compelling",
+      "C": "tenuous"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 82,
+    "content": "Pick the best fit: \"The manager's decision was _____ but ultimately effective.\"",
+    "options": {
+      "A": "controversial",
+      "B": "ineffectual",
+      "C": "redundant"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 83,
+    "content": "Choose the most appropriate option: \"The tone of the memo was _____ and reassuring.\"",
+    "options": {
+      "A": "stern",
+      "B": "conciliatory",
+      "C": "abrasive"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 84,
+    "content": "Select the correct word: \"The problem was _____ by a lack of clear communication.\"",
+    "options": {
+      "A": "alleviated",
+      "B": "exacerbated",
+      "C": "resolved"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 85,
+    "content": "Choose the best fit: \"Her response was _____, carefully avoiding direct blame.\"",
+    "options": {
+      "A": "tactful",
+      "B": "blunt",
+      "C": "acerbic"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 86,
+    "content": "Pick the correct option: \"The solution seemed _____ at first glance but proved effective.\"",
+    "options": {
+      "A": "counterintuitive",
+      "B": "obvious",
+      "C": "conventional"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 87,
+    "content": "Choose the word that fits best: \"The investigation yielded _____ results.\"",
+    "options": {
+      "A": "inconclusive",
+      "B": "definitive",
+      "C": "unambiguous"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 88,
+    "content": "Select the most appropriate option: \"The policy aims to _____ unintended consequences.\"",
+    "options": {
+      "A": "mitigate",
+      "B": "exacerbate",
+      "C": "provoke"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 89,
+    "content": "Choose the correct word: \"His explanation was _____, lacking clarity.\"",
+    "options": {
+      "A": "lucid",
+      "B": "opaque",
+      "C": "transparent"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 90,
+    "content": "Pick the best fit: \"The compromise was _____ acceptable to both parties.\"",
+    "options": {
+      "A": "mutually",
+      "B": "exclusively",
+      "C": "partially"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 91,
+    "content": "Choose the most appropriate option: \"The criticism was _____ and focused on minor issues.\"",
+    "options": {
+      "A": "petty",
+      "B": "constructive",
+      "C": "insightful"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 92,
+    "content": "Select the correct word: \"Her remarks were _____ interpreted as a challenge.\"",
+    "options": {
+      "A": "erroneously",
+      "B": "accurately",
+      "C": "deliberately"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 93,
+    "content": "Choose the best fit: \"The findings were _____ with previous research.\"",
+    "options": {
+      "A": "consistent",
+      "B": "incompatible",
+      "C": "irrelevant"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 94,
+    "content": "Pick the correct option: \"The response was _____ swift, surprising observers.\"",
+    "options": {
+      "A": "uncharacteristically",
+      "B": "habitually",
+      "C": "predictably"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 95,
+    "content": "Choose the word that fits best: \"The explanation was _____, leaving no doubt.\"",
+    "options": {
+      "A": "equivocal",
+      "B": "unequivocal",
+      "C": "ambiguous"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 96,
+    "content": "Select the most appropriate option: \"The project was abandoned due to _____ costs.\"",
+    "options": {
+      "A": "manageable",
+      "B": "prohibitive",
+      "C": "marginal"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 97,
+    "content": "Choose the correct word: \"His manner was _____, putting everyone at ease.\"",
+    "options": {
+      "A": "affable",
+      "B": "aloof",
+      "C": "abrasive"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 98,
+    "content": "Pick the best fit: \"The criticism was _____ harsh and unnecessary.\"",
+    "options": {
+      "A": "unduly",
+      "B": "barely",
+      "C": "scarcely"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 99,
+    "content": "Choose the most appropriate option: \"The evidence was _____ enough to warrant further investigation.\"",
+    "options": {
+      "A": "insubstantial",
+      "B": "compelling",
+      "C": "trivial"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 100,
+    "content": "Select the correct word: \"Her skepticism was _____ by past experiences.\"",
+    "options": {
+      "A": "informed",
+      "B": "fabricated",
+      "C": "dismissed"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 101,
+    "content": "Choose the word that best fits the context: \"The proposal was dismissed as _____, offering no practical solutions.\"",
+    "options": {
+      "A": "visionary",
+      "B": "speculative",
+      "C": "actionable"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 102,
+    "content": "Select the most appropriate option: \"Her explanation was _____, leaving listeners confused.\"",
+    "options": {
+      "A": "lucid",
+      "B": "coherent",
+      "C": "convoluted"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "id": 103,
+    "content": "Choose the correct word: \"The committee adopted a _____ approach, delaying any firm decision.\"",
+    "options": {
+      "A": "decisive",
+      "B": "cautious",
+      "C": "precipitate"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 104,
+    "content": "Pick the best fit: \"His remarks were _____, lacking any subtlety.\"",
+    "options": {
+      "A": "circumspect",
+      "B": "tactful",
+      "C": "blunt"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "id": 105,
+    "content": "Choose the option that completes the sentence logically: \"The findings were _____ with earlier conclusions.\"",
+    "options": {
+      "A": "consistent",
+      "B": "discordant",
+      "C": "irrelevant"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 106,
+    "content": "Select the most appropriate word: \"The policy aims to _____ long-term sustainability.\"",
+    "options": {
+      "A": "jeopardize",
+      "B": "undermine",
+      "C": "promote"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "id": 107,
+    "content": "Choose the correct option: \"Her silence was _____ as agreement.\"",
+    "options": {
+      "A": "construed",
+      "B": "obscured",
+      "C": "mitigated"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 108,
+    "content": "Pick the best fit: \"The lecture was informative but excessively _____, testing the audience's patience.\"",
+    "options": {
+      "A": "succinct",
+      "B": "prolix",
+      "C": "concise"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 109,
+    "content": "Choose the correct word: \"The team's victory was _____ by internal conflicts.\"",
+    "options": {
+      "A": "overshadowed",
+      "B": "celebrated",
+      "C": "amplified"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 110,
+    "content": "Select the most appropriate option: \"His apology appeared _____, lacking genuine remorse.\"",
+    "options": {
+      "A": "sincere",
+      "B": "contrite",
+      "C": "perfunctory"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "id": 111,
+    "content": "Choose the word that best fits: \"The solution was elegant but ultimately _____ under real-world conditions.\"",
+    "options": {
+      "A": "effective",
+      "B": "impractical",
+      "C": "robust"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 112,
+    "content": "Pick the correct option: \"The criticism was _____ fair, though harsh.\"",
+    "options": {
+      "A": "nevertheless",
+      "B": "therefore",
+      "C": "otherwise"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 113,
+    "content": "Choose the most appropriate word: \"Her optimism was _____ by recent failures.\"",
+    "options": {
+      "A": "bolstered",
+      "B": "dampened",
+      "C": "amplified"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 114,
+    "content": "Select the correct option: \"The argument was _____ by a lack of evidence.\"",
+    "options": {
+      "A": "strengthened",
+      "B": "reinforced",
+      "C": "weakened"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "id": 115,
+    "content": "Choose the best fit: \"The committee reached a _____ decision after prolonged discussion.\"",
+    "options": {
+      "A": "tentative",
+      "B": "hasty",
+      "C": "rash"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 116,
+    "content": "Pick the correct word: \"The explanation was _____ and left no room for doubt.\"",
+    "options": {
+      "A": "ambiguous",
+      "B": "unequivocal",
+      "C": "vague"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 117,
+    "content": "Choose the most appropriate option: \"The proposal was _____ criticized for its lack of detail.\"",
+    "options": {
+      "A": "widely",
+      "B": "narrowly",
+      "C": "barely"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 118,
+    "content": "Select the correct word: \"Her remarks were _____ interpreted as a warning.\"",
+    "options": {
+      "A": "rightly",
+      "B": "randomly",
+      "C": "loosely"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 119,
+    "content": "Choose the best fit: \"The initiative was praised for its _____ impact.\"",
+    "options": {
+      "A": "trivial",
+      "B": "transformative",
+      "C": "negligible"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 120,
+    "content": "Pick the correct option: \"The policy was introduced as a _____ solution.\"",
+    "options": {
+      "A": "temporary",
+      "B": "permanent",
+      "C": "irrevocable"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 121,
+    "content": "Choose the word that fits best: \"His response was _____, revealing more than he intended.\"",
+    "options": {
+      "A": "guarded",
+      "B": "candid",
+      "C": "circumspect"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 122,
+    "content": "Select the most appropriate option: \"The findings were later _____ by independent verification.\"",
+    "options": {
+      "A": "discredited",
+      "B": "refuted",
+      "C": "validated"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "id": 123,
+    "content": "Choose the correct word: \"The tone of the memo was _____ and reassuring.\"",
+    "options": {
+      "A": "conciliatory",
+      "B": "abrasive",
+      "C": "hostile"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 124,
+    "content": "Pick the best fit: \"The project was abandoned due to _____ costs.\"",
+    "options": {
+      "A": "manageable",
+      "B": "prohibitive",
+      "C": "nominal"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 125,
+    "content": "Choose the most appropriate option: \"The explanation was _____, failing to address key concerns.\"",
+    "options": {
+      "A": "comprehensive",
+      "B": "superficial",
+      "C": "thorough"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 126,
+    "content": "Select the correct word: \"Her caution was _____ given the circumstances.\"",
+    "options": {
+      "A": "misplaced",
+      "B": "warranted",
+      "C": "excessive"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 127,
+    "content": "Choose the best fit: \"The decision was _____ influenced by political considerations.\"",
+    "options": {
+      "A": "marginally",
+      "B": "heavily",
+      "C": "barely"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 128,
+    "content": "Pick the correct option: \"The criticism was harsh but _____ constructive.\"",
+    "options": {
+      "A": "therefore",
+      "B": "nonetheless",
+      "C": "otherwise"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 129,
+    "content": "Choose the most appropriate word: \"His behavior was _____ with the organization's values.\"",
+    "options": {
+      "A": "aligned",
+      "B": "discordant",
+      "C": "incongruent"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 130,
+    "content": "Select the correct option: \"The evidence was _____ enough to support the claim.\"",
+    "options": {
+      "A": "tenuous",
+      "B": "compelling",
+      "C": "insubstantial"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 131,
+    "content": "Choose the best fit: \"The investigation yielded _____ results.\"",
+    "options": {
+      "A": "conclusive",
+      "B": "definitive",
+      "C": "inconclusive"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "id": 132,
+    "content": "Pick the correct word: \"Her response was _____, leaving no ambiguity.\"",
+    "options": {
+      "A": "equivocal",
+      "B": "unequivocal",
+      "C": "ambiguous"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 133,
+    "content": "Choose the most appropriate option: \"The agreement was reached after _____ negotiations.\"",
+    "options": {
+      "A": "fleeting",
+      "B": "protracted",
+      "C": "perfunctory"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 134,
+    "content": "Select the correct word: \"The speaker's argument was _____ by contradictory data.\"",
+    "options": {
+      "A": "bolstered",
+      "B": "undermined",
+      "C": "supported"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 135,
+    "content": "Choose the best fit: \"The policy change was met with _____ approval.\"",
+    "options": {
+      "A": "enthusiastic",
+      "B": "lukewarm",
+      "C": "unanimous"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 136,
+    "content": "Pick the correct option: \"His response was _____, betraying a lack of preparation.\"",
+    "options": {
+      "A": "polished",
+      "B": "improvised",
+      "C": "rehearsed"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 137,
+    "content": "Choose the most appropriate word: \"The research provided _____ evidence supporting the hypothesis.\"",
+    "options": {
+      "A": "anecdotal",
+      "B": "compelling",
+      "C": "tenuous"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 138,
+    "content": "Select the correct option: \"The explanation was _____ and difficult to follow.\"",
+    "options": {
+      "A": "lucid",
+      "B": "opaque",
+      "C": "transparent"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 139,
+    "content": "Choose the best fit: \"Her criticism was _____, focusing on minor issues.\"",
+    "options": {
+      "A": "constructive",
+      "B": "petty",
+      "C": "insightful"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 140,
+    "content": "Pick the correct word: \"The solution appeared simple but proved _____ in practice.\"",
+    "options": {
+      "A": "effective",
+      "B": "impractical",
+      "C": "efficient"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 141,
+    "content": "Choose the most appropriate option: \"The decision was _____ received by the public.\"",
+    "options": {
+      "A": "favorably",
+      "B": "poorly",
+      "C": "indifferently"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 142,
+    "content": "Select the correct word: \"His explanation was _____, omitting key details.\"",
+    "options": {
+      "A": "comprehensive",
+      "B": "selective",
+      "C": "thorough"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 143,
+    "content": "Choose the best fit: \"The compromise was _____ acceptable to both sides.\"",
+    "options": {
+      "A": "mutually",
+      "B": "partially",
+      "C": "exclusively"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 144,
+    "content": "Pick the correct option: \"The policy was _____ criticized for its unintended consequences.\"",
+    "options": {
+      "A": "widely",
+      "B": "narrowly",
+      "C": "minimally"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 145,
+    "content": "Choose the most appropriate word: \"Her enthusiasm was _____ by repeated failures.\"",
+    "options": {
+      "A": "rekindled",
+      "B": "dampened",
+      "C": "amplified"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 146,
+    "content": "Select the correct option: \"The response was _____ swift, catching everyone off guard.\"",
+    "options": {
+      "A": "habitually",
+      "B": "uncharacteristically",
+      "C": "predictably"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 147,
+    "content": "Choose the best fit: \"The evidence was _____ enough to justify further action.\"",
+    "options": {
+      "A": "compelling",
+      "B": "trivial",
+      "C": "insubstantial"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 148,
+    "content": "Pick the correct word: \"His manner was _____, making the discussion pleasant.\"",
+    "options": {
+      "A": "abrasive",
+      "B": "affable",
+      "C": "aloof"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 149,
+    "content": "Choose the most appropriate option: \"The criticism was _____ harsh and unnecessary.\"",
+    "options": {
+      "A": "barely",
+      "B": "unduly",
+      "C": "scarcely"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 150,
+    "content": "Select the correct word: \"Her skepticism was _____ by years of experience.\"",
+    "options": {
+      "A": "informed",
+      "B": "fabricated",
+      "C": "dismissed"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 151,
+    "content": "Choose the word that best fits the context: \"The explanation was _____, addressing every concern thoroughly.\"",
+    "options": {
+      "A": "comprehensive",
+      "B": "selective",
+      "C": "fragmentary"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 152,
+    "content": "Select the most appropriate option: \"His confidence was _____, stemming from years of experience.\"",
+    "options": {
+      "A": "misplaced",
+      "B": "warranted",
+      "C": "illusory"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 153,
+    "content": "Choose the correct word: \"The policy's benefits were _____ by its unintended consequences.\"",
+    "options": {
+      "A": "overshadowed",
+      "B": "enhanced",
+      "C": "magnified"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 154,
+    "content": "Pick the best fit: \"Her remarks were _____, carefully chosen to avoid offense.\"",
+    "options": {
+      "A": "tactful",
+      "B": "acerbic",
+      "C": "blunt"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 155,
+    "content": "Choose the option that completes the sentence logically: \"The argument was _____ by solid evidence.\"",
+    "options": {
+      "A": "undermined",
+      "B": "bolstered",
+      "C": "weakened"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 156,
+    "content": "Select the most appropriate word: \"The project progressed at a _____ pace, avoiding unnecessary delays.\"",
+    "options": {
+      "A": "lethargic",
+      "B": "measured",
+      "C": "erratic"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 157,
+    "content": "Choose the correct option: \"His apology appeared _____, lacking emotional depth.\"",
+    "options": {
+      "A": "sincere",
+      "B": "contrite",
+      "C": "perfunctory"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "id": 158,
+    "content": "Pick the best fit: \"The research findings were _____ across multiple studies.\"",
+    "options": {
+      "A": "inconsistent",
+      "B": "replicated",
+      "C": "anomalous"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 159,
+    "content": "Choose the most appropriate option: \"Her silence was _____ as approval.\"",
+    "options": {
+      "A": "construed",
+      "B": "obscured",
+      "C": "mitigated"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 160,
+    "content": "Select the correct word: \"The decision was _____ received by the committee.\"",
+    "options": {
+      "A": "favorably",
+      "B": "reluctantly",
+      "C": "indifferently"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 161,
+    "content": "Choose the best fit: \"The explanation was _____, leaving no room for doubt.\"",
+    "options": {
+      "A": "ambiguous",
+      "B": "unequivocal",
+      "C": "vague"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 162,
+    "content": "Pick the correct option: \"The criticism was harsh but _____ fair.\"",
+    "options": {
+      "A": "therefore",
+      "B": "nonetheless",
+      "C": "otherwise"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 163,
+    "content": "Choose the most appropriate word: \"The agreement was reached after _____ negotiations.\"",
+    "options": {
+      "A": "fleeting",
+      "B": "protracted",
+      "C": "perfunctory"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 164,
+    "content": "Select the correct word: \"The speaker's argument was _____ by contradictory evidence.\"",
+    "options": {
+      "A": "bolstered",
+      "B": "undermined",
+      "C": "supported"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 165,
+    "content": "Choose the best fit: \"The policy change was met with _____ approval.\"",
+    "options": {
+      "A": "enthusiastic",
+      "B": "lukewarm",
+      "C": "unanimous"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 166,
+    "content": "Pick the correct option: \"His response was _____, betraying a lack of preparation.\"",
+    "options": {
+      "A": "polished",
+      "B": "improvised",
+      "C": "rehearsed"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 167,
+    "content": "Choose the most appropriate word: \"The study provided _____ evidence supporting the claim.\"",
+    "options": {
+      "A": "tenuous",
+      "B": "compelling",
+      "C": "anecdotal"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 168,
+    "content": "Select the correct option: \"The explanation was _____ and difficult to follow.\"",
+    "options": {
+      "A": "lucid",
+      "B": "opaque",
+      "C": "transparent"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 169,
+    "content": "Choose the best fit: \"Her criticism was _____, focusing on trivial issues.\"",
+    "options": {
+      "A": "constructive",
+      "B": "petty",
+      "C": "insightful"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 170,
+    "content": "Pick the correct word: \"The solution seemed elegant but proved _____ in execution.\"",
+    "options": {
+      "A": "effective",
+      "B": "impractical",
+      "C": "efficient"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 171,
+    "content": "Choose the most appropriate option: \"The decision was _____ received by stakeholders.\"",
+    "options": {
+      "A": "favorably",
+      "B": "poorly",
+      "C": "indifferently"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 172,
+    "content": "Select the correct word: \"His explanation was _____, omitting key facts.\"",
+    "options": {
+      "A": "comprehensive",
+      "B": "selective",
+      "C": "thorough"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 173,
+    "content": "Choose the best fit: \"The compromise was _____ acceptable to both sides.\"",
+    "options": {
+      "A": "mutually",
+      "B": "partially",
+      "C": "exclusively"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 174,
+    "content": "Pick the correct option: \"The policy was _____ criticized for its side effects.\"",
+    "options": {
+      "A": "widely",
+      "B": "narrowly",
+      "C": "minimally"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 175,
+    "content": "Choose the most appropriate word: \"Her enthusiasm was _____ by repeated setbacks.\"",
+    "options": {
+      "A": "rekindled",
+      "B": "dampened",
+      "C": "amplified"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 176,
+    "content": "Select the correct option: \"The response was _____ swift, surprising observers.\"",
+    "options": {
+      "A": "predictably",
+      "B": "uncharacteristically",
+      "C": "habitually"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 177,
+    "content": "Choose the best fit: \"The evidence was _____ enough to justify action.\"",
+    "options": {
+      "A": "trivial",
+      "B": "compelling",
+      "C": "insubstantial"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 178,
+    "content": "Pick the correct word: \"His manner was _____, making everyone comfortable.\"",
+    "options": {
+      "A": "abrasive",
+      "B": "affable",
+      "C": "aloof"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 179,
+    "content": "Choose the most appropriate option: \"The criticism was _____ harsh and unnecessary.\"",
+    "options": {
+      "A": "unduly",
+      "B": "barely",
+      "C": "scarcely"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 180,
+    "content": "Select the correct word: \"Her skepticism was _____ by professional experience.\"",
+    "options": {
+      "A": "fabricated",
+      "B": "dismissed",
+      "C": "informed"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "id": 181,
+    "content": "Choose the word that best fits: \"The proposal was rejected as _____ and unrealistic.\"",
+    "options": {
+      "A": "utopian",
+      "B": "pragmatic",
+      "C": "workable"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 182,
+    "content": "Pick the correct option: \"The explanation was _____ enough to be understood by all.\"",
+    "options": {
+      "A": "opaque",
+      "B": "lucid",
+      "C": "convoluted"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 183,
+    "content": "Choose the most appropriate word: \"The decision was _____ influenced by external pressure.\"",
+    "options": {
+      "A": "marginally",
+      "B": "heavily",
+      "C": "barely"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 184,
+    "content": "Select the correct option: \"The findings were _____ with previous research.\"",
+    "options": {
+      "A": "incompatible",
+      "B": "consistent",
+      "C": "irrelevant"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 185,
+    "content": "Choose the best fit: \"The response was _____ and reassuring.\"",
+    "options": {
+      "A": "abrasive",
+      "B": "conciliatory",
+      "C": "hostile"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 186,
+    "content": "Pick the correct word: \"The investigation produced _____ results.\"",
+    "options": {
+      "A": "definitive",
+      "B": "conclusive",
+      "C": "inconclusive"
+    },
+    "correct_answer": "C",
+    "marks": 1
+  },
+  {
+    "id": 187,
+    "content": "Choose the most appropriate option: \"The explanation was _____, avoiding unnecessary detail.\"",
+    "options": {
+      "A": "verbose",
+      "B": "concise",
+      "C": "diffuse"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 188,
+    "content": "Select the correct word: \"His remarks were _____, leaving no ambiguity.\"",
+    "options": {
+      "A": "equivocal",
+      "B": "unequivocal",
+      "C": "ambiguous"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 189,
+    "content": "Choose the best fit: \"The criticism focused on _____ details.\"",
+    "options": {
+      "A": "substantive",
+      "B": "minor",
+      "C": "critical"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 190,
+    "content": "Pick the correct option: \"The policy aims to _____ potential risks.\"",
+    "options": {
+      "A": "exacerbate",
+      "B": "mitigate",
+      "C": "provoke"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 191,
+    "content": "Choose the most appropriate word: \"Her explanation was _____, clarifying the issue.\"",
+    "options": {
+      "A": "obscure",
+      "B": "lucid",
+      "C": "opaque"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 192,
+    "content": "Select the correct option: \"The agreement was reached after _____ debate.\"",
+    "options": {
+      "A": "fleeting",
+      "B": "intense",
+      "C": "cursory"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 193,
+    "content": "Choose the best fit: \"The outcome was _____, given the circumstances.\"",
+    "options": {
+      "A": "predictable",
+      "B": "unexpected",
+      "C": "fortuitous"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 194,
+    "content": "Pick the correct word: \"The decision was _____ justified.\"",
+    "options": {
+      "A": "poorly",
+      "B": "adequately",
+      "C": "barely"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 195,
+    "content": "Choose the most appropriate option: \"His response was _____ and thoughtful.\"",
+    "options": {
+      "A": "measured",
+      "B": "impulsive",
+      "C": "rash"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 196,
+    "content": "Select the correct word: \"The evidence was _____ insufficient to support the claim.\"",
+    "options": {
+      "A": "clearly",
+      "B": "barely",
+      "C": "hardly"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 197,
+    "content": "Choose the best fit: \"The explanation was _____ and persuasive.\"",
+    "options": {
+      "A": "rambling",
+      "B": "concise",
+      "C": "diffuse"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 198,
+    "content": "Pick the correct option: \"The criticism was _____ directed at procedural flaws.\"",
+    "options": {
+      "A": "squarely",
+      "B": "vaguely",
+      "C": "loosely"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  },
+  {
+    "id": 199,
+    "content": "Choose the most appropriate word: \"Her caution was _____ under the circumstances.\"",
+    "options": {
+      "A": "misplaced",
+      "B": "warranted",
+      "C": "excessive"
+    },
+    "correct_answer": "B",
+    "marks": 1
+  },
+  {
+    "id": 200,
+    "content": "Select the correct option: \"His skepticism was _____ by past failures.\"",
+    "options": {
+      "A": "informed",
+      "B": "fabricated",
+      "C": "dismissed"
+    },
+    "correct_answer": "A",
+    "marks": 1
+  }
 ]

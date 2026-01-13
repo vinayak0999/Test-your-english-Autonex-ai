@@ -1,70 +1,88 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import api from '../../api';
+import useAdminStore from '../../store/adminStore';
+import { AdminPageSkeleton } from '../../components/Skeleton';
 import {
-    Plus, Edit2, Trash2, Check, X,
-    Clock, Award, Building, ToggleLeft, ToggleRight,
+    Plus, Trash2,
+    Clock, ToggleLeft, ToggleRight,
     RefreshCw, FileText
 } from 'lucide-react';
 
 const TestManagement = () => {
-    const [tests, setTests] = useState([]);
-    const [organizations, setOrganizations] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [editingTest, setEditingTest] = useState(null);
+    // Use cached data from store
+    const {
+        tests,
+        testsLoaded,
+        testsLoading,
+        organizations,
+        fetchTests,
+        fetchOrganizations,
+        updateTest,
+        removeTest
+    } = useAdminStore();
 
     useEffect(() => {
-        fetchData();
+        // Fetch without force - will use cache if available
+        fetchTests();
+        fetchOrganizations();
     }, []);
 
-    const fetchData = async () => {
-        try {
-            const [testsRes, orgsRes] = await Promise.all([
-                api.get('/admin/tests'),
-                api.get('/admin/organizations')
-            ]);
-            setTests(testsRes.data);
-            setOrganizations(orgsRes.data);
-        } catch (err) {
-            console.error("Failed to fetch data", err);
-        } finally {
-            setLoading(false);
-        }
+    const handleRefresh = () => {
+        // Force refresh - bypass cache
+        fetchTests(true);
+        fetchOrganizations(true);
     };
 
     const toggleActive = async (testId, currentStatus) => {
+        // Optimistic update
+        updateTest(testId, { is_active: !currentStatus });
+
         try {
             await api.patch(`/admin/tests/${testId}`, { is_active: !currentStatus });
-            setTests(tests.map(t =>
-                t.id === testId ? { ...t, is_active: !currentStatus } : t
-            ));
         } catch (err) {
+            // Revert on failure
+            updateTest(testId, { is_active: currentStatus });
             console.error("Toggle failed", err);
         }
     };
 
     const deleteTest = async (testId) => {
         if (!confirm("Are you sure you want to delete this test? This cannot be undone.")) return;
+
+        // Optimistic update
+        removeTest(testId);
+
         try {
             await api.delete(`/admin/tests/${testId}`);
-            setTests(tests.filter(t => t.id !== testId));
         } catch (err) {
+            // Revert on failure
+            fetchTests(true);
             console.error("Delete failed", err);
         }
     };
 
     const updateOrg = async (testId, orgId) => {
+        const newOrgId = orgId === "all" ? null : parseInt(orgId);
+
+        // Optimistic update
+        updateTest(testId, { organization_id: newOrgId });
+
         try {
             await api.patch(`/admin/tests/${testId}`, {
                 organization_id: orgId === "all" ? 0 : parseInt(orgId)
             });
-            fetchData(); // Refresh to get updated org name
         } catch (err) {
+            // Revert on failure
+            fetchTests(true);
             console.error("Update failed", err);
         }
     };
 
-    if (loading) return <div className="p-8 text-center text-slate-500">Loading tests...</div>;
+    // Show skeleton only on first load (no cached data)
+    if (!testsLoaded && tests.length === 0) {
+        return <AdminPageSkeleton title="Test Management" />;
+    }
 
     return (
         <div className="max-w-7xl mx-auto pb-20 px-4">
@@ -80,10 +98,12 @@ const TestManagement = () => {
 
                 <div className="flex gap-3">
                     <button
-                        onClick={fetchData}
-                        className="flex items-center gap-2 px-4 py-2 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors"
+                        onClick={handleRefresh}
+                        disabled={testsLoading}
+                        className={`flex items-center gap-2 px-4 py-2 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors ${testsLoading ? 'opacity-50' : ''}`}
                     >
-                        <RefreshCw size={18} /> Refresh
+                        <RefreshCw size={18} className={testsLoading ? 'animate-spin' : ''} />
+                        {testsLoading ? 'Refreshing...' : 'Refresh'}
                     </button>
                     <Link
                         to="/admin/create-test"
@@ -159,8 +179,8 @@ const TestManagement = () => {
                                     <button
                                         onClick={() => toggleActive(test.id, test.is_active)}
                                         className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold transition-colors ${test.is_active
-                                                ? 'bg-green-100 text-green-700 hover:bg-green-200'
-                                                : 'bg-slate-100 text-slate-500 hover:bg-slate-200'
+                                            ? 'bg-green-100 text-green-700 hover:bg-green-200'
+                                            : 'bg-slate-100 text-slate-500 hover:bg-slate-200'
                                             }`}
                                     >
                                         {test.is_active ? <ToggleRight size={14} /> : <ToggleLeft size={14} />}
