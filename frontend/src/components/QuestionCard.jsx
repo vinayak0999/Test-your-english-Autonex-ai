@@ -136,7 +136,7 @@ const QuestionCard = ({ question, answer, onAnswerChange }) => {
                 )}
 
                 {/* B. MCQ OPTIONS (Simple) */}
-                {(question.type === 'mcq-grammar' || question.type === 'mcq-reading') && contentData.options && (
+                {(question.type === 'mcq-grammar' || question.type === 'mcq-reading' || question.type === 'mcq-context') && contentData.options && (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         {Object.entries(contentData.options).map(([key, value]) => (
                             <button
@@ -157,40 +157,7 @@ const QuestionCard = ({ question, answer, onAnswerChange }) => {
                     </div>
                 )}
 
-                {/* C. MCQ CONTEXT (Contextual Blanks) */}
-                {question.type === 'mcq-context' && contentData.options && (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 bg-slate-50 p-6 rounded-xl border border-slate-200">
-                        {Object.entries(contentData.options).map(([blankKey, choices]) => (
-                            <div key={blankKey} className="space-y-2">
-                                <label className="text-sm font-bold text-slate-500 uppercase">{blankKey}</label>
-                                <div className="space-y-2">
-                                    {Object.entries(choices).map(([optKey, optVal]) => {
-                                        // Parse current answer JSON
-                                        let currentAns = {};
-                                        try { currentAns = answer ? JSON.parse(answer) : {}; } catch (e) { }
-                                        const isSelected = currentAns[blankKey] === optKey;
 
-                                        return (
-                                            <button
-                                                key={optKey}
-                                                onClick={() => {
-                                                    const newAns = { ...currentAns, [blankKey]: optKey };
-                                                    onAnswerChange(JSON.stringify(newAns));
-                                                }}
-                                                className={`w-full p-3 rounded-lg border text-left text-sm transition-all ${isSelected
-                                                    ? 'bg-indigo-600 text-white border-indigo-600'
-                                                    : 'bg-white border-slate-200 text-slate-700 hover:border-indigo-300'
-                                                    }`}
-                                            >
-                                                <b>{optKey}.</b> {optVal}
-                                            </button>
-                                        );
-                                    })}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                )}
             </div>
         </motion.div>
     );
