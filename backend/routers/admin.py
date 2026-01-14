@@ -43,6 +43,11 @@ class OrgUpdate(PydanticModel):
     slug: str = None
     is_active: bool = None
 
+class ScoreOverride(PydanticModel):
+    """Request model for overriding a question's score"""
+    new_score: float
+    reason: str = None  # Optional reason for the override
+
 @router.post("/organizations")
 async def create_organization(
     org_data: OrgCreate,
@@ -450,4 +455,89 @@ async def get_detailed_result(
         "status": exam_result.status,
         # Detailed breakdown per question (enriched with session data)
         "breakdown": breakdown
+    }
+
+
+# 6. Override Question Score (Teacher Review)
+@router.patch("/results/{result_id}/questions/{question_id}")
+async def override_question_score(
+    result_id: int,
+    question_id: int,
+    override: ScoreOverride,
+    db: AsyncSession = Depends(get_db),
+    admin: User = Depends(require_admin)
+):
+    """
+    Allow admin/teacher to override the AI-assigned score for a specific question.
+    Automatically recalculates the total score.
+    """
+    from datetime import datetime, timezone
+    
+    # Validate score is not negative
+    if override.new_score < 0:
+        raise HTTPException(status_code=400, detail="Score cannot be negative")
+    
+    # Get the result
+    result = await db.execute(
+        select(TestResult)
+        .options(selectinload(TestResult.test))
+        .where(TestResult.id == result_id)
+    )
+    exam_result = result.scalars().first()
+    
+    if not exam_result:
+        raise HTTPException(status_code=404, detail="Result not found")
+    
+    breakdown = exam_result.ai_breakdown or []
+    
+    # Find the question in breakdown
+    question_found = False
+    for item in breakdown:
+        if item.get("question_id") == question_id:
+            question_found = True
+            
+            # Validate score doesn't exceed max marks
+            max_marks = item.get("max_marks", 0)
+            if override.new_score > max_marks:
+                raise HTTPException(
+                    status_code=400, 
+                    detail=f"Score cannot exceed max marks ({max_marks})"
+                )
+            
+            # Store the override
+            item["override_score"] = override.new_score
+            item["override_by"] = admin.email
+            item["override_at"] = datetime.now(timezone.utc).isoformat()
+            if override.reason:
+                item["override_reason"] = override.reason
+            break
+    
+    if not question_found:
+        raise HTTPException(status_code=404, detail="Question not found in result")
+    
+    # Recalculate total score
+    # Use override_score if exists, otherwise use student_score
+    new_total = 0
+    for item in breakdown:
+        score = item.get("override_score", item.get("student_score", 0))
+        new_total += score
+    
+    # Update the result
+    # IMPORTANT: SQLAlchemy doesn't detect in-place JSON mutations
+    # We must explicitly mark the column as modified
+    from sqlalchemy.orm.attributes import flag_modified
+    
+    exam_result.ai_breakdown = breakdown
+    flag_modified(exam_result, "ai_breakdown")
+    exam_result.total_score = new_total
+    exam_result.status = "reviewed"  # Mark as reviewed by teacher
+    
+    await db.commit()
+    
+    return {
+        "message": "Score updated successfully",
+        "question_id": question_id,
+        "new_score": override.new_score,
+        "new_total": round(new_total, 1),
+        "max_marks": exam_result.test.total_marks if exam_result.test else 100
     }

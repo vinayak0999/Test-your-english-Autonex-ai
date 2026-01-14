@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import api from '../../api';
-import { ArrowLeft, User, FileText, AlertTriangle, CheckCircle, XCircle, Loader2, Image as ImageIcon, Video, List, Shuffle } from 'lucide-react';
+import { ArrowLeft, User, FileText, AlertTriangle, CheckCircle, XCircle, Loader2, Image as ImageIcon, Video, List, Shuffle, Edit3, Save, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
@@ -11,6 +11,12 @@ const AdminDetailedResult = () => {
     const [result, setResult] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+
+    // Score editing state
+    const [editingQuestion, setEditingQuestion] = useState(null);
+    const [editScore, setEditScore] = useState('');
+    const [saving, setSaving] = useState(false);
+    const [saveError, setSaveError] = useState(null);
 
     useEffect(() => {
         const fetchResult = async () => {
@@ -57,6 +63,84 @@ const AdminDetailedResult = () => {
         return videoExtensions.some(ext => lowerUrl.includes(ext));
     };
 
+    // Start editing a question's score
+    const startEditing = (questionId, currentScore) => {
+        setEditingQuestion(questionId);
+        setEditScore(currentScore.toString());
+        setSaveError(null);
+    };
+
+    // Cancel editing
+    const cancelEditing = () => {
+        setEditingQuestion(null);
+        setEditScore('');
+        setSaveError(null);
+    };
+
+    // Save the override score
+    const saveScore = async (questionId, maxMarks) => {
+        // Round to 1 decimal place to avoid floating point issues
+        const newScore = Math.round(parseFloat(editScore) * 10) / 10;
+
+        if (isNaN(newScore)) {
+            setSaveError('Please enter a valid number');
+            return;
+        }
+        if (newScore < 0) {
+            setSaveError('Score cannot be negative');
+            return;
+        }
+        if (newScore > maxMarks) {
+            setSaveError(`Score cannot exceed ${maxMarks}`);
+            return;
+        }
+
+        setSaving(true);
+        setSaveError(null);
+
+        try {
+            const res = await api.patch(`/admin/results/${resultId}/questions/${questionId}`, {
+                new_score: newScore
+            });
+
+            // Update local state with new scores
+            setResult(prev => ({
+                ...prev,
+                total_score: res.data.new_total,
+                status: 'reviewed',  // Update status to show reviewed banner
+                breakdown: prev.breakdown.map(item =>
+                    item.question_id === questionId
+                        ? { ...item, override_score: newScore, student_score: item.student_score }
+                        : item
+                )
+            }));
+
+            setEditingQuestion(null);
+            setEditScore('');
+        } catch (err) {
+            setSaveError(err.response?.data?.detail || 'Failed to save');
+        } finally {
+            setSaving(false);
+        }
+    };
+
+    // Get display score (override if exists, otherwise student score)
+    const getDisplayScore = (item) => {
+        const score = item.override_score !== undefined ? item.override_score : item.student_score;
+        // Round to 1 decimal for display
+        return Math.round(score * 10) / 10;
+    };
+
+    // Handle keyboard events for editing
+    const handleKeyDown = (e, questionId, maxMarks) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            saveScore(questionId, maxMarks);
+        } else if (e.key === 'Escape') {
+            cancelEditing();
+        }
+    };
+
     if (loading) return <div className="flex justify-center py-20"><Loader2 className="w-8 h-8 animate-spin text-blue-600" /></div>;
     if (error) return <div className="text-center py-20 text-red-600">{error}</div>;
 
@@ -90,7 +174,7 @@ const AdminDetailedResult = () => {
                         </div>
                         <div className="text-center">
                             <p className="text-slate-400 font-medium">Score</p>
-                            <p className={`text-2xl font-bold ${result.percentage >= 60 ? 'text-green-600' : 'text-red-600'}`}>
+                            <p className={`text-2xl font-bold ${(result.total_score / result.max_marks * 100) >= 60 ? 'text-green-600' : 'text-red-600'}`}>
                                 {result.total_score}/{result.max_marks}
                             </p>
                         </div>
@@ -106,6 +190,12 @@ const AdminDetailedResult = () => {
                     <div className="mt-4 p-3 bg-amber-50 border border-amber-200 rounded-lg flex items-center gap-2 text-amber-800">
                         <AlertTriangle size={18} />
                         <span>This candidate switched tabs {result.tab_switches} times during the exam.</span>
+                    </div>
+                )}
+                {result.status === 'reviewed' && (
+                    <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg flex items-center gap-2 text-blue-800">
+                        <CheckCircle size={18} />
+                        <span>This result has been reviewed manually.</span>
                     </div>
                 )}
             </motion.div>
@@ -133,6 +223,11 @@ const AdminDetailedResult = () => {
                     const hasOptions = Object.keys(options).length > 0;
                     const hasJumbleParts = Object.keys(jumbleParts).length > 0;
 
+                    // Score display
+                    const displayScore = getDisplayScore(item);
+                    const isOverridden = item.override_score !== undefined;
+                    const isEditing = editingQuestion === item.question_id;
+
                     return (
                         <motion.div
                             key={index}
@@ -148,16 +243,77 @@ const AdminDetailedResult = () => {
                                         Q{index + 1}
                                     </span>
                                     <span className="font-semibold text-slate-700 capitalize">{item.type?.replace('mcq_', 'MCQ ')} Question</span>
+                                    {isOverridden && (
+                                        <span className="bg-amber-100 text-amber-700 text-xs px-2 py-1 rounded-full">
+                                            Reviewed
+                                        </span>
+                                    )}
                                 </div>
-                                <div className={`px-4 py-1 rounded-full text-sm font-bold ${item.student_score >= item.max_marks * 0.7
-                                    ? 'bg-green-100 text-green-700 border border-green-200'
-                                    : item.student_score >= item.max_marks * 0.4
-                                        ? 'bg-amber-100 text-amber-700 border border-amber-200'
-                                        : 'bg-red-100 text-red-700 border border-red-200'
-                                    }`}>
-                                    {item.student_score} / {item.max_marks} Marks
+
+                                {/* SCORE SECTION - Editable */}
+                                <div className="flex items-center gap-2">
+                                    {isEditing ? (
+                                        // Edit Mode
+                                        <div className="flex items-center gap-2">
+                                            <input
+                                                type="number"
+                                                value={editScore}
+                                                onChange={(e) => setEditScore(e.target.value)}
+                                                onKeyDown={(e) => handleKeyDown(e, item.question_id, item.max_marks)}
+                                                className="w-20 px-2 py-1 border border-blue-300 rounded text-center font-bold focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                                min="0"
+                                                max={item.max_marks}
+                                                step="0.5"
+                                                autoFocus
+                                                disabled={saving}
+                                            />
+                                            <span className="text-slate-500">/ {item.max_marks}</span>
+                                            <button
+                                                onClick={() => saveScore(item.question_id, item.max_marks)}
+                                                disabled={saving}
+                                                className="p-1 bg-green-500 text-white rounded hover:bg-green-600 disabled:opacity-50"
+                                                title="Save"
+                                            >
+                                                {saving ? <Loader2 size={16} className="animate-spin" /> : <Save size={16} />}
+                                            </button>
+                                            <button
+                                                onClick={cancelEditing}
+                                                disabled={saving}
+                                                className="p-1 bg-slate-400 text-white rounded hover:bg-slate-500 disabled:opacity-50"
+                                                title="Cancel (Esc)"
+                                            >
+                                                <X size={16} />
+                                            </button>
+                                        </div>
+                                    ) : (
+                                        // Display Mode
+                                        <div className="flex items-center gap-2">
+                                            <div className={`px-4 py-1 rounded-full text-sm font-bold ${displayScore >= item.max_marks * 0.7
+                                                ? 'bg-green-100 text-green-700 border border-green-200'
+                                                : displayScore >= item.max_marks * 0.4
+                                                    ? 'bg-amber-100 text-amber-700 border border-amber-200'
+                                                    : 'bg-red-100 text-red-700 border border-red-200'
+                                                }`}>
+                                                {displayScore} / {item.max_marks} Marks
+                                            </div>
+                                            <button
+                                                onClick={() => startEditing(item.question_id, displayScore)}
+                                                className="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded transition-colors"
+                                                title="Edit Score"
+                                            >
+                                                <Edit3 size={16} />
+                                            </button>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
+
+                            {/* Save Error Message */}
+                            {isEditing && saveError && (
+                                <div className="px-6 py-2 bg-red-50 text-red-600 text-sm">
+                                    {saveError}
+                                </div>
+                            )}
 
                             {/* Question Body */}
                             <div className="p-6">
@@ -317,9 +473,9 @@ const AdminDetailedResult = () => {
                                         <h4 className="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2 flex items-center gap-1">
                                             <User size={14} /> User's Answer
                                         </h4>
-                                        <div className={`border rounded-lg p-4 ${item.student_score > 0
-                                                ? 'bg-green-50 border-green-200'
-                                                : 'bg-red-50 border-red-200'
+                                        <div className={`border rounded-lg p-4 ${displayScore > 0
+                                            ? 'bg-green-50 border-green-200'
+                                            : 'bg-red-50 border-red-200'
                                             }`}>
                                             <p className="text-slate-700 text-sm whitespace-pre-wrap font-medium">{item.student_answer || "No answer provided"}</p>
                                         </div>
