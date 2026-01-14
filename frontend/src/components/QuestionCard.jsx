@@ -87,10 +87,23 @@ const QuestionCard = ({ question, answer, onAnswerChange }) => {
                         {/* Jumble Text */}
                         {question.type === 'jumble' && (
                             <div className="text-center p-8 bg-indigo-50 rounded-xl border-2 border-dashed border-indigo-200">
-                                <p className="text-sm text-indigo-500 font-bold uppercase mb-2">Rearrange this:</p>
-                                <p className="text-2xl font-mono text-indigo-900 tracking-wide">
-                                    {contentData.sentence}
-                                </p>
+                                <p className="text-sm text-indigo-500 font-bold uppercase mb-4">Rearrange these parts in correct order:</p>
+                                {/* Show individual parts if jumble object exists */}
+                                {contentData.jumble && Object.keys(contentData.jumble).length > 0 ? (
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-2xl mx-auto">
+                                        {Object.entries(contentData.jumble).sort().map(([key, value]) => (
+                                            <div key={key} className="bg-white border border-indigo-200 rounded-lg p-3 text-left shadow-sm">
+                                                <span className="font-bold text-indigo-600 mr-2">{key}:</span>
+                                                <span className="text-slate-700">{value}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                ) : (
+                                    <p className="text-2xl font-mono text-indigo-900 tracking-wide">
+                                        {contentData.sentence}
+                                    </p>
+                                )}
+                                <p className="text-xs text-slate-500 mt-4">Type the correct order (e.g., "B A C D")</p>
                             </div>
                         )}
 

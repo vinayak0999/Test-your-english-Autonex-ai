@@ -120,10 +120,16 @@ class QuestionBankService:
             # 4. Jumble
             elif section_type == "jumble":
                 # Jumble bank structure: {"id": 1, "jumble": {"A": "...", "B": "...", ...}, "answer": "B A C D"}
-                jumble_data = item.get("jumble", {})
+                jumble_parts = item.get("jumble", {})
+                
+                # Create display sentence by joining all parts with " / " separator
+                # Sort by key to show A, B, C, D in order
+                parts_list = [f"{k}: {v}" for k, v in sorted(jumble_parts.items())]
+                sentence_display = " | ".join(parts_list) if parts_list else ""
+                
                 q_structure["content"] = {
-                    "jumble": jumble_data,  # The A, B, C, D sentence parts
-                    "sentence": item.get("content", "")  # Fallback if there's a sentence
+                    "jumble": jumble_parts,  # The A, B, C, D sentence parts for structured display
+                    "sentence": sentence_display  # Joined sentence for simple display
                 }
                 q_structure["grading_config"] = {
                     "correct_answer": item.get("answer") or item.get("correct_answer", "")
