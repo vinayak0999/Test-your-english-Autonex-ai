@@ -9,7 +9,9 @@ class QuestionBankService:
 
     @staticmethod
     def load_bank(bank_name: str) -> List[Dict[str, Any]]:
-        """Loads a JSON bank file by name (e.g., 'jumble.json')."""
+        """Loads a JSON bank file by name (e.g., 'jumble.json').
+        Handles both flat arrays and nested {questions: [...]} format.
+        """
         file_path = os.path.join(QuestionBankService.BANK_DIR, bank_name)
         if not os.path.exists(file_path):
             print(f"Bank not found: {file_path}")
@@ -17,7 +19,17 @@ class QuestionBankService:
         
         try:
             with open(file_path, "r", encoding="utf-8") as f:
-                return json.load(f)
+                data = json.load(f)
+                
+            # Handle nested format: {"set_name": "...", "questions": [...]}
+            if isinstance(data, dict) and "questions" in data:
+                return data["questions"]
+            # Handle flat array format: [{...}, {...}]
+            elif isinstance(data, list):
+                return data
+            else:
+                print(f"Unexpected format in {bank_name}")
+                return []
         except Exception as e:
             print(f"Error loading bank {bank_name}: {e}")
             return []
