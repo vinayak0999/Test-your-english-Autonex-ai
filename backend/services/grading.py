@@ -174,31 +174,30 @@ async def grade_reading_question(student_text: str, original_passage: str, refer
 async def grade_jumble_question(student_text: str, correct_answer: str, marks: int):
     """
     Grading Logic for Jumble (Lenient Match)
-    - Ignores punctuation (periods, commas, etc.)
-    - Ignores capitalization
-    - Ignores extra spaces
-    - Only checks if words are in correct order
+    - Extracts sequence of letters (A, B, C, D, etc.)
+    - Ignores spaces between letters
+    - Ignores punctuation and capitalization
+    - "ABCD" matches "A B C D" matches "A, B, C, D"
     """
     import re
     
     if not student_text:
         return {"score": 0, "breakdown": {"result": "Incorrect", "correct_answer": correct_answer}}
 
-    def normalize(text: str) -> str:
-        """Normalize text for comparison - remove punctuation, lowercase, single spaces"""
-        # Remove all punctuation
-        text = re.sub(r'[^\w\s]', '', text)
-        # Convert to lowercase
-        text = text.lower()
-        # Normalize whitespace (multiple spaces to single, strip ends)
-        text = ' '.join(text.split())
-        return text
+    def extract_letter_sequence(text: str) -> list:
+        """Extract uppercase letters in order - A, B, C, D etc."""
+        # Extract all letters, uppercase them
+        text = text.upper()
+        # For jumble answers, we only care about the letter sequence (A, B, C, D)
+        # Extract single capital letters that are likely part labels
+        letters = re.findall(r'[A-Z]', text)
+        return letters
     
-    # Normalize both answers - only compare the words themselves
-    student_normalized = normalize(student_text)
-    correct_normalized = normalize(correct_answer)
+    # Extract letter sequences from both answers
+    student_letters = extract_letter_sequence(student_text)
+    correct_letters = extract_letter_sequence(correct_answer)
     
-    is_correct = student_normalized == correct_normalized
+    is_correct = student_letters == correct_letters
     
     score = marks if is_correct else 0
     return {
@@ -207,7 +206,9 @@ async def grade_jumble_question(student_text: str, correct_answer: str, marks: i
             "result": "Correct" if is_correct else "Incorrect",
             "student_answer": student_text,
             "expected": correct_answer,
-            "comparison_note": "Compared without punctuation and case"
+            "student_sequence": " ".join(student_letters),
+            "expected_sequence": " ".join(correct_letters),
+            "comparison_note": "Compared letter sequence only (spaces ignored)"
         }
     }
 
