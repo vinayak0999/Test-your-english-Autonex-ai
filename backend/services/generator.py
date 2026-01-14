@@ -107,11 +107,14 @@ class QuestionBankService:
             
             # 4. Jumble
             elif section_type == "jumble":
+                # Jumble bank structure: {"id": 1, "jumble": {"A": "...", "B": "...", ...}, "answer": "B A C D"}
+                jumble_data = item.get("jumble", {})
                 q_structure["content"] = {
-                    "sentence": item.get("content")
+                    "jumble": jumble_data,  # The A, B, C, D sentence parts
+                    "sentence": item.get("content", "")  # Fallback if there's a sentence
                 }
                 q_structure["grading_config"] = {
-                    "correct_answer": item.get("correct_answer")
+                    "correct_answer": item.get("answer") or item.get("correct_answer", "")
                 }
             
             # 5. MCQ (Grammar / Reading / Context)

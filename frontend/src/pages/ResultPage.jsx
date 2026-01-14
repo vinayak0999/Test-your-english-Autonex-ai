@@ -3,7 +3,9 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion'
 import api from '../api';
 import useAuthStore from '../store/authStore';
-import { CheckCircle, XCircle, AlertTriangle, ArrowLeft, Download } from 'lucide-react';
+import { CheckCircle, XCircle, AlertTriangle, ArrowLeft, Download, Play, Image as ImageIcon } from 'lucide-react';
+
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
 const ResultPage = () => {
     const { resultId } = useParams();
@@ -32,6 +34,12 @@ const ResultPage = () => {
     const backLink = user?.role === 'admin' ? '/admin/results' : '/dashboard';
     const backText = user?.role === 'admin' ? 'Back to Recruitment Results' : 'Back to Dashboard';
 
+    // Helper to get media URL
+    const getMediaUrl = (url) => {
+        if (!url) return '';
+        return url.startsWith('http') ? url : `${API_URL}${url}`;
+    };
+
     return (
         <div className="min-h-screen bg-slate-50 py-10 px-4">
             <div className="max-w-4xl mx-auto">
@@ -54,7 +62,6 @@ const ResultPage = () => {
 
                     <div className="flex justify-center items-center">
                         <div className="relative w-48 h-48 flex items-center justify-center">
-                            {/* Animated Circle SVG would go here, simplified for code: */}
                             <div className="w-full h-full rounded-full border-8 border-slate-100 absolute" />
                             <motion.div
                                 initial={{ scale: 0 }}
@@ -97,10 +104,105 @@ const ResultPage = () => {
                                 </div>
                             </div>
 
-                            {/* Card Body (AI Feedback vs Simple Result) */}
+                            {/* Card Body */}
                             <div className="p-6">
-                                {(item.type === 'jumble' || item.type.includes('mcq')) ? (
-                                    // --- SIMPLE RESULT FOR JUMBLE/MCQ ---
+
+                                {/* ========== MEDIA SECTION (NEW) ========== */}
+                                {(item.type === 'video' || item.type === 'image') && (
+                                    <div className="mb-6 space-y-4">
+                                        {/* Media Display */}
+                                        {item.type === 'video' && item.content_url && (
+                                            <div className="rounded-xl overflow-hidden bg-black aspect-video shadow-md">
+                                                <video
+                                                    controls
+                                                    controlsList="nodownload"
+                                                    className="w-full h-full object-contain"
+                                                    src={getMediaUrl(item.content_url)}
+                                                >
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                            </div>
+                                        )}
+
+                                        {item.type === 'image' && item.content_url && (
+                                            <div className="rounded-xl overflow-hidden bg-slate-100 border border-slate-200">
+                                                <img
+                                                    src={getMediaUrl(item.content_url)}
+                                                    alt="Question Visual"
+                                                    className="w-full h-auto max-h-[350px] object-contain mx-auto"
+                                                />
+                                            </div>
+                                        )}
+
+                                        {/* Question Prompt */}
+                                        {item.question_text && (
+                                            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                                                <p className="text-sm font-bold text-blue-600 uppercase tracking-wider mb-2">Question</p>
+                                                <p className="text-slate-700 font-medium">{item.question_text}</p>
+                                            </div>
+                                        )}
+
+                                        {/* Correct Answer (Reference) */}
+                                        {item.correct_answer && (
+                                            <div className="bg-green-50 border border-green-200 rounded-xl p-4">
+                                                <p className="text-sm font-bold text-green-600 uppercase tracking-wider mb-2">
+                                                    <CheckCircle className="inline w-4 h-4 mr-1" /> Expected Answer
+                                                </p>
+                                                <p className="text-slate-700">{item.correct_answer}</p>
+                                            </div>
+                                        )}
+
+                                        {/* User's Answer */}
+                                        <div className="bg-slate-100 border border-slate-300 rounded-xl p-4">
+                                            <p className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-2">Your Answer</p>
+                                            <p className="text-slate-800 font-medium">
+                                                {item.student_answer || <span className="text-slate-400 italic">No answer provided</span>}
+                                            </p>
+                                        </div>
+                                    </div>
+                                )}
+
+                                {/* ========== READING SECTION ========== */}
+                                {item.type === 'reading' && (
+                                    <div className="mb-6 space-y-4">
+                                        {/* Reading Passage */}
+                                        {item.passage && (
+                                            <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 max-h-48 overflow-y-auto">
+                                                <p className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-2">Passage</p>
+                                                <p className="text-slate-700 text-sm leading-relaxed">{item.passage}</p>
+                                            </div>
+                                        )}
+
+                                        {/* Question */}
+                                        {item.question_text && (
+                                            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                                                <p className="text-sm font-bold text-blue-600 uppercase tracking-wider mb-2">Question</p>
+                                                <p className="text-slate-700 font-medium">{item.question_text}</p>
+                                            </div>
+                                        )}
+
+                                        {/* Correct Answer */}
+                                        {item.correct_answer && (
+                                            <div className="bg-green-50 border border-green-200 rounded-xl p-4">
+                                                <p className="text-sm font-bold text-green-600 uppercase tracking-wider mb-2">
+                                                    <CheckCircle className="inline w-4 h-4 mr-1" /> Expected Answer
+                                                </p>
+                                                <p className="text-slate-700">{item.correct_answer}</p>
+                                            </div>
+                                        )}
+
+                                        {/* User's Answer */}
+                                        <div className="bg-slate-100 border border-slate-300 rounded-xl p-4">
+                                            <p className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-2">Your Answer</p>
+                                            <p className="text-slate-800 font-medium">
+                                                {item.student_answer || <span className="text-slate-400 italic">No answer provided</span>}
+                                            </p>
+                                        </div>
+                                    </div>
+                                )}
+
+                                {/* ========== JUMBLE / MCQ SIMPLE SECTION ========== */}
+                                {(item.type === 'jumble' || item.type.includes('mcq')) && (
                                     <div className="flex items-center justify-between">
                                         <div>
                                             <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-2">Outcome</h4>
@@ -116,12 +218,17 @@ const ResultPage = () => {
                                             </p>
                                         </div>
                                     </div>
-                                ) : (
-                                    // --- DETAILED AI FEEDBACK FOR VIDEO/READING/IMAGE ---
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                        {/* Metrics */}
-                                        <div>
-                                            <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4">AI Metrics (15-Mark Rubric)</h4>
+                                )}
+
+                                {/* ========== AI EVALUATION SECTION (for video/image/reading) ========== */}
+                                {(item.type === 'video' || item.type === 'image' || item.type === 'reading') && (
+                                    <div className="border-t border-slate-200 pt-6 mt-2">
+                                        <h4 className="text-sm font-bold text-indigo-600 uppercase tracking-wider mb-4 flex items-center gap-2">
+                                            <AlertTriangle size={16} /> AI Evaluation
+                                        </h4>
+
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                            {/* Metrics */}
                                             <div className="space-y-4">
                                                 {/* Grammar & Structure Bar (4 marks) */}
                                                 <div>
@@ -198,25 +305,26 @@ const ResultPage = () => {
                                                     {item.ai_feedback?.passed ? '✓ PASSED (≥11/15)' : '✗ FAILED (<11/15)'}
                                                 </div>
                                             </div>
-                                        </div>
 
-                                        {/* Qualitative Feedback */}
-                                        <div className="bg-slate-50 p-4 rounded-lg">
-                                            <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-2">Detailed Feedback</h4>
-                                            <p className="text-slate-700 text-sm leading-relaxed">
-                                                {item.ai_feedback?.feedback || "No specific feedback provided."}
-                                            </p>
+                                            {/* Qualitative Feedback */}
+                                            <div className="bg-slate-50 p-4 rounded-lg">
+                                                <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-2">AI Reasoning</h4>
+                                                <p className="text-slate-700 text-sm leading-relaxed">
+                                                    {item.ai_feedback?.feedback || "No specific feedback provided."}
+                                                </p>
 
-                                            {item.ai_feedback?.key_ideas_matched && (
-                                                <div className="mt-4 pt-4 border-t border-slate-200">
-                                                    <p className="text-xs font-bold text-green-600 flex items-center gap-1">
-                                                        <CheckCircle size={14} /> Key Ideas Matched: {item.ai_feedback.key_ideas_matched}
-                                                    </p>
-                                                </div>
-                                            )}
+                                                {item.ai_feedback?.key_ideas_matched && (
+                                                    <div className="mt-4 pt-4 border-t border-slate-200">
+                                                        <p className="text-xs font-bold text-green-600 flex items-center gap-1">
+                                                            <CheckCircle size={14} /> Key Ideas Matched: {item.ai_feedback.key_ideas_matched}
+                                                        </p>
+                                                    </div>
+                                                )}
+                                            </div>
                                         </div>
                                     </div>
                                 )}
+
                             </div>
                         </motion.div>
                     ))}

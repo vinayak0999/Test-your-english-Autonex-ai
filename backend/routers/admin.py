@@ -355,7 +355,6 @@ async def get_all_results(
     
     return data
 
-
 # 5. Get Detailed Result by ID (Admin Detailed Report)
 @router.get("/results/{result_id}")
 async def get_detailed_result(
@@ -367,6 +366,8 @@ async def get_detailed_result(
     Admin Detailed Report: Get detailed breakdown for a specific test result.
     Shows: Question, Correct Answer, User Answer, Score, Tab Switch Count
     """
+    from models import ExamSession
+    
     # Get result with relationships
     result = await db.execute(
         select(TestResult)
@@ -380,6 +381,56 @@ async def get_detailed_result(
     
     if not exam_result:
         raise HTTPException(status_code=404, detail="Result not found")
+    
+    breakdown = exam_result.ai_breakdown or []
+    
+    # Try to enrich breakdown with question options/jumble from session if missing
+    if breakdown and exam_result.user_id:
+        # Find the ExamSession for this user and test
+        session_result = await db.execute(
+            select(ExamSession)
+            .where(ExamSession.user_id == exam_result.user_id)
+            .where(ExamSession.test_id == exam_result.test_id)
+            .where(ExamSession.is_completed == True)
+            .order_by(ExamSession.started_at.desc())
+            .limit(1)
+        )
+        session = session_result.scalars().first()
+        
+        if session and session.generated_questions:
+            # Create a map of question_id -> question content
+            question_map = {}
+            for q in session.generated_questions:
+                q_id = q.get("temp_id")
+                if q_id:
+                    question_map[q_id] = q
+            
+            # Enrich breakdown with missing options/jumble
+            for item in breakdown:
+                q_id = item.get("question_id")
+                if q_id and q_id in question_map:
+                    q_data = question_map[q_id]
+                    content = q_data.get("content", {})
+                    
+                    # Add options for MCQ if not present
+                    if not item.get("options") and "mcq" in item.get("type", ""):
+                        item["options"] = content.get("options", {})
+                    
+                    # Add jumble parts if not present
+                    if not item.get("jumble") and item.get("type") == "jumble":
+                        item["jumble"] = content.get("jumble", {})
+                    
+                    # Add content_url for image/video if not present
+                    if not item.get("content_url") and item.get("type") in ["image", "video"]:
+                        item["content_url"] = content.get("url", "")
+                    
+                    # Add passage for reading if not present
+                    if not item.get("passage") and item.get("type") == "reading":
+                        item["passage"] = content.get("passage", "")
+                    
+                    # Update question_text if empty
+                    if not item.get("question_text"):
+                        item["question_text"] = content.get("question", content.get("title", ""))
     
     return {
         "id": exam_result.id,
@@ -397,6 +448,6 @@ async def get_detailed_result(
         "tab_switches": exam_result.flags or 0,
         "submitted_at": exam_result.completed_at.strftime("%Y-%m-%d %H:%M") if exam_result.completed_at else "N/A",
         "status": exam_result.status,
-        # Detailed breakdown per question
-        "breakdown": exam_result.ai_breakdown or []
+        # Detailed breakdown per question (enriched with session data)
+        "breakdown": breakdown
     }

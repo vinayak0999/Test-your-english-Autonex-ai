@@ -1,101 +1,2006 @@
-[
-  { "content": "to / school / goes / he / daily", "correct_answer": "He goes to school daily.", "marks": 2 },
-  { "content": "apple / an / eating / is / she", "correct_answer": "She is eating an apple.", "marks": 2 },
-  { "content": "the / on / table / book / the / is", "correct_answer": "The book is on the table.", "marks": 2 },
-  { "content": "dog / the / fast / runs", "correct_answer": "The dog runs fast.", "marks": 2 },
-  { "content": "friends / playing / are / my", "correct_answer": "My friends are playing.", "marks": 2 },
-  { "content": "coffee / morning / likes / he / in / the", "correct_answer": "He likes coffee in the morning.", "marks": 2 },
-  { "content": "rain / heavy / is / it", "correct_answer": "It is heavy rain.", "marks": 2 },
-  { "content": "cat / sleeping / is / the", "correct_answer": "The cat is sleeping.", "marks": 2 },
-  { "content": "movie / watching / are / we / a", "correct_answer": "We are watching a movie.", "marks": 2 },
-  { "content": "car / new / bought / they / a", "correct_answer": "They bought a new car.", "marks": 2 },
-  { "content": "the / closed / is / door", "correct_answer": "The door is closed.", "marks": 2 },
-  { "content": "late / was / very / he", "correct_answer": "He was very late.", "marks": 2 },
-  { "content": "cake / baked / she / a", "correct_answer": "She baked a cake.", "marks": 2 },
-  { "content": "water / of / glass / a / need / I", "correct_answer": "I need a glass of water.", "marks": 2 },
-  { "content": "park / the / children / at / playing / are", "correct_answer": "The children are playing at the park.", "marks": 2 },
-  { "content": "help / please / me", "correct_answer": "Please help me.", "marks": 2 },
-  { "content": "time / what / the / is", "correct_answer": "What is the time?", "marks": 2 },
-  { "content": "home / reached / he / finally", "correct_answer": "He finally reached home.", "marks": 2 },
-  { "content": "bus / missed / I / the", "correct_answer": "I missed the bus.", "marks": 2 },
-  { "content": "pen / your / use / I / may", "correct_answer": "May I use your pen?", "marks": 2 },
-  { "content": "is / the / sky / blue", "correct_answer": "The sky is blue.", "marks": 2 },
-  { "content": "reading / book / a / she / is", "correct_answer": "She is reading a book.", "marks": 2 },
-  { "content": "milk / some / get / please / me", "correct_answer": "Please get me some milk.", "marks": 2 },
-  { "content": "we / picnic / a / going / for / are", "correct_answer": "We are going for a picnic.", "marks": 2 },
-  { "content": "room / clean / your", "correct_answer": "Clean your room.", "marks": 2 },
-  { "content": "fruits / healthy / are", "correct_answer": "Fruits are healthy.", "marks": 2 },
-  { "content": "phone / ringing / your / is", "correct_answer": "Your phone is ringing.", "marks": 2 },
-  { "content": "meeting / the / starts / soon", "correct_answer": "The meeting starts soon.", "marks": 2 },
-  { "content": "very / tired / am / I", "correct_answer": "I am very tired.", "marks": 2 },
-  { "content": "you / see / can / I / hear / and", "correct_answer": "I can see and hear you.", "marks": 2 },
-  { "content": "project / new / working / are / on / we / the", "correct_answer": "We are working on the new project.", "marks": 2 },
-  { "content": "yesterday / raining / heavily / was / it", "correct_answer": "It was raining heavily yesterday.", "marks": 2 },
-  { "content": "exam / the / for / preparing / is / she", "correct_answer": "She is preparing for the exam.", "marks": 2 },
-  { "content": "reason / no / him / for / trust / I / to / have", "correct_answer": "I have no reason to trust him.", "marks": 2 },
-  { "content": "meeting / postponed / the / was / suddenly", "correct_answer": "The meeting was suddenly postponed.", "marks": 2 },
-  { "content": "bus / the / people / many / in / were", "correct_answer": "Many people were in the bus.", "marks": 2 },
-  { "content": "game / interesting / very / the / was", "correct_answer": "The game was very interesting.", "marks": 2 },
-  { "content": "traffic / stuck / I / the / in / was", "correct_answer": "I was stuck in the traffic.", "marks": 2 },
-  { "content": "to / early / up / get / tomorrow / need / we", "correct_answer": "We need to get up early tomorrow.", "marks": 2 },
-  { "content": "vacation / planning / summer / are / for / a / they", "correct_answer": "They are planning a vacation for summer.", "marks": 2 },
-  { "content": "assignment / complete / difficult / a / was / the", "correct_answer": "The assignment was difficult to complete.", "marks": 2 },
-  { "content": "garden / beautiful / the / very / looks", "correct_answer": "The garden looks very beautiful.", "marks": 2 },
-  { "content": "tickets / movie / the / bought / we", "correct_answer": "We bought the movie tickets.", "marks": 2 },
-  { "content": "appointment / doctor / the / missed / I / my", "correct_answer": "I missed my doctor appointment.", "marks": 2 },
-  { "content": "bus / catch / I / quickly / the / had / to", "correct_answer": "I had to quickly catch the bus.", "marks": 2 },
-  { "content": "reason / no / came / he / to / up / with", "correct_answer": "He came up with no reason.", "marks": 2 },
-  { "content": "dinner / cooking / for / mother / is / my", "correct_answer": "My mother is cooking dinner.", "marks": 2 },
-  { "content": "train / the / boarded / passengers / the", "correct_answer": "The passengers boarded the train.", "marks": 2 },
-  { "content": "program / launch / new / the / tomorrow / will", "correct_answer": "The new program will launch tomorrow.", "marks": 2 },
-  { "content": "late / too / slept / I / night / last", "correct_answer": "I slept too late last night.", "marks": 2 },
-  { "content": "exam / passed / she / easily / the", "correct_answer": "She easily passed the exam.", "marks": 2 },
-  { "content": "lost / wallet / my / I / have", "correct_answer": "I have lost my wallet.", "marks": 2 },
-  { "content": "books / library / in / many / are / there", "correct_answer": "There are many books in the library.", "marks": 2 },
-  { "content": "important / meeting / very / is / the / today", "correct_answer": "The meeting today is very important.", "marks": 2 },
-  { "content": "bring / you / did / documents / the / required", "correct_answer": "Did you bring the required documents?", "marks": 2 },
-  { "content": "room / cleaned / the / already / I / have", "correct_answer": "I have already cleaned the room.", "marks": 2 },
-  { "content": "watch / new / a / gifted / me / he", "correct_answer": "He gifted me a new watch.", "marks": 2 },
-  { "content": "chance / missed / the / completely / he", "correct_answer": "He completely missed the chance.", "marks": 2 },
-  { "content": "quickly / finish / should / we / work / the", "correct_answer": "We should finish the work quickly.", "marks": 2 },
-  { "content": "starts / morning / at / early / work / his", "correct_answer": "His work starts early in the morning.", "marks": 2 },
-  { "content": "healthy / stay / to / exercise / daily / we / must", "correct_answer": "We must exercise daily to stay healthy.", "marks": 2 },
-  { "content": "the / completed / successfully / project / they", "correct_answer": "They completed the project successfully.", "marks": 2 },
-  { "content": "information / enough / us / gave / he", "correct_answer": "He gave us enough information.", "marks": 2 },
-  { "content": "heavy / too / is / box / the / lift / to", "correct_answer": "The box is too heavy to lift.", "marks": 2 },
-  { "content": "call / later / will / back / I / you", "correct_answer": "I will call you back later.", "marks": 2 },
-  { "content": "difficult / understand / to / is / this / topic", "correct_answer": "This topic is difficult to understand.", "marks": 2 },
-  { "content": "festival / next / celebrate / we / the / will / week", "correct_answer": "We will celebrate the festival next week.", "marks": 2 },
-  { "content": "problem / solve / try / to / the / we / will", "correct_answer": "We will try to solve the problem.", "marks": 2 },
-  { "content": "quiet / very / became / room / the", "correct_answer": "The room became very quiet.", "marks": 2 },
-  { "content": "him / instructions / follow / carefully / please", "correct_answer": "Please follow the instructions carefully.", "marks": 2 },
-  { "content": "schedule / tight / a / follow / to / forced / was / he", "correct_answer": "He was forced to follow a tight schedule.", "marks": 2 },
-  { "content": "although / tired / continued / extremely / she / was / working", "correct_answer": "Although she was extremely tired, she continued working.", "marks": 2 },
-  { "content": "project / completion / delayed / unforeseen / due / the / was / circumstances", "correct_answer": "The project completion was delayed due to unforeseen circumstances.", "marks": 2 },
-  { "content": "achieve / hard / must / goals / we / our / work / to", "correct_answer": "We must work hard to achieve our goals.", "marks": 2 },
-  { "content": "difficulties / several / encountered / during / journey / the / we", "correct_answer": "We encountered several difficulties during the journey.", "marks": 2 },
-  { "content": "announcement / official / made / the / yesterday / was", "correct_answer": "The official announcement was made yesterday.", "marks": 2 },
-  { "content": "attention / immediate / requires / issue / this / serious", "correct_answer": "This serious issue requires immediate attention.", "marks": 2 },
-  { "content": "meeting / earlier / rescheduled / been / has / the", "correct_answer": "The meeting has been rescheduled earlier.", "marks": 2 },
-  { "content": "suggestion / considered / carefully / your / will / be", "correct_answer": "Your suggestion will be carefully considered.", "marks": 2 },
-  { "content": "highly / appreciated / efforts / your / are", "correct_answer": "Your efforts are highly appreciated.", "marks": 2 },
-  { "content": "decision / difficult / extremely / was / the / make / to", "correct_answer": "The decision was extremely difficult to make.", "marks": 2 },
-  { "content": "documents / necessary / provided / all / they / had", "correct_answer": "They had provided all the necessary documents.", "marks": 2 },
-  { "content": "unexpectedly / changed / weather / the / afternoon / in / the", "correct_answer": "The weather changed unexpectedly in the afternoon.", "marks": 2 },
-  { "content": "resolve / to / trying / were / conflict / the / they", "correct_answer": "They were trying to resolve the conflict.", "marks": 2 },
-  { "content": "impressed / presentation / highly / your / were / we / with", "correct_answer": "We were highly impressed with your presentation.", "marks": 2 },
-  { "content": "before / arrived / guests / the / everything / prepared / we", "correct_answer": "We prepared everything before the guests arrived.", "marks": 2 },
-  { "content": "meeting / attend / unable / due / was / he / to / illness / the", "correct_answer": "He was unable to attend the meeting due to illness.", "marks": 2 },
-  { "content": "policy / revised / recently / been / has / the / company’s", "correct_answer": "The company’s policy has been recently revised.", "marks": 2 },
-  { "content": "performance / consistent / his / appreciated / always / is", "correct_answer": "His consistent performance is always appreciated.", "marks": 2 },
-  { "content": "deadline / meet / extended / help / the / to / was / the", "correct_answer": "The deadline was extended to help meet the requirement.", "marks": 2 },
-  { "content": "instructions / followed / carefully / you / have / should / the", "correct_answer": "You should have followed the instructions carefully.", "marks": 2 },
-  { "content": "arrangements / made / necessary / already / the / we / have", "correct_answer": "We have already made the necessary arrangements.", "marks": 2 },
-  { "content": "expected / earlier / than / arrived / team / the", "correct_answer": "The team arrived earlier than expected.", "marks": 2 },
-  { "content": "proposal / reviewed / thoroughly / been / has / your", "correct_answer": "Your proposal has been thoroughly reviewed.", "marks": 2 },
-  { "content": "ensure / to / steps / taken / required / were / the", "correct_answer": "The required steps were taken to ensure success.", "marks": 2 },
-  { "content": "maintenance / regular / needs / equipment / the", "correct_answer": "The equipment needs regular maintenance.", "marks": 2 },
-  { "content": "training / completed / successfully / she / the / has", "correct_answer": "She has successfully completed the training.", "marks": 2 },
-  { "content": "responsibilities / handle / assigned / to / able / was / he / the", "correct_answer": "He was able to handle the assigned responsibilities.", "marks": 2 },
-  { "content": "discussion / productive / very / a / had / we", "correct_answer": "We had a very productive discussion.", "marks": 2 }
-]
+{
+  "set_name": "Jumble",
+  "total_questions": 200,
+  "questions": [
+    {
+      "id": 1,
+      "jumble": {
+        "A": "that innovation thrives",
+        "B": "the study suggests",
+        "C": "only when constraints",
+        "D": "are carefully managed"
+      },
+      "answer": "B A C D"
+    },
+    {
+      "id": 2,
+      "jumble": {
+        "A": "in modern organizations",
+        "B": "effective leadership",
+        "C": "requires adaptability",
+        "D": "rather than rigid control"
+      },
+      "answer": "B C A D"
+    },
+    {
+      "id": 3,
+      "jumble": {
+        "A": "despite initial resistance",
+        "B": "the policy was implemented",
+        "C": "after extensive consultation",
+        "D": "with key stakeholders"
+      },
+      "answer": "B A C D"
+    },
+    {
+      "id": 4,
+      "jumble": {
+        "A": "can undermine trust",
+        "B": "lack of transparency",
+        "C": "particularly in institutions",
+        "D": "that wield significant power"
+      },
+      "answer": "B A C D"
+    },
+    {
+      "id": 5,
+      "jumble": {
+        "A": "to changing circumstances",
+        "B": "organizations that adapt",
+        "C": "are more likely",
+        "D": "to remain resilient"
+      },
+      "answer": "B A C D"
+    },
+    {
+      "id": 6,
+      "jumble": {
+        "A": "while technological progress",
+        "B": "has improved efficiency",
+        "C": "it has also introduced",
+        "D": "new ethical dilemmas"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 7,
+      "jumble": {
+        "A": "by fostering critical thinking",
+        "B": "education systems can",
+        "C": "better prepare individuals",
+        "D": "for uncertain futures"
+      },
+      "answer": "B A C D"
+    },
+    {
+      "id": 8,
+      "jumble": {
+        "A": "economic growth alone",
+        "B": "cannot guarantee",
+        "C": "improved quality of life",
+        "D": "for all segments of society"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 9,
+      "jumble": {
+        "A": "the report highlights",
+        "B": "a growing disparity",
+        "C": "between policy intent",
+        "D": "and practical outcomes"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 10,
+      "jumble": {
+        "A": "when decisions are rushed",
+        "B": "unintended consequences",
+        "C": "are more likely",
+        "D": "to emerge"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 11,
+      "jumble": {
+        "A": "public confidence erodes",
+        "B": "when accountability is absent",
+        "C": "especially during periods",
+        "D": "of institutional failure"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 12,
+      "jumble": {
+        "A": "by prioritizing short-term gains",
+        "B": "organizations often overlook",
+        "C": "the long-term implications",
+        "D": "of their actions"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 13,
+      "jumble": {
+        "A": "the effectiveness of communication",
+        "B": "depends not only on clarity",
+        "C": "but also on context",
+        "D": "and audience awareness"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 14,
+      "jumble": {
+        "A": "historical narratives are shaped",
+        "B": "by those who control",
+        "C": "the means of documentation",
+        "D": "and dissemination"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 15,
+      "jumble": {
+        "A": "although the strategy appeared sound",
+        "B": "its execution revealed",
+        "C": "several structural weaknesses",
+        "D": "within the organization"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 16,
+      "jumble": {
+        "A": "innovation is often constrained",
+        "B": "not by lack of ideas",
+        "C": "but by resistance",
+        "D": "to change"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 17,
+      "jumble": {
+        "A": "the committee postponed the decision",
+        "B": "to allow for",
+        "C": "further analysis",
+        "D": "of potential risks"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 18,
+      "jumble": {
+        "A": "sustainable development requires",
+        "B": "a balance between growth",
+        "C": "and environmental preservation",
+        "D": "over time"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 19,
+      "jumble": {
+        "A": "as information becomes abundant",
+        "B": "the ability to discern",
+        "C": "reliable sources",
+        "D": "grows increasingly important"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 20,
+      "jumble": {
+        "A": "the negotiation succeeded",
+        "B": "because both parties",
+        "C": "were willing to compromise",
+        "D": "on key issues"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 21,
+      "jumble": {
+        "A": "without proper oversight",
+        "B": "autonomous systems may",
+        "C": "produce outcomes",
+        "D": "that are difficult to justify"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 22,
+      "jumble": {
+        "A": "long-term success depends",
+        "B": "less on rapid expansion",
+        "C": "and more on",
+        "D": "strategic consistency"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 23,
+      "jumble": {
+        "A": "the researcher cautioned",
+        "B": "against drawing conclusions",
+        "C": "from incomplete data",
+        "D": "sets"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 24,
+      "jumble": {
+        "A": "as markets become interconnected",
+        "B": "local disruptions can",
+        "C": "have global repercussions",
+        "D": "within days"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 25,
+      "jumble": {
+        "A": "effective governance relies",
+        "B": "on transparency",
+        "C": "consistent enforcement",
+        "D": "and public engagement"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 26,
+      "jumble": {
+        "A": "the proposal failed",
+        "B": "not due to ambition",
+        "C": "but because it lacked",
+        "D": "practical feasibility"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 27,
+      "jumble": {
+        "A": "by encouraging dissent",
+        "B": "leaders can uncover",
+        "C": "flaws that might otherwise",
+        "D": "remain hidden"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 28,
+      "jumble": {
+        "A": "technological solutions",
+        "B": "often fail when",
+        "C": "human factors",
+        "D": "are ignored"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 29,
+      "jumble": {
+        "A": "the organization acknowledged",
+        "B": "its shortcomings",
+        "C": "and committed to",
+        "D": "systemic reform"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 30,
+      "jumble": {
+        "A": "public discourse deteriorates",
+        "B": "when complex issues",
+        "C": "are reduced to",
+        "D": "simplistic narratives"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 31,
+      "jumble": {
+        "A": "the success of the initiative",
+        "B": "hinged on collaboration",
+        "C": "between diverse groups",
+        "D": "with competing interests"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 32,
+      "jumble": {
+        "A": "although progress was slow",
+        "B": "the reforms eventually",
+        "C": "yielded measurable",
+        "D": "improvements"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 33,
+      "jumble": {
+        "A": "critical evaluation is essential",
+        "B": "in environments",
+        "C": "where information",
+        "D": "is rapidly disseminated"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 34,
+      "jumble": {
+        "A": "the argument collapses",
+        "B": "once its underlying assumptions",
+        "C": "are subjected to",
+        "D": "rigorous scrutiny"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 35,
+      "jumble": {
+        "A": "economic resilience depends",
+        "B": "on diversification",
+        "C": "rather than reliance",
+        "D": "on a single sector"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 36,
+      "jumble": {
+        "A": "the investigation revealed",
+        "B": "systemic failures",
+        "C": "that had been",
+        "D": "ignored for years"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 37,
+      "jumble": {
+        "A": "effective problem-solving requires",
+        "B": "both analytical rigor",
+        "C": "and creative",
+        "D": "flexibility"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 38,
+      "jumble": {
+        "A": "the policy aimed",
+        "B": "to address inequality",
+        "C": "but failed to",
+        "D": "account for regional variation"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 39,
+      "jumble": {
+        "A": "as expectations rise",
+        "B": "public dissatisfaction grows",
+        "C": "when institutions",
+        "D": "fail to deliver"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 40,
+      "jumble": {
+        "A": "the success of negotiations",
+        "B": "often depends on",
+        "C": "mutual trust",
+        "D": "and transparency"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 41,
+      "jumble": {
+        "A": "organizational change falters",
+        "B": "when leadership",
+        "C": "fails to communicate",
+        "D": "a coherent vision"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 42,
+      "jumble": {
+        "A": "the findings challenge",
+        "B": "long-held assumptions",
+        "C": "about productivity",
+        "D": "and workplace efficiency"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 43,
+      "jumble": {
+        "A": "public trust is difficult",
+        "B": "to rebuild once",
+        "C": "it has been",
+        "D": "compromised"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 44,
+      "jumble": {
+        "A": "the strategy prioritized",
+        "B": "short-term visibility",
+        "C": "at the expense of",
+        "D": "long-term stability"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 45,
+      "jumble": {
+        "A": "innovation flourishes",
+        "B": "in environments",
+        "C": "that tolerate",
+        "D": "calculated risk"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 46,
+      "jumble": {
+        "A": "as regulatory frameworks lag",
+        "B": "behind technological change",
+        "C": "legal ambiguities",
+        "D": "inevitably arise"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 47,
+      "jumble": {
+        "A": "the debate centered",
+        "B": "not on feasibility",
+        "C": "but on",
+        "D": "ethical implications"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 48,
+      "jumble": {
+        "A": "organizational culture influences",
+        "B": "how policies are",
+        "C": "interpreted",
+        "D": "and implemented"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 49,
+      "jumble": {
+        "A": "the reforms were introduced",
+        "B": "gradually",
+        "C": "to minimize disruption",
+        "D": "across departments"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 50,
+      "jumble": {
+        "A": "strategic foresight enables",
+        "B": "organizations to anticipate",
+        "C": "and respond effectively",
+        "D": "to emerging challenges"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 51,
+      "jumble": {
+        "A": "by ignoring early warning signs",
+        "B": "the organization compounded",
+        "C": "what could have been",
+        "D": "a manageable problem"
+      },
+      "answer": "B A C D"
+    },
+    {
+      "id": 52,
+      "jumble": {
+        "A": "the study concludes",
+        "B": "that sustained innovation",
+        "C": "depends on incentives",
+        "D": "aligned with long-term goals"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 53,
+      "jumble": {
+        "A": "although the proposal was ambitious",
+        "B": "it ultimately failed",
+        "C": "to secure sufficient",
+        "D": "political support"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 54,
+      "jumble": {
+        "A": "public trust diminishes",
+        "B": "when institutions appear",
+        "C": "unresponsive to",
+        "D": "legitimate concerns"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 55,
+      "jumble": {
+        "A": "the initiative sought",
+        "B": "to streamline processes",
+        "C": "without compromising",
+        "D": "regulatory compliance"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 56,
+      "jumble": {
+        "A": "in the absence of clear guidelines",
+        "B": "individual discretion",
+        "C": "often replaces",
+        "D": "consistent decision-making"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 57,
+      "jumble": {
+        "A": "the debate intensified",
+        "B": "as new evidence",
+        "C": "challenged previously",
+        "D": "accepted assumptions"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 58,
+      "jumble": {
+        "A": "effective reform requires",
+        "B": "not only vision",
+        "C": "but also",
+        "D": "institutional capacity"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 59,
+      "jumble": {
+        "A": "by prioritizing efficiency",
+        "B": "the system inadvertently",
+        "C": "sacrificed",
+        "D": "robustness"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 60,
+      "jumble": {
+        "A": "the report warns",
+        "B": "against complacency",
+        "C": "in the face of",
+        "D": "incremental decline"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 61,
+      "jumble": {
+        "A": "organizational learning occurs",
+        "B": "when failures are",
+        "C": "systematically analyzed",
+        "D": "rather than concealed"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 62,
+      "jumble": {
+        "A": "the negotiation stalled",
+        "B": "because neither side",
+        "C": "was willing to",
+        "D": "reconsider core positions"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 63,
+      "jumble": {
+        "A": "technological adoption accelerates",
+        "B": "when usability concerns",
+        "C": "are addressed",
+        "D": "early in development"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 64,
+      "jumble": {
+        "A": "the policy intervention",
+        "B": "produced mixed results",
+        "C": "due to uneven",
+        "D": "implementation"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 65,
+      "jumble": {
+        "A": "as competition intensified",
+        "B": "margins narrowed",
+        "C": "forcing firms to",
+        "D": "reassess strategies"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 66,
+      "jumble": {
+        "A": "the inquiry revealed",
+        "B": "a pattern of",
+        "C": "systematic neglect",
+        "D": "rather than isolated error"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 67,
+      "jumble": {
+        "A": "effective communication entails",
+        "B": "listening actively",
+        "C": "as much as",
+        "D": "articulating clearly"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 68,
+      "jumble": {
+        "A": "the reforms were delayed",
+        "B": "until consensus",
+        "C": "could be built",
+        "D": "among stakeholders"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 69,
+      "jumble": {
+        "A": "by emphasizing outcomes",
+        "B": "rather than process",
+        "C": "the evaluation framework",
+        "D": "shifted priorities"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 70,
+      "jumble": {
+        "A": "the strategy underestimated",
+        "B": "the complexity of",
+        "C": "coordinating efforts",
+        "D": "across departments"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 71,
+      "jumble": {
+        "A": "long-term planning is hindered",
+        "B": "when leadership turnover",
+        "C": "disrupts continuity",
+        "D": "of vision"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 72,
+      "jumble": {
+        "A": "the analysis demonstrates",
+        "B": "how seemingly minor",
+        "C": "adjustments can",
+        "D": "yield substantial gains"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 73,
+      "jumble": {
+        "A": "the committee expressed concern",
+        "B": "that premature action",
+        "C": "might foreclose",
+        "D": "better alternatives"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 74,
+      "jumble": {
+        "A": "as transparency increases",
+        "B": "public scrutiny",
+        "C": "tends to",
+        "D": "intensify"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 75,
+      "jumble": {
+        "A": "the initiative faltered",
+        "B": "not because of",
+        "C": "conceptual flaws",
+        "D": "but due to poor execution"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 76,
+      "jumble": {
+        "A": "organizational resilience is strengthened",
+        "B": "when contingency planning",
+        "C": "is embedded",
+        "D": "into standard operations"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 77,
+      "jumble": {
+        "A": "the findings underscore",
+        "B": "the importance of",
+        "C": "contextual interpretation",
+        "D": "of data"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 78,
+      "jumble": {
+        "A": "by framing the issue narrowly",
+        "B": "the debate overlooked",
+        "C": "broader structural",
+        "D": "factors"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 79,
+      "jumble": {
+        "A": "the reform agenda stalled",
+        "B": "as political priorities",
+        "C": "shifted unexpectedly",
+        "D": "midway through implementation"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 80,
+      "jumble": {
+        "A": "effective risk management involves",
+        "B": "anticipating unlikely",
+        "C": "but high-impact",
+        "D": "events"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 81,
+      "jumble": {
+        "A": "the proposal gained traction",
+        "B": "after empirical evidence",
+        "C": "substantiated its",
+        "D": "core assumptions"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 82,
+      "jumble": {
+        "A": "as the crisis unfolded",
+        "B": "communication failures",
+        "C": "exacerbated",
+        "D": "public anxiety"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 83,
+      "jumble": {
+        "A": "the initiative was designed",
+        "B": "to complement",
+        "C": "rather than replace",
+        "D": "existing frameworks"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 84,
+      "jumble": {
+        "A": "institutional inertia often",
+        "B": "impedes reforms",
+        "C": "even when",
+        "D": "their necessity is evident"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 85,
+      "jumble": {
+        "A": "the analysis cautions",
+        "B": "against overreliance",
+        "C": "on short-term",
+        "D": "performance indicators"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 86,
+      "jumble": {
+        "A": "by decentralizing authority",
+        "B": "the organization sought",
+        "C": "to enhance responsiveness",
+        "D": "to local needs"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 87,
+      "jumble": {
+        "A": "the negotiations resumed",
+        "B": "once preliminary concerns",
+        "C": "had been",
+        "D": "addressed"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 88,
+      "jumble": {
+        "A": "effective policy design requires",
+        "B": "anticipating behavioral responses",
+        "C": "rather than assuming",
+        "D": "ideal compliance"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 89,
+      "jumble": {
+        "A": "the organization struggled",
+        "B": "to reconcile growth",
+        "C": "with sustainability",
+        "D": "objectives"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 90,
+      "jumble": {
+        "A": "by investing in training",
+        "B": "the firm aimed",
+        "C": "to mitigate",
+        "D": "skill shortages"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 91,
+      "jumble": {
+        "A": "the review highlighted",
+        "B": "gaps between stated goals",
+        "C": "and actual",
+        "D": "performance"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 92,
+      "jumble": {
+        "A": "as public awareness grew",
+        "B": "pressure mounted",
+        "C": "for more",
+        "D": "decisive action"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 93,
+      "jumble": {
+        "A": "the strategy assumed",
+        "B": "a level of coordination",
+        "C": "that proved",
+        "D": "unrealistic"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 94,
+      "jumble": {
+        "A": "the initiative emphasized",
+        "B": "preventive measures",
+        "C": "over reactive",
+        "D": "interventions"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 95,
+      "jumble": {
+        "A": "the committee deferred judgment",
+        "B": "until additional evidence",
+        "C": "could be",
+        "D": "gathered"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 96,
+      "jumble": {
+        "A": "organizational credibility suffers",
+        "B": "when promises",
+        "C": "consistently exceed",
+        "D": "delivery"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 97,
+      "jumble": {
+        "A": "the report documents",
+        "B": "a gradual erosion",
+        "C": "of institutional",
+        "D": "capacity"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 98,
+      "jumble": {
+        "A": "by fostering collaboration",
+        "B": "the initiative sought",
+        "C": "to bridge",
+        "D": "sectoral divides"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 99,
+      "jumble": {
+        "A": "the analysis reveals",
+        "B": "how incentive structures",
+        "C": "shape organizational",
+        "D": "behavior"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 100,
+      "jumble": {
+        "A": "as circumstances evolved",
+        "B": "the original assumptions",
+        "C": "required",
+        "D": "revision"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 101,
+      "jumble": {
+        "A": "despite widespread criticism",
+        "B": "the framework remained",
+        "C": "largely unchanged",
+        "D": "for over a decade"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 102,
+      "jumble": {
+        "A": "the analysis demonstrates",
+        "B": "that correlation should not",
+        "C": "be mistaken",
+        "D": "for causation"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 103,
+      "jumble": {
+        "A": "by failing to address",
+        "B": "structural inefficiencies",
+        "C": "the reforms inadvertently",
+        "D": "reinforced existing problems"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 104,
+      "jumble": {
+        "A": "the organization underestimated",
+        "B": "how deeply entrenched",
+        "C": "the resistance",
+        "D": "to change had become"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 105,
+      "jumble": {
+        "A": "as technological capabilities expand",
+        "B": "ethical considerations",
+        "C": "assume greater",
+        "D": "importance"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 106,
+      "jumble": {
+        "A": "the committee emphasized",
+        "B": "the need for",
+        "C": "incremental progress",
+        "D": "over sweeping reform"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 107,
+      "jumble": {
+        "A": "the report attributes",
+        "B": "the project's failure",
+        "C": "to inadequate coordination",
+        "D": "among stakeholders"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 108,
+      "jumble": {
+        "A": "by privileging speed",
+        "B": "over accuracy",
+        "C": "the system introduced",
+        "D": "avoidable errors"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 109,
+      "jumble": {
+        "A": "the initiative gained legitimacy",
+        "B": "once its objectives",
+        "C": "were clearly articulated",
+        "D": "to the public"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 110,
+      "jumble": {
+        "A": "although resources were available",
+        "B": "implementation faltered",
+        "C": "due to inadequate",
+        "D": "institutional support"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 111,
+      "jumble": {
+        "A": "the findings suggest",
+        "B": "that policy effectiveness",
+        "C": "depends heavily",
+        "D": "on local context"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 112,
+      "jumble": {
+        "A": "by conflating symptoms",
+        "B": "with underlying causes",
+        "C": "the analysis",
+        "D": "misdiagnosed the problem"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 113,
+      "jumble": {
+        "A": "the negotiation succeeded",
+        "B": "not through coercion",
+        "C": "but by building",
+        "D": "mutual trust"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 114,
+      "jumble": {
+        "A": "as public expectations rise",
+        "B": "institutional failures",
+        "C": "become increasingly",
+        "D": "visible"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 115,
+      "jumble": {
+        "A": "the strategy prioritized",
+        "B": "short-term metrics",
+        "C": "at the expense of",
+        "D": "long-term outcomes"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 116,
+      "jumble": {
+        "A": "the review cautions",
+        "B": "against assuming",
+        "C": "uniform impact",
+        "D": "across regions"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 117,
+      "jumble": {
+        "A": "by embedding accountability",
+        "B": "into operational processes",
+        "C": "organizations can",
+        "D": "improve performance"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 118,
+      "jumble": {
+        "A": "the findings challenge",
+        "B": "simplistic explanations",
+        "C": "of complex",
+        "D": "phenomena"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 119,
+      "jumble": {
+        "A": "although the model is elegant",
+        "B": "its assumptions",
+        "C": "limit applicability",
+        "D": "in practice"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 120,
+      "jumble": {
+        "A": "the organization acknowledged",
+        "B": "past shortcomings",
+        "C": "and outlined",
+        "D": "corrective measures"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 121,
+      "jumble": {
+        "A": "by fostering transparency",
+        "B": "the initiative aimed",
+        "C": "to rebuild",
+        "D": "public trust"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 122,
+      "jumble": {
+        "A": "the assessment reveals",
+        "B": "systemic vulnerabilities",
+        "C": "that could",
+        "D": "escalate rapidly"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 123,
+      "jumble": {
+        "A": "as competition intensified",
+        "B": "firms were compelled",
+        "C": "to innovate",
+        "D": "or exit the market"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 124,
+      "jumble": {
+        "A": "the debate shifted",
+        "B": "from feasibility",
+        "C": "to broader",
+        "D": "ethical implications"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 125,
+      "jumble": {
+        "A": "the policy failed",
+        "B": "to anticipate",
+        "C": "behavioral responses",
+        "D": "from affected groups"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 126,
+      "jumble": {
+        "A": "by relying exclusively",
+        "B": "on quantitative indicators",
+        "C": "the evaluation",
+        "D": "missed qualitative nuances"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 127,
+      "jumble": {
+        "A": "the reforms were diluted",
+        "B": "as compromises",
+        "C": "accumulated",
+        "D": "over time"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 128,
+      "jumble": {
+        "A": "the initiative underscored",
+        "B": "the importance of",
+        "C": "cross-sector collaboration",
+        "D": "in addressing complex challenges"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 129,
+      "jumble": {
+        "A": "the investigation concluded",
+        "B": "that oversight mechanisms",
+        "C": "were insufficient",
+        "D": "to prevent misuse"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 130,
+      "jumble": {
+        "A": "as demographic trends evolve",
+        "B": "policy frameworks",
+        "C": "must adapt",
+        "D": "accordingly"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 131,
+      "jumble": {
+        "A": "the report highlights",
+        "B": "a disconnect",
+        "C": "between stated objectives",
+        "D": "and actual outcomes"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 132,
+      "jumble": {
+        "A": "by postponing difficult decisions",
+        "B": "leaders often",
+        "C": "exacerbate",
+        "D": "long-term problems"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 133,
+      "jumble": {
+        "A": "the strategy assumed",
+        "B": "levels of cooperation",
+        "C": "that proved",
+        "D": "unsustainable"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 134,
+      "jumble": {
+        "A": "the analysis cautions",
+        "B": "against drawing conclusions",
+        "C": "from incomplete",
+        "D": "datasets"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 135,
+      "jumble": {
+        "A": "by investing in resilience",
+        "B": "organizations can",
+        "C": "better withstand",
+        "D": "future shocks"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 136,
+      "jumble": {
+        "A": "the negotiation process",
+        "B": "revealed underlying",
+        "C": "power asymmetries",
+        "D": "between the parties"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 137,
+      "jumble": {
+        "A": "as regulatory scrutiny intensifies",
+        "B": "compliance costs",
+        "C": "are likely",
+        "D": "to increase"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 138,
+      "jumble": {
+        "A": "the findings reinforce",
+        "B": "the argument that",
+        "C": "context matters",
+        "D": "significantly"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 139,
+      "jumble": {
+        "A": "by simplifying complex narratives",
+        "B": "the media risk",
+        "C": "distorting",
+        "D": "public understanding"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 140,
+      "jumble": {
+        "A": "the reform initiative",
+        "B": "lost momentum",
+        "C": "as leadership priorities",
+        "D": "shifted"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 141,
+      "jumble": {
+        "A": "the assessment identifies",
+        "B": "structural weaknesses",
+        "C": "that require",
+        "D": "systemic solutions"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 142,
+      "jumble": {
+        "A": "by engaging stakeholders early",
+        "B": "policy designers can",
+        "C": "anticipate resistance",
+        "D": "and adjust strategies"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 143,
+      "jumble": {
+        "A": "the debate illustrates",
+        "B": "how values influence",
+        "C": "policy choices",
+        "D": "in subtle ways"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 144,
+      "jumble": {
+        "A": "the organization's response",
+        "B": "was constrained",
+        "C": "by limited",
+        "D": "institutional capacity"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 145,
+      "jumble": {
+        "A": "as evidence accumulates",
+        "B": "previous assumptions",
+        "C": "must be",
+        "D": "revisited"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 146,
+      "jumble": {
+        "A": "the findings suggest",
+        "B": "that incremental change",
+        "C": "may be more effective",
+        "D": "than radical overhaul"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 147,
+      "jumble": {
+        "A": "by overlooking local variation",
+        "B": "the policy produced",
+        "C": "uneven",
+        "D": "outcomes"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 148,
+      "jumble": {
+        "A": "the negotiation highlighted",
+        "B": "the difficulty of",
+        "C": "balancing competing",
+        "D": "interests"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 149,
+      "jumble": {
+        "A": "the report emphasizes",
+        "B": "the need for",
+        "C": "adaptive governance",
+        "D": "frameworks"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 150,
+      "jumble": {
+        "A": "as uncertainty persists",
+        "B": "flexibility becomes",
+        "C": "a critical",
+        "D": "asset"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 151,
+      "jumble": {
+        "A": "despite clear evidence",
+        "B": "policy inertia",
+        "C": "often delays",
+        "D": "meaningful reform"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 152,
+      "jumble": {
+        "A": "the analysis highlights",
+        "B": "how short-term incentives",
+        "C": "can distort",
+        "D": "strategic decision-making"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 153,
+      "jumble": {
+        "A": "by neglecting maintenance",
+        "B": "organizations risk",
+        "C": "undermining",
+        "D": "long-term reliability"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 154,
+      "jumble": {
+        "A": "the initiative struggled",
+        "B": "to gain traction",
+        "C": "amid competing",
+        "D": "priorities"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 155,
+      "jumble": {
+        "A": "as regulatory demands increase",
+        "B": "compliance efforts",
+        "C": "must evolve",
+        "D": "accordingly"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 156,
+      "jumble": {
+        "A": "the report cautions",
+        "B": "against interpreting correlation",
+        "C": "as definitive proof",
+        "D": "of causation"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 157,
+      "jumble": {
+        "A": "by prioritizing consensus",
+        "B": "the committee avoided",
+        "C": "polarizing outcomes",
+        "D": "in the short term"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 158,
+      "jumble": {
+        "A": "the organization acknowledged",
+        "B": "systemic shortcomings",
+        "C": "and committed to",
+        "D": "incremental improvement"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 159,
+      "jumble": {
+        "A": "as information asymmetries persist",
+        "B": "market inefficiencies",
+        "C": "are likely to",
+        "D": "endure"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 160,
+      "jumble": {
+        "A": "the findings suggest",
+        "B": "that adaptability",
+        "C": "is a prerequisite",
+        "D": "for resilience"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 161,
+      "jumble": {
+        "A": "by centralizing authority",
+        "B": "the organization aimed",
+        "C": "to accelerate",
+        "D": "decision-making"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 162,
+      "jumble": {
+        "A": "the debate underscores",
+        "B": "the tension between",
+        "C": "efficiency and",
+        "D": "accountability"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 163,
+      "jumble": {
+        "A": "as public scrutiny intensifies",
+        "B": "institutional transparency",
+        "C": "becomes increasingly",
+        "D": "important"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 164,
+      "jumble": {
+        "A": "the strategy faltered",
+        "B": "not because it lacked vision",
+        "C": "but because it underestimated",
+        "D": "execution challenges"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 165,
+      "jumble": {
+        "A": "by delaying intervention",
+        "B": "leaders inadvertently",
+        "C": "exacerbated",
+        "D": "systemic risks"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 166,
+      "jumble": {
+        "A": "the assessment identifies",
+        "B": "gaps in capability",
+        "C": "that require",
+        "D": "targeted investment"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 167,
+      "jumble": {
+        "A": "as digital adoption accelerates",
+        "B": "workforce skills",
+        "C": "must adapt",
+        "D": "in parallel"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 168,
+      "jumble": {
+        "A": "the findings challenge",
+        "B": "assumptions about",
+        "C": "linear progress",
+        "D": "over time"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 169,
+      "jumble": {
+        "A": "by overlooking feedback loops",
+        "B": "the model failed",
+        "C": "to capture",
+        "D": "dynamic behavior"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 170,
+      "jumble": {
+        "A": "the initiative emphasized",
+        "B": "learning from failure",
+        "C": "rather than assigning",
+        "D": "blame"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 171,
+      "jumble": {
+        "A": "as competition intensifies",
+        "B": "differentiation strategies",
+        "C": "become",
+        "D": "essential"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 172,
+      "jumble": {
+        "A": "the report documents",
+        "B": "a gradual decline",
+        "C": "in institutional",
+        "D": "capacity"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 173,
+      "jumble": {
+        "A": "by strengthening governance",
+        "B": "organizations can",
+        "C": "mitigate",
+        "D": "operational risk"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 174,
+      "jumble": {
+        "A": "the analysis reveals",
+        "B": "how misaligned incentives",
+        "C": "can undermine",
+        "D": "collective outcomes"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 175,
+      "jumble": {
+        "A": "as uncertainty increases",
+        "B": "scenario planning",
+        "C": "gains strategic",
+        "D": "value"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 176,
+      "jumble": {
+        "A": "the policy response",
+        "B": "was constrained",
+        "C": "by limited",
+        "D": "administrative capacity"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 177,
+      "jumble": {
+        "A": "by fostering cross-functional teams",
+        "B": "the organization sought",
+        "C": "to break down",
+        "D": "operational silos"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 178,
+      "jumble": {
+        "A": "the evaluation emphasizes",
+        "B": "outcomes over",
+        "C": "procedural",
+        "D": "compliance"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 179,
+      "jumble": {
+        "A": "as demographic pressures mount",
+        "B": "existing systems",
+        "C": "face increasing",
+        "D": "strain"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 180,
+      "jumble": {
+        "A": "the initiative failed",
+        "B": "to account for",
+        "C": "behavioral responses",
+        "D": "at scale"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 181,
+      "jumble": {
+        "A": "by embedding flexibility",
+        "B": "into design",
+        "C": "systems can",
+        "D": "adapt more readily"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 182,
+      "jumble": {
+        "A": "the findings indicate",
+        "B": "that incremental gains",
+        "C": "can accumulate",
+        "D": "over time"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 183,
+      "jumble": {
+        "A": "as coordination costs rise",
+        "B": "organizational complexity",
+        "C": "becomes harder",
+        "D": "to manage"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 184,
+      "jumble": {
+        "A": "the strategy relied",
+        "B": "on assumptions",
+        "C": "that proved",
+        "D": "untenable"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 185,
+      "jumble": {
+        "A": "by clarifying roles",
+        "B": "leaders can",
+        "C": "reduce",
+        "D": "coordination failures"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 186,
+      "jumble": {
+        "A": "the report underscores",
+        "B": "the importance of",
+        "C": "continuous monitoring",
+        "D": "and evaluation"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 187,
+      "jumble": {
+        "A": "as expectations evolve",
+        "B": "organizational legitimacy",
+        "C": "must be",
+        "D": "actively maintained"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 188,
+      "jumble": {
+        "A": "the initiative prioritized",
+        "B": "evidence-based",
+        "C": "decision-making",
+        "D": "processes"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 189,
+      "jumble": {
+        "A": "by neglecting context",
+        "B": "policy prescriptions",
+        "C": "risk becoming",
+        "D": "counterproductive"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 190,
+      "jumble": {
+        "A": "the assessment concludes",
+        "B": "that sustained improvement",
+        "C": "requires",
+        "D": "institutional learning"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 191,
+      "jumble": {
+        "A": "as resource constraints tighten",
+        "B": "trade-offs",
+        "C": "become increasingly",
+        "D": "salient"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 192,
+      "jumble": {
+        "A": "the findings emphasize",
+        "B": "the role of",
+        "C": "leadership in",
+        "D": "driving change"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 193,
+      "jumble": {
+        "A": "by anticipating resistance",
+        "B": "change initiatives",
+        "C": "can be",
+        "D": "more effectively managed"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 194,
+      "jumble": {
+        "A": "the strategy balanced",
+        "B": "ambition with",
+        "C": "operational",
+        "D": "realism"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 195,
+      "jumble": {
+        "A": "as systems scale",
+        "B": "governance challenges",
+        "C": "tend to",
+        "D": "multiply"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 196,
+      "jumble": {
+        "A": "the analysis identifies",
+        "B": "feedback mechanisms",
+        "C": "that can",
+        "D": "stabilize performance"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 197,
+      "jumble": {
+        "A": "by aligning incentives",
+        "B": "organizations can",
+        "C": "encourage",
+        "D": "desired behaviors"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 198,
+      "jumble": {
+        "A": "the report calls",
+        "B": "for a reassessment",
+        "C": "of prevailing",
+        "D": "assumptions"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 199,
+      "jumble": {
+        "A": "as uncertainty persists",
+        "B": "adaptive strategies",
+        "C": "offer greater",
+        "D": "robustness"
+      },
+      "answer": "A B C D"
+    },
+    {
+      "id": 200,
+      "jumble": {
+        "A": "the findings ultimately",
+        "B": "underscore the need",
+        "C": "for sustained",
+        "D": "institutional reform"
+      },
+      "answer": "A B C D"
+    }
+  ]
+}

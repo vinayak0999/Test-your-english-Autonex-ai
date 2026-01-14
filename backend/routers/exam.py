@@ -461,12 +461,28 @@ async def finish_exam(
             
             correct_answer = grading_config.get("reference", grading_config.get("correct_answer", "N/A"))
             content = q.get("content") or {}
-            question_text = content.get("passage", content.get("question", content.get("text", content.get("url", ""))))
+            question_text = content.get("question", content.get("text", content.get("content", "")))
+            
+            # Get content URL for media (video/image)
+            content_url = content.get("url", "")
+            
+            # Get passage for reading questions
+            passage = content.get("passage", "")
+            
+            # Get options for MCQ questions
+            options = content.get("options", {})
+            
+            # Get jumble parts for Jumble questions
+            jumble_parts = content.get("jumble", {})
             
             breakdown.append({
                 "question_id": q["temp_id"],
                 "type": question_type,
-                "question_text": (str(question_text)[:200] + "...") if question_text and len(str(question_text)) > 200 else str(question_text or ""),
+                "content_url": content_url,  # For video/image display
+                "passage": passage,  # For reading questions
+                "question_text": question_text[:500] if question_text else "",
+                "options": options,  # For MCQ questions (A, B, C options)
+                "jumble": jumble_parts,  # For Jumble questions (A, B, C, D parts)
                 "correct_answer": correct_answer[:500] if isinstance(correct_answer, str) else str(correct_answer),
                 "student_answer": student_text[:500] if student_text else "No answer provided",
                 "max_marks": q["marks"],
@@ -543,16 +559,29 @@ async def finish_exam(
             total_score += question_score
             
             correct_answer = grading.get("reference", grading.get("correct_answer", "N/A"))
+            
+            # Extract content fields
+            content_url = ""
+            passage = ""
             question_text = ""
+            
             if q.content:
-                question_text = q.content.get("passage", q.content.get("question", q.content.get("text", "")))
+                content_url = q.content.get("url", "")
+                passage = q.content.get("passage", "")
+                question_text = q.content.get("question", q.content.get("text", ""))
             else:
-                question_text = q.content_url_or_text or ""
+                # Legacy mode - content_url_or_text could be URL or passage
+                if q.question_type in ['video', 'image']:
+                    content_url = q.content_url_or_text or ""
+                else:
+                    passage = q.content_url_or_text or ""
             
             breakdown.append({
                 "question_id": q.id,
                 "type": q.question_type,
-                "question_text": (question_text[:200] + "...") if question_text and len(question_text) > 200 else (question_text or ""),
+                "content_url": content_url,  # For video/image display
+                "passage": passage,  # For reading questions
+                "question_text": question_text[:500] if question_text else "",
                 "correct_answer": correct_answer[:500] if isinstance(correct_answer, str) else str(correct_answer),
                 "student_answer": student_text[:500] if student_text else "No answer provided",
                 "max_marks": q.marks,

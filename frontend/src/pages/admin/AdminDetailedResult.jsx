@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import api from '../../api';
-import { ArrowLeft, User, FileText, AlertTriangle, CheckCircle, XCircle, Loader2 } from 'lucide-react';
+import { ArrowLeft, User, FileText, AlertTriangle, CheckCircle, XCircle, Loader2, Image as ImageIcon, Video, List, Shuffle } from 'lucide-react';
 import { motion } from 'framer-motion';
+
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
 const AdminDetailedResult = () => {
     const { resultId } = useParams();
@@ -23,6 +25,37 @@ const AdminDetailedResult = () => {
         };
         fetchResult();
     }, [resultId]);
+
+    // Helper to get media URL
+    const getMediaUrl = (url) => {
+        if (!url) return '';
+        return url.startsWith('http') ? url : `${API_URL}${url}`;
+    };
+
+    // Helper to check if a string is a URL (for image/video)
+    const isMediaUrl = (str) => {
+        if (!str) return false;
+        return str.startsWith('http://') || str.startsWith('https://') || str.startsWith('/static/');
+    };
+
+    // Helper to determine if URL is an image
+    const isImageUrl = (url) => {
+        if (!url) return false;
+        const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg', '.bmp'];
+        const lowerUrl = url.toLowerCase();
+        return imageExtensions.some(ext => lowerUrl.includes(ext)) ||
+            lowerUrl.includes('unsplash') ||
+            lowerUrl.includes('imgur') ||
+            lowerUrl.includes('cloudinary');
+    };
+
+    // Helper to determine if URL is a video
+    const isVideoUrl = (url) => {
+        if (!url) return false;
+        const videoExtensions = ['.mp4', '.webm', '.ogg', '.mov', '.avi'];
+        const lowerUrl = url.toLowerCase();
+        return videoExtensions.some(ext => lowerUrl.includes(ext));
+    };
 
     if (loading) return <div className="flex justify-center py-20"><Loader2 className="w-8 h-8 animate-spin text-blue-600" /></div>;
     if (error) return <div className="text-center py-20 text-red-600">{error}</div>;
@@ -81,91 +114,256 @@ const AdminDetailedResult = () => {
             <h2 className="text-xl font-bold text-slate-800 mb-6">Question-by-Question Analysis</h2>
 
             <div className="space-y-6">
-                {result.breakdown?.map((item, index) => (
-                    <motion.div
-                        key={index}
-                        initial={{ opacity: 0, x: -10 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.05 }}
-                        className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden"
-                    >
-                        {/* Question Header */}
-                        <div className="bg-slate-50 px-6 py-4 border-b border-slate-200 flex justify-between items-center">
-                            <div className="flex items-center gap-3">
-                                <span className="bg-white border border-slate-200 text-slate-500 font-bold px-3 py-1 rounded text-sm">
-                                    Q{index + 1}
-                                </span>
-                                <span className="font-semibold text-slate-700 capitalize">{item.type} Question</span>
-                            </div>
-                            <div className={`px-4 py-1 rounded-full text-sm font-bold ${item.student_score >= item.max_marks * 0.7
+                {result.breakdown?.map((item, index) => {
+                    // Determine the media URL - check multiple possible fields
+                    const mediaUrl = item.content_url ||
+                        (isMediaUrl(item.question_text) ? item.question_text : null);
+
+                    // Check if this is an image or video question (by type or by URL)
+                    const hasImage = item.type === 'image' || (mediaUrl && isImageUrl(mediaUrl));
+                    const hasVideo = item.type === 'video' || (mediaUrl && isVideoUrl(mediaUrl));
+
+                    // Check if this is MCQ or Jumble
+                    const isMCQ = item.type?.includes('mcq');
+                    const isJumble = item.type === 'jumble';
+
+                    // Get options and jumble parts
+                    const options = item.options || {};
+                    const jumbleParts = item.jumble || {};
+                    const hasOptions = Object.keys(options).length > 0;
+                    const hasJumbleParts = Object.keys(jumbleParts).length > 0;
+
+                    return (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: index * 0.05 }}
+                            className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden"
+                        >
+                            {/* Question Header */}
+                            <div className="bg-slate-50 px-6 py-4 border-b border-slate-200 flex justify-between items-center">
+                                <div className="flex items-center gap-3">
+                                    <span className="bg-white border border-slate-200 text-slate-500 font-bold px-3 py-1 rounded text-sm">
+                                        Q{index + 1}
+                                    </span>
+                                    <span className="font-semibold text-slate-700 capitalize">{item.type?.replace('mcq_', 'MCQ ')} Question</span>
+                                </div>
+                                <div className={`px-4 py-1 rounded-full text-sm font-bold ${item.student_score >= item.max_marks * 0.7
                                     ? 'bg-green-100 text-green-700 border border-green-200'
                                     : item.student_score >= item.max_marks * 0.4
                                         ? 'bg-amber-100 text-amber-700 border border-amber-200'
                                         : 'bg-red-100 text-red-700 border border-red-200'
-                                }`}>
-                                {item.student_score} / {item.max_marks} Marks
-                            </div>
-                        </div>
-
-                        {/* Question Body */}
-                        <div className="p-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
-                            {/* Correct Answer */}
-                            <div>
-                                <h4 className="text-xs font-bold text-green-600 uppercase tracking-wider mb-2 flex items-center gap-1">
-                                    <CheckCircle size={14} /> Correct Answer
-                                </h4>
-                                <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-                                    <p className="text-slate-700 text-sm whitespace-pre-wrap">{item.correct_answer || "N/A"}</p>
+                                    }`}>
+                                    {item.student_score} / {item.max_marks} Marks
                                 </div>
                             </div>
 
-                            {/* User's Answer */}
-                            <div>
-                                <h4 className="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2 flex items-center gap-1">
-                                    <User size={14} /> User's Answer
-                                </h4>
-                                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                                    <p className="text-slate-700 text-sm whitespace-pre-wrap">{item.student_answer || "No answer provided"}</p>
-                                </div>
-                            </div>
+                            {/* Question Body */}
+                            <div className="p-6">
 
-                            {/* AI Feedback */}
-                            {item.ai_feedback && (
-                                <div className="lg:col-span-2">
-                                    <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">AI Evaluation</h4>
-                                    <div className="bg-slate-50 border border-slate-200 rounded-lg p-4">
-                                        {/* Rubric Scores */}
-                                        {item.ai_feedback.grammar_structure_score !== undefined && (
-                                            <div className="grid grid-cols-2 md:grid-cols-5 gap-2 mb-4">
-                                                <div className="text-center p-2 bg-white rounded border">
-                                                    <p className="text-xs text-slate-400">Grammar</p>
-                                                    <p className="font-bold text-slate-700">{item.ai_feedback.grammar_structure_score}/4</p>
-                                                </div>
-                                                <div className="text-center p-2 bg-white rounded border">
-                                                    <p className="text-xs text-slate-400">Vocabulary</p>
-                                                    <p className="font-bold text-slate-700">{item.ai_feedback.vocabulary_word_choice_score}/4</p>
-                                                </div>
-                                                <div className="text-center p-2 bg-white rounded border">
-                                                    <p className="text-xs text-slate-400">Clarity</p>
-                                                    <p className="font-bold text-slate-700">{item.ai_feedback.clarity_meaning_score}/3</p>
-                                                </div>
-                                                <div className="text-center p-2 bg-white rounded border">
-                                                    <p className="text-xs text-slate-400">Compliance</p>
-                                                    <p className="font-bold text-slate-700">{item.ai_feedback.instruction_compliance_score}/2</p>
-                                                </div>
-                                                <div className="text-center p-2 bg-white rounded border">
-                                                    <p className="text-xs text-slate-400">Spelling</p>
-                                                    <p className="font-bold text-slate-700">{item.ai_feedback.spelling_formatting_score}/2</p>
+                                {/* ========== IMAGE DISPLAY ========== */}
+                                {hasImage && mediaUrl && (
+                                    <div className="mb-6">
+                                        <h4 className="text-xs font-bold text-purple-600 uppercase tracking-wider mb-3 flex items-center gap-1">
+                                            <ImageIcon size={14} /> Question Image
+                                        </h4>
+                                        <div className="rounded-xl overflow-hidden bg-slate-100 border border-slate-200">
+                                            <img
+                                                src={getMediaUrl(mediaUrl)}
+                                                alt="Question Visual"
+                                                className="w-full h-auto max-h-[400px] object-contain mx-auto"
+                                                onError={(e) => {
+                                                    e.target.style.display = 'none';
+                                                }}
+                                            />
+                                        </div>
+                                    </div>
+                                )}
+
+                                {/* ========== VIDEO DISPLAY ========== */}
+                                {hasVideo && mediaUrl && (
+                                    <div className="mb-6">
+                                        <h4 className="text-xs font-bold text-purple-600 uppercase tracking-wider mb-3 flex items-center gap-1">
+                                            <Video size={14} /> Question Video
+                                        </h4>
+                                        <div className="rounded-xl overflow-hidden bg-black aspect-video shadow-md">
+                                            <video
+                                                controls
+                                                controlsList="nodownload"
+                                                className="w-full h-full object-contain"
+                                                src={getMediaUrl(mediaUrl)}
+                                            >
+                                                Your browser does not support the video tag.
+                                            </video>
+                                        </div>
+                                    </div>
+                                )}
+
+                                {/* ========== MCQ QUESTION WITH OPTIONS ========== */}
+                                {isMCQ && (
+                                    <div className="mb-6">
+                                        {/* Question Text */}
+                                        {item.question_text && !isMediaUrl(item.question_text) && (
+                                            <div className="mb-4">
+                                                <h4 className="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-2 flex items-center gap-1">
+                                                    <List size={14} /> Question
+                                                </h4>
+                                                <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
+                                                    <p className="text-slate-700">{item.question_text}</p>
                                                 </div>
                                             </div>
                                         )}
-                                        <p className="text-slate-600 text-sm">{item.ai_feedback.feedback || "No additional feedback."}</p>
+
+                                        {/* Options */}
+                                        {hasOptions && (
+                                            <div className="mb-4">
+                                                <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Options</h4>
+                                                <div className="space-y-2">
+                                                    {Object.entries(options).map(([key, value]) => {
+                                                        const isCorrect = item.correct_answer === key;
+                                                        const isSelected = item.student_answer === key;
+
+                                                        return (
+                                                            <div
+                                                                key={key}
+                                                                className={`p-3 rounded-lg border flex items-start gap-3
+                                                                    ${isCorrect ? 'bg-green-50 border-green-300' : ''}
+                                                                    ${isSelected && !isCorrect ? 'bg-red-50 border-red-300' : ''}
+                                                                    ${!isCorrect && !isSelected ? 'bg-slate-50 border-slate-200' : ''}
+                                                                `}
+                                                            >
+                                                                <span className={`font-bold px-2 py-0.5 rounded text-sm
+                                                                    ${isCorrect ? 'bg-green-200 text-green-800' : ''}
+                                                                    ${isSelected && !isCorrect ? 'bg-red-200 text-red-800' : ''}
+                                                                    ${!isCorrect && !isSelected ? 'bg-slate-200 text-slate-600' : ''}
+                                                                `}>
+                                                                    {key}
+                                                                </span>
+                                                                <span className="text-slate-700 flex-1">{value}</span>
+                                                                {isCorrect && <CheckCircle size={18} className="text-green-600 flex-shrink-0" />}
+                                                                {isSelected && !isCorrect && <XCircle size={18} className="text-red-600 flex-shrink-0" />}
+                                                            </div>
+                                                        );
+                                                    })}
+                                                </div>
+                                            </div>
+                                        )}
                                     </div>
+                                )}
+
+                                {/* ========== JUMBLE QUESTION WITH PARTS ========== */}
+                                {isJumble && (
+                                    <div className="mb-6">
+                                        <h4 className="text-xs font-bold text-orange-600 uppercase tracking-wider mb-3 flex items-center gap-1">
+                                            <Shuffle size={14} /> Jumbled Sentence Parts
+                                        </h4>
+
+                                        {/* Jumble Parts */}
+                                        {hasJumbleParts && (
+                                            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+                                                {Object.entries(jumbleParts).map(([key, value]) => (
+                                                    <div
+                                                        key={key}
+                                                        className="p-3 rounded-lg bg-orange-50 border border-orange-200"
+                                                    >
+                                                        <span className="font-bold text-orange-700 text-sm">{key}:</span>
+                                                        <p className="text-slate-700 text-sm mt-1">{value}</p>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </div>
+                                )}
+
+                                {/* ========== QUESTION PROMPT (for non-MCQ, non-media types) ========== */}
+                                {!isMCQ && !isJumble && item.question_text && !isMediaUrl(item.question_text) && (
+                                    <div className="mb-6">
+                                        <h4 className="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-2 flex items-center gap-1">
+                                            <FileText size={14} /> Question Prompt
+                                        </h4>
+                                        <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
+                                            <p className="text-slate-700 text-sm">{item.question_text}</p>
+                                        </div>
+                                    </div>
+                                )}
+
+                                {/* ========== READING PASSAGE ========== */}
+                                {item.type === 'reading' && item.passage && (
+                                    <div className="mb-6">
+                                        <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 flex items-center gap-1">
+                                            <FileText size={14} /> Reading Passage
+                                        </h4>
+                                        <div className="bg-slate-50 border border-slate-200 rounded-lg p-4 max-h-48 overflow-y-auto">
+                                            <p className="text-slate-700 text-sm leading-relaxed">{item.passage}</p>
+                                        </div>
+                                    </div>
+                                )}
+
+                                {/* Answers Grid */}
+                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                    {/* Correct Answer */}
+                                    <div>
+                                        <h4 className="text-xs font-bold text-green-600 uppercase tracking-wider mb-2 flex items-center gap-1">
+                                            <CheckCircle size={14} /> Correct Answer
+                                        </h4>
+                                        <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+                                            <p className="text-slate-700 text-sm whitespace-pre-wrap font-medium">{item.correct_answer || "N/A"}</p>
+                                        </div>
+                                    </div>
+
+                                    {/* User's Answer */}
+                                    <div>
+                                        <h4 className="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2 flex items-center gap-1">
+                                            <User size={14} /> User's Answer
+                                        </h4>
+                                        <div className={`border rounded-lg p-4 ${item.student_score > 0
+                                                ? 'bg-green-50 border-green-200'
+                                                : 'bg-red-50 border-red-200'
+                                            }`}>
+                                            <p className="text-slate-700 text-sm whitespace-pre-wrap font-medium">{item.student_answer || "No answer provided"}</p>
+                                        </div>
+                                    </div>
+
+                                    {/* AI Feedback (for image/video/reading) */}
+                                    {item.ai_feedback && !isMCQ && !isJumble && (
+                                        <div className="lg:col-span-2">
+                                            <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">AI Evaluation</h4>
+                                            <div className="bg-slate-50 border border-slate-200 rounded-lg p-4">
+                                                {/* Rubric Scores */}
+                                                {item.ai_feedback.grammar_structure_score !== undefined && (
+                                                    <div className="grid grid-cols-2 md:grid-cols-5 gap-2 mb-4">
+                                                        <div className="text-center p-2 bg-white rounded border">
+                                                            <p className="text-xs text-slate-400">Grammar</p>
+                                                            <p className="font-bold text-slate-700">{item.ai_feedback.grammar_structure_score}/4</p>
+                                                        </div>
+                                                        <div className="text-center p-2 bg-white rounded border">
+                                                            <p className="text-xs text-slate-400">Vocabulary</p>
+                                                            <p className="font-bold text-slate-700">{item.ai_feedback.vocabulary_word_choice_score}/4</p>
+                                                        </div>
+                                                        <div className="text-center p-2 bg-white rounded border">
+                                                            <p className="text-xs text-slate-400">Clarity</p>
+                                                            <p className="font-bold text-slate-700">{item.ai_feedback.clarity_meaning_score}/3</p>
+                                                        </div>
+                                                        <div className="text-center p-2 bg-white rounded border">
+                                                            <p className="text-xs text-slate-400">Compliance</p>
+                                                            <p className="font-bold text-slate-700">{item.ai_feedback.instruction_compliance_score}/2</p>
+                                                        </div>
+                                                        <div className="text-center p-2 bg-white rounded border">
+                                                            <p className="text-xs text-slate-400">Spelling</p>
+                                                            <p className="font-bold text-slate-700">{item.ai_feedback.spelling_formatting_score}/2</p>
+                                                        </div>
+                                                    </div>
+                                                )}
+                                                <p className="text-slate-600 text-sm">{item.ai_feedback.feedback || "No additional feedback."}</p>
+                                            </div>
+                                        </div>
+                                    )}
                                 </div>
-                            )}
-                        </div>
-                    </motion.div>
-                ))}
+                            </div>
+                        </motion.div>
+                    );
+                })}
             </div>
         </div>
     );
