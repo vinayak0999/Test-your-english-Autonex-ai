@@ -70,16 +70,6 @@
         "tags": ["business", "technology"]
     },
     {
-        "id": "typing_008",
-        "type": "typing",
-        "marks": 15,
-        "passage": "Spectroscopic analysis of exoplanet TRAPPIST-1e's atmospheric composition — conducted via the James Webb Space Telescope's Near-Infrared Spectrograph (NIRSpec) — detected absorption features consistent with CO2 (4.26 micrometers) and tentative signatures of dimethyl sulfide (CH3)2S, a potential biosignature. The planet orbits within its M-dwarf host star's habitable zone at 0.029 AU, completing one revolution every 6.1 Earth days; equilibrium temperature estimates range from 230K to 280K.",
-        "word_count": 63,
-        "time_limit_seconds": 60,
-        "difficulty": "advanced",
-        "tags": ["astronomy", "science"]
-    },
-    {
         "id": "typing_009",
         "type": "typing",
         "marks": 15,
