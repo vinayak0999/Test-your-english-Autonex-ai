@@ -52,7 +52,9 @@ class QuestionBankService:
             "mcq-grammar": "mcq_grammar.json",
             "mcq-context": "mcq_context.json",
             "mcq-reading": "mcq_reading.json",
-            "typing": "typing.json"
+            "typing": "typing.json",
+            "typing-easy": "typing_easy.json",
+            "typing-advanced": "typing_advanced.json",
         }
 
         filename = bank_map.get(section_type)
@@ -184,16 +186,27 @@ class QuestionBankService:
                     "correct_answer": new_correct
                 }
 
-            # 6. Typing Speed
-            elif section_type == "typing":
+            # 6. Typing Speed (all variants)
+            elif section_type in ("typing", "typing-easy", "typing-advanced"):
+                # Determine grading mode from section type or difficulty field
+                if section_type == "typing-easy":
+                    grading_mode = "speed"
+                elif section_type == "typing-advanced":
+                    grading_mode = "accuracy"
+                else:
+                    grading_mode = "both"  # legacy
+
+                q_structure["type"] = "typing"  # Frontend always renders as 'typing'
                 q_structure["content"] = {
                     "passage": item.get("passage"),
                     "word_count": item.get("word_count"),
-                    "time_limit": item.get("time_limit_seconds", 60)
+                    "time_limit": item.get("time_limit_seconds", 60),
+                    "grading_mode": grading_mode,
                 }
                 q_structure["grading_config"] = {
                     "original_passage": item.get("passage"),
                     "time_limit": item.get("time_limit_seconds", 60),
+                    "grading_mode": grading_mode,
                     "benchmark_wpm": 30,
                     "benchmark_accuracy": 90
                 }

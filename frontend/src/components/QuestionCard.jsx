@@ -22,7 +22,10 @@ const QuestionCard = ({ question, answer, onAnswerChange, onTypingComplete, onAu
         >
             <div className="mb-6 flex items-center justify-between">
                 <span className="bg-indigo-100 text-indigo-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
-                    {question.type === 'mcq-grammar' ? 'Grammar' : question.type}
+                    {question.type === 'mcq-grammar' ? 'Grammar'
+                        : question.type === 'typing-easy' ? '⌨️ Typing — Easy'
+                        : question.type === 'typing-advanced' ? '⌨️ Typing — Advanced'
+                        : question.type}
                 </span>
                 <span className="text-slate-400 text-sm font-medium">
                     {question.marks} Marks
@@ -124,8 +127,8 @@ const QuestionCard = ({ question, answer, onAnswerChange, onTypingComplete, onAu
                     </div>
                 )}
 
-                {/* 4. TYPING */}
-                {question.type === 'typing' && (
+                {/* 4. TYPING (all variants) */}
+                {['typing', 'typing-easy', 'typing-advanced'].includes(question.type) && (
                     <TypingQuestion
                         question={question}
                         answer={answer}
@@ -135,8 +138,8 @@ const QuestionCard = ({ question, answer, onAnswerChange, onTypingComplete, onAu
                 )}
             </div>
 
-            {/* --- ANSWER INPUT AREA (not shown for typing - it has its own) --- */}
-            {question.type !== 'typing' && (
+            {/* --- ANSWER INPUT AREA (not shown for any typing variant) --- */}
+            {!['typing', 'typing-easy', 'typing-advanced'].includes(question.type) && (
             <div className="space-y-4">
                 <label className="block text-sm font-bold text-slate-400 uppercase tracking-wider">
                     Your Answer

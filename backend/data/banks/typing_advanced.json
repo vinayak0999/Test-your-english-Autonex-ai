@@ -1,0 +1,132 @@
+[
+  {
+    "id": "typing_a001",
+    "type": "typing",
+    "marks": 15,
+    "passage": "The pharmaceutical conglomerate announced a $2.7 billion acquisition of BioSynth Laboratories, citing significant synergies in immunotherapy research (Phase III clinical trials). Dr. Yamamoto's peer reviewed publication in The Lancet concluded that mRNA therapeutics exhibited a 43.6% efficacy improvement over conventional monoclonal antibodies; nevertheless, longitudinal studies spanning 18 to 24 months remain absolute prerequisites for FDA premarket authorization across all participating treatment centers.",
+    "word_count": 62,
+    "time_limit_seconds": 60,
+    "difficulty": "advanced",
+    "tags": [
+      "pharmaceutical",
+      "technical"
+    ]
+  },
+  {
+    "id": "typing_a002",
+    "type": "typing",
+    "marks": 15,
+    "passage": "Kubernetes orchestration architecture demands meticulous configuration of load balancing parameters, particularly when deploying microservices across geographically distributed clusters spanning multiple availability zones. The DevOps engineering team identified that PostgreSQL replication lag exceeded 340 milliseconds during peak throughput (approximately 12,500 requests per second), necessitating an urgent migration from synchronous to asynchronous commit protocols. Containerized workloads must reference environment specific YAML manifests to ensure idempotent deployments.",
+    "word_count": 64,
+    "time_limit_seconds": 60,
+    "difficulty": "advanced",
+    "tags": [
+      "technology",
+      "devops"
+    ]
+  },
+  {
+    "id": "typing_a003",
+    "type": "typing",
+    "marks": 15,
+    "passage": "The fiduciary responsibility of portfolio managers encompasses diversification across multiple asset classes including equities, fixed income securities, commodities, and alternative investments, while maintaining strict compliance with Sarbanes Oxley (SOX) reporting requirements. Quarterly rebalancing of the $450 million endowment yielded annualized returns of 8.3%, outperforming the benchmark S&P 500 index by 127 basis points. Macroeconomic volatility, exacerbated by geopolitical tensions, necessitated hedging strategies utilizing volatility linked derivatives.",
+    "word_count": 66,
+    "time_limit_seconds": 60,
+    "difficulty": "advanced",
+    "tags": [
+      "finance",
+      "investment"
+    ]
+  },
+  {
+    "id": "typing_a004",
+    "type": "typing",
+    "marks": 15,
+    "passage": "The architectural firm's competition submission incorporated advanced parametric design methodologies, employing Voronoi tessellations generated through Grasshopper software integrated with finite element analysis (FEA) for structural optimization. Load bearing calculations indicated that cross laminated timber (CLT) panels, reinforced with carbon fiber composites, could achieve a strength to weight ratio 2.4 times superior to conventional reinforced concrete, while reducing embodied carbon by approximately 37% per square meter.",
+    "word_count": 65,
+    "time_limit_seconds": 60,
+    "difficulty": "advanced",
+    "tags": [
+      "architecture",
+      "engineering"
+    ]
+  },
+  {
+    "id": "typing_a005",
+    "type": "typing",
+    "marks": 15,
+    "passage": "Pursuant to Article 17 of the General Data Protection Regulation (GDPR), data controllers must facilitate the right to erasure within 30 calendar days of receiving a verified subject access request (SAR). Penalties for noncompliance, calculated at 4% of global annual turnover or EUR 20 million whichever is greater, have been levied against numerous organizations including Meta Platforms Inc. for $1.3 billion in May 2023.",
+    "word_count": 64,
+    "time_limit_seconds": 60,
+    "difficulty": "advanced",
+    "tags": [
+      "legal",
+      "data_privacy"
+    ]
+  },
+  {
+    "id": "typing_a006",
+    "type": "typing",
+    "marks": 15,
+    "passage": "Neuroplasticity research conducted at the Max Planck Institute for Human Cognitive and Brain Sciences demonstrated that polyglots, defined as individuals fluent in four or more languages, exhibit significantly denser grey matter throughout Broca's area and the left inferior parietal lobule. Longitudinal fMRI scans (n=2,847 participants; ages 22 to 68) revealed that consistent bilingual usage correlated with a 4.1 year delay in Alzheimer's symptom onset.",
+    "word_count": 64,
+    "time_limit_seconds": 60,
+    "difficulty": "advanced",
+    "tags": [
+      "neuroscience",
+      "research"
+    ]
+  },
+  {
+    "id": "typing_a007",
+    "type": "typing",
+    "marks": 15,
+    "passage": "The acquisition of Activision Blizzard by Microsoft Corporation (closed October 2023; valued at $68.7 billion) represents the largest transaction in interactive entertainment history. Regulatory scrutiny from the Federal Trade Commission, the European Commission, and the United Kingdom's Competition and Markets Authority (CMA) centered on vertical integration concerns, specifically the potential exclusivity of Call of Duty, World of Warcraft, and Candy Crush franchises from competing platforms.",
+    "word_count": 65,
+    "time_limit_seconds": 60,
+    "difficulty": "advanced",
+    "tags": [
+      "business",
+      "technology"
+    ]
+  },
+  {
+    "id": "typing_a008",
+    "type": "typing",
+    "marks": 15,
+    "passage": "Spectroscopic analysis of exoplanet TRAPPIST 1e's atmospheric composition, conducted via the James Webb Space Telescope's Near Infrared Spectrograph (NIRSpec), detected absorption features consistent with carbon dioxide at 4.26 micrometers and tentative signatures of dimethyl sulfide, regarded as a potential biosignature. The planet orbits within its M dwarf host star's habitable zone at 0.029 astronomical units, completing one revolution every 6.1 Earth days.",
+    "word_count": 62,
+    "time_limit_seconds": 60,
+    "difficulty": "advanced",
+    "tags": [
+      "astronomy",
+      "science"
+    ]
+  },
+  {
+    "id": "typing_a009",
+    "type": "typing",
+    "marks": 15,
+    "passage": "The World Health Organization's Global Antimicrobial Resistance Surveillance System (GLASS) reported that carbapenem resistant Enterobacteriaceae (CRE) infections increased by 31.4% across 87 participating countries between 2019 and 2023. Third generation cephalosporin resistance in Escherichia coli exceeded 57% throughout Southeast Asian nations; consequently, the WHO reclassified colistin, previously regarded as a last resort antibiotic, as critically important (effective January 2024).",
+    "word_count": 59,
+    "time_limit_seconds": 60,
+    "difficulty": "advanced",
+    "tags": [
+      "healthcare",
+      "microbiology"
+    ]
+  },
+  {
+    "id": "typing_a010",
+    "type": "typing",
+    "marks": 15,
+    "passage": "McKinsey & Company's 2024 Global Institute report projected that generative artificial intelligence could contribute between $2.6 trillion and $4.4 trillion annually to the global economy. Sector specific impact analyses indicated that banking ($200 to $340 billion), pharmaceuticals ($60 to $110 billion), and software engineering ($150 to $250 billion) would experience the most substantial productivity gains; however, an estimated 375 million workers worldwide may require significant reskilling by 2030.",
+    "word_count": 68,
+    "time_limit_seconds": 60,
+    "difficulty": "advanced",
+    "tags": [
+      "business",
+      "ai"
+    ]
+  }
+]

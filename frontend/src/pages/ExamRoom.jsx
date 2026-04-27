@@ -97,7 +97,7 @@ const ExamRoom = () => {
             // Check if current question is typing — if so, don't tick the exam timer
             const state = useExamStore.getState();
             const currentQ = questions[state.currentQuestionIndex];
-            if (currentQ && currentQ.type === 'typing') return; // pause exam timer
+            if (currentQ && ['typing', 'typing-easy', 'typing-advanced'].includes(currentQ.type)) return;
 
             tick();
             if (state.timeLeft <= 1) {
@@ -358,12 +358,12 @@ const ExamRoom = () => {
                         </button>
                     )}
                     {/* Hide exam timer when on typing question (it has its own) */}
-                    {currentQuestion?.type !== 'typing' && (
+                    {!['typing', 'typing-easy', 'typing-advanced'].includes(currentQuestion?.type) && (
                         <div className={`flex items-center gap-3 px-5 py-2 rounded-lg font-mono font-bold text-xl ${timeLeft < 300 ? 'bg-red-50 text-red-600' : 'bg-slate-50 text-slate-700'}`}>
                             <span>{formatTime(timeLeft)}</span>
                         </div>
                     )}
-                    {currentQuestion?.type === 'typing' && (
+                    {['typing', 'typing-easy', 'typing-advanced'].includes(currentQuestion?.type) && (
                         <div className="px-4 py-2 rounded-lg bg-purple-50 text-purple-600 font-bold text-sm">
                             ⌨️ Typing Section — Own Timer
                         </div>

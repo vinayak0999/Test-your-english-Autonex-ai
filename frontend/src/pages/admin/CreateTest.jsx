@@ -77,7 +77,8 @@ const CreateTest = () => {
         'mcq-grammar': { enabled: true, count: 12, marks: 1, label: "MCQ: Grammar", icon: CheckSquare },
         'mcq-context': { enabled: true, count: 12, marks: 1, label: "MCQ: Context", icon: Layers },
         'mcq-reading': { enabled: true, count: 11, marks: 1, label: "MCQ: Reading", icon: FileText },
-        typing: { enabled: false, count: 1, marks: 15, label: "Typing Speed", icon: Keyboard },
+        'typing-easy': { enabled: false, count: 1, marks: 10, label: "Typing: Easy (Speed)", icon: Keyboard },
+        'typing-advanced': { enabled: false, count: 1, marks: 15, label: "Typing: Advanced (Accuracy)", icon: Keyboard },
     });
 
     // Calculated Total Marks

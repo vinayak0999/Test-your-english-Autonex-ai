@@ -454,7 +454,7 @@ async def finish_exam(
                     grading_config.get("correct_answer", ""),
                     q["marks"]
                 )
-            elif question_type == 'typing':
+            elif question_type in ('typing', 'typing-easy', 'typing-advanced'):
                 import json as json_lib
                 print(f"[TYPING DEBUG] temp_id={temp_id}, raw student_text='{student_text[:200] if student_text else 'EMPTY'}'")
                 try:
@@ -483,7 +483,8 @@ async def finish_exam(
                     typed_text,
                     grading_config.get("original_passage", ""),
                     time_taken,
-                    q["marks"]
+                    q["marks"],
+                    grading_mode=grading_config.get("grading_mode", "both")
                 )
             else:
                 grade_data = {"score": 0, "breakdown": {"error": "Manual review needed"}}

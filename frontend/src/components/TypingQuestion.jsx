@@ -17,11 +17,13 @@ const TypingQuestion = ({ question, answer, onAnswerChange, onTypingComplete }) 
     };
 
     const existing = parseExisting();
+    const alreadyAttempted = !!(existing.typed_text && existing.typed_text.length > 0);
+
     const [userInput, setUserInput] = useState(existing.typed_text || '');
-    const [started, setStarted] = useState(false);
-    const [finished, setFinished] = useState(false);
+    const [started, setStarted] = useState(alreadyAttempted);
+    const [finished, setFinished] = useState(alreadyAttempted);
     const [startTime, setStartTime] = useState(null);
-    const [elapsed, setElapsed] = useState(0);
+    const [elapsed, setElapsed] = useState(existing.time_seconds || 0);
     const [wpm, setWpm] = useState(0);
     const [accuracy, setAccuracy] = useState(100);
     const [completion, setCompletion] = useState(0);
@@ -34,6 +36,14 @@ const TypingQuestion = ({ question, answer, onAnswerChange, onTypingComplete }) 
 
     // Keep refs in sync
     useEffect(() => { onAnswerChangeRef.current = onAnswerChange; }, [onAnswerChange]);
+
+    // If already attempted (came back via Previous), compute stats immediately
+    useEffect(() => {
+        if (alreadyAttempted && existing.time_seconds > 0) {
+            calculateStats(existing.typed_text, existing.time_seconds);
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     // Calculate stats
     const calculateStats = useCallback((input, elapsedSec) => {
@@ -266,7 +276,7 @@ const TypingQuestion = ({ question, answer, onAnswerChange, onTypingComplete }) 
                         }}
                     />
 
-                    {/* Completion banner */}
+                    {/* Completion / Locked banner */}
                     {finished && (
                         <div style={{
                             display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
@@ -274,7 +284,7 @@ const TypingQuestion = ({ question, answer, onAnswerChange, onTypingComplete }) 
                             borderRadius: 8
                         }}>
                             <span style={{ fontSize: 14, fontWeight: 700, color: '#16a34a' }}>
-                                ✅ Typing Complete! Your stats are below.
+                                🔒 Typing Complete — Answer Saved. You cannot re-attempt this section.
                             </span>
                         </div>
                     )}
@@ -298,18 +308,7 @@ const TypingQuestion = ({ question, answer, onAnswerChange, onTypingComplete }) 
                         ))}
                     </div>
 
-                    {/* Reset button */}
-                    <button
-                        onClick={handleReset}
-                        style={{
-                            display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6,
-                            margin: '0 auto', padding: '6px 12px',
-                            background: 'none', border: 'none', cursor: 'pointer',
-                            fontSize: 13, color: '#94a3b8'
-                        }}
-                    >
-                        <RotateCcw size={14} /> Reset & Start Over
-                    </button>
+
                 </>
             )}
         </div>

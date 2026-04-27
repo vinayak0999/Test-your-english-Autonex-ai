@@ -1,544 +1,393 @@
 [
     {
-        "id": "image_041",
-        "question_number": 41,
-        "type": "image",
-        "marks": 15,
-        "image_url": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop",
-        "image_thumbnail": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=200&auto=format&fit=crop",
-        "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
-        "correct_answer": "A group of four young adults are sitting around a large wooden table, actively collaborating. They are using silver laptops and writing in notebooks, situated in a bright, modern room with a brick wall in the background.",
-        "alternative_answers": [
-            "The image shows a study group or team of professionals working together at a wooden desk with computers and papers.",
-            "Four people are engaged in a discussion around a table, with open laptops and notebooks in front of them against a brick background."
-        ],
-        "key_elements": {
-            "people": "four young adults/team",
-            "furniture": "large wooden table",
-            "technology": "silver laptops",
-            "materials": "notebooks/papers",
-            "background": "brick wall"
-        },
-        "acceptable_synonyms": {
-            "collaborating": [
-                "working together",
-                "studying",
-                "discussing"
-            ],
-            "laptops": [
-                "computers",
-                "notebooks",
-                "devices"
-            ],
-            "table": [
-                "desk",
-                "workspace"
-            ]
-        },
-        "marks_distribution": {
-            "grammar_structure": 4,
-            "vocabulary_word_choice": 4,
-            "clarity_meaning": 3,
-            "instruction_compliance": 2,
-            "spelling_formatting": 2
-        },
-        "difficulty": "intermediate",
-        "tags": [
-            "indoor",
-            "education",
-            "workplace",
-            "people"
-        ]
+    "id": "image_001",
+    "question_number": 1,
+    "type": "image",
+    "marks": 15,
+    "image_url": "https://images.unsplash.com/photo-1773332611573-5e5bfa8e5de5?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "image_thumbnail": "https://images.unsplash.com/photo-1773332611573-5e5bfa8e5de5?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
+    "correct_answer": "A woman with long curly hair is sitting on a brown sofa and doing knitting work with blue wool. A dog is sleeping beside her on the right side of the sofa. A mobile phone is placed on the sofa between them. Behind her there are wooden shelves with some decorative items and a warm light.",
+    "alternative_answers": [
+        "The image shows a woman sitting on a brown leather sofa and working with blue yarn. A dog is resting next to her and a phone is kept on the sofa. There are shelves with objects and a soft light in the background.",
+        "A lady wearing a dark red top and light-coloured pants is sitting on a sofa and knitting with blue thread. A dog is lying on the same sofa beside her and a mobile phone is also placed nearby."
+    ],
+    "key_elements": {
+        "main_object": "woman with curly hair knitting with blue wool",
+        "seating": "brown leather sofa",
+        "animal": "dog sleeping on the right side of the sofa",
+        "accessory": "mobile phone placed on the sofa",
+        "background": "wooden shelves with decorative items and warm light",
+        "setting": "indoor living room"
+    },
+    "acceptable_synonyms": {
+        "knitting": ["stitching", "sewing", "crafting"],
+        "sofa": ["couch", "settee", "seat"],
+        "sleeping": ["resting", "lying down", "relaxing"],
+        "mobile phone": ["phone", "smartphone", "cell phone"],
+        "wool": ["yarn", "thread", "fabric"],
+        "warm light": ["soft light", "dim light", "lamp light"]
+    },
+    "marks_distribution": {
+        "grammar_structure": 4,
+        "vocabulary_word_choice": 4,
+        "clarity_meaning": 3,
+        "instruction_compliance": 2,
+        "spelling_formatting": 2
+    },
+    "difficulty": "beginner",
+    "tags": ["indoor", "lifestyle", "knitting", "pet", "living room", "cozy"]
     },
     {
-        "id": "image_002",
-        "question_number": 6,
-        "type": "image",
-        "marks": 15,
-        "image_url": "https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQWGC_VpHvUwLB7XwWGd88P_D0KJ2q01o9hI7aV4b-ndm8ruB-hY4phrTZmBajXi8Z2WMuIU9PTAmu2ilpOMzo_FIXsWvmhAOUfrpfk1gmwbh5Xj7E",
-        "image_thumbnail": "https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQWGC_VpHvUwLB7XwWGd88P_D0KJ2q01o9hI7aV4b-ndm8ruB-hY4phrTZmBajXi8Z2WMuIU9PTAmu2ilpOMzo_FIXsWvmhAOUfrpfk1gmwbh5Xj7E",
-        "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
-        "correct_answer": "A bright red double-decker bus driving along a busy city street, with buildings visible in the background.",
-        "alternative_answers": [
-            "The photo depicts a red two-story bus moving on the road, surrounded by an urban environment."
-        ],
-        "key_elements": {
-            "main_object": "red double-decker bus",
-            "location": "city street",
-            "background": "buildings"
-        },
-        "acceptable_synonyms": {
-            "bus": [
-                "coach",
-                "vehicle"
-            ],
-            "street": [
-                "road",
-                "avenue"
-            ],
-            "driving": [
-                "moving",
-                "travelling"
-            ]
-        },
-        "marks_distribution": {
-            "grammar_structure": 4,
-            "vocabulary_word_choice": 4,
-            "clarity_meaning": 3,
-            "instruction_compliance": 2,
-            "spelling_formatting": 2
-        },
-        "difficulty": "beginner",
-        "tags": [
-            "outdoor",
-            "transport",
-            "city"
-        ]
+    "id": "image_002",
+    "question_number": 2,
+    "type": "image",
+    "marks": 15,
+    "image_url": "https://images.unsplash.com/photo-1774612541935-14b5efc16511?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "image_thumbnail": "https://images.unsplash.com/photo-1774612541935-14b5efc16511?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
+    "correct_answer": "The image shows a clean and simple living room with light coloured walls. On the left side there is a soft beige sofa with a dark brown blanket on it and a small candle on the floor nearby. In the middle of the room there is a big green plant. On the right side there is a beige chair near a large window. Outside the window there are trees. A black and white picture frame is hanging on the wall.",
+    "alternative_answers": [
+        "The image shows a simple and neat room with cream coloured walls. A soft sofa with a brown blanket is placed on the left side. A big green plant is kept in the centre of the room. On the right there is a chair near a big window and outside the window many trees can be seen.",
+        "A well decorated room is shown in the image. There is a light brown sofa on the left with a blanket on it. A large green indoor plant is placed in the middle. A comfortable chair is placed near the window on the right side and trees are visible outside the window."
+    ],
+    "key_elements": {
+        "main_object": "beige sofa with dark brown blanket on the left side",
+        "plant": "large green indoor plant in the centre of the room",
+        "chair": "beige padded chair on the right side near the window",
+        "window": "large wide window with a view of trees outside",
+        "wall": "light cream coloured walls with a black and white picture frame",
+        "floor": "white and brown patterned carpet on the floor"
+    },
+    "acceptable_synonyms": {
+        "sofa": ["couch", "seat", "settee"],
+        "blanket": ["cover", "cloth", "throw"],
+        "plant": ["indoor plant", "green plant", "tree plant"],
+        "window": ["glass window", "opening", "glass panel"],
+        "chair": ["seat", "armchair", "sitting chair"],
+        "carpet": ["rug", "floor mat", "mat"]
+    },
+    "marks_distribution": {
+        "grammar_structure": 4,
+        "vocabulary_word_choice": 4,
+        "clarity_meaning": 3,
+        "instruction_compliance": 2,
+        "spelling_formatting": 2
+    },
+    "difficulty": "beginner",
+    "tags": ["indoor", "living room", "furniture", "plant", "interior", "home"]
     },
     {
-        "id": "image_003",
-        "question_number": 8,
-        "type": "image",
-        "marks": 15,
-        "image_url": "https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQuiBMghVfGfIrR9NxV4quZrApEA7JEbpPp9J2s1zCHRn634MR6DzZFfkZmjA39LmqoVB_dgJz-O9DKrdTrzx07u6bM4hW_JcHqbtVfHOxljLR6A4c",
-        "image_thumbnail": "https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcQuiBMghVfGfIrR9NxV4quZrApEA7JEbpPp9J2s1zCHRn634MR6DzZFfkZmjA39LmqoVB_dgJz-O9DKrdTrzx07u6bM4hW_JcHqbtVfHOxljLR6A4c",
-        "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
-        "correct_answer": "A stack of golden-brown pancakes served on a white plate, topped with red strawberries and drizzled with syrup.",
-        "alternative_answers": [
-            "The picture displays a breakfast plate with pancakes, fruit, and syrup.",
-            "There is a pile of pancakes with strawberries on top sitting on a white dish."
-        ],
-        "key_elements": {
-            "main_object": "stack of pancakes",
-            "container": "white plate",
-            "topping_fruit": "red strawberries",
-            "topping_liquid": "syrup"
-        },
-        "acceptable_synonyms": {
-            "pancakes": [
-                "hotcakes",
-                "breakfast"
-            ],
-            "syrup": [
-                "honey",
-                "maple syrup"
-            ],
-            "stack": [
-                "pile"
-            ],
-            "plate": [
-                "dish"
-            ]
-        },
-        "marks_distribution": {
-            "grammar_structure": 4,
-            "vocabulary_word_choice": 4,
-            "clarity_meaning": 3,
-            "instruction_compliance": 2,
-            "spelling_formatting": 2
-        },
-        "difficulty": "intermediate",
-        "tags": [
-            "food",
-            "indoor",
-            "breakfast"
-        ]
+    "id": "image_003",
+    "question_number": 3,
+    "type": "image",
+    "marks": 15,
+    "image_url": "https://images.unsplash.com/photo-1777040209763-381b649613aa?q=80&w=2100&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "image_thumbnail": "https://images.unsplash.com/photo-1777040209763-381b649613aa?q=80&w=2100&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
+    "correct_answer": "A woman wearing a white and red striped dress and a white hat is standing in front of a bright red wall. She is facing the door which has a white and red striped curtain. On both sides of the door there are two windows with black shutters and white flower pots with red flowers. The floor is made of stone tiles.",
+    "alternative_answers": [
+    "The image shows a lady in a striped red and white dress standing at the entrance of a red coloured building. She is wearing a white hat and facing the door. There are two windows on the left and right side with black shutters and red flowers in white pots placed below them.",
+    "A woman with a white hat and a striped dress is standing at the door of a red house. The door has a striped curtain on it. Two windows with black shutters and red flower pots are placed on each side of the door. The ground has stone tiles."
+    ],
+    "key_elements": {
+    "main_object": "woman in white and red striped dress with white hat",
+    "door": "white framed door with red and white striped curtain",
+    "wall": "bright red painted wall",
+    "windows": "two windows with black shutters on left and right side",
+    "flowers": "red flowers in white pots placed below each window",
+    "ground": "stone tile floor"
+    },
+    "acceptable_synonyms": {
+    "striped": ["lined", "patterned", "printed"],
+    "curtain": ["cloth", "drape", "covering"],
+    "shutters": ["window covers", "panels", "boards"],
+    "flower pots": ["planters", "pots", "plant holders"],
+    "stone tiles": ["stone floor", "paved ground", "tiled path"],
+    "bright red": ["deep red", "bold red", "dark red"]
+    },
+    "marks_distribution": {
+    "grammar_structure": 4,
+    "vocabulary_word_choice": 4,
+    "clarity_meaning": 3,
+    "instruction_compliance": 2,
+    "spelling_formatting": 2
+    },
+    "difficulty": "beginner",
+    "tags": ["outdoor", "house", "woman", "red", "flowers", "door"]
     },
     {
-        "id": "image_004",
-        "question_number": 9,
-        "type": "image",
-        "marks": 15,
-        "image_url": "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTvMUn9le6Dxhi4x9EDEfbQXWH6U5PIh6QZN0QmaeNqzBscyMfk9yKduQOnxmyZxlmoYZwhCOTkefM8OBdMtC5hMqMZDdyARIVp0tzBbw4iGQOmBXQ",
-        "image_thumbnail": "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTvMUn9le6Dxhi4x9EDEfbQXWH6U5PIh6QZN0QmaeNqzBscyMfk9yKduQOnxmyZxlmoYZwhCOTkefM8OBdMtC5hMqMZDdyARIVp0tzBbw4iGQOmBXQ",
-        "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
-        "correct_answer": "A diverse group of professional people standing together in an office, smiling and looking at a document or tablet, dressed in business casual attire.",
-        "alternative_answers": [
-            "The image depicts a team of colleagues having a meeting while standing up.",
-            "A group of business people are gathered together looking happy."
-        ],
-        "key_elements": {
-            "main_object": "group of people",
-            "action": "meeting/standing together",
-            "clothing": "business attire",
-            "expression": "smiling/happy"
-        },
-        "acceptable_synonyms": {
-            "group": [
-                "team",
-                "colleagues",
-                "coworkers"
-            ],
-            "standing": [
-                "gathered"
-            ],
-            "attire": [
-                "clothes",
-                "outfits"
-            ]
-        },
-        "marks_distribution": {
-            "grammar_structure": 4,
-            "vocabulary_word_choice": 4,
-            "clarity_meaning": 3,
-            "instruction_compliance": 2,
-            "spelling_formatting": 2
-        },
-        "difficulty": "intermediate",
-        "tags": [
-            "indoor",
-            "people",
-            "business"
-        ]
+    "id": "image_004",
+    "question_number": 4,
+    "type": "image",
+    "marks": 15,
+    "image_url": "https://plus.unsplash.com/premium_photo-1723649902727-d4ef19ab5f34?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "image_thumbnail": "https://plus.unsplash.com/premium_photo-1723649902727-d4ef19ab5f34?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
+    "correct_answer": "A pink school bag is open and placed in the centre of the image. Inside the bag there are many coloured pencils and a box of sketch pens. A small flower shaped keychain is attached to the zip of the bag. On the left side of the bag there is a pair of pink and black shoes and an orange headphone. The surface below all the items is light grey in colour.",
+    "alternative_answers": [
+        "The image shows an open pink school bag with many colour pencils and a clear box of sketch pens inside it. A flower keychain is hanging on the zip. Next to the bag on the left side there are pink sports shoes and an orange headphone placed on a grey surface.",
+        "A pink bag is shown open with coloured pencils and a box of sketch pens kept inside it. A small yellow flower charm is attached to the zip of the bag. On the left side there are pink and black shoes and orange headphones lying on a light grey floor."
+    ],
+    "key_elements": {
+        "main_object": "open pink school bag or backpack",
+        "inside_bag": "many coloured pencils and a clear box of sketch pens",
+        "keychain": "small yellow flower shaped keychain on the zip",
+        "left_side": "pink and black sports shoes",
+        "top_left": "orange headphones placed on the grey surface",
+        "surface": "light grey flat surface or floor"
+    },
+    "acceptable_synonyms": {
+        "school bag": ["backpack", "bag", "school bag"],
+        "coloured pencils": ["colour pencils", "drawing pencils", "pencils"],
+        "sketch pens": ["markers", "colour pens", "felt pens"],
+        "keychain": ["key charm", "zip charm", "bag charm"],
+        "headphone": ["earphone", "headset", "music headphone"],
+        "shoes": ["sneakers", "sports shoes", "footwear"]
+    },
+    "marks_distribution": {
+        "grammar_structure": 4,
+        "vocabulary_word_choice": 4,
+        "clarity_meaning": 3,
+        "instruction_compliance": 2,
+        "spelling_formatting": 2
+    },
+    "difficulty": "beginner",
+    "tags": ["school", "bag", "stationery", "pencils", "indoor", "education"]
     },
     {
-        "id": "image_005",
-        "question_number": 10,
-        "type": "image",
-        "marks": 15,
-        "image_url": "https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTGgK5fGhHUv_EixegdWWBc7SnBrAOaL3ebl3kVz-oBWwbvXf7Spqt-Rtv5zeT35ssCfIy1ZD-J6Qi8VZpKcoE4OpkzKXXb76afS46DEHAsE7jo0SQ",
-        "image_thumbnail": "https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTGgK5fGhHUv_EixegdWWBc7SnBrAOaL3ebl3kVz-oBWwbvXf7Spqt-Rtv5zeT35ssCfIy1ZD-J6Qi8VZpKcoE4OpkzKXXb76afS46DEHAsE7jo0SQ",
-        "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
-        "correct_answer": "A majestic snowy mountain peak under a clear blue sky, with its reflection clearly visible in the calm blue lake below.",
-        "alternative_answers": [
-            "The picture shows a snow-covered mountain reflected in a body of water.",
-            "There is a large mountain with snow on top and a lake at the bottom mirroring the view."
-        ],
-        "key_elements": {
-            "main_object": "snowy mountain",
-            "water_body": "lake",
-            "phenomenon": "reflection",
-            "sky": "blue sky"
-        },
-        "acceptable_synonyms": {
-            "mountain": [
-                "peak",
-                "alp"
-            ],
-            "lake": [
-                "water",
-                "pond"
-            ],
-            "snowy": [
-                "white",
-                "ice-covered"
-            ]
-        },
-        "marks_distribution": {
-            "grammar_structure": 4,
-            "vocabulary_word_choice": 4,
-            "clarity_meaning": 3,
-            "instruction_compliance": 2,
-            "spelling_formatting": 2
-        },
-        "difficulty": "advanced",
-        "tags": [
-            "outdoor",
-            "nature",
-            "landscape"
-        ]
+    "id": "image_005",
+    "question_number": 5,
+    "type": "image",
+    "marks": 15,
+    "image_url": "https://images.unsplash.com/photo-1556110554-2eb59e72fa3a?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "image_thumbnail": "https://images.unsplash.com/photo-1556110554-2eb59e72fa3a?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
+    "correct_answer": "A white and grey train with a red stripe and yellow bottom is standing at a railway station platform. The name Elefant is written on the front of the train. On the left side of the platform two people are walking and a black dog is also walking with them. Above the platform there is a roof and a blue information board showing the platform number 4. Electric wires are visible above the train in the sky.",
+    "alternative_answers": [
+        "The image shows a white train with a red line and yellow base stopped at a station platform. Two people and a black dog are walking on the platform on the left side. A blue display board with the number 4 is hanging above the platform and electric wires can be seen in the sky above.",
+        "A grey and white train named Elefant is parked at a train station. It has a red stripe and a yellow front bottom part. Two people with a black dog are walking on the platform to the left. A blue information board showing platform number 4 is hanging from the roof above."
+    ],
+    "key_elements": {
+        "main_object": "white and grey train with red stripe and yellow bottom",
+        "train_name": "Elefant written on the front of the train",
+        "platform": "grey stone railway station platform",
+        "people": "two people walking with a black dog on the left side",
+        "board": "blue information board showing platform number 4",
+        "above": "electric wires and metal poles visible in the sky"
+    },
+    "acceptable_synonyms": {
+        "train": ["railway train", "passenger train", "express train"],
+        "platform": ["station platform", "railway platform", "boarding area"],
+        "stripe": ["line", "band", "colour strip"],
+        "information board": ["display board", "sign board", "notice board"],
+        "electric wires": ["overhead wires", "cables", "power lines"],
+        "walking": ["moving", "going", "passing"]
+    },
+    "marks_distribution": {
+        "grammar_structure": 4,
+        "vocabulary_word_choice": 4,
+        "clarity_meaning": 3,
+        "instruction_compliance": 2,
+        "spelling_formatting": 2
+    },
+    "difficulty": "intermediate",
+    "tags": ["transport", "train", "station", "platform", "outdoor", "travel"]
     },
     {
-        "id": "image_006",
-        "question_number": 11,
-        "type": "image",
-        "marks": 15,
-        "image_url": "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcS7WDche3ArnTLTNKX7arBU4eLnhLyimfA-4WxvIjl6DBzSAiXenn2bQlTqokOB8rp__0mesu3B-gBJBvsVsMRnumT6K3igWm4jKZQOkzwYZ1qagkU",
-        "image_thumbnail": "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcS7WDche3ArnTLTNKX7arBU4eLnhLyimfA-4WxvIjl6DBzSAiXenn2bQlTqokOB8rp__0mesu3B-gBJBvsVsMRnumT6K3igWm4jKZQOkzwYZ1qagkU",
-        "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
-        "correct_answer": "A basketball player in a grey jersey jumping high to shoot the orange ball into the hoop on an outdoor court.",
-        "alternative_answers": [
-            "The image depicts an athlete taking a shot at the basket on an outside court.",
-            "A person is in mid-air throwing a basketball towards the net."
-        ],
-        "key_elements": {
-            "main_object": "basketball player",
-            "action": "jumping/shooting",
-            "equipment": "orange basketball",
-            "setting": "outdoor court"
-        },
-        "acceptable_synonyms": {
-            "player": [
-                "athlete",
-                "sportsman"
-            ],
-            "hoop": [
-                "basket",
-                "net",
-                "rim"
-            ],
-            "jersey": [
-                "uniform",
-                "shirt"
-            ]
-        },
-        "marks_distribution": {
-            "grammar_structure": 4,
-            "vocabulary_word_choice": 4,
-            "clarity_meaning": 3,
-            "instruction_compliance": 2,
-            "spelling_formatting": 2
-        },
-        "difficulty": "intermediate",
-        "tags": [
-            "outdoor",
-            "sports",
-            "people"
-        ]
+    "id": "image_006",
+    "question_number": 6,
+    "type": "image",
+    "marks": 15,
+    "image_url": "https://images.unsplash.com/photo-1569089801453-b3e9c187c08a?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "image_thumbnail": "https://images.unsplash.com/photo-1569089801453-b3e9c187c08a?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
+    "correct_answer": "A woman wearing a white top and a long black skirt is standing at the edge of a stone path and looking at the blue sea. On the left side of the image there are wooden tables and chairs with colourful cushions placed against a white wall. The floor is made of white and grey stone. The sky is clear and light blue in colour and small hills can be seen far away across the sea.",
+    "alternative_answers": [
+        "The image shows a woman in a white shirt and black long skirt standing near the sea and raising her hand. On the left side wooden dining tables and chairs are arranged near a white wall with colourful cushions. The ground is made of stone and the blue sea and clear sky are visible in the background.",
+        "A lady wearing a white top and black skirt is standing on a stone floor near the open sea. She is looking towards the bright blue water. Wooden tables and chairs with colourful cushions are placed on the left side near a white painted wall. The sky is clear and some hills are visible in the distance."
+    ],
+    "key_elements": {
+        "main_object": "woman in white top and long black skirt standing near the sea",
+        "furniture": "wooden tables and chairs placed on the left side",
+        "cushions": "colourful cushions kept against the white wall",
+        "floor": "white and grey stone path or floor",
+        "background": "bright blue sea with small hills visible far away",
+        "sky": "clear light blue sky"
+    },
+    "acceptable_synonyms": {
+        "sea": ["ocean", "water", "blue water"],
+        "stone path": ["stone floor", "paved ground", "stone surface"],
+        "cushions": ["pillows", "seat covers", "soft covers"],
+        "wooden chairs": ["chairs", "dining chairs", "brown chairs"],
+        "clear sky": ["blue sky", "open sky", "bright sky"],
+        "hills": ["mountains", "land", "distant land"]
+    },
+    "marks_distribution": {
+        "grammar_structure": 4,
+        "vocabulary_word_choice": 4,
+        "clarity_meaning": 3,
+        "instruction_compliance": 2,
+        "spelling_formatting": 2
+    },
+    "difficulty": "intermediate",
+    "tags": ["outdoor", "sea", "cafe", "woman", "travel", "scenic"]
     },
     {
-        "id": "image_007",
-        "question_number": 12,
-        "type": "image",
-        "marks": 15,
-        "image_url": "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcTFZjpQzlLS_F4rx9wsAkjXTgbLATRHYO8Elh004OBs3mw5C8susrDqPL3cfiQBTk54XYM1uDkVp2qk-GC5PPt3LQf5a47DdoxuaaZCQmCW-nNYryU",
-        "image_thumbnail": "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcTFZjpQzlLS_F4rx9wsAkjXTgbLATRHYO8Elh004OBs3mw5C8susrDqPL3cfiQBTk54XYM1uDkVp2qk-GC5PPt3LQf5a47DdoxuaaZCQmCW-nNYryU",
-        "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
-        "correct_answer": "A colorful market stall displaying a wide variety of fresh vegetables and fruits, arranged neatly in crates and baskets.",
-        "alternative_answers": [
-            "The photo shows a grocery display full of colorful produce like peppers and greens.",
-            "There is a vegetable stand with many different types of fresh food for sale."
-        ],
-        "key_elements": {
-            "main_object": "market stall",
-            "items": "vegetables and fruits",
-            "arrangement": "crates/baskets",
-            "attribute": "colorful/fresh"
-        },
-        "acceptable_synonyms": {
-            "stall": [
-                "stand",
-                "display",
-                "shop"
-            ],
-            "vegetables": [
-                "produce",
-                "greens",
-                "veggies"
-            ],
-            "crates": [
-                "boxes",
-                "containers"
-            ]
-        },
-        "marks_distribution": {
-            "grammar_structure": 4,
-            "vocabulary_word_choice": 4,
-            "clarity_meaning": 3,
-            "instruction_compliance": 2,
-            "spelling_formatting": 2
-        },
-        "difficulty": "advanced",
-        "tags": [
-            "indoor/outdoor",
-            "food",
-            "shopping"
-        ]
+    "id": "image_007",
+    "question_number": 7,
+    "type": "image",
+    "marks": 15,
+    "image_url": "https://images.unsplash.com/photo-1667384447307-9ae9cd6ff1d8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "image_thumbnail": "https://images.unsplash.com/photo-1667384447307-9ae9cd6ff1d8?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
+    "correct_answer": "A group of girls are dancing on a big stage. All of them are wearing bright green tops and brown pants with white shoes. They are jumping and moving their arms as part of their dance. The stage floor is light green in colour. A large group of people are sitting and watching the dance performance in the background. Stage lights are on at the top and a red curtain is visible on the right side.",
+    "alternative_answers": [
+        "The image shows many girls performing a dance on a stage. They are all dressed in the same bright green shirt and brown trousers with white shoes. Some of them are jumping in the air. The audience is sitting and watching them from behind and stage lights are shining from the top. A red curtain is seen on the right side of the stage.",
+        "A dance group of girls wearing matching green tops and brown pants are performing on a light coloured stage. They are all jumping and raising their arms. Many people are sitting in the background watching the show. Lights are fixed on the ceiling of the stage and a red and pink curtain is hanging on the right side."
+    ],
+    "key_elements": {
+        "main_object": "group of girls dancing on a stage",
+        "costume": "bright green tops and brown pants with white shoes",
+        "action": "jumping and moving arms as part of dance performance",
+        "stage": "large light green coloured stage floor",
+        "audience": "many people sitting and watching in the background",
+        "lighting": "stage lights on the ceiling and a red curtain on the right side"
+    },
+    "acceptable_synonyms": {
+        "dancing": ["performing", "moving", "jumping"],
+        "stage": ["performance area", "show floor", "platform"],
+        "bright green": ["neon green", "light green", "yellow green"],
+        "audience": ["crowd", "viewers", "spectators"],
+        "curtain": ["drape", "cloth", "stage curtain"],
+        "costume": ["dress", "outfit", "uniform"]
+    },
+    "marks_distribution": {
+        "grammar_structure": 4,
+        "vocabulary_word_choice": 4,
+        "clarity_meaning": 3,
+        "instruction_compliance": 2,
+        "spelling_formatting": 2
+    },
+    "difficulty": "intermediate",
+    "tags": ["dance", "stage", "performance", "group", "indoor", "event"]
     },
     {
-        "id": "image_008",
-        "question_number": 15,
-        "type": "image",
-        "marks": 15,
-        "image_url": "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcT21Vy1R9YSVjf3bsrsnx6AgvhyKFSR8HOI1_A9YLSI9fSj05OGFY_AFWylwv8WcXx-aM628-B6YFrMNxWjrb-mx6c_OjkYeWP9VMB6XbHDvHym4sU",
-        "image_thumbnail": "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcT21Vy1R9YSVjf3bsrsnx6AgvhyKFSR8HOI1_A9YLSI9fSj05OGFY_AFWylwv8WcXx-aM628-B6YFrMNxWjrb-mx6c_OjkYeWP9VMB6XbHDvHym4sU",
-        "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
-        "correct_answer": "A female scientist wearing a white lab coat and blue gloves is looking intently through a microscope in a laboratory setting.",
-        "alternative_answers": [
-            "The image shows a researcher using a microscope in a lab while wearing safety gear.",
-            "A woman in a white coat is examining something under a microscope."
-        ],
-        "key_elements": {
-            "main_object": "scientist/researcher",
-            "equipment": "microscope",
-            "clothing": "white lab coat",
-            "accessory": "blue gloves"
-        },
-        "acceptable_synonyms": {
-            "scientist": [
-                "researcher",
-                "biologist",
-                "chemist"
-            ],
-            "lab coat": [
-                "coat",
-                "uniform"
-            ],
-            "looking": [
-                "examining",
-                "peering"
-            ]
-        },
-        "marks_distribution": {
-            "grammar_structure": 4,
-            "vocabulary_word_choice": 4,
-            "clarity_meaning": 3,
-            "instruction_compliance": 2,
-            "spelling_formatting": 2
-        },
-        "difficulty": "intermediate",
-        "tags": [
-            "indoor",
-            "science",
-            "profession"
-        ]
+    "id": "image_008",
+    "question_number": 8,
+    "type": "image",
+    "marks": 15,
+    "image_url": "https://images.unsplash.com/photo-1515658323406-25d61c141a6e?q=80&w=1009&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "image_thumbnail": "https://images.unsplash.com/photo-1515658323406-25d61c141a6e?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
+    "correct_answer": "A group of women wearing colourful traditional clothes and many bead necklaces are standing together in an open area. The woman in the centre is smiling and carrying a small baby on her side. She is wearing a red top and a striped skirt with many colourful beads around her neck. Some children are also seen in the front. In the background there are dry trees and an open sky.",
+    "alternative_answers": [
+        "The image shows many women dressed in bright and colourful traditional outfits with lots of bead jewellery around their necks and heads. The woman in the middle is holding a baby and smiling. Children can be seen in the lower part of the image. Dry trees and a light sky are visible in the background.",
+        "A group of traditionally dressed women are gathered together outdoors. They are wearing very colourful clothes and many bead necklaces and head decorations. One woman in the centre is carrying a small baby and is smiling happily. Some young children are also present in the front of the group and dry trees can be seen behind them."
+    ],
+    "key_elements": {
+        "main_object": "group of women in colourful traditional clothes and bead necklaces",
+        "centre_woman": "smiling woman in red top and striped skirt carrying a baby",
+        "jewellery": "many colourful bead necklaces and head decorations",
+        "children": "some children visible in the front of the group",
+        "ground": "dry open sandy ground",
+        "background": "dry trees and open light coloured sky"
+    },
+    "acceptable_synonyms": {
+        "colourful": ["bright", "multicoloured", "vibrant"],
+        "traditional clothes": ["cultural dress", "tribal outfit", "traditional dress"],
+        "bead necklaces": ["beads", "necklaces", "jewellery"],
+        "carrying": ["holding", "supporting", "keeping"],
+        "smiling": ["happy", "laughing", "joyful"],
+        "gathering": ["group", "crowd", "community"]
+    },
+    "marks_distribution": {
+        "grammar_structure": 4,
+        "vocabulary_word_choice": 4,
+        "clarity_meaning": 3,
+        "instruction_compliance": 2,
+        "spelling_formatting": 2
+    },
+    "difficulty": "intermediate",
+    "tags": ["culture", "outdoor", "traditional", "people", "Africa", "community"]
     },
     {
-        "id": "image_009",
-        "question_number": 16,
-        "type": "image",
-        "marks": 15,
-        "image_url": "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcSOMKeWODVxJGpX3f4ETkMqaAoJA-INzDjySB-78UISeIuCCWg7_8G7IV8EGoyF5pwRHLUDMOo1ujo6Fjatm_n7Vd9He1VYEp2RIvcEcqzMPoVHCQI",
-        "image_thumbnail": "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcSOMKeWODVxJGpX3f4ETkMqaAoJA-INzDjySB-78UISeIuCCWg7_8G7IV8EGoyF5pwRHLUDMOo1ujo6Fjatm_n7Vd9He1VYEp2RIvcEcqzMPoVHCQI",
-        "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
-        "correct_answer": "A person sitting outdoors playing an acoustic wooden guitar, wearing a hat and a light-colored shirt.",
-        "alternative_answers": [
-            "The photo depicts a musician strumming a guitar outside.",
-            "Someone is playing a wooden instrument while sitting in the open air."
-        ],
-        "key_elements": {
-            "main_object": "person/musician",
-            "instrument": "acoustic guitar",
-            "action": "playing/strumming",
-            "clothing_head": "hat"
-        },
-        "acceptable_synonyms": {
-            "guitar": [
-                "instrument"
-            ],
-            "playing": [
-                "strumming",
-                "practicing"
-            ],
-            "person": [
-                "man",
-                "musician"
-            ]
-        },
-        "marks_distribution": {
-            "grammar_structure": 4,
-            "vocabulary_word_choice": 4,
-            "clarity_meaning": 3,
-            "instruction_compliance": 2,
-            "spelling_formatting": 2
-        },
-        "difficulty": "beginner",
-        "tags": [
-            "outdoor",
-            "music",
-            "hobbies"
-        ]
+    "id": "image_009",
+    "question_number": 9,
+    "type": "image",
+    "marks": 15,
+    "image_url": "https://plus.unsplash.com/premium_photo-1666863909125-3a01f038e71f?q=80&w=1986&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "image_thumbnail": "https://plus.unsplash.com/premium_photo-1666863909125-3a01f038e71f?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
+    "correct_answer": "The image shows a beautiful green valley with many tall trees and green bushes. In the middle of the valley there is a small blue green lake with clear water. On the right side there is a small wooden shelter with a roof and a narrow path leading to it. In the background there are very big grey mountains covered with dark green trees. The sky above is cloudy with white and grey clouds.",
+    "alternative_answers": [
+        "A wide green valley is shown in the image with lots of trees and plants. A small clear water lake is visible in the centre of the valley. On the right side a small hut with a roof and a walking path can be seen. Large grey mountains are standing in the background and the sky is covered with big grey and white clouds.",
+        "The image shows a green open area with many trees and bushes surrounding a small blue green pond. A small wooden shed and a narrow footpath are visible on the right side. Behind the green area there are large rocky mountains with trees on them. The sky above is full of grey and white clouds."
+    ],
+    "key_elements": {
+        "main_object": "wide green valley with tall trees and green bushes",
+        "water": "small blue green lake or pond with clear water in the centre",
+        "structure": "small wooden shelter with a roof on the right side",
+        "path": "narrow walking path leading to the shelter on the right",
+        "background": "large grey rocky mountains covered with dark green trees",
+        "sky": "cloudy sky with white and grey clouds"
+    },
+    "acceptable_synonyms": {
+        "valley": ["green area", "open land", "lowland"],
+        "lake": ["pond", "water body", "small lake"],
+        "shelter": ["hut", "shed", "small building"],
+        "path": ["footpath", "walkway", "narrow road"],
+        "mountains": ["hills", "peaks", "rocky mountains"],
+        "cloudy": ["overcast", "grey sky", "cloud covered"]
+    },
+    "marks_distribution": {
+        "grammar_structure": 4,
+        "vocabulary_word_choice": 4,
+        "clarity_meaning": 3,
+        "instruction_compliance": 2,
+        "spelling_formatting": 2
+    },
+    "difficulty": "intermediate",
+    "tags": ["nature", "mountains", "valley", "lake", "landscape", "outdoor"]
     },
     {
-        "id": "image_010",
-        "question_number": 18,
-        "type": "image",
-        "marks": 15,
-        "image_url": "https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcS8Uj-jdIO3zF35-E35EwqHw7CWW4BcYAWdQRJm8Cmlwn-s3GhIJieXuau4zaYDnDQamc11kbv2_wZMcQ7XYWyiSZIRvzlkTZrzM5h6dUpIoLWrwaY",
-        "image_thumbnail": "https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcS8Uj-jdIO3zF35-E35EwqHw7CWW4BcYAWdQRJm8Cmlwn-s3GhIJieXuau4zaYDnDQamc11kbv2_wZMcQ7XYWyiSZIRvzlkTZrzM5h6dUpIoLWrwaY",
-        "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
-        "correct_answer": "A professional chef wearing a white uniform and hat is cooking in a kitchen, skillfully managing a large flame rising from a frying pan.",
-        "alternative_answers": [
-            "The photo depicts a cook in a white coat sautéing food with a large fire in the pan.",
-            "A chef is preparing food in a restaurant kitchen with flames coming out of the skillet."
-        ],
-        "key_elements": {
-            "main_object": "chef",
-            "action": "cooking/sautéing",
-            "phenomenon": "fire/flame",
-            "clothing": "white uniform/hat"
-        },
-        "acceptable_synonyms": {
-            "chef": [
-                "cook"
-            ],
-            "pan": [
-                "skillet",
-                "wok"
-            ],
-            "flame": [
-                "fire",
-                "blaze"
-            ],
-            "uniform": [
-                "apron",
-                "coat",
-                "whites"
-            ]
-        },
-        "marks_distribution": {
-            "grammar_structure": 4,
-            "vocabulary_word_choice": 4,
-            "clarity_meaning": 3,
-            "instruction_compliance": 2,
-            "spelling_formatting": 2
-        },
-        "difficulty": "advanced",
-        "tags": [
-            "indoor",
-            "profession",
-            "food"
-        ]
+    "id": "image_010",
+    "question_number": 15,
+    "type": "image",
+    "marks": 15,
+    "image_url": "https://images.unsplash.com/photo-1775045308924-d2d6605683b0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "image_thumbnail": "https://images.unsplash.com/photo-1775045308924-d2d6605683b0?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
+    "correct_answer": "A woman wearing a bright yellow dress is riding a bicycle on a wide city road. The bicycle has a black basket at the back. In front of her there is a long yellow tram moving on the road. On the right side there are some white cars and tall grey buildings. A few green trees are also visible on the right side and the sky is clear and light blue.",
+    "alternative_answers": [
+        "The image shows a lady in a yellow dress cycling on a big road in a city. Her bicycle has a black basket on the back. A long yellow tram is moving in front of her. There are white cars parked on the right side and tall buildings can be seen in the background along with some green trees.",
+        "A woman dressed in yellow is riding a cycle on a city road. The cycle has a black basket attached to it. A yellow coloured tram is passing in front of her on the same road. On the right side white cars and tall grey buildings are visible and some green trees can also be seen in the background."
+    ],
+    "key_elements": {
+        "main_object": "woman in yellow dress riding a bicycle on a city road",
+        "bicycle": "grey bicycle with a black basket at the back",
+        "tram": "long yellow tram moving on the road in front of the woman",
+        "right_side": "white cars and tall grey buildings on the right side",
+        "trees": "green trees visible on the right side",
+        "road": "wide grey city road with yellow markings on it"
     },
-    {
-        "id": "image_011",
-        "question_number": 19,
-        "type": "image",
-        "marks": 15,
-        "image_url": "https://images.unsplash.com/photo-1768158984380-5071c359070f?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "image_thumbnail": "https://images.unsplash.com/photo-1768158984380-5071c359070f?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
-        "correct_answer": "A hand wears a grey glove and holds a black Nikon camera. In the blurry background, there is a frozen river with snowy banks under a grey sky.",
-        "alternative_answers": [
-            "A gloved hand is holding a black compact camera against a backdrop of a frozen, snowy body of water.",
-            "A person's hand in a grey winter glove grips a black Nikon camera, with an icy, snow-lined river visible behind it.",
-            "A grey-gloved hand presents a black camera over a frozen, snowy landscape."
-        ],
-        "key_elements": {
-            "main_object": "hand",
-            "clothing": "grey glove",
-            "object_held": "black Nikon camera",
-            "background_scene": "frozen river/water",
-            "weather_element": "snow",
-            "overall_setting": "winter"
-        },
-        "acceptable_synonyms": {
-            "glove": [
-                "mitten",
-                "winter glove"
-            ],
-            "camera": [
-                "compact camera",
-                "Nikon"
-            ],
-            "frozen river": [
-                "icy water",
-                "frozen stream"
-            ],
-            "snowy": [
-                "snow-covered",
-                "wintery"
-            ],
-            "blurry": [
-                "out-of-focus",
-                "indistinct"
-            ]
-        },
-        "marks_distribution": {
-            "grammar_structure": 4,
-            "vocabulary_word_choice": 4,
-            "clarity_meaning": 3,
-            "instruction_compliance": 2,
-            "spelling_formatting": 2
-        },
-        "difficulty": "intermediate",
-        "tags": [
-            "outdoor",
-            "winter",
-            "objects",
-            "hand",
-            "camera"
-        ]
+    "acceptable_synonyms": {
+        "bicycle": ["cycle", "bike", "two wheeler"],
+        "tram": ["electric bus", "city tram", "rail bus"],
+        "basket": ["carrier", "back basket", "bag holder"],
+        "yellow dress": ["yellow outfit", "yellow clothes", "bright yellow frock"],
+        "buildings": ["flats", "apartments", "tall buildings"],
+        "riding": ["cycling", "pedalling", "driving"]
+    },
+    "marks_distribution": {
+        "grammar_structure": 4,
+        "vocabulary_word_choice": 4,
+        "clarity_meaning": 3,
+        "instruction_compliance": 2,
+        "spelling_formatting": 2
+    },
+    "difficulty": "beginner",
+    "tags": ["outdoor", "city", "bicycle", "transport", "woman", "road"]
     },
     {
         "id": "image_012",
@@ -820,6 +669,66 @@
             "music",
             "outdoor",
             "portrait"
+        ]
+    },
+    {
+        "id": "image_016",
+        "question_number": 16,
+        "type": "image",
+        "marks": 15,
+        "image_url": "https://images.unsplash.com/photo-1768158984380-5071c359070f?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "image_thumbnail": "https://images.unsplash.com/photo-1768158984380-5071c359070f?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
+        "correct_answer": "A hand wears a grey glove and holds a black Nikon camera. In the blurry background, there is a frozen river with snowy banks under a grey sky.",
+        "alternative_answers": [
+            "A gloved hand is holding a black compact camera against a backdrop of a frozen, snowy body of water.",
+            "A person's hand in a grey winter glove grips a black Nikon camera, with an icy, snow-lined river visible behind it.",
+            "A grey-gloved hand presents a black camera over a frozen, snowy landscape."
+        ],
+        "key_elements": {
+            "main_object": "hand",
+            "clothing": "grey glove",
+            "object_held": "black Nikon camera",
+            "background_scene": "frozen river/water",
+            "weather_element": "snow",
+            "overall_setting": "winter"
+        },
+        "acceptable_synonyms": {
+            "glove": [
+                "mitten",
+                "winter glove"
+            ],
+            "camera": [
+                "compact camera",
+                "Nikon"
+            ],
+            "frozen river": [
+                "icy water",
+                "frozen stream"
+            ],
+            "snowy": [
+                "snow-covered",
+                "wintery"
+            ],
+            "blurry": [
+                "out-of-focus",
+                "indistinct"
+            ]
+        },
+        "marks_distribution": {
+            "grammar_structure": 4,
+            "vocabulary_word_choice": 4,
+            "clarity_meaning": 3,
+            "instruction_compliance": 2,
+            "spelling_formatting": 2
+        },
+        "difficulty": "intermediate",
+        "tags": [
+            "outdoor",
+            "winter",
+            "objects",
+            "hand",
+            "camera"
         ]
     }
 ]

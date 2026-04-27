@@ -250,12 +250,14 @@ async def grade_mcq_question(student_answer: str, correct_answer: str, marks: in
 
 
 async def grade_typing_question(student_text: str, original_passage: str,
-                                 time_taken_seconds: float, marks: int):
+                                 time_taken_seconds: float, marks: int,
+                                 grading_mode: str = "both"):
     """
     Grading Logic for Typing Speed Test.
-    - Speed: Words Per Minute (WPM) — industry standard: 5 chars = 1 word
-    - Accuracy: Correct entries / Total entries TYPED (not passage length)
-    - Benchmark: 30 WPM with 90% accuracy = PASS
+    grading_mode:
+      "speed"    — Easy:    100% of marks from WPM (benchmark: 30 WPM)
+      "accuracy" — Advanced: 100% of marks from accuracy (benchmark: 90%)
+      "both"     — Legacy:  split 50/50 between speed and accuracy
     """
     if not student_text or not student_text.strip():
         return {
@@ -266,63 +268,80 @@ async def grade_typing_question(student_text: str, original_passage: str,
                 "time_seconds": 0, "completion": 0,
                 "speed_score": 0, "accuracy_score": 0,
                 "passed": False, "benchmark_wpm": 30, "benchmark_accuracy": 90,
+                "grading_mode": grading_mode,
                 "result": "No answer",
                 "feedback": "No typing input was provided."
             }
         }
 
-    # --- Calculate Gross WPM ---
+    # --- Base metrics (same for all modes) ---
     typed_chars = len(student_text)
     time_minutes = max(time_taken_seconds / 60, 0.1)
     gross_wpm = (typed_chars / 5) / time_minutes
 
-    # --- Calculate Accuracy (industry standard: correct / typed) ---
-    correct_chars = 0
-    for i in range(typed_chars):
-        if i < len(original_passage) and student_text[i] == original_passage[i]:
-            correct_chars += 1
-
+    correct_chars = sum(
+        1 for i in range(typed_chars)
+        if i < len(original_passage) and student_text[i] == original_passage[i]
+    )
     accuracy = (correct_chars / typed_chars) * 100 if typed_chars > 0 else 0
-
-    # --- Errors = typed - correct (NOT passage - correct) ---
     errors = typed_chars - correct_chars
-
-    # --- Completion (separate metric) ---
-    completion = min((typed_chars / len(original_passage)) * 100, 100) if original_passage else 0
-
-    # --- Net WPM ---
     error_rate = errors / time_minutes
     net_wpm = max(gross_wpm - error_rate, 0)
+    completion = min((typed_chars / len(original_passage)) * 100, 100) if original_passage else 0
 
-    # --- Scoring (dynamic based on marks parameter) ---
-    speed_marks = round(marks * 0.53)
-    accuracy_marks = marks - speed_marks
-
-    speed_score = min((net_wpm / 30) * speed_marks, speed_marks)
-
-    if accuracy < 70:
+    # --- Mode-specific scoring ---
+    if grading_mode == "speed":
+        # Easy: judged purely on WPM — 30 WPM = full marks
+        speed_score = min((net_wpm / 30) * marks, marks)
         accuracy_score = 0
+        total_score = round(speed_score, 1)
+        passed = net_wpm >= 30
+        if passed:
+            feedback = f"Great speed! {round(net_wpm)} WPM meets the 30 WPM benchmark."
+        else:
+            feedback = f"Speed: {round(net_wpm)} WPM. Need 30+ WPM to pass. Keep practising!"
+
+    elif grading_mode == "accuracy":
+        # Advanced: judged purely on accuracy — 90% = full marks
+        if accuracy < 50:
+            accuracy_score = 0
+        else:
+            accuracy_score = min(((accuracy - 50) / 40) * marks, marks)  # 50% = 0, 90% = full
         speed_score = 0
-    else:
-        accuracy_score = (accuracy / 100) * accuracy_marks
+        total_score = round(accuracy_score, 1)
+        passed = accuracy >= 90
+        if passed:
+            feedback = f"Excellent accuracy! {round(accuracy)}% meets the 90% benchmark."
+        elif accuracy < 70:
+            feedback = f"Accuracy too low ({round(accuracy)}%). Focus on typing each character correctly."
+        else:
+            feedback = f"Accuracy: {round(accuracy)}%. Need 90%+ to pass. Slow down and type carefully."
 
-    total_score = speed_score + accuracy_score
-    if net_wpm < 15:
-        total_score = min(total_score, marks / 3)
-
-    passed = net_wpm >= 30 and accuracy >= 90
-
-    if passed:
-        feedback = f"Great job! {round(net_wpm)} WPM with {round(accuracy)}% accuracy meets the benchmark."
-    elif accuracy < 70:
-        feedback = f"Accuracy too low ({round(accuracy)}%). Focus on typing correctly before speed."
-    elif net_wpm < 30:
-        feedback = f"Speed is {round(net_wpm)} WPM (need 30+). Practice to improve typing speed."
-    else:
-        feedback = f"Speed is good ({round(net_wpm)} WPM) but accuracy needs work ({round(accuracy)}%)."
+    else:  # "both" — legacy split
+        speed_marks = round(marks * 0.53)
+        accuracy_marks = marks - speed_marks
+        speed_score = min((net_wpm / 30) * speed_marks, speed_marks)
+        if accuracy < 70:
+            accuracy_score = 0
+            speed_score = 0
+        else:
+            accuracy_score = (accuracy / 100) * accuracy_marks
+        total_score = speed_score + accuracy_score
+        if net_wpm < 15:
+            total_score = min(total_score, marks / 3)
+        total_score = round(total_score, 1)
+        passed = net_wpm >= 30 and accuracy >= 90
+        if passed:
+            feedback = f"Great job! {round(net_wpm)} WPM with {round(accuracy)}% accuracy meets the benchmark."
+        elif accuracy < 70:
+            feedback = f"Accuracy too low ({round(accuracy)}%). Focus on typing correctly before speed."
+        elif net_wpm < 30:
+            feedback = f"Speed is {round(net_wpm)} WPM (need 30+). Practice to improve typing speed."
+        else:
+            feedback = f"Speed is good ({round(net_wpm)} WPM) but accuracy needs work ({round(accuracy)}%)."
 
     return {
-        "score": round(total_score, 1),
+        "score": total_score,
         "breakdown": {
             "gross_wpm": round(gross_wpm, 1),
             "net_wpm": round(net_wpm, 1),
@@ -337,8 +356,10 @@ async def grade_typing_question(student_text: str, original_passage: str,
             "passed": passed,
             "benchmark_wpm": 30,
             "benchmark_accuracy": 90,
+            "grading_mode": grading_mode,
             "result": "Pass" if passed else "Fail",
             "feedback": feedback
         }
     }
+
 
