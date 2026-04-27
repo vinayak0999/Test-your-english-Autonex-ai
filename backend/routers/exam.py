@@ -11,7 +11,8 @@ from services.grading import (
     grade_image_question,
     grade_reading_question, 
     grade_jumble_question, 
-    grade_mcq_question
+    grade_mcq_question,
+    grade_typing_question
 )
 from pydantic import BaseModel
 
@@ -453,13 +454,44 @@ async def finish_exam(
                     grading_config.get("correct_answer", ""),
                     q["marks"]
                 )
+            elif question_type == 'typing':
+                import json as json_lib
+                print(f"[TYPING DEBUG] temp_id={temp_id}, raw student_text='{student_text[:200] if student_text else 'EMPTY'}'")
+                try:
+                    answer_data = json_lib.loads(student_text)
+                    typed_text = answer_data.get("typed_text", "")
+                    client_time = answer_data.get("time_seconds", 0)
+                    print(f"[TYPING DEBUG] Parsed OK: typed_text_len={len(typed_text)}, time={client_time}")
+                except:
+                    typed_text = student_text
+                    client_time = 0
+                    print(f"[TYPING DEBUG] JSON parse failed, using raw text")
+
+                # Server-side time validation
+                time_limit = grading_config.get("time_limit", 60)
+                if session and session.started_at:
+                    from datetime import datetime, timezone
+                    elapsed = (datetime.now(timezone.utc) - session.started_at.replace(tzinfo=timezone.utc)).total_seconds()
+                    if client_time > 0 and client_time <= elapsed + 5:
+                        time_taken = client_time
+                    else:
+                        time_taken = min(elapsed, time_limit)
+                else:
+                    time_taken = min(client_time, time_limit) if client_time > 0 else time_limit
+
+                grade_data = await grade_typing_question(
+                    typed_text,
+                    grading_config.get("original_passage", ""),
+                    time_taken,
+                    q["marks"]
+                )
             else:
                 grade_data = {"score": 0, "breakdown": {"error": "Manual review needed"}}
 
             question_score = grade_data.get('score', 0)
             total_score += question_score
             
-            correct_answer = grading_config.get("reference", grading_config.get("correct_answer", "N/A"))
+            correct_answer = grading_config.get("reference", grading_config.get("correct_answer", grading_config.get("original_passage", "N/A")))
             content = q.get("content") or {}
             question_text = content.get("question", content.get("text", content.get("content", "")))
             
@@ -550,6 +582,23 @@ async def finish_exam(
                 grade_data = await grade_mcq_question(
                     student_text,
                     grading.get("correct_answer", ""),
+                    q.marks
+                )
+            elif q.question_type == 'typing':
+                import json as json_lib
+                try:
+                    answer_data = json_lib.loads(student_text)
+                    typed_text = answer_data.get("typed_text", "")
+                    client_time = answer_data.get("time_seconds", 0)
+                except:
+                    typed_text = student_text
+                    client_time = 0
+                time_limit = grading.get("time_limit", 120)
+                time_taken = min(client_time, time_limit) if client_time > 0 else time_limit
+                grade_data = await grade_typing_question(
+                    typed_text,
+                    grading.get("original_passage", q.content_url_or_text or ""),
+                    time_taken,
                     q.marks
                 )
             else:

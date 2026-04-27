@@ -456,12 +456,76 @@ const AdminDetailedResult = () => {
                                     </div>
                                 )}
 
+                                {/* ========== TYPING SPEED TEST RESULTS ========== */}
+                                {item.type === 'typing' && item.ai_feedback && (
+                                    <div className="mb-6">
+                                        <h4 className="text-xs font-bold text-purple-600 uppercase tracking-wider mb-3 flex items-center gap-1">
+                                            ⌨️ Typing Speed Results
+                                        </h4>
+
+                                        {/* Metrics Grid */}
+                                        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+                                            <div className="text-center p-3 bg-blue-50 rounded-lg border border-blue-200">
+                                                <p className="text-xs text-blue-500 font-bold">Net WPM</p>
+                                                <p className={`text-xl font-bold ${(item.ai_feedback.net_wpm || 0) >= 30 ? 'text-green-600' : 'text-red-600'}`}>
+                                                    {item.ai_feedback.net_wpm || 0}
+                                                </p>
+                                                <p className="text-xs text-slate-400">Target: 30+</p>
+                                            </div>
+                                            <div className="text-center p-3 bg-green-50 rounded-lg border border-green-200">
+                                                <p className="text-xs text-green-500 font-bold">Accuracy</p>
+                                                <p className={`text-xl font-bold ${(item.ai_feedback.accuracy || 0) >= 90 ? 'text-green-600' : 'text-amber-600'}`}>
+                                                    {item.ai_feedback.accuracy || 0}%
+                                                </p>
+                                                <p className="text-xs text-slate-400">Target: 90%+</p>
+                                            </div>
+                                            <div className="text-center p-3 bg-amber-50 rounded-lg border border-amber-200">
+                                                <p className="text-xs text-amber-500 font-bold">Completion</p>
+                                                <p className="text-xl font-bold text-slate-700">
+                                                    {item.ai_feedback.completion || 0}%
+                                                </p>
+                                                <p className="text-xs text-slate-400">{item.ai_feedback.total_chars_typed || 0} chars</p>
+                                            </div>
+                                            <div className="text-center p-3 bg-slate-50 rounded-lg border border-slate-200">
+                                                <p className="text-xs text-slate-500 font-bold">Time</p>
+                                                <p className="text-xl font-bold text-slate-700">
+                                                    {item.ai_feedback.time_seconds ? `${Math.round(item.ai_feedback.time_seconds)}s` : '—'}
+                                                </p>
+                                                <p className="text-xs text-slate-400">Errors: {item.ai_feedback.errors || 0}</p>
+                                            </div>
+                                        </div>
+
+                                        {/* Score Breakdown */}
+                                        <div className="grid grid-cols-2 gap-3 mb-4">
+                                            <div className="p-3 bg-white rounded-lg border border-slate-200">
+                                                <p className="text-xs text-slate-400 mb-1">Speed Score</p>
+                                                <p className="font-bold text-slate-700">{item.ai_feedback.speed_score || 0} / 8</p>
+                                            </div>
+                                            <div className="p-3 bg-white rounded-lg border border-slate-200">
+                                                <p className="text-xs text-slate-400 mb-1">Accuracy Score</p>
+                                                <p className="font-bold text-slate-700">{item.ai_feedback.accuracy_score || 0} / 7</p>
+                                            </div>
+                                        </div>
+
+                                        {/* Pass/Fail Badge */}
+                                        <div className={`flex items-center gap-2 p-3 rounded-lg ${item.ai_feedback.passed ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}`}>
+                                            {item.ai_feedback.passed
+                                                ? <CheckCircle size={18} className="text-green-600" />
+                                                : <XCircle size={18} className="text-red-600" />
+                                            }
+                                            <span className={`font-bold text-sm ${item.ai_feedback.passed ? 'text-green-700' : 'text-red-700'}`}>
+                                                {item.ai_feedback.passed ? 'PASS' : 'FAIL'} — {item.ai_feedback.feedback || ''}
+                                            </span>
+                                        </div>
+                                    </div>
+                                )}
+
                                 {/* Answers Grid */}
                                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                                     {/* Correct Answer */}
                                     <div>
                                         <h4 className="text-xs font-bold text-green-600 uppercase tracking-wider mb-2 flex items-center gap-1">
-                                            <CheckCircle size={14} /> Correct Answer
+                                            <CheckCircle size={14} /> {item.type === 'typing' ? 'Original Passage' : 'Correct Answer'}
                                         </h4>
                                         <div className="bg-green-50 border border-green-200 rounded-lg p-4">
                                             <p className="text-slate-700 text-sm whitespace-pre-wrap font-medium">{item.correct_answer || "N/A"}</p>
@@ -471,18 +535,31 @@ const AdminDetailedResult = () => {
                                     {/* User's Answer */}
                                     <div>
                                         <h4 className="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2 flex items-center gap-1">
-                                            <User size={14} /> User's Answer
+                                            <User size={14} /> {item.type === 'typing' ? "Student's Typing" : "User's Answer"}
                                         </h4>
                                         <div className={`border rounded-lg p-4 ${displayScore > 0
                                             ? 'bg-green-50 border-green-200'
                                             : 'bg-red-50 border-red-200'
                                             }`}>
-                                            <p className="text-slate-700 text-sm whitespace-pre-wrap font-medium">{item.student_answer || "No answer provided"}</p>
+                                            <p className="text-slate-700 text-sm whitespace-pre-wrap font-medium">
+                                                {(() => {
+                                                    // For typing questions, parse JSON to show just typed text
+                                                    if (item.type === 'typing' && item.student_answer) {
+                                                        try {
+                                                            const parsed = JSON.parse(item.student_answer);
+                                                            return parsed.typed_text || item.student_answer;
+                                                        } catch {
+                                                            return item.student_answer;
+                                                        }
+                                                    }
+                                                    return item.student_answer || "No answer provided";
+                                                })()}
+                                            </p>
                                         </div>
                                     </div>
 
-                                    {/* AI Feedback (for image/video/reading) */}
-                                    {item.ai_feedback && !isMCQ && !isJumble && (
+                                    {/* AI Feedback (for image/video/reading — NOT typing, it has its own display above) */}
+                                    {item.ai_feedback && !isMCQ && !isJumble && item.type !== 'typing' && (
                                         <div className="lg:col-span-2">
                                             <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">AI Evaluation</h4>
                                             <div className="bg-slate-50 border border-slate-200 rounded-lg p-4">

@@ -1,9 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import TypingQuestion from './TypingQuestion';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
-const QuestionCard = ({ question, answer, onAnswerChange }) => {
+const QuestionCard = ({ question, answer, onAnswerChange, onTypingComplete, onAutoNext }) => {
     // Helper to safely get content fields (handles both legacy string and new object)
     const getContent = (field) => {
         if (typeof question.content === 'string') return question.content;
@@ -122,9 +123,20 @@ const QuestionCard = ({ question, answer, onAnswerChange }) => {
                         )}
                     </div>
                 )}
+
+                {/* 4. TYPING */}
+                {question.type === 'typing' && (
+                    <TypingQuestion
+                        question={question}
+                        answer={answer}
+                        onAnswerChange={onAnswerChange}
+                        onTypingComplete={onTypingComplete}
+                    />
+                )}
             </div>
 
-            {/* --- ANSWER INPUT AREA --- */}
+            {/* --- ANSWER INPUT AREA (not shown for typing - it has its own) --- */}
+            {question.type !== 'typing' && (
             <div className="space-y-4">
                 <label className="block text-sm font-bold text-slate-400 uppercase tracking-wider">
                     Your Answer
@@ -148,13 +160,16 @@ const QuestionCard = ({ question, answer, onAnswerChange }) => {
                     />
                 )}
 
-                {/* B. MCQ OPTIONS (Simple) */}
+                {/* B. MCQ OPTIONS — auto-advance to next question on click */}
                 {(question.type === 'mcq-grammar' || question.type === 'mcq-reading' || question.type === 'mcq-context') && contentData.options && (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         {Object.entries(contentData.options).map(([key, value]) => (
                             <button
                                 key={key}
-                                onClick={() => onAnswerChange(key)}
+                                onClick={() => {
+                                    onAnswerChange(key);
+                                    if (onAutoNext) setTimeout(onAutoNext, 400);
+                                }}
                                 className={`p-4 rounded-xl border-2 text-left transition-all flex items-center gap-3 ${answer === key
                                     ? 'border-indigo-600 bg-indigo-50 text-indigo-900 shadow-sm'
                                     : 'border-slate-200 hover:border-indigo-300 hover:bg-slate-50 text-slate-600'
@@ -172,6 +187,7 @@ const QuestionCard = ({ question, answer, onAnswerChange }) => {
 
 
             </div>
+            )}
         </motion.div>
     );
 };

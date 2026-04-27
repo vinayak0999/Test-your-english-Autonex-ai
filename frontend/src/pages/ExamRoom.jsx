@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import api from '../api';
 import useExamStore from '../store/examStore';
@@ -19,7 +19,7 @@ const ExamRoom = () => {
     const [showFullscreenPrompt, setShowFullscreenPrompt] = useState(true);
     const [violations, setViolations] = useState(0);
     const [showViolationWarning, setShowViolationWarning] = useState(false);
-    const [sessionId, setSessionId] = useState(null);  // For template-based random questions
+    const [sessionId, setSessionId] = useState(null);
     const violationRef = useRef(0);
 
     // Zustand Store
@@ -44,34 +44,31 @@ const ExamRoom = () => {
             setShowFullscreenPrompt(false);
         } catch (err) {
             console.error("Fullscreen failed:", err);
-            // Allow proceeding even if fullscreen fails (some browsers block it)
             setShowFullscreenPrompt(false);
         }
     };
 
     // Handle violation (tab switch or fullscreen exit)
-    const handleViolation = (reason) => {
+    const handleViolation = useCallback((reason) => {
         const newViolations = violationRef.current + 1;
         violationRef.current = newViolations;
         setViolations(newViolations);
         incrementFlag();
 
         if (newViolations >= MAX_VIOLATIONS) {
-            // Auto-submit after 3 violations
             alert(`⚠️ DISQUALIFIED: You have ${newViolations} violations. Your test is being auto-submitted.`);
-            handleSubmitExam(true); // Force submit with disqualification
+            doSubmit(true);
         } else if (newViolations === MAX_VIOLATIONS - 1) {
-            // Final warning before auto-submit
             setShowViolationWarning(true);
             alert(`🚨 FINAL WARNING: You have ${newViolations} violations. ONE MORE and your test will be auto-submitted!`);
         } else {
             alert(`⚠️ WARNING: ${reason}. Violation ${newViolations}/${MAX_VIOLATIONS}. Your test will be auto-submitted after ${MAX_VIOLATIONS} violations.`);
         }
-    };
+    }, []);
 
     // 1. Load Test Data
     useEffect(() => {
-        resetExam(); // Clear old data
+        resetExam();
         api.get(`/exam/tests/${testId}`)
             .then(res => {
                 if (res.data.already_completed) {
@@ -82,7 +79,7 @@ const ExamRoom = () => {
                 setQuestions(res.data.questions);
                 setDuration(res.data.duration);
                 if (res.data.session_id) {
-                    setSessionId(res.data.session_id);  // Save session_id for template-based tests
+                    setSessionId(res.data.session_id);
                 }
                 setLoading(false);
             })
@@ -93,17 +90,22 @@ const ExamRoom = () => {
             });
     }, [testId]);
 
-    // 2. Timer Logic
+    // 2. Timer Logic — PAUSES when current question is typing (typing has its own timer)
     useEffect(() => {
         if (loading || showFullscreenPrompt) return;
         const timer = setInterval(() => {
+            // Check if current question is typing — if so, don't tick the exam timer
+            const state = useExamStore.getState();
+            const currentQ = questions[state.currentQuestionIndex];
+            if (currentQ && currentQ.type === 'typing') return; // pause exam timer
+
             tick();
-            if (useExamStore.getState().timeLeft <= 0) {
-                handleSubmitExam();
+            if (state.timeLeft <= 1) {
+                doSubmit(false);
             }
         }, 1000);
         return () => clearInterval(timer);
-    }, [loading, showFullscreenPrompt]);
+    }, [loading, showFullscreenPrompt, questions]);
 
     // 3. Anti-Cheat: Tab Switching Detection
     useEffect(() => {
@@ -116,7 +118,7 @@ const ExamRoom = () => {
         };
         document.addEventListener("visibilitychange", handleVisibilityChange);
         return () => document.removeEventListener("visibilitychange", handleVisibilityChange);
-    }, [showFullscreenPrompt]);
+    }, [showFullscreenPrompt, handleViolation]);
 
     // 4. Anti-Cheat: Fullscreen Exit Detection
     useEffect(() => {
@@ -144,26 +146,23 @@ const ExamRoom = () => {
             document.removeEventListener('webkitfullscreenchange', handleFullscreenChange);
             document.removeEventListener('msfullscreenchange', handleFullscreenChange);
         };
-    }, [showFullscreenPrompt]);
+    }, [showFullscreenPrompt, handleViolation]);
 
     // 5. Disable Right-Click and Keyboard Shortcuts
     useEffect(() => {
         if (showFullscreenPrompt) return;
 
         const preventCheating = (e) => {
-            // Disable right-click
             if (e.type === 'contextmenu') {
                 e.preventDefault();
                 return;
             }
-            // Disable common shortcuts
             if (e.ctrlKey || e.metaKey) {
                 const blockedKeys = ['c', 'v', 'u', 'p', 's', 'a', 'f', 'Tab'];
                 if (blockedKeys.includes(e.key)) {
                     e.preventDefault();
                 }
             }
-            // Disable F12, F5
             if (['F12', 'F5', 'Escape'].includes(e.key)) {
                 e.preventDefault();
             }
@@ -178,24 +177,26 @@ const ExamRoom = () => {
         };
     }, [showFullscreenPrompt]);
 
-    // Submit Logic
-    const handleSubmitExam = async (isDisqualified = false) => {
+    // ========== SUBMIT LOGIC ==========
+    // Uses useExamStore.getState() to ALWAYS get the freshest answers — no stale closures
+    const doSubmit = async (isDisqualified = false) => {
         if (submitting) return;
         setSubmitting(true);
 
-        // Exit fullscreen before submitting
         if (document.fullscreenElement) {
-            try {
-                await document.exitFullscreen();
-            } catch (e) { }
+            try { await document.exitFullscreen(); } catch (e) { }
         }
 
+        // CRITICAL FIX: Read answers directly from Zustand store, not from closure
+        const freshState = useExamStore.getState();
+        console.log('[SUBMIT] All answers:', JSON.stringify(freshState.answers));
+
         const payload = {
-            answers: answers,
+            answers: freshState.answers,
             flags: violationRef.current,
             tab_switches: violationRef.current,
             disqualified: isDisqualified,
-            session_id: sessionId  // Include session_id for template-based tests
+            session_id: sessionId
         };
 
         try {
@@ -209,11 +210,58 @@ const ExamRoom = () => {
         }
     };
 
+    // Kept for backwards compat — calls doSubmit
+    const handleSubmitExam = (isDisqualified = false) => doSubmit(isDisqualified);
+
     const formatTime = (seconds) => {
         const mins = Math.floor(seconds / 60);
         const secs = seconds % 60;
         return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
     };
+
+    // ========== NAVIGATION HELPERS ==========
+    const currentQuestion = questions[currentQuestionIndex];
+    const isLastQuestion = currentQuestionIndex === questions.length - 1;
+
+    // Check if reading question has an answer (for compulsory enforcement)
+    const isReadingBlocked = () => {
+        if (!currentQuestion) return false;
+        if (currentQuestion.type === 'reading') {
+            const ans = useExamStore.getState().answers[currentQuestion.id];
+            if (!ans || ans.trim().length < 10) return true; // Must write at least 10 chars
+        }
+        return false;
+    };
+
+    const handleNext = () => {
+        if (isReadingBlocked()) {
+            alert("⚠️ The reading summary question is compulsory. Please write your answer before proceeding.");
+            return;
+        }
+        nextQuestion();
+    };
+
+    const handleSubmitClick = () => {
+        // Check ALL reading questions have answers before submitting
+        const state = useExamStore.getState();
+        for (const q of questions) {
+            if (q.type === 'reading') {
+                const ans = state.answers[q.id];
+                if (!ans || ans.trim().length < 10) {
+                    alert(`⚠️ Reading questions are compulsory. Please answer the reading question before submitting.`);
+                    return;
+                }
+            }
+        }
+        doSubmit(false);
+    };
+
+    // Typing auto-advance: when typing question finishes, auto-go to next
+    const handleTypingComplete = useCallback(() => {
+        if (!isLastQuestion) {
+            setTimeout(() => nextQuestion(), 1500);
+        }
+    }, [isLastQuestion, nextQuestion]);
 
     // Fullscreen Prompt Screen
     if (showFullscreenPrompt && !loading) {
@@ -275,9 +323,6 @@ const ExamRoom = () => {
 
     if (loading) return <div className="min-h-screen flex items-center justify-center"><Loader2 className="animate-spin" /></div>;
 
-    const currentQuestion = questions[currentQuestionIndex];
-    const isLastQuestion = currentQuestionIndex === questions.length - 1;
-
     return (
         <div className="min-h-screen bg-slate-100 flex flex-col">
             {/* --- VIOLATION BANNER --- */}
@@ -312,9 +357,17 @@ const ExamRoom = () => {
                             <Maximize size={14} /> Re-enter Fullscreen
                         </button>
                     )}
-                    <div className={`flex items-center gap-3 px-5 py-2 rounded-lg font-mono font-bold text-xl ${timeLeft < 300 ? 'bg-red-50 text-red-600' : 'bg-slate-50 text-slate-700'}`}>
-                        <span>{formatTime(timeLeft)}</span>
-                    </div>
+                    {/* Hide exam timer when on typing question (it has its own) */}
+                    {currentQuestion?.type !== 'typing' && (
+                        <div className={`flex items-center gap-3 px-5 py-2 rounded-lg font-mono font-bold text-xl ${timeLeft < 300 ? 'bg-red-50 text-red-600' : 'bg-slate-50 text-slate-700'}`}>
+                            <span>{formatTime(timeLeft)}</span>
+                        </div>
+                    )}
+                    {currentQuestion?.type === 'typing' && (
+                        <div className="px-4 py-2 rounded-lg bg-purple-50 text-purple-600 font-bold text-sm">
+                            ⌨️ Typing Section — Own Timer
+                        </div>
+                    )}
                 </div>
             </header>
 
@@ -324,6 +377,8 @@ const ExamRoom = () => {
                     question={currentQuestion}
                     answer={answers[currentQuestion.id]}
                     onAnswerChange={(text) => saveAnswer(currentQuestion.id, text)}
+                    onTypingComplete={handleTypingComplete}
+                    onAutoNext={isLastQuestion ? undefined : handleNext}
                 />
             </main>
 
@@ -340,14 +395,14 @@ const ExamRoom = () => {
 
                     {isLastQuestion ? (
                         <button
-                            onClick={() => handleSubmitExam(false)}
+                            onClick={handleSubmitClick}
                             className="px-8 py-2 rounded-lg font-bold bg-green-600 text-white hover:bg-green-700 shadow-lg shadow-green-200 transition-all flex items-center gap-2"
                         >
                             <Save size={18} /> Submit Exam
                         </button>
                     ) : (
                         <button
-                            onClick={nextQuestion}
+                            onClick={handleNext}
                             className="px-8 py-2 rounded-lg font-bold bg-[#0F1A4D] text-white hover:bg-[#1E3A8A] shadow-lg shadow-slate-200 transition-all flex items-center gap-2"
                         >
                             Next Question <ChevronRight size={20} />
@@ -360,4 +415,3 @@ const ExamRoom = () => {
 };
 
 export default ExamRoom;
-

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../../api';
-import { Save, Sliders, CheckSquare, FileText, Video, Image as ImageIcon, BookOpen, Type, Layers } from 'lucide-react';
+import { Save, Sliders, CheckSquare, FileText, Video, Image as ImageIcon, BookOpen, Type, Layers, Keyboard } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const SectionCard = ({ type, icon: Icon, label, config, onUpdate }) => {
@@ -72,11 +72,12 @@ const CreateTest = () => {
     const [sections, setSections] = useState({
         video: { enabled: true, count: 1, marks: 15, label: "Video Analysis", icon: Video },
         image: { enabled: true, count: 1, marks: 15, label: "Image Description", icon: ImageIcon },
-        reading: { enabled: true, count: 1, marks: 15, label: "Reading Summary", icon: BookOpen },
+        // reading: { enabled: false, count: 1, marks: 15, label: "Reading Summary", icon: BookOpen }, // Hidden — no bank yet
         jumble: { enabled: true, count: 20, marks: 1, label: "Jumble Sentences", icon: Type },
         'mcq-grammar': { enabled: true, count: 12, marks: 1, label: "MCQ: Grammar", icon: CheckSquare },
         'mcq-context': { enabled: true, count: 12, marks: 1, label: "MCQ: Context", icon: Layers },
         'mcq-reading': { enabled: true, count: 11, marks: 1, label: "MCQ: Reading", icon: FileText },
+        typing: { enabled: false, count: 1, marks: 15, label: "Typing Speed", icon: Keyboard },
     });
 
     // Calculated Total Marks

@@ -1,34 +1,38 @@
 [
     {
-        "id": "image_001",
-        "question_number": 5,
+        "id": "image_041",
+        "question_number": 41,
         "type": "image",
         "marks": 15,
-        "image_url": "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcSVLbSYAlAbe7rXG5rjwpJHAOuUfILqMPs4qwq6OG28kfpMb4UScwbG_NIdzzjhP85om53yu1HIrx8lqAIq4ZgCU8UwGiYNNYYjZxNsWnS0wTEzgrM",
-        "image_thumbnail": "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcSVLbSYAlAbe7rXG5rjwpJHAOuUfILqMPs4qwq6OG28kfpMb4UScwbG_NIdzzjhP85om53yu1HIrx8lqAIq4ZgCU8UwGiYNNYYjZxNsWnS0wTEzgrM",
+        "image_url": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop",
+        "image_thumbnail": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=200&auto=format&fit=crop",
         "prompt": "Look at the image and describe what you see. Your description should include the main objects, their colors, and their positions.",
-        "correct_answer": "A modern living room featuring a large blue sofa in the center, a wooden coffee table placed in front of it, and bright lighting.",
+        "correct_answer": "A group of four young adults are sitting around a large wooden table, actively collaborating. They are using silver laptops and writing in notebooks, situated in a bright, modern room with a brick wall in the background.",
         "alternative_answers": [
-            "The image shows a contemporary lounge area with a blue couch, a wood table in the middle, and light décor."
+            "The image shows a study group or team of professionals working together at a wooden desk with computers and papers.",
+            "Four people are engaged in a discussion around a table, with open laptops and notebooks in front of them against a brick background."
         ],
         "key_elements": {
-            "main_object": "living room",
-            "furniture_1": "blue sofa",
-            "furniture_2": "wooden coffee table",
-            "style": "modern/contemporary"
+            "people": "four young adults/team",
+            "furniture": "large wooden table",
+            "technology": "silver laptops",
+            "materials": "notebooks/papers",
+            "background": "brick wall"
         },
         "acceptable_synonyms": {
-            "sofa": [
-                "couch",
-                "settee"
+            "collaborating": [
+                "working together",
+                "studying",
+                "discussing"
             ],
-            "coffee table": [
-                "low table",
-                "center table"
+            "laptops": [
+                "computers",
+                "notebooks",
+                "devices"
             ],
-            "wooden": [
-                "wood",
-                "timber"
+            "table": [
+                "desk",
+                "workspace"
             ]
         },
         "marks_distribution": {
@@ -41,8 +45,9 @@
         "difficulty": "intermediate",
         "tags": [
             "indoor",
-            "home",
-            "furniture"
+            "education",
+            "workplace",
+            "people"
         ]
     },
     {

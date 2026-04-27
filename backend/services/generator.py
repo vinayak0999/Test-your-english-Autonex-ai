@@ -51,7 +51,8 @@ class QuestionBankService:
             "jumble": "jumble.json",
             "mcq-grammar": "mcq_grammar.json",
             "mcq-context": "mcq_context.json",
-            "mcq-reading": "mcq_reading.json"
+            "mcq-reading": "mcq_reading.json",
+            "typing": "typing.json"
         }
 
         filename = bank_map.get(section_type)
@@ -117,42 +118,84 @@ class QuestionBankService:
                     "key_ideas": item.get("key_ideas", [])
                 }
             
-            # 4. Jumble
+            # 4. Jumble — shuffle letter assignments so answer isn't always A B C D
             elif section_type == "jumble":
-                # Jumble bank structure: {"id": 1, "jumble": {"A": "...", "B": "...", ...}, "answer": "B A C D"}
-                jumble_parts = item.get("jumble", {})
-                
-                # Create display sentence by joining all parts with " / " separator
-                # Sort by key to show A, B, C, D in order
-                parts_list = [f"{k}: {v}" for k, v in sorted(jumble_parts.items())]
+                original_jumble = item.get("jumble", {})
+                original_answer = (item.get("answer") or item.get("correct_answer", "")).strip()
+
+                # Get the correct sentence order from original answer
+                answer_keys = original_answer.split()  # e.g. ["B", "A", "C", "D"]
+                # Build ordered sentence parts in correct reading order
+                ordered_parts = [original_jumble[k] for k in answer_keys if k in original_jumble]
+
+                # Create new random letter assignment
+                labels = list(original_jumble.keys())  # ["A", "B", "C", "D"]
+                shuffled_labels = labels[:]
+                random.shuffle(shuffled_labels)
+
+                # Map: ordered_parts[i] -> shuffled_labels[i]
+                # So the correct answer is shuffled_labels in order
+                new_jumble = {}
+                for i, part in enumerate(ordered_parts):
+                    new_jumble[shuffled_labels[i]] = part
+                new_correct = " ".join(shuffled_labels)  # e.g. "C A D B"
+
+                parts_list = [f"{k}: {v}" for k, v in sorted(new_jumble.items())]
                 sentence_display = " | ".join(parts_list) if parts_list else ""
-                
+
                 q_structure["content"] = {
-                    "jumble": jumble_parts,  # The A, B, C, D sentence parts for structured display
-                    "sentence": sentence_display  # Joined sentence for simple display
+                    "jumble": new_jumble,
+                    "sentence": sentence_display
                 }
                 q_structure["grading_config"] = {
-                    "correct_answer": item.get("answer") or item.get("correct_answer", "")
+                    "correct_answer": new_correct
                 }
             
-            # 5. MCQ (Grammar / Reading / Context)
+            # 5. MCQ (Grammar / Reading / Context) — shuffle options
             elif section_type.startswith("mcq"):
-                # MCQ-reading has: content (passage), question_text, options
-                # MCQ-grammar has: content (question), options
+                original_options = item.get("options", {})
+                original_correct = item.get("correct_answer", "")
+                correct_text = original_options.get(original_correct, "")
+
+                # Shuffle: get all option texts, shuffle, reassign to A, B, C...
+                option_keys = sorted(original_options.keys())  # ["A", "B", "C"]
+                option_texts = [original_options[k] for k in option_keys]
+                random.shuffle(option_texts)
+
+                new_options = {}
+                new_correct = original_correct
+                for i, key in enumerate(option_keys):
+                    new_options[key] = option_texts[i]
+                    if option_texts[i] == correct_text:
+                        new_correct = key
+
                 if section_type == "mcq-reading":
                     q_structure["content"] = {
-                        "passage": item.get("content"),  # The reading passage
-                        "question": item.get("question_text"),  # The actual question
-                        "options": item.get("options")
+                        "passage": item.get("content"),
+                        "question": item.get("question_text"),
+                        "options": new_options
                     }
                 else:
-                    # mcq-grammar, mcq-context: content IS the question
                     q_structure["content"] = {
                         "question": item.get("content") or item.get("question_text"),
-                        "options": item.get("options")
+                        "options": new_options
                     }
                 q_structure["grading_config"] = {
-                    "correct_answer": item.get("correct_answer")
+                    "correct_answer": new_correct
+                }
+
+            # 6. Typing Speed
+            elif section_type == "typing":
+                q_structure["content"] = {
+                    "passage": item.get("passage"),
+                    "word_count": item.get("word_count"),
+                    "time_limit": item.get("time_limit_seconds", 60)
+                }
+                q_structure["grading_config"] = {
+                    "original_passage": item.get("passage"),
+                    "time_limit": item.get("time_limit_seconds", 60),
+                    "benchmark_wpm": 30,
+                    "benchmark_accuracy": 90
                 }
 
             generated_questions.append(q_structure)
