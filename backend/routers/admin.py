@@ -541,3 +541,136 @@ async def override_question_score(
         "new_total": round(new_total, 1),
         "max_marks": exam_result.test.total_marks if exam_result.test else 100
     }
+
+
+# 7. Re-evaluate Result with AI
+@router.post("/results/{result_id}/re-evaluate")
+async def re_evaluate_result(
+    result_id: int,
+    db: AsyncSession = Depends(get_db),
+    admin: User = Depends(require_admin)
+):
+    """
+    Re-runs AI evaluation on all subjective questions (video, image, reading)
+    using the candidate's original answers stored in ExamSession.
+    MCQ, Jumble, and Typing are skipped (rule-based, no AI needed).
+    """
+    from models import ExamSession
+    from services.grading import (
+        grade_video_question,
+        grade_image_question,
+        grade_reading_question,
+    )
+    from sqlalchemy.orm.attributes import flag_modified
+    import json as json_lib
+
+    # Load result (no selectinload — test/user use backref, not proper relationship)
+    result_q = await db.execute(
+        select(TestResult)
+        .where(TestResult.id == result_id)
+    )
+    exam_result = result_q.scalars().first()
+    if not exam_result:
+        raise HTTPException(status_code=404, detail="Result not found")
+
+    # Fetch test separately (backref pattern used in this codebase)
+    from models import Test as TestModel
+    test_q = await db.execute(select(TestModel).where(TestModel.id == exam_result.test_id))
+    test_obj = test_q.scalars().first()
+
+    # Load the ExamSession to get saved answers + generated questions
+    session_q = await db.execute(
+        select(ExamSession)
+        .where(ExamSession.user_id == exam_result.user_id)
+        .where(ExamSession.test_id == exam_result.test_id)
+        .where(ExamSession.is_completed == True)
+        .order_by(ExamSession.started_at.desc())
+        .limit(1)
+    )
+    session = session_q.scalars().first()
+    if not session:
+        raise HTTPException(status_code=404, detail="Exam session not found — cannot re-evaluate")
+
+    answers = session.answers or {}
+    generated_questions = session.generated_questions or []
+
+    # Build question map: temp_id -> full question object
+    question_map = {q["temp_id"]: q for q in generated_questions if "temp_id" in q}
+
+    breakdown = exam_result.ai_breakdown or []
+    re_evaluated = 0
+    errors = []
+
+    for item in breakdown:
+        q_type = item.get("type", "")
+        q_id = item.get("question_id")
+
+        # Only re-evaluate subjective AI-graded types
+        if q_type not in ("video", "image", "reading"):
+            continue
+
+        student_text = str(answers.get(str(q_id), answers.get(q_id, ""))).strip()
+        if not student_text:
+            item["student_score"] = 0
+            item.pop("override_score", None)  # Clear any override
+            continue
+
+        q_data = question_map.get(q_id, {})
+        grading_config = q_data.get("grading_config", {})
+        marks = item.get("max_marks", q_data.get("marks", 15))
+        content = q_data.get("content", {})
+
+        try:
+            if q_type == "video":
+                grade_data = await grade_video_question(
+                    student_text,
+                    grading_config.get("reference", ""),
+                    grading_config.get("key_ideas", []),
+                    content.get("title", "Video description task")
+                )
+            elif q_type == "image":
+                image_context = content.get("title", grading_config.get("reference", "Image description task"))
+                grade_data = await grade_image_question(
+                    student_text,
+                    grading_config.get("reference", ""),
+                    grading_config.get("key_ideas", []),
+                    image_context
+                )
+            elif q_type == "reading":
+                passage = content.get("passage", "")
+                grade_data = await grade_reading_question(
+                    student_text,
+                    passage,
+                    grading_config.get("reference", ""),
+                    grading_config.get("key_ideas", [])
+                )
+
+            new_score = grade_data.get("score", 0)
+            item["student_score"] = round(new_score, 1)
+            item["ai_feedback"] = grade_data.get("breakdown", {})  # matches exam.py field name
+            item.pop("override_score", None)  # Clear manual overrides on re-eval
+            re_evaluated += 1
+
+        except Exception as e:
+            errors.append(f"Q{q_id} ({q_type}): {str(e)}")
+
+    # Recalculate total
+    new_total = sum(
+        item.get("override_score", item.get("student_score", 0))
+        for item in breakdown
+    )
+
+    exam_result.ai_breakdown = breakdown
+    flag_modified(exam_result, "ai_breakdown")
+    exam_result.total_score = new_total
+    exam_result.status = "re-evaluated"
+
+    await db.commit()
+
+    return {
+        "message": f"Re-evaluation complete. {re_evaluated} question(s) re-graded.",
+        "re_evaluated": re_evaluated,
+        "errors": errors,
+        "new_total": round(new_total, 1),
+        "max_marks": test_obj.total_marks if test_obj else 100
+    }

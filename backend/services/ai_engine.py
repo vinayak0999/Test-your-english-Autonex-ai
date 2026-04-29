@@ -1,18 +1,23 @@
 import asyncio
 from concurrent.futures import ThreadPoolExecutor
-import google.generativeai as genai
+import anthropic
 import json
 import re
 from config import settings
 
-# Optimization: Create a dedicated thread pool for AI tasks
+# Dedicated thread pool for AI tasks
 ai_executor = ThreadPoolExecutor(max_workers=3)
 
-print("Loading AI Models... (This happens once)")
+print("Loading AI Engine... Claude 3.5 Sonnet (This happens once)")
 
-# Configure Gemini (without response_mime_type - not supported in this library version)
-genai.configure(api_key=settings.GEMINI_API_KEY)
-model = genai.GenerativeModel('gemini-2.5-flash')
+# Claude client — created fresh per call (lightweight, no network cost at creation)
+_claude = None
+MODEL = "claude-haiku-4-5-20251001"
+
+def _get_claude():
+    """Always create a fresh client reading the current key from settings."""
+    key = settings.ANTHROPIC_API_KEY
+    return anthropic.Anthropic(api_key=key)
 
 # --- Lightweight Similarity Functions (No Heavy ML Dependencies) ---
 
@@ -20,7 +25,6 @@ def _normalize_text(text: str) -> set:
     """Normalize text to set of words for comparison"""
     if not text:
         return set()
-    # Remove punctuation and convert to lowercase
     text = re.sub(r'[^\w\s]', '', text.lower())
     return set(text.split())
 
@@ -37,19 +41,18 @@ def _sync_get_vector_similarity(text1: str, text2: str) -> float:
     return intersection / union if union > 0 else 0.0
 
 async def get_vector_similarity(text1: str, text2: str) -> float:
-    """The Async Wrapper (Non-Blocking)"""
+    """Async Wrapper (Non-Blocking)"""
     loop = asyncio.get_event_loop()
     return await loop.run_in_executor(ai_executor, _sync_get_vector_similarity, text1, text2)
 
 def _sync_check_key_ideas(student_text: str, key_ideas: list) -> float:
     """Check if student text contains key ideas using word matching"""
-    if not key_ideas: 
+    if not key_ideas:
         return 1.0
     student_words = _normalize_text(student_text)
     match_count = 0
     for idea in key_ideas:
         idea_words = _normalize_text(idea)
-        # If 50%+ of idea words are in student text, count as match
         if idea_words and len(student_words & idea_words) / len(idea_words) > 0.5:
             match_count += 1
     return min(match_count / len(key_ideas), 1.0)
@@ -59,50 +62,64 @@ async def check_key_ideas(student_text: str, key_ideas: list) -> float:
     return await loop.run_in_executor(ai_executor, _sync_check_key_ideas, student_text, key_ideas)
 
 
-def _call_gemini(prompt: str) -> dict:
-    """Thread-safe Gemini Call"""
+# ============================================================
+# CORE CLAUDE CALLER
+# ============================================================
+
+def _call_claude(prompt: str) -> dict:
+    """Thread-safe Claude 3.5 Sonnet call — returns parsed JSON dict"""
     try:
-        response = model.generate_content(prompt)
-        # Clean potential markdown backticks if any (JSON mode usually handles this, but being safe)
-        text = response.text.replace('```json', '').replace('```', '')
+        client = _get_claude()
+        message = client.messages.create(
+            model=MODEL,
+            max_tokens=1024,
+            messages=[{"role": "user", "content": prompt}]
+        )
+        text = message.content[0].text.strip()
+        # Strip any markdown code fences
+        text = re.sub(r'^```json\s*', '', text, flags=re.MULTILINE)
+        text = re.sub(r'^```\s*', '', text, flags=re.MULTILINE)
+        text = text.strip()
         return json.loads(text)
+    except json.JSONDecodeError as e:
+        print(f"Claude JSON parse error: {e}\nRaw: {text[:300]}")
+        return {"relevance": 1, "grammar": 5, "feedback": "AI parse error"}
     except Exception as e:
-        print(f"Gemini Error: {e}")
-        return {"relevance": 1, "grammar": 5, "feedback": "AI Eval Error"}
+        print(f"Claude API error: {e}")
+        return {"relevance": 1, "grammar": 5, "feedback": f"AI Error: {str(e)}"}
+
 
 async def evaluate_english_quality(text: str, context_type: str) -> dict:
     """
-    Legacy function - kept for backward compatibility.
-    Strict IELTS-Style Evaluation using Gemini 1.5 Flash.
+    Legacy function — kept for backward compatibility.
+    IELTS-Style Evaluation using Claude 3.5 Sonnet.
     """
-    prompt = f"""
-    You are a strict IELTS Examiner. Evaluate this student answer for the task: "{context_type}".
-    
-    Student Answer: "{text}"
+    prompt = f"""You are a strict IELTS Examiner. Evaluate this student answer for the task: "{context_type}".
 
-    Criteria (0-9 Scale):
-    1. Task Achievement: Did they answer the specific question? If OFF-TOPIC, give 0 immediately.
-    2. Coherence & Cohesion: Flow, linking words, logic.
-    3. Lexical Resource: Range of vocabulary, precision.
-    4. Grammatical Range & Accuracy: Syntax errors, sentence complexity.
+Student Answer: "{text}"
 
-    Strict Rules:
-    - If answer is completely irrelevant or gibberish -> score 0.
-    - Be harsh on basic vocabulary.
-    
-    Output JSON MUST follow this format:
-    {{
-        "relevance": 0 or 1, (0 if off-topic/gibberish)
-        "grammar": 0-10, (Scaled from your 0-9 band Score)
-        "vocab_score": 0-10,
-        "coherence_score": 0-10,
-        "feedback": "Concise feedback focused on improvements."
-    }}
-    """
-    
+Criteria (0-9 Scale):
+1. Task Achievement: Did they answer the specific question? If OFF-TOPIC, give 0 immediately.
+2. Coherence & Cohesion: Flow, linking words, logic.
+3. Lexical Resource: Range of vocabulary, precision.
+4. Grammatical Range & Accuracy: Syntax errors, sentence complexity.
+
+Strict Rules:
+- If answer is completely irrelevant or gibberish -> score 0.
+- Be harsh on basic vocabulary.
+
+Output ONLY valid JSON in this exact format, no other text:
+{{
+    "relevance": 0 or 1,
+    "grammar": 0-10,
+    "vocab_score": 0-10,
+    "coherence_score": 0-10,
+    "feedback": "Concise feedback focused on improvements."
+}}"""
+
     try:
         loop = asyncio.get_event_loop()
-        result = await loop.run_in_executor(ai_executor, _call_gemini, prompt)
+        result = await loop.run_in_executor(ai_executor, _call_claude, prompt)
         return result
     except Exception as e:
         print(f"Eval Error: {e}")
@@ -122,7 +139,7 @@ async def evaluate_video_strict(user_answer: str, correct_answer: str, video_con
     - Instruction Compliance: 2 marks
     - Spelling & Formatting: 2 marks
     """
-    prompt = f'''You are a STRICT English teacher grading a proficiency test. You do NOT give participation points. You FAIL students who deserve to fail.
+    prompt = f"""You are a STRICT English teacher grading a proficiency test. You do NOT give participation points. You FAIL students who deserve to fail.
 
 VIDEO DESCRIPTION: {video_context}
 CORRECT ANSWER: "{correct_answer}"
@@ -173,7 +190,7 @@ SCORING PHILOSOPHY:
 - Only give high marks (13+) if answer is truly GOOD
 - Most students should score 6-12, NOT 12-15
 
-Output MUST be valid JSON in this exact format:
+Output ONLY valid JSON, no other text:
 {{
     "grammar_structure_score": 0-4,
     "vocabulary_word_choice_score": 0-4,
@@ -181,14 +198,14 @@ Output MUST be valid JSON in this exact format:
     "instruction_compliance_score": 0 or 2,
     "spelling_formatting_score": 0-2,
     "total_score": 0-15,
-    "passed": true/false (true if >= 11),
+    "passed": true or false,
     "feedback": "Specific, constructive feedback explaining deductions",
     "grade_justification": "Brief breakdown of why each score was given"
-}}'''
+}}"""
 
     try:
         loop = asyncio.get_event_loop()
-        result = await loop.run_in_executor(ai_executor, _call_gemini, prompt)
+        result = await loop.run_in_executor(ai_executor, _call_claude, prompt)
         return result
     except Exception as e:
         print(f"Video Eval Error: {e}")
@@ -200,7 +217,7 @@ async def evaluate_image_strict(user_answer: str, correct_answer: str, image_con
     Strict Image Question Evaluation (15 Marks Total)
     Same rubric as video but focused on visual description.
     """
-    prompt = f'''You are a STRICT English teacher grading a proficiency test. You do NOT give participation points.
+    prompt = f"""You are a STRICT English teacher grading a proficiency test. You do NOT give participation points.
 
 IMAGE DESCRIPTION: {image_context}
 CORRECT ANSWER: "{correct_answer}"
@@ -239,7 +256,7 @@ STRICT RULES:
 - Vague answers = maximum 10/15
 - Multiple errors = FAIL
 
-Output MUST be valid JSON:
+Output ONLY valid JSON, no other text:
 {{
     "grammar_structure_score": 0-4,
     "vocabulary_word_choice_score": 0-4,
@@ -247,14 +264,14 @@ Output MUST be valid JSON:
     "instruction_compliance_score": 0 or 2,
     "spelling_formatting_score": 0-2,
     "total_score": 0-15,
-    "passed": true/false (true if >= 11),
+    "passed": true or false,
     "feedback": "Specific feedback explaining deductions",
     "grade_justification": "Brief breakdown of scores"
-}}'''
+}}"""
 
     try:
         loop = asyncio.get_event_loop()
-        result = await loop.run_in_executor(ai_executor, _call_gemini, prompt)
+        result = await loop.run_in_executor(ai_executor, _call_claude, prompt)
         return result
     except Exception as e:
         print(f"Image Eval Error: {e}")
@@ -271,8 +288,8 @@ async def evaluate_reading_strict(user_summary: str, original_passage: str, refe
     - Vocabulary Precision: 1 mark
     """
     key_ideas_str = ", ".join(key_ideas) if key_ideas else "Not specified"
-    
-    prompt = f'''You are a STRICT English teacher grading a reading comprehension summary. Be harsh but fair.
+
+    prompt = f"""You are a STRICT English teacher grading a reading comprehension summary. Be harsh but fair.
 
 ORIGINAL PASSAGE: "{original_passage[:500]}..."
 REFERENCE SUMMARY: "{reference_summary}"
@@ -314,7 +331,7 @@ STRICT RULES:
 - Missing half the key ideas = maximum 8/15
 - Incoherent summary = maximum 6/15
 
-Output MUST be valid JSON:
+Output ONLY valid JSON, no other text:
 {{
     "key_idea_coverage_score": 0-5,
     "paraphrasing_score": 0-4,
@@ -322,18 +339,17 @@ Output MUST be valid JSON:
     "coherence_flow_score": 0-2,
     "vocabulary_precision_score": 0-1,
     "total_score": 0-15,
-    "passed": true/false (true if >= 11),
+    "passed": true or false,
     "key_ideas_found": ["list of key ideas student mentioned"],
     "key_ideas_missing": ["list of key ideas student missed"],
     "feedback": "Specific feedback on summary quality",
     "grade_justification": "Brief breakdown of scores"
-}}'''
+}}"""
 
     try:
         loop = asyncio.get_event_loop()
-        result = await loop.run_in_executor(ai_executor, _call_gemini, prompt)
+        result = await loop.run_in_executor(ai_executor, _call_claude, prompt)
         return result
     except Exception as e:
         print(f"Reading Eval Error: {e}")
         return {"total_score": 0, "passed": False, "feedback": "Evaluation Error"}
-

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import api from '../../api';
-import { ArrowLeft, User, FileText, AlertTriangle, CheckCircle, XCircle, Loader2, Image as ImageIcon, Video, List, Shuffle, Edit3, Save, X } from 'lucide-react';
+import { ArrowLeft, User, FileText, AlertTriangle, CheckCircle, XCircle, Loader2, Image as ImageIcon, Video, List, Shuffle, Edit3, Save, X, RefreshCw } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
@@ -17,6 +17,10 @@ const AdminDetailedResult = () => {
     const [editScore, setEditScore] = useState('');
     const [saving, setSaving] = useState(false);
     const [saveError, setSaveError] = useState(null);
+
+    // Re-evaluate state
+    const [reEvaluating, setReEvaluating] = useState(false);
+    const [reEvalResult, setReEvalResult] = useState(null); // { message, errors }
 
     useEffect(() => {
         const fetchResult = async () => {
@@ -141,6 +145,24 @@ const AdminDetailedResult = () => {
         }
     };
 
+    // Re-evaluate all AI questions
+    const handleReEvaluate = async () => {
+        if (!window.confirm('Re-evaluate all AI questions (Video, Image, Reading) with Claude? This will overwrite current AI scores.')) return;
+        setReEvaluating(true);
+        setReEvalResult(null);
+        try {
+            const res = await api.post(`/admin/results/${resultId}/re-evaluate`);
+            setReEvalResult({ success: true, message: res.data.message, errors: res.data.errors });
+            // Reload fresh data
+            const fresh = await api.get(`/admin/results/${resultId}`);
+            setResult(fresh.data);
+        } catch (err) {
+            setReEvalResult({ success: false, message: err.response?.data?.detail || 'Re-evaluation failed' });
+        } finally {
+            setReEvaluating(false);
+        }
+    };
+
     if (loading) return <div className="flex justify-center py-20"><Loader2 className="w-8 h-8 animate-spin text-blue-600" /></div>;
     if (error) return <div className="text-center py-20 text-red-600">{error}</div>;
 
@@ -196,6 +218,38 @@ const AdminDetailedResult = () => {
                     <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg flex items-center gap-2 text-blue-800">
                         <CheckCircle size={18} />
                         <span>This result has been reviewed manually.</span>
+                    </div>
+                )}
+                {result.status === 're-evaluated' && (
+                    <div className="mt-4 p-3 bg-purple-50 border border-purple-200 rounded-lg flex items-center gap-2 text-purple-800">
+                        <RefreshCw size={18} />
+                        <span>This result was re-evaluated by AI.</span>
+                    </div>
+                )}
+                {/* Re-evaluate button */}
+                <div className="mt-4 flex items-center gap-3">
+                    <button
+                        onClick={handleReEvaluate}
+                        disabled={reEvaluating}
+                        className="flex items-center gap-2 px-4 py-2 bg-purple-600 hover:bg-purple-700 disabled:bg-purple-300 text-white rounded-lg font-semibold text-sm transition-colors"
+                    >
+                        {reEvaluating
+                            ? <><Loader2 size={15} className="animate-spin" /> Re-evaluating…</>
+                            : <><RefreshCw size={15} /> Re-evaluate with AI</>}
+                    </button>
+                    <span className="text-xs text-slate-400">Re-runs Claude grading on Video, Image &amp; Reading questions</span>
+                </div>
+                {reEvalResult && (
+                    <div className={`mt-3 p-3 rounded-lg text-sm flex items-start gap-2 ${
+                        reEvalResult.success ? 'bg-green-50 border border-green-200 text-green-800' : 'bg-red-50 border border-red-200 text-red-800'
+                    }`}>
+                        {reEvalResult.success ? <CheckCircle size={16} className="mt-0.5 flex-shrink-0" /> : <XCircle size={16} className="mt-0.5 flex-shrink-0" />}
+                        <div>
+                            <p className="font-semibold">{reEvalResult.message}</p>
+                            {reEvalResult.errors?.length > 0 && (
+                                <p className="text-xs mt-1 opacity-75">Errors: {reEvalResult.errors.join(', ')}</p>
+                            )}
+                        </div>
                     </div>
                 )}
             </motion.div>

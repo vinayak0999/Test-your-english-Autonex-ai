@@ -23,7 +23,8 @@ class Settings(BaseSettings):
     
     # AI Config
     OPENAI_API_KEY: str = "sk-placeholder"
-    GEMINI_API_KEY: str = "placeholder_key"
+    GEMINI_API_KEY: str = "placeholder_key"  # Legacy — kept for reference
+    ANTHROPIC_API_KEY: str = "placeholder_key"  # Claude 3.5 Sonnet
 
     # File Storage for Videos
     VIDEO_DIR: str = "public/videos"
