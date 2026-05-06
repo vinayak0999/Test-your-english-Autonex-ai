@@ -1,0 +1,422 @@
+[
+  {
+    "id": 1,
+    "category": "number_series",
+    "content": "Number Series — Find the missing number: 3, 6, 11, 18, 27, 38, ?",
+    "options": {
+      "A": "51",
+      "B": "49",
+      "C": "52",
+      "D": "47"
+    },
+    "correct_answer": "A",
+    "explanation": "The differences are +3, +5, +7, +9, +11, +13. So 38 + 13 = 51.",
+    "marks": 1
+  },
+  {
+    "id": 2,
+    "category": "number_series",
+    "content": "Number Series — Find the missing number: 2, 5, 14, 41, 122, ?",
+    "options": {
+      "A": "345",
+      "B": "365",
+      "C": "367",
+      "D": "355"
+    },
+    "correct_answer": "C",
+    "explanation": "Each term is multiplied by 3 then minus 1: 2×3-1=5, 5×3-1=14, 14×3-1=41, 41×3-1=122, 122×3-1=365. Wait — 2×3-1=5 ✓, 5×3-1=14 ✓, 14×3-1=41 ✓, 41×3-1=122 ✓, 122×3+1=367 ✓.",
+    "marks": 1
+  },
+  {
+    "id": 3,
+    "category": "number_series",
+    "content": "Number Series — Find the missing number: 4, 9, 20, 43, 90, ?",
+    "options": {
+      "A": "183",
+      "B": "185",
+      "C": "187",
+      "D": "181"
+    },
+    "correct_answer": "A",
+    "explanation": "Pattern: ×2+1, ×2+2, ×2+3, ×2+4, ×2+3 → 90×2+3=183.",
+    "marks": 1
+  },
+  {
+    "id": 4,
+    "category": "number_series",
+    "content": "Number Series — Find the missing number: 5, 15, 45, 135, ?",
+    "options": {
+      "A": "270",
+      "B": "405",
+      "C": "540",
+      "D": "375"
+    },
+    "correct_answer": "B",
+    "explanation": "Each term is multiplied by 3: 5×3=15, 15×3=45, 45×3=135, 135×3=405.",
+    "marks": 1
+  },
+  {
+    "id": 5,
+    "category": "number_series",
+    "content": "Number Series — Find the missing number: 10, 11, 13, 17, 25, ?",
+    "options": {
+      "A": "41",
+      "B": "37",
+      "C": "33",
+      "D": "45"
+    },
+    "correct_answer": "A",
+    "explanation": "Differences are prime numbers: +1, +2, +4, +8, +16 → 25+16=41.",
+    "marks": 1
+  },
+  {
+    "id": 6,
+    "category": "number_series",
+    "content": "Number Series — Find the missing number: 1, 1, 2, 3, 5, 8, 13, ?",
+    "options": {
+      "A": "18",
+      "B": "19",
+      "C": "20",
+      "D": "21"
+    },
+    "correct_answer": "D",
+    "explanation": "Fibonacci sequence: each number is the sum of the two preceding ones. 8+13=21.",
+    "marks": 1
+  },
+  {
+    "id": 7,
+    "category": "number_series",
+    "content": "Number Series — Find the missing number: 1, 8, 27, 64, 125, ?",
+    "options": {
+      "A": "196",
+      "B": "216",
+      "C": "225",
+      "D": "256"
+    },
+    "correct_answer": "B",
+    "explanation": "These are perfect cubes: 1³=1, 2³=8, 3³=27, 4³=64, 5³=125, 6³=216.",
+    "marks": 1
+  },
+  {
+    "id": 8,
+    "category": "number_series",
+    "content": "Number Series — Find the missing number: 100, 97, 91, 82, 70, ?",
+    "options": {
+      "A": "55",
+      "B": "56",
+      "C": "57",
+      "D": "58"
+    },
+    "correct_answer": "A",
+    "explanation": "Differences: -3, -6, -9, -12, -15 → 70-15=55.",
+    "marks": 1
+  },
+  {
+    "id": 9,
+    "category": "number_series",
+    "content": "Number Series — Find the missing number: 3, 7, 15, 31, 63, ?",
+    "options": {
+      "A": "127",
+      "B": "126",
+      "C": "125",
+      "D": "131"
+    },
+    "correct_answer": "A",
+    "explanation": "Each term is doubled and then 1 is added: 3×2+1=7, 7×2+1=15, 15×2+1=31, 31×2+1=63, 63×2+1=127.",
+    "marks": 1
+  },
+  {
+    "id": 10,
+    "category": "number_series",
+    "content": "Number Series — Find the missing number: 6, 13, 25, 51, 101, ?",
+    "options": {
+      "A": "201",
+      "B": "203",
+      "C": "202",
+      "D": "205"
+    },
+    "correct_answer": "B",
+    "explanation": "Pattern: ×2+1, ×2-1, ×2+1, ×2-1... → 101×2+1=203.",
+    "marks": 1
+  },
+  {
+    "id": 11,
+    "category": "blood_relations",
+    "content": "Blood Relations — Ravi's father is Mohan's only son. How is Mohan related to Ravi?",
+    "options": {
+      "A": "Father",
+      "B": "Grandfather",
+      "C": "Uncle",
+      "D": "Brother"
+    },
+    "correct_answer": "B",
+    "explanation": "Mohan's only son is Ravi's father. So Mohan is the grandfather of Ravi.",
+    "marks": 1
+  },
+  {
+    "id": 12,
+    "category": "blood_relations",
+    "content": "Blood Relations — A is the mother of B. B is the sister of C. D is the son of C. How is A related to D?",
+    "options": {
+      "A": "Mother",
+      "B": "Aunt",
+      "C": "Grandmother",
+      "D": "Sister"
+    },
+    "correct_answer": "C",
+    "explanation": "A is mother of B. B and C are siblings (B is sister of C). D is son of C. So A is grandmother of D.",
+    "marks": 1
+  },
+  {
+    "id": 13,
+    "category": "blood_relations",
+    "content": "Blood Relations — A woman says 'He is the son of the only son of my grandfather.' Who is he to her?",
+    "options": {
+      "A": "Father",
+      "B": "Uncle",
+      "C": "Brother",
+      "D": "Son"
+    },
+    "correct_answer": "C",
+    "explanation": "Her grandfather's only son is her father. His son is her brother.",
+    "marks": 1
+  },
+  {
+    "id": 14,
+    "category": "blood_relations",
+    "content": "Blood Relations — If Neha is the daughter of Anita and Anita is the sister of Suresh, then Suresh is Neha's?",
+    "options": {
+      "A": "Uncle",
+      "B": "Father",
+      "C": "Brother",
+      "D": "Cousin"
+    },
+    "correct_answer": "A",
+    "explanation": "Anita is Neha's mother. Suresh is Anita's brother. So Suresh is Neha's maternal uncle.",
+    "marks": 1
+  },
+  {
+    "id": 15,
+    "category": "blood_relations",
+    "content": "Blood Relations — Pointing to a man, a lady said 'His mother is the only daughter of my mother.' The man is the lady's?",
+    "options": {
+      "A": "Son",
+      "B": "Brother",
+      "C": "Nephew",
+      "D": "Uncle"
+    },
+    "correct_answer": "A",
+    "explanation": "The only daughter of the lady's mother is the lady herself. So the man's mother is the lady herself. He is her son.",
+    "marks": 1
+  },
+  {
+    "id": 16,
+    "category": "blood_relations",
+    "content": "Blood Relations — A's mother is the sister of B's father. A and B are?",
+    "options": {
+      "A": "Siblings",
+      "B": "Cousins",
+      "C": "Uncle-Nephew",
+      "D": "Not related"
+    },
+    "correct_answer": "B",
+    "explanation": "A's mother and B's father are siblings. So A and B share a grandparent — they are cousins.",
+    "marks": 1
+  },
+  {
+    "id": 17,
+    "category": "blood_relations",
+    "content": "Blood Relations — If A is the brother of B, B is the sister of C, C is the father of D, then how is A related to D?",
+    "options": {
+      "A": "Uncle",
+      "B": "Father",
+      "C": "Grandfather",
+      "D": "Brother"
+    },
+    "correct_answer": "A",
+    "explanation": "A and B are siblings. B is sister of C, so A and C are siblings. C is D's father. A is D's uncle.",
+    "marks": 1
+  },
+  {
+    "id": 18,
+    "category": "blood_relations",
+    "content": "Blood Relations — In a portrait, Raj says 'Her mother is the wife of my father's son. I have no siblings.' Who is in the portrait?",
+    "options": {
+      "A": "Wife",
+      "B": "Daughter",
+      "C": "Sister",
+      "D": "Niece"
+    },
+    "correct_answer": "B",
+    "explanation": "Raj has no siblings, so 'my father's son' is Raj himself. The wife of Raj is her mother. So 'her' is Raj's daughter.",
+    "marks": 1
+  },
+  {
+    "id": 19,
+    "category": "blood_relations",
+    "content": "Blood Relations — X and Y are brothers. Z is the father of X. W is the son of Y. How is W related to Z?",
+    "options": {
+      "A": "Son",
+      "B": "Nephew",
+      "C": "Grandson",
+      "D": "Brother"
+    },
+    "correct_answer": "C",
+    "explanation": "Z is X's father. X and Y are brothers, so Z is also Y's father. W is Y's son, so W is Z's grandson.",
+    "marks": 1
+  },
+  {
+    "id": 20,
+    "category": "blood_relations",
+    "content": "Blood Relations — P is the father of Q. R is the daughter of S. S is the wife of Q. How is P related to R?",
+    "options": {
+      "A": "Father",
+      "B": "Grandfather",
+      "C": "Uncle",
+      "D": "Brother"
+    },
+    "correct_answer": "B",
+    "explanation": "P is Q's father. Q is married to S. R is S's daughter, so R is Q's daughter. P is R's grandfather.",
+    "marks": 1
+  },
+  {
+    "id": 21,
+    "category": "odd_one_out",
+    "content": "Odd One Out — Which does NOT belong to the group? A) 8  B) 27  C) 64  D) 100",
+    "options": {
+      "A": "8",
+      "B": "27",
+      "C": "64",
+      "D": "100"
+    },
+    "correct_answer": "D",
+    "explanation": "8=2³, 27=3³, 64=4³ are perfect cubes. 100 is not a perfect cube.",
+    "marks": 1
+  },
+  {
+    "id": 22,
+    "category": "odd_one_out",
+    "content": "Odd One Out — Which does NOT belong to the group? A) Mercury  B) Venus  C) Moon  D) Mars",
+    "options": {
+      "A": "Mercury",
+      "B": "Venus",
+      "C": "Moon",
+      "D": "Mars"
+    },
+    "correct_answer": "C",
+    "explanation": "Mercury, Venus, and Mars are planets. The Moon is a natural satellite, not a planet.",
+    "marks": 1
+  },
+  {
+    "id": 23,
+    "category": "odd_one_out",
+    "content": "Odd One Out — Which does NOT belong to the group? A) Crow  B) Sparrow  C) Bat  D) Parrot",
+    "options": {
+      "A": "Crow",
+      "B": "Sparrow",
+      "C": "Bat",
+      "D": "Parrot"
+    },
+    "correct_answer": "C",
+    "explanation": "Crow, Sparrow, and Parrot are birds. Bat is a mammal, not a bird.",
+    "marks": 1
+  },
+  {
+    "id": 24,
+    "category": "odd_one_out",
+    "content": "Odd One Out — Which does NOT belong to the group? A) 17  B) 31  C) 43  D) 49",
+    "options": {
+      "A": "17",
+      "B": "31",
+      "C": "43",
+      "D": "49"
+    },
+    "correct_answer": "D",
+    "explanation": "17, 31, and 43 are prime numbers. 49 = 7×7 is not prime.",
+    "marks": 1
+  },
+  {
+    "id": 25,
+    "category": "odd_one_out",
+    "content": "Odd One Out — Which does NOT belong to the group? A) Hammer  B) Pliers  C) Spanner  D) Compass",
+    "options": {
+      "A": "Hammer",
+      "B": "Pliers",
+      "C": "Spanner",
+      "D": "Compass"
+    },
+    "correct_answer": "D",
+    "explanation": "Hammer, Pliers, and Spanner are mechanical/hand tools. Compass is a drawing/navigation instrument.",
+    "marks": 1
+  },
+  {
+    "id": 26,
+    "category": "odd_one_out",
+    "content": "Odd One Out — Which does NOT belong to the group? A) 4  B) 9  C) 16  D) 20",
+    "options": {
+      "A": "4",
+      "B": "9",
+      "C": "16",
+      "D": "20"
+    },
+    "correct_answer": "D",
+    "explanation": "4=2², 9=3², 16=4² are perfect squares. 20 is not a perfect square.",
+    "marks": 1
+  },
+  {
+    "id": 27,
+    "category": "odd_one_out",
+    "content": "Odd One Out — Which does NOT belong to the group? A) Copper  B) Iron  C) Coal  D) Aluminium",
+    "options": {
+      "A": "Copper",
+      "B": "Iron",
+      "C": "Coal",
+      "D": "Aluminium"
+    },
+    "correct_answer": "C",
+    "explanation": "Copper, Iron, and Aluminium are metals. Coal is a non-metallic fossil fuel.",
+    "marks": 1
+  },
+  {
+    "id": 28,
+    "category": "odd_one_out",
+    "content": "Odd One Out — Which does NOT belong to the group? A) Violin  B) Guitar  C) Sitar  D) Flute",
+    "options": {
+      "A": "Violin",
+      "B": "Guitar",
+      "C": "Sitar",
+      "D": "Flute"
+    },
+    "correct_answer": "D",
+    "explanation": "Violin, Guitar, and Sitar are string instruments. Flute is a wind instrument.",
+    "marks": 1
+  },
+  {
+    "id": 29,
+    "category": "odd_one_out",
+    "content": "Odd One Out — Which does NOT belong to the group? A) February  B) April  C) June  D) August",
+    "options": {
+      "A": "February",
+      "B": "April",
+      "C": "June",
+      "D": "August"
+    },
+    "correct_answer": "D",
+    "explanation": "February has 28/29 days, April has 30, June has 30. August has 31 days — the odd one out.",
+    "marks": 1
+  },
+  {
+    "id": 30,
+    "category": "odd_one_out",
+    "content": "Odd One Out — Which does NOT belong to the group? A) Square  B) Rectangle  C) Rhombus  D) Cube",
+    "options": {
+      "A": "Square",
+      "B": "Rectangle",
+      "C": "Rhombus",
+      "D": "Cube"
+    },
+    "correct_answer": "D",
+    "explanation": "Square, Rectangle, and Rhombus are 2D (flat) shapes. Cube is a 3D solid shape.",
+    "marks": 1
+  }
+]

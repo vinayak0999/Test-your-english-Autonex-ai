@@ -77,6 +77,9 @@ const CreateTest = () => {
         'mcq-grammar': { enabled: true, count: 12, marks: 1, label: "MCQ: Grammar", icon: CheckSquare },
         'mcq-context': { enabled: true, count: 12, marks: 1, label: "MCQ: Context", icon: Layers },
         'mcq-reading': { enabled: true, count: 11, marks: 1, label: "MCQ: Reading", icon: FileText },
+        'mcq-number-series': { enabled: false, count: 5, marks: 1, label: "Logical: Number Series", icon: CheckSquare },
+        'mcq-blood-relations': { enabled: false, count: 5, marks: 1, label: "Logical: Blood Relations", icon: CheckSquare },
+        'mcq-odd-one-out': { enabled: false, count: 5, marks: 1, label: "Logical: Odd One Out", icon: CheckSquare },
         'typing-easy': { enabled: false, count: 1, marks: 10, label: "Typing: Easy (Speed)", icon: Keyboard },
         'typing-advanced': { enabled: false, count: 1, marks: 15, label: "Typing: Advanced (Accuracy)", icon: Keyboard },
     });

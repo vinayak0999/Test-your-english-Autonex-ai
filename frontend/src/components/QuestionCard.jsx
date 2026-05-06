@@ -121,7 +121,7 @@ const QuestionCard = ({ question, answer, onAnswerChange, onTypingComplete, onAu
                         {/* MCQ Question Text */}
                         {question.type.includes('mcq') && (
                             <p className="text-lg font-medium text-slate-800">
-                                {contentData.question || contentData.text}
+                                {contentData.question || contentData.text || contentData.content}
                             </p>
                         )}
                     </div>
@@ -164,7 +164,7 @@ const QuestionCard = ({ question, answer, onAnswerChange, onTypingComplete, onAu
                 )}
 
                 {/* B. MCQ OPTIONS — auto-advance to next question on click */}
-                {(question.type === 'mcq-grammar' || question.type === 'mcq-reading' || question.type === 'mcq-context') && contentData.options && (
+                {question.type.includes('mcq') && contentData.options && (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         {Object.entries(contentData.options).map(([key, value]) => (
                             <button
