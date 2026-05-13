@@ -4,6 +4,7 @@ import shutil
 from fastapi import APIRouter, Depends, HTTPException, UploadFile, File, Form
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
+from sqlalchemy import delete
 from sqlalchemy.orm import selectinload
 from typing import List, Optional
 from database import get_db
@@ -48,7 +49,67 @@ class ScoreOverride(PydanticModel):
     new_score: float
     reason: str = None  # Optional reason for the override
 
-@router.post("/organizations")
+
+# ─── Breakdown format helpers ────────────────────────────────────────────────
+def _unwrap_breakdown(raw):
+    """Returns (questions_list, section_summary, is_v2_format)."""
+    if isinstance(raw, dict) and raw.get("version") == 2:
+        return raw.get("questions", []), raw.get("section_summary", {}), True
+    return (raw if isinstance(raw, list) else []), {}, False
+
+
+def _recompute_section_summary(questions):
+    """Recomputes section_summary + MCQ% total from the questions list."""
+    VISUAL  = {'video', 'video-robot', 'image'}
+    TYPING  = {'typing', 'typing-easy', 'typing-advanced'}
+
+    mcq_qs    = [b for b in questions if b.get('type') not in VISUAL and b.get('type') not in TYPING]
+    typing_qs = [b for b in questions if b.get('type') in TYPING]
+    visual_qs = [b for b in questions if b.get('type') in VISUAL]
+
+    mcq_correct = sum(b.get('override_score', b.get('student_score', 0)) for b in mcq_qs)
+    mcq_max     = sum(b.get('max_marks', 0) for b in mcq_qs)
+    mcq_pct     = round((mcq_correct / mcq_max) * 100, 1) if mcq_max > 0 else 0.0
+
+    typing_tasks = []
+    for b in typing_qs:
+        fb  = b.get('ai_feedback', {})
+        acc = fb.get('accuracy', 0)
+        typing_tasks.append({'question_id': b.get('question_id'), 'type': b.get('type'),
+                             'wpm': fb.get('net_wpm', 0), 'accuracy': acc, 'passed': acc >= 80})
+    avg_wpm      = round(sum(t['wpm']      for t in typing_tasks) / len(typing_tasks), 1) if typing_tasks else 0
+    avg_accuracy = round(sum(t['accuracy'] for t in typing_tasks) / len(typing_tasks), 1) if typing_tasks else 100
+    typing_passed = all(t['passed'] for t in typing_tasks) if typing_tasks else True
+
+    visual_ranks = []
+    for b in visual_qs:
+        fb   = b.get('ai_feedback', {})
+        rank = fb.get('rank', 'Bad')
+        visual_ranks.append({'question_id': b.get('question_id'), 'type': b.get('type'),
+                             'rank': rank, 'feedback': fb.get('feedback', ''),
+                             'passed': rank in ('Good', 'Medium')})
+    visual_passed_count = sum(1 for q in visual_ranks if q['passed'])
+    visual_total        = len(visual_ranks)
+    visual_pass_pct     = round((visual_passed_count / visual_total) * 100) if visual_total > 0 else 100
+    visual_passed = all(q['passed'] for q in visual_ranks) if visual_ranks else True
+
+    summary = {
+        'mcq_jumble': {'score_pct': mcq_pct, 'correct_marks': mcq_correct,
+                       'max_marks': mcq_max, 'question_count': len(mcq_qs)},
+        'typing':  {'tasks': typing_tasks, 'avg_wpm': avg_wpm, 'avg_accuracy': avg_accuracy,
+                    'benchmark_wpm': 30, 'passed': typing_passed,
+                    'fail_reasons': [f"Task {i+1} accuracy {t['accuracy']}% below 80%"
+                                     for i, t in enumerate(typing_tasks) if not t['passed']],
+                    'question_count': len(typing_qs)},
+        'visual':  {'questions': visual_ranks, 'passed': visual_passed,
+                    'pass_pct': visual_pass_pct, 'passed_count': visual_passed_count,
+                    'question_count': visual_total},
+        'overall_passed': typing_passed and visual_passed
+    }
+    return summary, mcq_correct   # raw correct marks, NOT a percentage
+# ─────────────────────────────────────────────────────────────────────────────
+
+
 async def create_organization(
     org_data: OrgCreate,
     db: AsyncSession = Depends(get_db),
@@ -226,6 +287,63 @@ async def delete_test(
     await db.commit()
     return {"status": "deleted", "test_id": test_id}
 
+
+# --- RESET ATTEMPT (allow candidate to retake) ---
+@router.delete("/reset-attempt")
+async def reset_candidate_attempt(
+    email: str,
+    test_id: int | None = None,
+    db: AsyncSession = Depends(get_db),
+    admin: User = Depends(require_admin)
+):
+    """
+    Delete a candidate's test attempt(s) by email so they can retake.
+    Optionally filter by test_id to reset only a specific test.
+    """
+    from models import ExamSession
+
+    # Find user
+    user_result = await db.execute(select(User).where(User.email == email))
+    user = user_result.scalars().first()
+    if not user:
+        raise HTTPException(status_code=404, detail=f"No user found with email: {email}")
+
+    # Build queries
+    result_q = select(TestResult).where(TestResult.user_id == user.id)
+    session_q = select(ExamSession).where(ExamSession.user_id == user.id)
+    if test_id:
+        result_q  = result_q.where(TestResult.test_id == test_id)
+        session_q = session_q.where(ExamSession.test_id == test_id)
+
+    results  = (await db.execute(result_q)).scalars().all()
+    sessions = (await db.execute(session_q)).scalars().all()
+
+    if not results and not sessions:
+        return {
+            "status": "nothing_to_delete",
+            "message": f"No attempts found for {email}" + (f" on test {test_id}" if test_id else "")
+        }
+
+    # Delete
+    result_ids  = [r.id for r in results]
+    session_ids = [s.id for s in sessions]
+
+    if result_ids:
+        await db.execute(delete(TestResult).where(TestResult.id.in_(result_ids)))
+    if session_ids:
+        await db.execute(delete(ExamSession).where(ExamSession.id.in_(session_ids)))
+
+    await db.commit()
+
+    return {
+        "status": "reset",
+        "email": email,
+        "test_id": test_id,
+        "deleted_results": len(result_ids),
+        "deleted_sessions": len(session_ids),
+        "message": f"{email} can now retake the test."
+    }
+
 # 1. Create a New Test (Legacy endpoint)
 @router.post("/tests/create")
 async def create_test(test: TestCreate, db: AsyncSession = Depends(get_db), _: dict = Depends(require_admin)):
@@ -241,6 +359,53 @@ async def create_test(test: TestCreate, db: AsyncSession = Depends(get_db), _: d
     await db.refresh(new_test)
     
     return new_test
+
+# --- BANK SIZES (dynamic — reads actual files) ---
+@router.get("/bank-sizes")
+async def get_bank_sizes(_: dict = Depends(require_admin)):
+    """Returns the number of available questions per section type by reading the bank files."""
+    import json as _json
+
+    # Same map as generator.py — single source of truth via this endpoint
+    bank_map = {
+        "video"              : "video.json",
+        "video-robot"        : "video_robot.json",
+        "image"              : "image.json",
+        "image-count"        : "woven_test.json",
+        "mcq-image"          : "woven_test.json",
+        "mcq-annotation"     : "woven2_test.json",
+        "jumble"             : "jumble.json",
+        "mcq-grammar"        : "mcq_grammar.json",
+        "mcq-context"        : "mcq_context.json",
+        "mcq-reading"        : "mcq_reading.json",
+        "mcq-number-series"  : "mcq_number_series.json",
+        "mcq-blood-relations": "mcq_blood_relations.json",
+        "mcq-odd-one-out"    : "mcq_odd_one_out.json",
+        "typing-easy"        : "typing_easy.json",
+        "typing-advanced"    : "typing_advanced.json",
+    }
+
+    # Filter types that share a file (image-count and mcq-image share woven_test.json)
+    filter_type = {
+        "image-count": "image-count",
+        "mcq-image"  : "mcq-image",
+    }
+
+    banks_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "banks")
+    sizes = {}
+
+    for section_type, filename in bank_map.items():
+        path = os.path.join(banks_dir, filename)
+        try:
+            items = _json.load(open(path))
+            if section_type in filter_type:
+                items = [q for q in items if q.get("type") == filter_type[section_type]]
+            sizes[section_type] = len(items)
+        except Exception:
+            sizes[section_type] = 0
+
+    return sizes
+
 
 @router.post("/generate-test", response_model=TestResponse)
 async def generate_test_from_template(
@@ -345,20 +510,54 @@ async def get_all_results(
     # Flatten data for the frontend table
     data = []
     for sub in submissions:
+        raw_bd = sub.ai_breakdown or []
+        if isinstance(raw_bd, dict) and raw_bd.get("version") == 2:
+            full_ss  = raw_bd.get("section_summary", {})
+            ss_mcq   = full_ss.get("mcq_jumble", {})
+            ss_vis   = full_ss.get("visual", {})
+            ss_typ   = full_ss.get("typing", {})
+            ts       = round(ss_mcq.get("correct_marks", sub.total_score or 0), 1)
+            mm       = ss_mcq.get("max_marks", 1) or 1
+            pct      = round((ts / mm) * 100) if mm > 0 else 0
+            # Individual visual questions [{type, rank, passed}]
+            vis_qs   = [{"type": q.get("type","video"), "rank": q.get("rank","Bad"), "passed": q.get("passed", False)}
+                        for q in ss_vis.get("questions", [])]
+            # Individual typing tasks [{type, wpm, accuracy, passed}]
+            typ_tasks = [{"type": t.get("type","typing"), "wpm": t.get("wpm", 0),
+                          "accuracy": t.get("accuracy", 0), "passed": t.get("passed", False)}
+                         for t in ss_typ.get("tasks", [])]
+            avg_wpm   = ss_typ.get("avg_wpm", 0)
+            avg_acc   = ss_typ.get("avg_accuracy", 0)
+            typ_pass  = ss_typ.get("passed")
+        else:
+            ts  = round(sub.total_score, 1) if sub.total_score else 0
+            mm  = sub.test.total_marks if sub.test else 100
+            pct = round((sub.total_score / sub.test.total_marks) * 100) if sub.test and sub.test.total_marks else 0
+            vis_qs = typ_tasks = []
+            avg_wpm = avg_acc = 0
+            typ_pass = None
         data.append({
             "id": sub.id,
-            "candidate_name": sub.user.full_name if sub.user else "Unknown",
+            "candidate_name":  sub.user.full_name if sub.user else "Unknown",
             "candidate_email": sub.user.email if sub.user else "N/A",
-            "test_id": sub.test_id,
+            "test_id":    sub.test_id,
             "test_title": sub.test.title if sub.test else "Unknown Test",
-            "total_score": round(sub.total_score, 1) if sub.total_score else 0,
-            "max_marks": sub.test.total_marks if sub.test else 100,
-            "percentage": round((sub.total_score / sub.test.total_marks) * 100) if sub.test and sub.test.total_marks else 0,
-            "tab_switches": sub.flags or 0,  # Tab switch count stored in flags
+            "total_score":     ts,
+            "max_marks":       mm,
+            "percentage":      pct,
+            "visual_questions": vis_qs,
+            "typing_tasks":     typ_tasks,
+            "typing_avg_wpm":   avg_wpm,
+            "typing_avg_acc":   avg_acc,
+            "typing_passed":    typ_pass,
+            "tab_switches": sub.flags or 0,
             "date": sub.completed_at.strftime("%Y-%m-%d %H:%M") if sub.completed_at else "N/A"
         })
-    
+
     return data
+
+
+
 
 # 5. Get Detailed Result by ID (Admin Detailed Report)
 @router.get("/results/{result_id}")
@@ -387,8 +586,16 @@ async def get_detailed_result(
     if not exam_result:
         raise HTTPException(status_code=404, detail="Result not found")
     
-    breakdown = exam_result.ai_breakdown or []
-    
+    raw_breakdown = exam_result.ai_breakdown or []
+
+    # Handle both v1 (list) and v2 (dict with version/section_summary/questions)
+    if isinstance(raw_breakdown, dict) and raw_breakdown.get("version") == 2:
+        breakdown       = raw_breakdown.get("questions", [])
+        section_summary = raw_breakdown.get("section_summary", {})
+    else:
+        breakdown       = raw_breakdown if isinstance(raw_breakdown, list) else []
+        section_summary = {}
+
     # Try to enrich breakdown with question options/jumble from session if missing
     if breakdown and exam_result.user_id:
         # Find the ExamSession for this user and test
@@ -437,24 +644,36 @@ async def get_detailed_result(
                     if not item.get("question_text"):
                         item["question_text"] = content.get("question", content.get("title", ""))
     
+    # For v2 results: use mcq_max from section_summary so X/Y is meaningful
+    is_v2 = isinstance(raw_breakdown, dict) and raw_breakdown.get("version") == 2
+    if is_v2 and section_summary.get("mcq_jumble"):
+        ss_mcq    = section_summary["mcq_jumble"]
+        api_score = round(ss_mcq.get("correct_marks", exam_result.total_score or 0), 1)
+        api_max   = ss_mcq.get("max_marks", 1) or 1
+        api_pct   = round((api_score / api_max) * 100) if api_max > 0 else 0
+    else:
+        api_score = round(exam_result.total_score, 1) if exam_result.total_score else 0
+        api_max   = exam_result.test.total_marks if exam_result.test else 100
+        api_pct   = round((exam_result.total_score / api_max) * 100) if api_max > 0 else 0
+
     return {
         "id": exam_result.id,
         "candidate": {
-            "name": exam_result.user.full_name if exam_result.user else "Unknown",
+            "name":  exam_result.user.full_name if exam_result.user else "Unknown",
             "email": exam_result.user.email if exam_result.user else "N/A"
         },
         "test": {
-            "id": exam_result.test_id,
+            "id":    exam_result.test_id,
             "title": exam_result.test.title if exam_result.test else "Unknown Test"
         },
-        "total_score": round(exam_result.total_score, 1) if exam_result.total_score else 0,
-        "max_marks": exam_result.test.total_marks if exam_result.test else 100,
-        "percentage": round((exam_result.total_score / exam_result.test.total_marks) * 100) if exam_result.test and exam_result.test.total_marks else 0,
+        "total_score":  api_score,
+        "max_marks":    api_max,
+        "percentage":   api_pct,
         "tab_switches": exam_result.flags or 0,
         "submitted_at": exam_result.completed_at.strftime("%Y-%m-%d %H:%M") if exam_result.completed_at else "N/A",
-        "status": exam_result.status,
-        # Detailed breakdown per question (enriched with session data)
-        "breakdown": breakdown
+        "status":           exam_result.status,
+        "section_summary":  section_summary,
+        "breakdown":        breakdown
     }
 
 
@@ -488,52 +707,45 @@ async def override_question_score(
     if not exam_result:
         raise HTTPException(status_code=404, detail="Result not found")
     
-    breakdown = exam_result.ai_breakdown or []
-    
+    raw = exam_result.ai_breakdown or []
+    questions, section_summary, is_v2 = _unwrap_breakdown(raw)
+
     # Find the question in breakdown
     question_found = False
-    for item in breakdown:
+    for item in questions:
         if item.get("question_id") == question_id:
             question_found = True
-            
-            # Validate score doesn't exceed max marks
             max_marks = item.get("max_marks", 0)
             if override.new_score > max_marks:
                 raise HTTPException(
-                    status_code=400, 
+                    status_code=400,
                     detail=f"Score cannot exceed max marks ({max_marks})"
                 )
-            
-            # Store the override
             item["override_score"] = override.new_score
-            item["override_by"] = admin.email
-            item["override_at"] = datetime.now(timezone.utc).isoformat()
+            item["override_by"]    = admin.email
+            item["override_at"]    = datetime.now(timezone.utc).isoformat()
             if override.reason:
                 item["override_reason"] = override.reason
             break
-    
+
     if not question_found:
         raise HTTPException(status_code=404, detail="Question not found in result")
-    
-    # Recalculate total score
-    # Use override_score if exists, otherwise use student_score
-    new_total = 0
-    for item in breakdown:
-        score = item.get("override_score", item.get("student_score", 0))
-        new_total += score
-    
-    # Update the result
-    # IMPORTANT: SQLAlchemy doesn't detect in-place JSON mutations
-    # We must explicitly mark the column as modified
+
     from sqlalchemy.orm.attributes import flag_modified
-    
-    exam_result.ai_breakdown = breakdown
+
+    if is_v2:
+        section_summary, new_total = _recompute_section_summary(questions)
+        exam_result.ai_breakdown = {"version": 2, "section_summary": section_summary, "questions": questions}
+    else:
+        new_total = sum(item.get("override_score", item.get("student_score", 0)) for item in questions)
+        exam_result.ai_breakdown = questions
+
     flag_modified(exam_result, "ai_breakdown")
     exam_result.total_score = new_total
-    exam_result.status = "reviewed"  # Mark as reviewed by teacher
-    
+    exam_result.status = "reviewed"
+
     await db.commit()
-    
+
     return {
         "message": "Score updated successfully",
         "question_id": question_id,
@@ -597,31 +809,31 @@ async def re_evaluate_result(
     # Build question map: temp_id -> full question object
     question_map = {q["temp_id"]: q for q in generated_questions if "temp_id" in q}
 
-    breakdown = exam_result.ai_breakdown or []
+    raw = exam_result.ai_breakdown or []
+    questions, section_summary, is_v2 = _unwrap_breakdown(raw)
     re_evaluated = 0
     errors = []
 
-    for item in breakdown:
+    for item in questions:
         q_type = item.get("type", "")
-        q_id = item.get("question_id")
+        q_id   = item.get("question_id")
 
-        # Only re-evaluate subjective AI-graded types
-        if q_type not in ("video", "image", "reading"):
+        # Only re-evaluate AI-graded types
+        if q_type not in ("video", "video-robot", "image", "reading"):
             continue
 
         student_text = str(answers.get(str(q_id), answers.get(q_id, ""))).strip()
         if not student_text:
             item["student_score"] = 0
-            item.pop("override_score", None)  # Clear any override
+            item.pop("override_score", None)
             continue
 
-        q_data = question_map.get(q_id, {})
+        q_data         = question_map.get(q_id, {})
         grading_config = q_data.get("grading_config", {})
-        marks = item.get("max_marks", q_data.get("marks", 15))
-        content = q_data.get("content", {})
+        content        = q_data.get("content", {})
 
         try:
-            if q_type == "video":
+            if q_type in ("video", "video-robot"):
                 grade_data = await grade_video_question(
                     student_text,
                     grading_config.get("reference", ""),
@@ -629,38 +841,36 @@ async def re_evaluate_result(
                     content.get("title", "Video description task")
                 )
             elif q_type == "image":
-                image_context = content.get("title", grading_config.get("reference", "Image description task"))
                 grade_data = await grade_image_question(
                     student_text,
                     grading_config.get("reference", ""),
                     grading_config.get("key_ideas", []),
-                    image_context
+                    content.get("title", "Image description task")
                 )
             elif q_type == "reading":
-                passage = content.get("passage", "")
                 grade_data = await grade_reading_question(
                     student_text,
-                    passage,
+                    content.get("passage", ""),
                     grading_config.get("reference", ""),
                     grading_config.get("key_ideas", [])
                 )
 
-            new_score = grade_data.get("score", 0)
-            item["student_score"] = round(new_score, 1)
-            item["ai_feedback"] = grade_data.get("breakdown", {})  # matches exam.py field name
-            item.pop("override_score", None)  # Clear manual overrides on re-eval
+            item["student_score"] = round(grade_data.get("score", 0), 1)
+            item["ai_feedback"]   = grade_data.get("breakdown", {})
+            item.pop("override_score", None)
             re_evaluated += 1
 
         except Exception as e:
             errors.append(f"Q{q_id} ({q_type}): {str(e)}")
 
-    # Recalculate total
-    new_total = sum(
-        item.get("override_score", item.get("student_score", 0))
-        for item in breakdown
-    )
+    # Recompute section_summary and total
+    if is_v2:
+        section_summary, new_total = _recompute_section_summary(questions)
+        exam_result.ai_breakdown = {"version": 2, "section_summary": section_summary, "questions": questions}
+    else:
+        new_total = sum(item.get("override_score", item.get("student_score", 0)) for item in questions)
+        exam_result.ai_breakdown = questions
 
-    exam_result.ai_breakdown = breakdown
     flag_modified(exam_result, "ai_breakdown")
     exam_result.total_score = new_total
     exam_result.status = "re-evaluated"
@@ -674,3 +884,4 @@ async def re_evaluate_result(
         "new_total": round(new_total, 1),
         "max_marks": test_obj.total_marks if test_obj else 100
     }
+

@@ -278,6 +278,57 @@ Output ONLY valid JSON, no other text:
         return {"total_score": 0, "passed": False, "feedback": "Evaluation Error"}
 
 
+async def evaluate_visual_rank(user_answer: str, correct_answer: str, context: str, key_ideas: list = None) -> dict:
+    """
+    New Visual Evaluation — returns Good / Medium / Bad rank.
+    Does NOT produce a numeric score. Used for video and image questions.
+    """
+    key_ideas_str = ", ".join(key_ideas) if key_ideas else "Not specified"
+    prompt = f"""You are evaluating a student's description of a video or image clip for an English proficiency test.
+
+REFERENCE DESCRIPTION: "{correct_answer}"
+STUDENT'S ANSWER: "{user_answer}"
+CONTEXT: {context}
+KEY ELEMENTS TO IDENTIFY: {key_ideas_str}
+
+Rate the student's answer as EXACTLY one of these three ranks:
+
+GOOD — Student correctly identifies the main action AND the key objects/locations. Minor synonym use or slight phrasing difference is fine.
+MEDIUM — Student is partially correct. Gets the general idea or some key elements right but misses important details, OR gets most details right but makes a notable error.
+BAD — Student's answer is incorrect, completely vague, irrelevant, empty, or describes something completely different.
+
+RANKING GUIDE:
+- GOOD = 85%+ of key content correct — student clearly understood and described the scene accurately
+- MEDIUM = 60-84% correct — student got the general idea but missed notable details or made minor errors
+- BAD = below 60% correct — incorrect, vague, irrelevant, or missing the main action/object entirely
+
+Return ONLY valid JSON, no other text:
+{{
+    "rank": "Good" or "Medium" or "Bad",
+    "feedback": "One sentence explaining the rating",
+    "key_elements_found": ["elements the student correctly identified"],
+    "key_elements_missing": ["important elements the student missed"]
+}}"""
+
+    try:
+        loop = asyncio.get_event_loop()
+        result = await loop.run_in_executor(ai_executor, _call_claude, prompt)
+        # Ensure rank is one of the three valid values
+        rank = result.get("rank", "Bad")
+        if rank not in ("Good", "Medium", "Bad"):
+            rank = "Bad"
+        result["rank"] = rank
+        return result
+    except Exception as e:
+        print(f"Visual Rank Eval Error: {e}")
+        return {
+            "rank": "Bad",
+            "feedback": f"Evaluation error: {str(e)}",
+            "key_elements_found": [],
+            "key_elements_missing": []
+        }
+
+
 async def evaluate_reading_strict(user_summary: str, original_passage: str, reference_summary: str, key_ideas: list) -> dict:
     """
     Strict Reading Summary Evaluation (15 Marks Total)

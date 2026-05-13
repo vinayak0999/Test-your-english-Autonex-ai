@@ -9,6 +9,7 @@ from dependencies import get_current_user
 from services.grading import (
     grade_video_question, 
     grade_image_question,
+    grade_image_count_question,
     grade_reading_question, 
     grade_jumble_question, 
     grade_mcq_question,
@@ -196,10 +197,21 @@ async def get_test_paper(test_id: int, db: AsyncSession = Depends(get_db), user:
             # Add temp_id for tracking
             for q in section_questions:
                 q["temp_id"] = temp_id
-                q["type"] = section_type
+                # Preserve generator-set type (e.g. mcq-multi-image); fall back to section_type
+                if "question_type" not in q:
+                    q["type"] = section_type
+                else:
+                    q["type"] = q.get("question_type", section_type)
                 generated_questions.append(q)
                 temp_id += 1
         
+        # Shuffle all questions so they appear in random order regardless of section
+        random.shuffle(generated_questions)
+
+        # Re-assign temp_ids after shuffle so they stay sequential
+        for idx, q in enumerate(generated_questions, 1):
+            q["temp_id"] = idx
+
         # Create exam session with the generated questions
         new_session = ExamSession(
             user_id=user.id,
@@ -448,12 +460,32 @@ async def finish_exam(
                     grading_config.get("correct_answer", ""),
                     q["marks"]
                 )
-            elif question_type.startswith('mcq'):
+            elif question_type.startswith('mcq') or question_type == 'mcq-annotation':
                 grade_data = await grade_mcq_question(
                     student_text,
                     grading_config.get("correct_answer", ""),
                     q["marks"]
                 )
+            elif question_type == 'mcq-multi-image':
+                # student_text is JSON: {"0": "c", "1": "d", "2": "b"}
+                import json as _json
+                try:
+                    answers = _json.loads(student_text) if student_text else {}
+                except:
+                    answers = {}
+                sub_images   = grading_config.get("sub_images", [])
+                mpi          = grading_config.get("marks_per_image", 4)
+                total_score  = 0
+                breakdown    = {}
+                for i, sub in enumerate(sub_images):
+                    given  = str(answers.get(str(i), "")).strip().lower()
+                    expect = str(sub.get("correct_answer", "")).strip().lower()
+                    if given == expect:
+                        total_score += mpi
+                        breakdown[f"image_{i+1}"] = {"score": mpi, "correct": True}
+                    else:
+                        breakdown[f"image_{i+1}"] = {"score": 0, "correct": False, "expected": expect, "given": given}
+                grade_data = {"score": total_score, "breakdown": breakdown}
             elif question_type in ('typing', 'typing-easy', 'typing-advanced'):
                 import json as json_lib
                 print(f"[TYPING DEBUG] temp_id={temp_id}, raw student_text='{student_text[:200] if student_text else 'EMPTY'}'")
@@ -486,10 +518,19 @@ async def finish_exam(
                     q["marks"],
                     grading_mode=grading_config.get("grading_mode", "both")
                 )
+            elif question_type == 'image-count':
+                grade_data = await grade_image_count_question(
+                    student_text,
+                    grading_config.get("correct_answer", 0),
+                    q["marks"],
+                    grading_config.get("tolerance", 0)
+                )
             else:
                 grade_data = {"score": 0, "breakdown": {"error": "Manual review needed"}}
 
             question_score = grade_data.get('score', 0)
+            # Only MCQ and Jumble questions contribute to the raw score accumulation.
+            # Typing and Visual scores are always 0 (handled in section_summary).
             total_score += question_score
             
             correct_answer = grading_config.get("reference", grading_config.get("correct_answer", grading_config.get("original_passage", "N/A")))
@@ -526,7 +567,7 @@ async def finish_exam(
         # Mark session as completed
         session.is_completed = True
         session.answers = submission.answers
-        
+
     else:
         # LEGACY MODE: Fetch all questions from database
         result = await db.execute(select(Question).where(Question.test_id == test_id))
@@ -579,12 +620,31 @@ async def finish_exam(
                     grading.get("correct_answer", ""),
                     q.marks
                 )
-            elif q.question_type.startswith('mcq'):
+            elif q.question_type.startswith('mcq') or q.question_type == 'mcq-annotation':
                 grade_data = await grade_mcq_question(
                     student_text,
                     grading.get("correct_answer", ""),
                     q.marks
                 )
+            elif q.question_type == 'mcq-multi-image':
+                import json as _json
+                try:
+                    answers = _json.loads(student_text) if student_text else {}
+                except:
+                    answers = {}
+                sub_images   = grading.get("sub_images", [])
+                mpi          = grading.get("marks_per_image", 4)
+                total_score  = 0
+                breakdown    = {}
+                for i, sub in enumerate(sub_images):
+                    given  = str(answers.get(str(i), "")).strip().lower()
+                    expect = str(sub.get("correct_answer", "")).strip().lower()
+                    if given == expect:
+                        total_score += mpi
+                        breakdown[f"image_{i+1}"] = {"score": mpi, "correct": True}
+                    else:
+                        breakdown[f"image_{i+1}"] = {"score": 0, "correct": False, "expected": expect, "given": given}
+                grade_data = {"score": total_score, "breakdown": breakdown}
             elif q.question_type == 'typing':
                 import json as json_lib
                 try:
@@ -640,8 +700,89 @@ async def finish_exam(
             })
 
     # =====================================================
-    # STEP 3: UPDATE RESULT WITH GRADES (answers already safe)
+    # COMPUTE SECTION SUMMARY (new evaluation format)
     # =====================================================
+    VISUAL_TYPES = {'video', 'video-robot', 'image'}
+    TYPING_TYPES = {'typing', 'typing-easy', 'typing-advanced'}
+
+    mcq_jumble_qs = [b for b in breakdown if b['type'] not in VISUAL_TYPES and b['type'] not in TYPING_TYPES]
+    typing_qs     = [b for b in breakdown if b['type'] in TYPING_TYPES]
+    visual_qs     = [b for b in breakdown if b['type'] in VISUAL_TYPES]
+
+    # --- MCQ + Jumble section ---
+    mcq_correct = sum(b['student_score'] for b in mcq_jumble_qs)
+    mcq_max     = sum(b['max_marks']     for b in mcq_jumble_qs)
+    mcq_pct     = round((mcq_correct / mcq_max) * 100, 1) if mcq_max > 0 else 0.0
+
+    # --- Typing section ---
+    typing_tasks = []
+    for b in typing_qs:
+        fb  = b.get('ai_feedback', {})
+        wpm = fb.get('net_wpm', 0)
+        acc = fb.get('accuracy', 0)
+        typing_tasks.append({
+            'question_id': b['question_id'],
+            'type':        b['type'],
+            'wpm':         wpm,
+            'accuracy':    acc,
+            'passed':      acc >= 80
+        })
+    avg_wpm       = round(sum(t['wpm']      for t in typing_tasks) / len(typing_tasks), 1) if typing_tasks else 0
+    avg_accuracy  = round(sum(t['accuracy'] for t in typing_tasks) / len(typing_tasks), 1) if typing_tasks else 100
+    typing_passed = all(t['passed'] for t in typing_tasks) if typing_tasks else True
+    typing_fail_reasons = [
+        f"Task {i+1} accuracy {t['accuracy']}% is below 80%"
+        for i, t in enumerate(typing_tasks) if not t['passed']
+    ]
+
+    # --- Visual section ---
+    visual_ranks = []
+    for b in visual_qs:
+        fb   = b.get('ai_feedback', {})
+        rank = fb.get('rank', 'Bad')
+        visual_ranks.append({
+            'question_id': b['question_id'],
+            'type':        b['type'],
+            'rank':        rank,
+            'feedback':    fb.get('feedback', ''),
+            'passed':      rank in ('Good', 'Medium')
+        })
+    visual_passed_count = sum(1 for q in visual_ranks if q['passed'])
+    visual_total        = len(visual_ranks)
+    visual_pass_pct     = round((visual_passed_count / visual_total) * 100) if visual_total > 0 else 100
+    visual_passed = all(q['passed'] for q in visual_ranks) if visual_ranks else True
+
+    section_summary = {
+        'mcq_jumble': {
+            'score_pct':      mcq_pct,
+            'correct_marks':  mcq_correct,
+            'max_marks':      mcq_max,
+            'question_count': len(mcq_jumble_qs)
+        },
+        'typing': {
+            'tasks':          typing_tasks,
+            'avg_wpm':        avg_wpm,
+            'avg_accuracy':   avg_accuracy,
+            'benchmark_wpm':  30,
+            'passed':         typing_passed,
+            'fail_reasons':   typing_fail_reasons,
+            'question_count': len(typing_qs)
+        },
+        'visual': {
+            'questions':      visual_ranks,
+            'passed':         visual_passed,
+            'pass_pct':       visual_pass_pct,
+            'passed_count':   visual_passed_count,
+            'question_count': visual_total
+        },
+        'overall_passed': typing_passed and visual_passed
+    }
+
+    # total_score = raw MCQ+Jumble correct marks (NOT a percentage)
+    # percentage is computed on-the-fly from correct_marks / mcq_max
+    total_score = mcq_correct
+
+
     try:
         # Fetch the result we saved in Step 1
         result_to_update = await db.execute(
@@ -649,9 +790,13 @@ async def finish_exam(
         )
         final_result = result_to_update.scalars().first()
         
-        # Update with grading results
-        final_result.total_score = total_score
-        final_result.ai_breakdown = breakdown
+        # Store structured breakdown: version 2 format with section_summary
+        final_result.total_score = total_score  # MCQ+Jumble % (0-100)
+        final_result.ai_breakdown = {
+            "version": 2,
+            "section_summary": section_summary,
+            "questions": breakdown
+        }
         final_result.status = "graded"
         
         await db.commit()
@@ -674,16 +819,26 @@ async def get_result_details(
 ):
     result = await db.execute(select(TestResult).where(TestResult.id == result_id))
     exam_result = result.scalars().first()
-    
+
     if not exam_result:
         raise HTTPException(status_code=404, detail="Result not found")
-        
+
     # Security: Ensure student owns this result (or is admin)
     if exam_result.user_id != user.id and user.role != 'admin':
         raise HTTPException(status_code=403, detail="Access denied")
 
+    # Handle both old (list) and new (dict version=2) breakdown formats
+    raw_breakdown = exam_result.ai_breakdown
+    if isinstance(raw_breakdown, dict) and raw_breakdown.get("version") == 2:
+        questions   = raw_breakdown.get("questions", [])
+        section_sum = raw_breakdown.get("section_summary", {})
+    else:
+        questions   = raw_breakdown if isinstance(raw_breakdown, list) else []
+        section_sum = {}
+
     return {
-        "total_score": exam_result.total_score,
-        "breakdown": exam_result.ai_breakdown,
-        "date": exam_result.submitted_at
+        "total_score":     exam_result.total_score,
+        "section_summary": section_sum,
+        "breakdown":       questions,
+        "date":            exam_result.submitted_at
     }

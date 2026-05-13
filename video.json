@@ -1,0 +1,751 @@
+{
+  "questions": [
+    {
+      "id": "video_001",
+      "question_number": 1,
+      "type": "video",
+      "marks": 15,
+      "video_url": "/static/videos/episode_00.mp4",
+      "video_thumbnail": "/static/videos/episode_00_thumb.jpg",
+      "video_duration_seconds": 10,
+      "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'pick up', 'place', or 'move'.",
+      "required_prefix": ["pick up", "place", "move"],
+      "correct_answer": "The robot gripper picks up the wooden spatula from beside the silver pot and places it on the edge of the red plate.",
+      "alternative_answers": [
+        "pick up the wooden spatula near the silver pot and place it on the red plate",
+        "move the wooden spatula from next to the silver pot to the edge of the red plate",
+        "pick up the spatula beside the pot and place it on the plate"
+      ],
+      "key_elements": {
+        "action": "pick up and place",
+        "main_object": "wooden spatula",
+        "source_location": "beside the silver pot",
+        "target_location": "edge of the red plate"
+      },
+      "acceptable_synonyms": {
+        "wooden spatula": ["spatula", "cooking spatula"],
+        "beside": ["next to", "near", "by"],
+        "edge": ["rim", "side", "border"]
+      },
+      "marks_distribution": {
+        "grammar_structure": 4,
+        "vocabulary_word_choice": 4,
+        "clarity_meaning": 3,
+        "instruction_compliance": 2,
+        "spelling_formatting": 2
+      },
+      "difficulty": "beginner",
+      "tags": ["kitchen", "utensil", "pick-and-place"]
+    },
+    {
+      "id": "video_002",
+      "question_number": 2,
+      "type": "video",
+      "marks": 15,
+      "video_url": "/static/videos/episode_01.mp4",
+      "video_thumbnail": "/static/videos/episode_01_thumb.jpg",
+      "video_duration_seconds": 8,
+      "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'rotate', 'turn', or 'twist'.",
+      "required_prefix": ["rotate", "turn", "twist"],
+      "correct_answer": "The robot gripper rotates the oven knob to the right.",
+      "alternative_answers": [
+        "turn the oven knob to the right",
+        "twist the oven knob clockwise",
+        "rotate the knob on the oven to the right"
+      ],
+      "key_elements": {
+        "action": "rotate",
+        "main_object": "oven knob",
+        "direction": "right"
+      },
+      "acceptable_synonyms": {
+        "rotate": ["turn", "twist", "dial"],
+        "oven knob": ["knob", "dial", "control knob"],
+        "right": ["clockwise"]
+      },
+      "marks_distribution": {
+        "grammar_structure": 4,
+        "vocabulary_word_choice": 4,
+        "clarity_meaning": 3,
+        "instruction_compliance": 2,
+        "spelling_formatting": 2
+      },
+      "difficulty": "beginner",
+      "tags": ["kitchen", "appliance", "rotation"]
+    },
+    {
+      "id": "video_003",
+      "question_number": 3,
+      "type": "video",
+      "marks": 15,
+      "video_url": "/static/videos/episode_02.mp4",
+      "video_thumbnail": "/static/videos/episode_02_thumb.jpg",
+      "video_duration_seconds": 20,
+      "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'pick up', 'move', or 'place'.",
+      "required_prefix": ["pick up", "move", "place"],
+      "correct_answer": "The robot gripper shifts the yellow container beside the cardboard box toward the right. It then picks up a peach-colored T-shirt from the basket and places it on top of the yellow container. On a second attempt, it grasps both the T-shirt and the container together and places them inside the cardboard box.",
+      "alternative_answers": [
+        "shift the yellow container rightward, then place the peach-colored T-shirt and container into the cardboard box",
+        "move the yellow container aside, pick up the T-shirt from the basket, and put them both in the box",
+        "place the yellow container and the peach shirt together inside the cardboard box"
+      ],
+      "key_elements": {
+        "action": "move, pick up, and place",
+        "main_object": "yellow container and peach-colored T-shirt",
+        "source_location": "basket",
+        "target_location": "inside the cardboard box"
+      },
+      "acceptable_synonyms": {
+        "yellow container": ["container", "yellow box", "yellow bin"],
+        "peach-colored": ["peach", "light orange", "salmon-colored"],
+        "cardboard box": ["box", "carton"],
+        "shift": ["move", "push", "slide"]
+      },
+      "marks_distribution": {
+        "grammar_structure": 4,
+        "vocabulary_word_choice": 4,
+        "clarity_meaning": 3,
+        "instruction_compliance": 2,
+        "spelling_formatting": 2
+      },
+      "difficulty": "advanced",
+      "tags": ["multi-step", "clothing", "container", "pick-and-place"]
+    },
+    {
+      "id": "video_004",
+      "question_number": 4,
+      "type": "video",
+      "marks": 15,
+      "video_url": "/static/videos/episode_03.mp4",
+      "video_thumbnail": "/static/videos/episode_03_thumb.jpg",
+      "video_duration_seconds": 18,
+      "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'pick up', 'cover', or 'place'.",
+      "required_prefix": ["pick up", "cover", "place"],
+      "correct_answer": "The robot gripper picks up the white towel from the wooden table and places it over a brown animal toy. It then lifts both the towel and the toy together and places them into the basket on the table.",
+      "alternative_answers": [
+        "cover the brown animal toy with the white towel and place them both into the basket",
+        "pick up the white towel from the table, drape it over the animal toy, and place them in the basket",
+        "place the white towel over the brown toy and move both into the basket on the table"
+      ],
+      "key_elements": {
+        "action": "pick up, cover, and place",
+        "main_object": "white towel and brown animal toy",
+        "source_location": "wooden table",
+        "target_location": "basket on the table"
+      },
+      "acceptable_synonyms": {
+        "white towel": ["towel", "cloth", "white cloth"],
+        "brown animal toy": ["animal toy", "stuffed toy", "toy animal"],
+        "basket": ["bin", "container", "hamper"]
+      },
+      "marks_distribution": {
+        "grammar_structure": 4,
+        "vocabulary_word_choice": 4,
+        "clarity_meaning": 3,
+        "instruction_compliance": 2,
+        "spelling_formatting": 2
+      },
+      "difficulty": "intermediate",
+      "tags": ["multi-step", "household", "toys", "pick-and-place"]
+    },
+    {
+      "id": "video_005",
+      "question_number": 5,
+      "type": "video",
+      "marks": 15,
+      "video_url": "/static/videos/episode_04.mp4",
+      "video_thumbnail": "/static/videos/episode_04_thumb.jpg",
+      "video_duration_seconds": 15,
+      "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'pick up', 'grasp', or 'retrieve'.",
+      "required_prefix": ["pick up", "grasp", "retrieve"],
+      "correct_answer": "The robot gripper first attempts to pick up the marker with the red cap from inside the yellow mug but fails. On the second attempt, it successfully grasps the marker and places it outside, near the same mug.",
+      "alternative_answers": [
+        "retrieve the red-capped marker from the yellow mug and place it beside the mug",
+        "grasp the marker with the red cap from inside the mug and set it outside near it",
+        "pick up the red cap marker from the yellow mug after a failed first attempt and place it nearby"
+      ],
+      "key_elements": {
+        "action": "pick up and place",
+        "main_object": "marker with red cap",
+        "source_location": "inside the yellow mug",
+        "target_location": "outside near the yellow mug",
+        "attempts": 2
+      },
+      "acceptable_synonyms": {
+        "marker": ["pen", "marker pen"],
+        "red cap": ["red lid", "red top"],
+        "yellow mug": ["mug", "yellow cup"],
+        "outside": ["beside", "near", "next to"]
+      },
+      "marks_distribution": {
+        "grammar_structure": 4,
+        "vocabulary_word_choice": 4,
+        "clarity_meaning": 3,
+        "instruction_compliance": 2,
+        "spelling_formatting": 2
+      },
+      "difficulty": "intermediate",
+      "tags": ["stationery", "mug", "failed-attempt", "pick-and-place"]
+    },
+    {
+      "id": "video_006",
+      "question_number": 6,
+      "type": "video",
+      "marks": 15,
+      "video_url": "/static/videos/episode_05.mp4",
+      "video_thumbnail": "/static/videos/episode_05_thumb.jpg",
+      "video_duration_seconds": 10,
+      "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'pick up', 'remove', or 'take out'.",
+      "required_prefix": ["pick up", "remove", "take out"],
+      "correct_answer": "The robot gripper picks up the Fevicol stick from inside the yellow mug and places it outside near the same mug.",
+      "alternative_answers": [
+        "remove the Fevicol stick from the yellow mug and place it beside the mug",
+        "take out the glue stick from inside the yellow mug and set it near it",
+        "pick up the Fevicol from the mug and place it outside next to it"
+      ],
+      "key_elements": {
+        "action": "pick up and place",
+        "main_object": "Fevicol stick",
+        "source_location": "inside the yellow mug",
+        "target_location": "outside near the yellow mug"
+      },
+      "acceptable_synonyms": {
+        "Fevicol stick": ["glue stick", "adhesive stick", "Fevicol"],
+        "yellow mug": ["mug", "yellow cup", "cup"],
+        "outside": ["beside", "near", "next to"]
+      },
+      "marks_distribution": {
+        "grammar_structure": 4,
+        "vocabulary_word_choice": 4,
+        "clarity_meaning": 3,
+        "instruction_compliance": 2,
+        "spelling_formatting": 2
+      },
+      "difficulty": "beginner",
+      "tags": ["stationery", "mug", "pick-and-place"]
+    },
+    {
+      "id": "video_007",
+      "question_number": 7,
+      "type": "video",
+      "marks": 15,
+      "video_url": "/static/videos/episode_06.mp4",
+      "video_thumbnail": "/static/videos/episode_06_thumb.jpg",
+      "video_duration_seconds": 10,
+      "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'pick up', 'stack', or 'place'.",
+      "required_prefix": ["pick up", "stack", "place"],
+      "correct_answer": "The robot gripper picks up the red cube from the wooden table and stacks it on the green cube of the same size, slightly misaligned.",
+      "alternative_answers": [
+        "stack the red cube on top of the green cube with slight misalignment",
+        "place the red cube on the green cube on the table, slightly off-center",
+        "pick up the red cube and place it on the green cube, not perfectly aligned"
+      ],
+      "key_elements": {
+        "action": "pick up and stack",
+        "main_object": "red cube",
+        "source_location": "wooden table",
+        "target_location": "on top of the green cube",
+        "alignment": "slightly misaligned"
+      },
+      "acceptable_synonyms": {
+        "red cube": ["red block", "red square block"],
+        "green cube": ["green block", "green square block"],
+        "misaligned": ["off-center", "not aligned", "slightly offset"]
+      },
+      "marks_distribution": {
+        "grammar_structure": 4,
+        "vocabulary_word_choice": 4,
+        "clarity_meaning": 3,
+        "instruction_compliance": 2,
+        "spelling_formatting": 2
+      },
+      "difficulty": "intermediate",
+      "tags": ["blocks", "stacking", "misalignment", "pick-and-place"]
+    },
+    {
+      "id": "video_008",
+      "question_number": 8,
+      "type": "video",
+      "marks": 15,
+      "video_url": "/static/videos/episode_07.mp4",
+      "video_thumbnail": "/static/videos/episode_07_thumb.jpg",
+      "video_duration_seconds": 10,
+      "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'pick up', 'stack', or 'place'.",
+      "required_prefix": ["pick up", "stack", "place"],
+      "correct_answer": "The robot gripper picks up the red cube from the wooden table and stacks it on the green cube of the same size at a diagonal orientation.",
+      "alternative_answers": [
+        "stack the red cube on the green cube diagonally",
+        "place the red cube on top of the green cube at an angle",
+        "pick up the red cube and place it on the green cube in a diagonal position"
+      ],
+      "key_elements": {
+        "action": "pick up and stack",
+        "main_object": "red cube",
+        "source_location": "wooden table",
+        "target_location": "on top of the green cube",
+        "orientation": "diagonal"
+      },
+      "acceptable_synonyms": {
+        "red cube": ["red block", "red square block"],
+        "green cube": ["green block", "green square block"],
+        "diagonal": ["at an angle", "rotated", "tilted", "skewed"]
+      },
+      "marks_distribution": {
+        "grammar_structure": 4,
+        "vocabulary_word_choice": 4,
+        "clarity_meaning": 3,
+        "instruction_compliance": 2,
+        "spelling_formatting": 2
+      },
+      "difficulty": "intermediate",
+      "tags": ["blocks", "stacking", "orientation", "pick-and-place"]
+    },
+    {
+      "id": "video_009",
+      "question_number": 9,
+      "type": "video",
+      "marks": 15,
+      "video_url": "/static/videos/episode_08.mp4",
+      "video_thumbnail": "/static/videos/episode_08_thumb.jpg",
+      "video_duration_seconds": 12,
+      "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'pick up', 'stack', or 'place'.",
+      "required_prefix": ["pick up", "stack", "place"],
+      "correct_answer": "The robot gripper picks up the bottle containing brown liquid and stacks it over the cylindrical container.",
+      "alternative_answers": [
+        "place the bottle with brown liquid on top of the cylindrical container",
+        "stack the brown liquid bottle over the cylindrical container",
+        "pick up the bottle of brown liquid and place it on the cylindrical container"
+      ],
+      "key_elements": {
+        "action": "pick up and stack",
+        "main_object": "bottle containing brown liquid",
+        "target_location": "on top of the cylindrical container"
+      },
+      "acceptable_synonyms": {
+        "bottle": ["container", "flask"],
+        "brown liquid": ["dark liquid", "brown fluid"],
+        "cylindrical container": ["cylinder", "round container", "cylindrical object"]
+      },
+      "marks_distribution": {
+        "grammar_structure": 4,
+        "vocabulary_word_choice": 4,
+        "clarity_meaning": 3,
+        "instruction_compliance": 2,
+        "spelling_formatting": 2
+      },
+      "difficulty": "beginner",
+      "tags": ["bottle", "stacking", "pick-and-place"]
+    },
+    {
+      "id": "video_010",
+      "question_number": 10,
+      "type": "video",
+      "marks": 15,
+      "video_url": "/static/videos/episode_09.mp4",
+      "video_thumbnail": "/static/videos/episode_09_thumb.jpg",
+      "video_duration_seconds": 12,
+      "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'open', 'grasp', or 'pull'.",
+      "required_prefix": ["open", "grasp", "pull"],
+      "correct_answer": "The robot gripper grasps the left door of the kitchen shelf and swings it open to the left.",
+      "alternative_answers": [
+        "open the left door of the kitchen shelf by swinging it to the left",
+        "pull the left door of the kitchen cabinet open to the left",
+        "open the left cabinet door of the kitchen shelf outward to the left"
+      ],
+      "key_elements": {
+        "action": "grasp and open",
+        "main_object": "left door",
+        "location": "kitchen shelf",
+        "direction": "left"
+      },
+      "acceptable_synonyms": {
+        "kitchen shelf": ["kitchen cabinet", "cabinet", "shelf"],
+        "swing open": ["pull open", "open outward"],
+        "left door": ["left side door", "left panel"]
+      },
+      "marks_distribution": {
+        "grammar_structure": 4,
+        "vocabulary_word_choice": 4,
+        "clarity_meaning": 3,
+        "instruction_compliance": 2,
+        "spelling_formatting": 2
+      },
+      "difficulty": "beginner",
+      "tags": ["kitchen", "cabinet", "door", "manipulation"]
+    },
+    {
+      "id": "video_011",
+      "question_number": 11,
+      "type": "video",
+      "marks": 15,
+      "video_url": "/static/videos/episode_10.mp4",
+      "video_thumbnail": "/static/videos/episode_10_thumb.jpg",
+      "video_duration_seconds": 8,
+      "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'press', 'push', or 'click'.",
+      "required_prefix": ["press", "push", "click"],
+      "correct_answer": "The robot gripper presses the button on the left side of the black toaster's knob.",
+      "alternative_answers": [
+        "push the button located to the left of the toaster knob",
+        "click the left button near the knob of the black toaster",
+        "press the left-side button on the black toaster"
+      ],
+      "key_elements": {
+        "action": "press",
+        "main_object": "button",
+        "location": "left side of the black toaster's knob"
+      },
+      "acceptable_synonyms": {
+        "press": ["push", "click", "tap"],
+        "button": ["switch", "control"],
+        "black toaster": ["toaster", "dark toaster"],
+        "knob": ["dial", "control knob"]
+      },
+      "marks_distribution": {
+        "grammar_structure": 4,
+        "vocabulary_word_choice": 4,
+        "clarity_meaning": 3,
+        "instruction_compliance": 2,
+        "spelling_formatting": 2
+      },
+      "difficulty": "beginner",
+      "tags": ["kitchen", "toaster", "button", "pressing"]
+    },
+    {
+      "id": "video_012",
+      "question_number": 12,
+      "type": "video",
+      "marks": 15,
+      "video_url": "/static/videos/episode_11.mp4",
+      "video_thumbnail": "/static/videos/episode_11_thumb.jpg",
+      "video_duration_seconds": 8,
+      "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'push', 'press', or 'push down'.",
+      "required_prefix": ["push", "press", "push down"],
+      "correct_answer": "The gripper pushes down the toaster lever on the kitchen table.",
+      "alternative_answers": [
+        "press the toaster lever downward on the kitchen table",
+        "push the lever of the toaster down",
+        "push down the lever on the toaster on the kitchen counter"
+      ],
+      "key_elements": {
+        "action": "push down",
+        "main_object": "toaster lever",
+        "location": "kitchen table"
+      },
+      "acceptable_synonyms": {
+        "push down": ["press down", "lower", "depress"],
+        "toaster lever": ["lever", "toaster handle", "toaster arm"],
+        "kitchen table": ["kitchen counter", "countertop", "table"]
+      },
+      "marks_distribution": {
+        "grammar_structure": 4,
+        "vocabulary_word_choice": 4,
+        "clarity_meaning": 3,
+        "instruction_compliance": 2,
+        "spelling_formatting": 2
+      },
+      "difficulty": "beginner",
+      "tags": ["kitchen", "toaster", "lever", "pressing"]
+    },
+    {
+      "id": "video_013",
+      "question_number": 13,
+      "type": "video",
+      "marks": 15,
+      "video_url": "/static/videos/episode_12.mp4",
+      "video_thumbnail": "/static/videos/episode_12_thumb.jpg",
+      "video_duration_seconds": 10,
+      "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'pick up', 'place', or 'insert'.",
+      "required_prefix": ["pick up", "place", "insert"],
+      "correct_answer": "The gripper picks up the upright black marker and places it inside the black cup.",
+      "alternative_answers": [
+        "insert the black marker into the black cup",
+        "pick up the standing black marker and put it inside the black cup",
+        "place the upright black marker into the black cup"
+      ],
+      "key_elements": {
+        "action": "pick up and place",
+        "main_object": "black marker",
+        "orientation": "upright",
+        "target_location": "inside the black cup"
+      },
+      "acceptable_synonyms": {
+        "black marker": ["marker", "black pen", "marker pen"],
+        "upright": ["standing", "vertical", "erect"],
+        "black cup": ["cup", "dark cup", "black mug"],
+        "inside": ["into", "in", "within"]
+      },
+      "marks_distribution": {
+        "grammar_structure": 4,
+        "vocabulary_word_choice": 4,
+        "clarity_meaning": 3,
+        "instruction_compliance": 2,
+        "spelling_formatting": 2
+      },
+      "difficulty": "beginner",
+      "tags": ["stationery", "cup", "pick-and-place"]
+    },
+    {
+      "id": "video_014",
+      "question_number": 14,
+      "type": "video",
+      "marks": 15,
+      "video_url": "/static/videos/episode_13.mp4",
+      "video_thumbnail": "/static/videos/episode_13_thumb.jpg",
+      "video_duration_seconds": 10,
+      "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'pick up', 'remove', or 'take out'.",
+      "required_prefix": ["pick up", "remove", "take out"],
+      "correct_answer": "The gripper picks up the black marker from inside the black cup and places it just outside the cup on its right side.",
+      "alternative_answers": [
+        "remove the black marker from inside the black cup and set it to the right of the cup",
+        "take out the black marker from the black cup and place it on the right side",
+        "pick up the marker from the cup and put it outside to the right of the cup"
+      ],
+      "key_elements": {
+        "action": "pick up and place",
+        "main_object": "black marker",
+        "source_location": "inside the black cup",
+        "target_location": "outside the cup on its right side"
+      },
+      "acceptable_synonyms": {
+        "black marker": ["marker", "black pen", "pen"],
+        "black cup": ["cup", "black mug"],
+        "right side": ["right", "to the right", "right-hand side"]
+      },
+      "marks_distribution": {
+        "grammar_structure": 4,
+        "vocabulary_word_choice": 4,
+        "clarity_meaning": 3,
+        "instruction_compliance": 2,
+        "spelling_formatting": 2
+      },
+      "difficulty": "beginner",
+      "tags": ["stationery", "cup", "pick-and-place"]
+    },
+    {
+      "id": "video_015",
+      "question_number": 15,
+      "type": "video",
+      "marks": 15,
+      "video_url": "/static/videos/episode_14.mp4",
+      "video_thumbnail": "/static/videos/episode_14_thumb.jpg",
+      "video_duration_seconds": 12,
+      "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'pick up', 'move', or 'transfer'.",
+      "required_prefix": ["pick up", "move", "transfer"],
+      "correct_answer": "The robot gripper picks up the blue quatrefoil block from the left side of the salt cellar on the table and places it on the right side of the salt cellar.",
+      "alternative_answers": [
+        "move the blue quatrefoil block from the left of the salt cellar to the right side",
+        "transfer the blue quatrefoil block from the left to the right side of the salt cellar",
+        "pick up the blue decorative block from the left of the salt shaker and place it on the right"
+      ],
+      "key_elements": {
+        "action": "pick up and place",
+        "main_object": "blue quatrefoil block",
+        "source_location": "left side of the salt cellar",
+        "target_location": "right side of the salt cellar"
+      },
+      "acceptable_synonyms": {
+        "quatrefoil block": ["decorative block", "shaped block", "clover-shaped block"],
+        "salt cellar": ["salt shaker", "salt container", "salt pot"],
+        "left side": ["left", "left-hand side"],
+        "right side": ["right", "right-hand side"]
+      },
+      "marks_distribution": {
+        "grammar_structure": 4,
+        "vocabulary_word_choice": 4,
+        "clarity_meaning": 3,
+        "instruction_compliance": 2,
+        "spelling_formatting": 2
+      },
+      "difficulty": "intermediate",
+      "tags": ["blocks", "tabletop", "spatial-reasoning", "pick-and-place"]
+    },
+    {
+      "id": "video_016",
+      "question_number": 16,
+      "type": "video",
+      "marks": 15,
+      "video_url": "/static/videos/episode_15.mp4",
+      "video_thumbnail": "/static/videos/episode_15_thumb.jpg",
+      "video_duration_seconds": 10,
+      "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'pick up', 'remove', or 'take out'.",
+      "required_prefix": ["pick up", "remove", "take out"],
+      "correct_answer": "The robot gripper picks up the red marker from inside the wine glass and places it on the table to the left of the glass.",
+      "alternative_answers": [
+        "remove the red marker from the wine glass and set it to the left on the table",
+        "take out the red marker from inside the wine glass and place it on the left side of the table",
+        "pick up the red pen from the wine glass and put it to the left of the glass on the table"
+      ],
+      "key_elements": {
+        "action": "pick up and place",
+        "main_object": "red marker",
+        "source_location": "inside the wine glass",
+        "target_location": "table to the left of the glass"
+      },
+      "acceptable_synonyms": {
+        "red marker": ["red pen", "marker", "red marker pen"],
+        "wine glass": ["glass", "drinking glass"],
+        "to the left": ["left side", "on the left", "left of the glass"]
+      },
+      "marks_distribution": {
+        "grammar_structure": 4,
+        "vocabulary_word_choice": 4,
+        "clarity_meaning": 3,
+        "instruction_compliance": 2,
+        "spelling_formatting": 2
+      },
+      "difficulty": "beginner",
+      "tags": ["stationery", "glassware", "pick-and-place"]
+    },
+    {
+      "id": "video_017",
+      "question_number": 17,
+      "type": "video",
+      "marks": 15,
+      "video_url": "/static/videos/episode_16.mp4",
+      "video_thumbnail": "/static/videos/episode_16_thumb.jpg",
+      "video_duration_seconds": 12,
+      "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'pick up', 'remove', or 'take out'.",
+      "required_prefix": ["pick up", "remove", "take out"],
+      "correct_answer": "The robot gripper picks up a plastic tomato toy from an orange bowl containing a green broccoli toy and places it just outside the bowl nearby.",
+      "alternative_answers": [
+        "remove the plastic tomato from the orange bowl containing a broccoli toy and place it outside",
+        "take out the toy tomato from the orange bowl and set it near the bowl",
+        "pick up the tomato toy from the bowl with the broccoli and place it outside the bowl"
+      ],
+      "key_elements": {
+        "action": "pick up and place",
+        "main_object": "plastic tomato toy",
+        "source_location": "orange bowl",
+        "target_location": "just outside the bowl",
+        "context_object": "green broccoli toy"
+      },
+      "acceptable_synonyms": {
+        "plastic tomato toy": ["toy tomato", "tomato toy", "plastic tomato"],
+        "orange bowl": ["bowl", "orange-colored bowl"],
+        "broccoli toy": ["green broccoli toy", "plastic broccoli"],
+        "outside": ["beside", "near", "next to"]
+      },
+      "marks_distribution": {
+        "grammar_structure": 4,
+        "vocabulary_word_choice": 4,
+        "clarity_meaning": 3,
+        "instruction_compliance": 2,
+        "spelling_formatting": 2
+      },
+      "difficulty": "intermediate",
+      "tags": ["toy", "bowl", "food-props", "pick-and-place"]
+    },
+    {
+      "id": "video_018",
+      "question_number": 18,
+      "type": "video",
+      "marks": 15,
+      "video_url": "/static/videos/episode_17.mp4",
+      "video_thumbnail": "/static/videos/episode_17_thumb.jpg",
+      "video_duration_seconds": 10,
+      "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'pick up', 'place', or 'put'.",
+      "required_prefix": ["pick up", "place", "put"],
+      "correct_answer": "The robot gripper picks up a plastic tomato toy from the table and places it inside the nearby silver bowl.",
+      "alternative_answers": [
+        "place the plastic tomato toy from the table into the silver bowl",
+        "put the toy tomato from the table into the nearby silver bowl",
+        "pick up the tomato toy and place it in the silver bowl nearby"
+      ],
+      "key_elements": {
+        "action": "pick up and place",
+        "main_object": "plastic tomato toy",
+        "source_location": "table",
+        "target_location": "inside the nearby silver bowl"
+      },
+      "acceptable_synonyms": {
+        "plastic tomato toy": ["toy tomato", "tomato toy", "plastic tomato"],
+        "silver bowl": ["metal bowl", "bowl", "silver-colored bowl"],
+        "inside": ["into", "in", "within"],
+        "nearby": ["close by", "adjacent", "next to it"]
+      },
+      "marks_distribution": {
+        "grammar_structure": 4,
+        "vocabulary_word_choice": 4,
+        "clarity_meaning": 3,
+        "instruction_compliance": 2,
+        "spelling_formatting": 2
+      },
+      "difficulty": "beginner",
+      "tags": ["toy", "bowl", "food-props", "pick-and-place"]
+    },
+    {
+      "id": "video_019",
+      "question_number": 19,
+      "type": "video",
+      "marks": 15,
+      "video_url": "/static/videos/episode_18.mp4",
+      "video_thumbnail": "/static/videos/episode_18_thumb.jpg",
+      "video_duration_seconds": 10,
+      "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'pick up', 'move', or 'place'.",
+      "required_prefix": ["pick up", "move", "place"],
+      "correct_answer": "The gripper picks up the white cup and places it near the red marker lying on the table.",
+      "alternative_answers": [
+        "move the white cup and set it next to the red marker on the table",
+        "place the white cup near the red marker on the table",
+        "pick up the white cup and put it close to the red marker on the table"
+      ],
+      "key_elements": {
+        "action": "pick up and place",
+        "main_object": "white cup",
+        "target_location": "near the red marker on the table"
+      },
+      "acceptable_synonyms": {
+        "white cup": ["cup", "white mug", "white container"],
+        "red marker": ["red pen", "marker", "red marker pen"],
+        "near": ["next to", "beside", "close to"],
+        "lying": ["resting", "placed", "on the table"]
+      },
+      "marks_distribution": {
+        "grammar_structure": 4,
+        "vocabulary_word_choice": 4,
+        "clarity_meaning": 3,
+        "instruction_compliance": 2,
+        "spelling_formatting": 2
+      },
+      "difficulty": "beginner",
+      "tags": ["cup", "stationery", "tabletop", "pick-and-place"]
+    },
+    {
+      "id": "video_020",
+      "question_number": 20,
+      "type": "video",
+      "marks": 15,
+      "video_url": "/static/videos/episode_19.mp4",
+      "video_thumbnail": "/static/videos/episode_19_thumb.jpg",
+      "video_duration_seconds": 10,
+      "prompt": "Assign a label to the video clip above. The caption should begin with one of the following: 'pick up', 'place', or 'insert'.",
+      "required_prefix": ["pick up", "place", "insert"],
+      "correct_answer": "The gripper picks up the red marker from the table and places it inside the black cup.",
+      "alternative_answers": [
+        "insert the red marker into the black cup",
+        "place the red marker from the table into the black cup",
+        "pick up the red pen from the table and put it inside the black cup"
+      ],
+      "key_elements": {
+        "action": "pick up and place",
+        "main_object": "red marker",
+        "source_location": "table",
+        "target_location": "inside the black cup"
+      },
+      "acceptable_synonyms": {
+        "red marker": ["red pen", "marker", "red marker pen"],
+        "black cup": ["cup", "black mug", "dark cup"],
+        "inside": ["into", "in", "within"]
+      },
+      "marks_distribution": {
+        "grammar_structure": 4,
+        "vocabulary_word_choice": 4,
+        "clarity_meaning": 3,
+        "instruction_compliance": 2,
+        "spelling_formatting": 2
+      },
+      "difficulty": "beginner",
+      "tags": ["stationery", "cup", "pick-and-place"]
+    }
+  ]
+}

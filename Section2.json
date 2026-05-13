@@ -1,0 +1,141 @@
+[
+  {
+    "id": 1,
+    "question": "Which object class best describes the image below?",
+    "options": {
+      "a": "large vehicle",
+      "b": "small vehicle",
+      "c": "pedestrian",
+      "d": "motorcycle"
+    },
+    "correct_answer": "b",
+    "correct_answer_text": "small vehicle",
+    "image_filename": "image1.png"
+  },
+  {
+    "id": 2,
+    "question": "Which object class best describes the image below?",
+    "options": {
+      "a": "large vehicle",
+      "b": "pole",
+      "c": "pedestrian",
+      "d": "barricade"
+    },
+    "correct_answer": "a",
+    "correct_answer_text": "large vehicle",
+    "image_filename": "image2.png"
+  },
+  {
+    "id": 3,
+    "question": "Which object class and attributes best describes the image below?",
+    "guidelines": {
+      "front_determination_method": {
+        "unique": "The object has a clearly identifiable front side based on symbols, signboards, reflectors, or light-emitting devices.",
+        "rectangle_longest_side": "The object has a rectangular base and the longer side determines the front.",
+        "square_any_side": "The object is square or nearly square, allowing any side to be treated as the front."
+      }
+    },
+    "options": {
+      "a": "pole -> bend = true, sub_class = infrastructure, front_determination = square_any_side",
+      "b": "pole -> bend = false, sub_class = sign_post, front_determination = unique",
+      "c": "pole -> bend = false, sub_class = infrastructure, front_determination = unique",
+      "d": "pole -> bend = true, sub_class = infrastructure, front_determination = rectangle_longest_side"
+    },
+    "correct_answer": "c",
+    "correct_answer_text": "pole -> bend = false, sub_class = infrastructure, front_determination = unique",
+    "image_filename": "image3.png"
+  },
+  {
+    "id": 4,
+    "question": "Which object class best describes the image below?",
+    "options": {
+      "a": "traffic light",
+      "b": "pole",
+      "c": "traffic sign",
+      "d": "barricade"
+    },
+    "correct_answer": "a",
+    "correct_answer_text": "traffic light",
+    "image_filename": "image4.png"
+  },
+  {
+    "id": 5,
+    "question": "How many VRUs (Vulnerable Road Users) are present in this frame?",
+    "note": "VRUs = pedestrians + bicyclists + motorcyclists",
+    "options": {
+      "a": "8",
+      "b": "12",
+      "c": "9",
+      "d": "10"
+    },
+    "correct_answer": "d",
+    "correct_answer_text": "10",
+    "image_filename": "image5.png"
+  },
+  {
+    "id": 6,
+    "question": "Which lane is the ego lane in the image below?",
+    "options": {
+      "a": "Leftmost lane",
+      "b": "Center lane",
+      "c": "Right lane",
+      "d": "Bicycle lane"
+    },
+    "correct_answer": "b",
+    "correct_answer_text": "Center lane",
+    "image_filename": "image6.png"
+  },
+  {
+    "id": 7,
+    "question": "What should the Emergency_Personnel attribute be?",
+    "note": "Pedestrians clearly identifiable as police officers or medics based on uniform, context, or activity; otherwise not considered emergency personnel.",
+    "options": {
+      "a": "True",
+      "b": "Emergency",
+      "c": "Unknown",
+      "d": "False"
+    },
+    "correct_answer": "d",
+    "correct_answer_text": "False",
+    "image_filename": "image7.png"
+  },
+  {
+    "id": 8,
+    "question": "What should the Traffic_Flagger attribute be?",
+    "options": {
+      "a": "True",
+      "b": "False",
+      "c": "Unknown",
+      "d": "Standing"
+    },
+    "correct_answer": "b",
+    "correct_answer_text": "False",
+    "image_filename": "image8.png"
+  },
+  {
+    "id": 9,
+    "question": "What should the traffic_light_bulb & traffic_light_body attribute be?",
+    "options": {
+      "a": "Bulb_Count = 3, Color = red",
+      "b": "Bulb_Count = 1, Color = unknown",
+      "c": "Bulb_Count = 3, Color = green",
+      "d": "Bulb_Count = unknown, Color = flashing"
+    },
+    "correct_answer": "a",
+    "correct_answer_text": "Bulb_Count = 3, Color = red",
+    "image_filename": "image9.png"
+  },
+  {
+    "id": 10,
+    "question": "What should the correct attributes for the red car be?",
+    "options": {
+      "a": "Object_Class = Small_Vehicle, Towed_By = Large_Vehicle",
+      "b": "Object_Class = Large_Vehicle, Towed_By = Motorcycle",
+      "c": "Object_Class = Pedestrian, Towed_By = Unknown",
+      "d": "Object_Class = Small_Vehicle, Towed_By = None"
+    },
+    "correct_answer": "a",
+    "correct_answer_text": "Object_Class = Small_Vehicle, Towed_By = Large_Vehicle",
+    "image_filename": "image10.png"
+  }
+]

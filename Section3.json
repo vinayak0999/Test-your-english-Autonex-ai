@@ -1,0 +1,339 @@
+[
+  {
+    "id": 1,
+    "type": "true_false",
+    "guideline": "Emergency_Vehicle should be False unless the vehicle clearly performs emergency or law enforcement functions.",
+    "situation": "Apply Emergency-Vehicle attribute to the scenario below:",
+    "image_filename": [
+      "image1.png"
+    ],
+    "options": {
+      "a": "True",
+      "b": "False"
+    },
+    "correct_answer": "b",
+    "correct_answer_text": "False"
+  },
+  {
+    "id": 2,
+    "type": "mcq",
+    "guideline": "Traffic light bulbs that are not illuminated and not visibly active in the front camera are out of scope.",
+    "situation": "A traffic signal housing contains several bulbs, but none are illuminated, and it is visible clearly from the left rear camera only.",
+    "question": "What should the annotator do?",
+    "image_filename": [],
+    "options": {
+      "a": "Annotate",
+      "b": "Not annotate",
+      "c": "Unclear \u2013 ask for clarification"
+    },
+    "correct_answer": "b",
+    "correct_answer_text": "Not annotate"
+  },
+  {
+    "id": 3,
+    "type": "mcq_multi_image",
+    "guideline": "If pedestrian pose cannot be confidently determined due to poor visibility or occlusion, use Unknown instead of guessing.",
+    "question": "Which Pedestrian_Pose attribute is most appropriate?",
+    "note": "Answer independently for each of the 3 images below.",
+    "image_filename": [
+      "image3.1.png",
+      "image3.2.png",
+      "image3.3.png"
+    ],
+    "options": {
+      "a": "Standing",
+      "b": "Running",
+      "c": "Unknown",
+      "d": "Sitting"
+    },
+    "correct_answers": [
+      {
+        "sub_id": "3.1",
+        "image_filename": "image3.1.png",
+        "correct_answer": "c",
+        "correct_answer_text": "Unknown"
+      },
+      {
+        "sub_id": "3.2",
+        "image_filename": "image3.2.png",
+        "correct_answer": "d",
+        "correct_answer_text": "Sitting"
+      },
+      {
+        "sub_id": "3.3",
+        "image_filename": "image3.3.png",
+        "correct_answer": "b",
+        "correct_answer_text": "Running"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "type": "mcq",
+    "guideline": "Vehicle attributes such as Brake_Lights and Turn_Signal should default to Unknown when visibility is ambiguous.",
+    "situation": "In a nighttime scene, only the side of a vehicle is visible, making the rear lights impossible to evaluate confidently.",
+    "question": "What should the Turn_Signal attribute be set to?",
+    "image_filename": [
+      "image4.png"
+    ],
+    "options": {
+      "a": "None",
+      "b": "Left",
+      "c": "Right",
+      "d": "Unknown"
+    },
+    "correct_answer": "d",
+    "correct_answer_text": "Unknown"
+  },
+  {
+    "id": 5,
+    "type": "true_false",
+    "guideline": "Cuboid dimensions for the same pedestrian should remain generally consistent across frames.",
+    "scenario": "An annotator resizes a pedestrian cuboid in every frame to tightly match changing walking motion.",
+    "image_filename": [],
+    "options": {
+      "a": "True",
+      "b": "False"
+    },
+    "correct_answer": "b",
+    "correct_answer_text": "False"
+  },
+  {
+    "id": 6,
+    "type": "mcq",
+    "guideline": "Objects clearly visible in camera views should not be skipped even if LiDAR support is weak.",
+    "scenario": "A bicycle rider is clearly visible in the front camera, but only sparse LiDAR points are present.",
+    "image_filename": [],
+    "options": {
+      "a": "Annotate",
+      "b": "Not annotate",
+      "c": "Unclear \u2013 ask for clarification"
+    },
+    "correct_answer": "a",
+    "correct_answer_text": "Annotate"
+  },
+  {
+    "id": 7,
+    "type": "mcq",
+    "guideline": "Objects not clearly visible in camera views or outside annotation scope should not receive cuboids.",
+    "scenario": "A pole is barely detectable in LiDAR but cannot be identified confidently in any camera view.",
+    "question": "What should the annotator do?",
+    "image_filename": [],
+    "options": {
+      "a": "Annotate",
+      "b": "Not annotate",
+      "c": "Unclear \u2013 ask for clarification"
+    },
+    "correct_answer": "b",
+    "correct_answer_text": "Not annotate"
+  },
+  {
+    "id": 8,
+    "type": "mcq_multi_image",
+    "guideline": "Unattended bicycles parked or locked without rider interaction should not be annotated.",
+    "question": "Review the image below and choose the correct action:",
+    "image_filename": [
+      "image8.1.png",
+      "image8.2.png"
+    ],
+    "options": {
+      "a": "Annotate",
+      "b": "Not annotate",
+      "c": "Unclear \u2013 ask for clarification"
+    },
+    "correct_answer": "b",
+    "correct_answer_text": "Not annotate"
+  },
+  {
+    "id": 9,
+    "type": "mcq",
+    "guideline": "Bicycles actively being ridden or walked by a person should be annotated.",
+    "image_filename": [
+      "image9.png"
+    ],
+    "options": {
+      "a": "Annotate",
+      "b": "Not annotate",
+      "c": "Unclear \u2013 ask for clarification"
+    },
+    "correct_answer": "a",
+    "correct_answer_text": "Annotate"
+  },
+  {
+    "id": 10,
+    "type": "true_false",
+    "guideline": "Towed Objects must contain a valid Towed_by link to the towing object.",
+    "scenario": "A trailer is labeled correctly, but no Towed_by relationship is assigned.",
+    "image_filename": [],
+    "options": {
+      "a": "True",
+      "b": "False"
+    },
+    "correct_answer": "b",
+    "correct_answer_text": "False"
+  },
+  {
+    "id": 11,
+    "type": "mcq",
+    "guideline": "Objects visible only in LiDAR but not visible in any camera view should not be annotated.",
+    "scenario": "A vehicle-shaped cluster of LiDAR points appears in the top view, but no corresponding object is visible in any camera.",
+    "image_filename": [],
+    "options": {
+      "a": "Annotate",
+      "b": "Not annotate",
+      "c": "Unclear \u2013 ask for clarification"
+    },
+    "correct_answer": "b",
+    "correct_answer_text": "Not annotate"
+  },
+  {
+    "id": 12,
+    "type": "mcq",
+    "guideline": "Objects between 0-200m that are clearly visible in camera views should still be annotated even if LiDAR returns zero points.",
+    "scenario": "A pedestrian is clearly visible at approximately 170m in the front camera, but no LiDAR points are returned.",
+    "image_filename": [],
+    "options": {
+      "a": "Annotate",
+      "b": "Not annotate",
+      "c": "Unclear \u2013 ask for clarification"
+    },
+    "correct_answer": "a",
+    "correct_answer_text": "Annotate"
+  },
+  {
+    "id": 13,
+    "type": "true_false",
+    "guideline": "Static object cuboids should remain stable across frames even if LiDAR density fluctuates.",
+    "scenario": "The annotator changes the size of a parked vehicle cuboid frame-to-frame because LiDAR point density changes.",
+    "image_filename": [],
+    "options": {
+      "a": "True",
+      "b": "False"
+    },
+    "correct_answer": "b",
+    "correct_answer_text": "False"
+  },
+  {
+    "id": 14,
+    "type": "mcq",
+    "guideline": "Front camera visibility is mandatory for traffic light annotation.",
+    "situation": "A traffic light is clearly visible in LiDAR and side camera views but cannot be seen in the front camera.",
+    "question": "What should the annotator do?",
+    "image_filename": [],
+    "options": {
+      "a": "Annotate",
+      "b": "Not annotate",
+      "c": "Unclear \u2013 ask for clarification"
+    },
+    "correct_answer": "b",
+    "correct_answer_text": "Not annotate"
+  },
+  {
+    "id": 15,
+    "type": "mcq",
+    "guideline": "One traffic light system should generally receive one cuboid, even if multiple bulb housings exist. For 'Bulb_Count' attribute: enter total number of Traffic Light Bulbs, both lit and dark, contained in the Traffic Light Body.",
+    "question": "What is the correct annotation approach?",
+    "image_filename": [
+      "image15.png"
+    ],
+    "options": {
+      "a": "Create 6 cuboids, Bulb_Count = 1",
+      "b": "Create 1 cuboid, Bulb_Count = 6",
+      "c": "Create 1 cuboid, Bulb_Count = 4",
+      "d": "Create 4 cuboids, Bulb_Count = 1"
+    },
+    "correct_answer": "b",
+    "correct_answer_text": "Create 1 cuboid, Bulb_Count = 6"
+  },
+  {
+    "id": 16,
+    "type": "mcq",
+    "guideline": "If LiDAR points on a clearly visible object are systematically offset from the camera image across multiple frames, this is a calibration problem. Stop labeling, report to the project owner, and wait for explicit instruction before proceeding.",
+    "scenario": "You notice point cloud returns are consistently shifted ~0.4m left of where vehicles appear in every camera frame.",
+    "image_filename": [],
+    "options": {
+      "a": "Annotate",
+      "b": "Not annotate",
+      "c": "Unclear \u2013 ask for further instruction"
+    },
+    "correct_answer": "c",
+    "correct_answer_text": "Unclear \u2013 ask for further instruction"
+  },
+  {
+    "id": 17,
+    "type": "mcq",
+    "guideline": "If an object of a large category contains a smaller category object, label only the larger one. Exception: humans on the open bed of a vehicle (e.g. a construction worker in a truck bed) must be labeled individually. Do not separately label humans visible through vehicle windows.",
+    "scenario": "Review the image below.",
+    "question": "What is the correct annotation approach?",
+    "image_filename": [
+      "image17.png"
+    ],
+    "options": {
+      "a": "1 cuboid for vehicle",
+      "b": "1 cuboid for vehicle, 3 individual cuboids for person",
+      "c": "Unclear \u2013 ask for further instruction"
+    },
+    "correct_answer": "b",
+    "correct_answer_text": "1 cuboid for vehicle, 3 individual cuboids for person"
+  },
+  {
+    "id": 18,
+    "type": "mcq",
+    "guideline": "If a region cannot be classified with high confidence and no class clearly fits, do not force a label. Do not use OtherObstacle as a default for ambiguous points: OtherObstacle is for identifiable hazards with no dedicated class. Flag and hold; do not submit with an uncertain label.",
+    "scenario": "You see a cluster of points that could be fallen cargo or a large rock. You're not confident which class applies.",
+    "question": "What should the annotator do?",
+    "image_filename": [],
+    "options": {
+      "a": "Annotate with 'OtherObstacle' label",
+      "b": "Not annotate",
+      "c": "Unclear \u2013 ask for further instruction"
+    },
+    "correct_answer": "c",
+    "correct_answer_text": "Unclear \u2013 ask for further instruction"
+  },
+  {
+    "id": 19,
+    "type": "mcq",
+    "guideline": "Pedestrian_Pose attribute should be 'unknown' if a pedestrian appears to be in a state of transition, for example falling over, partially standing but not fully upright, or in an unusual yoga pose.",
+    "question": "Which Pedestrian_Pose attribute is most appropriate?",
+    "image_filename": [
+      "image19.png"
+    ],
+    "options": {
+      "a": "Standing",
+      "b": "Running",
+      "c": "Unknown",
+      "d": "Sitting"
+    },
+    "correct_answer": "c",
+    "correct_answer_text": "Unknown"
+  },
+  {
+    "id": 20,
+    "type": "true_false",
+    "question": "In this scenario, the turn_signal attribute is marked as 'Left'. Is this correct?",
+    "image_filename": [
+      "image20.png"
+    ],
+    "options": {
+      "a": "True",
+      "b": "False"
+    },
+    "correct_answer": "a",
+    "correct_answer_text": "True"
+  },
+  {
+    "id": 21,
+    "type": "true_false",
+    "question": "In this scenario, the open_door attribute is marked as 'Left'. Is this correct?",
+    "image_filename": [
+      "image21.png"
+    ],
+    "options": {
+      "a": "True",
+      "b": "False"
+    },
+    "correct_answer": "b",
+    "correct_answer_text": "False"
+  }
+]

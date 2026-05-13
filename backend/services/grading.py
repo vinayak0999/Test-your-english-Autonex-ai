@@ -1,34 +1,41 @@
 from services.ai_engine import (
-    get_vector_similarity, 
-    check_key_ideas, 
+    get_vector_similarity,
+    check_key_ideas,
     evaluate_english_quality,
     evaluate_video_strict,
     evaluate_image_strict,
     evaluate_reading_strict
 )
 
+# ─── Visual rank helper ───────────────────────────────────────────────────────
+def _score_to_rank(score: float) -> str:
+    """Convert 0-15 numeric score to Good/Medium/Bad rank.
+    <7 = Bad, 7-11 = Medium, 12-15 = Good
+    """
+    if score >= 12:
+        return "Good"
+    elif score >= 7:
+        return "Medium"
+    else:
+        return "Bad"
+
+
 async def grade_video_question(student_text: str, reference_caption: str, key_ideas: list, video_context: str = ""):
     """
-    Grading Logic for Video Question (15 Marks)
-    Uses STRICT rubric-based AI evaluation.
+    Video Grading: 15-mark AI evaluation → converted to Good/Medium/Bad rank.
+    Score stored as 0 (visual does not count toward total).
     """
-    
-    # Handle empty answers
     if not student_text or not student_text.strip():
         return {
-            "score": 0, 
+            "score": 0,
             "breakdown": {
-                "error": "No answer provided",
-                "grammar_structure_score": 0,
-                "vocabulary_word_choice_score": 0,
-                "clarity_meaning_score": 0,
-                "instruction_compliance_score": 0,
-                "spelling_formatting_score": 0,
-                "feedback": "No answer was provided."
+                "rank": "Bad",
+                "internal_score": 0,
+                "feedback": "No answer was provided.",
+                "passed": False
             }
         }
-    
-    # Use strict evaluation
+
     try:
         eval_result = await evaluate_video_strict(
             user_answer=student_text,
@@ -37,48 +44,38 @@ async def grade_video_question(student_text: str, reference_caption: str, key_id
         )
     except Exception as e:
         print(f"Video Eval Error: {e}")
-        eval_result = {"total_score": 0, "passed": False, "feedback": f"Evaluation Error: {str(e)}"}
-    
-    # Extract score and breakdown
+        eval_result = {"total_score": 0, "feedback": f"Evaluation Error: {str(e)}"}
+
     total_score = eval_result.get('total_score', 0)
-    
+    rank = _score_to_rank(total_score)
+
     return {
-        "score": round(total_score, 1),
+        "score": 0,  # Visual questions do NOT contribute to total score
         "breakdown": {
-            "grammar_structure_score": eval_result.get('grammar_structure_score', 0),
-            "vocabulary_word_choice_score": eval_result.get('vocabulary_word_choice_score', 0),
-            "clarity_meaning_score": eval_result.get('clarity_meaning_score', 0),
-            "instruction_compliance_score": eval_result.get('instruction_compliance_score', 0),
-            "spelling_formatting_score": eval_result.get('spelling_formatting_score', 0),
-            "passed": eval_result.get('passed', False),
+            "rank": rank,
+            "internal_score": round(total_score, 1),
             "feedback": eval_result.get('feedback', ''),
-            "grade_justification": eval_result.get('grade_justification', '')
+            "passed": rank in ("Good", "Medium")
         }
     }
 
 
 async def grade_image_question(student_text: str, reference_caption: str, key_ideas: list, image_context: str = ""):
     """
-    Grading Logic for Image Question (15 Marks)
-    Uses STRICT rubric-based AI evaluation.
+    Image Grading: 15-mark AI evaluation → converted to Good/Medium/Bad rank.
+    Score stored as 0 (visual does not count toward total).
     """
-    
-    # Handle empty answers
     if not student_text or not student_text.strip():
         return {
-            "score": 0, 
+            "score": 0,
             "breakdown": {
-                "error": "No answer provided",
-                "grammar_structure_score": 0,
-                "vocabulary_word_choice_score": 0,
-                "clarity_meaning_score": 0,
-                "instruction_compliance_score": 0,
-                "spelling_formatting_score": 0,
-                "feedback": "No answer was provided."
+                "rank": "Bad",
+                "internal_score": 0,
+                "feedback": "No answer was provided.",
+                "passed": False
             }
         }
-    
-    # Use strict evaluation
+
     try:
         eval_result = await evaluate_image_strict(
             user_answer=student_text,
@@ -87,22 +84,18 @@ async def grade_image_question(student_text: str, reference_caption: str, key_id
         )
     except Exception as e:
         print(f"Image Eval Error: {e}")
-        eval_result = {"total_score": 0, "passed": False, "feedback": f"Evaluation Error: {str(e)}"}
-    
-    # Extract score and breakdown
+        eval_result = {"total_score": 0, "feedback": f"Evaluation Error: {str(e)}"}
+
     total_score = eval_result.get('total_score', 0)
-    
+    rank = _score_to_rank(total_score)
+
     return {
-        "score": round(total_score, 1),
+        "score": 0,  # Visual questions do NOT contribute to total score
         "breakdown": {
-            "grammar_structure_score": eval_result.get('grammar_structure_score', 0),
-            "vocabulary_word_choice_score": eval_result.get('vocabulary_word_choice_score', 0),
-            "clarity_meaning_score": eval_result.get('clarity_meaning_score', 0),
-            "instruction_compliance_score": eval_result.get('instruction_compliance_score', 0),
-            "spelling_formatting_score": eval_result.get('spelling_formatting_score', 0),
-            "passed": eval_result.get('passed', False),
+            "rank": rank,
+            "internal_score": round(total_score, 1),
             "feedback": eval_result.get('feedback', ''),
-            "grade_justification": eval_result.get('grade_justification', '')
+            "passed": rank in ("Good", "Medium")
         }
     }
 
@@ -217,28 +210,23 @@ async def grade_mcq_question(student_answer: str, correct_answer: str, marks: in
     """
     Grading Logic for MCQ (Exact Match).
     Handles both single string "A" and JSON string '{"blank1": "A", ...}'
+    Also handles mcq-image type (image shown, same MCQ grading).
     """
     if not student_answer:
         return {"score": 0, "breakdown": {"result": "Incorrect", "reason": "No answer provided"}}
     
-    # Defensive: If correct_answer is missing, return incorrect
     if not correct_answer:
         return {"score": 0, "breakdown": {"result": "Error", "reason": "Missing correct answer in grading config"}}
 
-    # Handle JSON matching (for Contextual Fill-in-blanks)
     try:
         import json
         student_json = json.loads(student_answer)
         correct_json = json.loads(correct_answer)
-        
-        # Compare dictionaries
         is_correct = student_json == correct_json
     except:
-        # Fallback to simple string compare (for Grammar/Reading MCQ)
         is_correct = student_answer.strip().upper() == correct_answer.strip().upper()
 
     score = marks if is_correct else 0
-    
     return {
         "score": score,
         "breakdown": {
@@ -247,6 +235,52 @@ async def grade_mcq_question(student_answer: str, correct_answer: str, marks: in
             "expected": correct_answer
         }
     }
+
+
+async def grade_image_count_question(student_answer: str, correct_answer: int, marks: int, tolerance: int = 0):
+    """
+    Grading for image-count questions.
+    Candidate types a number → compared to the correct count.
+    tolerance=0 means exact match required.
+    Contributes to MCQ/total score (not AI-evaluated).
+    """
+    if not student_answer or not student_answer.strip():
+        return {
+            "score": 0,
+            "breakdown": {
+                "result": "Incorrect",
+                "reason": "No answer provided",
+                "correct_answer": correct_answer
+            }
+        }
+
+    # Try to parse the typed answer as a number
+    try:
+        typed_num = int(str(student_answer).strip().split()[0])  # take first token in case of extra text
+    except (ValueError, IndexError):
+        return {
+            "score": 0,
+            "breakdown": {
+                "result": "Incorrect",
+                "reason": f"Could not parse '{student_answer}' as a number",
+                "correct_answer": correct_answer
+            }
+        }
+
+    is_correct = abs(typed_num - int(correct_answer)) <= tolerance
+    score = marks if is_correct else 0
+
+    return {
+        "score": score,
+        "breakdown": {
+            "result": "Correct" if is_correct else "Incorrect",
+            "typed_number": typed_num,
+            "correct_answer": correct_answer,
+            "tolerance": tolerance
+        }
+    }
+
+
 
 
 async def grade_typing_question(student_text: str, original_passage: str,
@@ -341,7 +375,7 @@ async def grade_typing_question(student_text: str, original_passage: str,
             feedback = f"Speed is good ({round(net_wpm)} WPM) but accuracy needs work ({round(accuracy)}%)."
 
     return {
-        "score": total_score,
+        "score": 0,  # Typing does NOT contribute to total score in new evaluation
         "breakdown": {
             "gross_wpm": round(gross_wpm, 1),
             "net_wpm": round(net_wpm, 1),
@@ -353,11 +387,11 @@ async def grade_typing_question(student_text: str, original_passage: str,
             "time_seconds": round(time_taken_seconds, 1),
             "speed_score": round(speed_score, 1),
             "accuracy_score": round(accuracy_score, 1),
-            "passed": passed,
+            "passed": accuracy >= 80,  # New rule: accuracy < 80% = fail regardless of WPM
             "benchmark_wpm": 30,
-            "benchmark_accuracy": 90,
+            "benchmark_accuracy": 80,
             "grading_mode": grading_mode,
-            "result": "Pass" if passed else "Fail",
+            "result": "Pass" if accuracy >= 80 else "Fail",
             "feedback": feedback
         }
     }

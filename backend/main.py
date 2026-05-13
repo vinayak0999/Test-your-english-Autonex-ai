@@ -56,8 +56,18 @@ app.add_middleware(
 )
 # -----------------------------------------------
 
-# MOUNT VIDEO DIRECTORY
+# MOUNT VIDEO DIRECTORY (legacy uploads)
 app.mount("/static/videos", StaticFiles(directory=settings.VIDEO_DIR), name="videos")
+
+# MOUNT ROBOT EPISODE VIDEOS
+_robot_video_dir = os.path.join(os.path.dirname(__file__), "public", "video")
+if os.path.exists(_robot_video_dir):
+    app.mount("/static/video", StaticFiles(directory=_robot_video_dir), name="robot_videos")
+
+# MOUNT IMAGES (woven test, etc.)
+_images_dir = os.path.join(os.path.dirname(__file__), "static", "images")
+os.makedirs(_images_dir, exist_ok=True)
+app.mount("/static/images", StaticFiles(directory=_images_dir), name="images")
 
 # Include Routers
 app.include_router(auth.router)

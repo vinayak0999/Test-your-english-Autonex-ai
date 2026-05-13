@@ -35,9 +35,13 @@ const SectionCard = ({ type, icon: Icon, label, config, onUpdate }) => {
                         <input
                             type="number"
                             min="1"
-                            max="50"
+                            max={config.maxCount || 999}
                             value={config.count}
-                            onChange={(e) => onUpdate(type, 'count', parseInt(e.target.value) || 0)}
+                            onChange={(e) => {
+                                const raw = parseInt(e.target.value) || 1;
+                                const clamped = config.maxCount ? Math.min(raw, config.maxCount) : raw;
+                                onUpdate(type, 'count', clamped);
+                            }}
                             className="w-full mt-1 p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none"
                         />
                     </div>
@@ -61,6 +65,28 @@ const CreateTest = () => {
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
 
+    // Fetch real bank sizes from backend and apply as maxCount
+    React.useEffect(() => {
+        api.get('/admin/bank-sizes')
+            .then(res => {
+                setSections(prev => {
+                    const updated = { ...prev };
+                    Object.entries(res.data).forEach(([type, count]) => {
+                        if (updated[type]) {
+                            updated[type] = {
+                                ...updated[type],
+                                maxCount: count,
+                                // Also clamp current count if it exceeds bank size
+                                count: Math.min(updated[type].count, count || updated[type].count)
+                            };
+                        }
+                    });
+                    return updated;
+                });
+            })
+            .catch(() => {}); // silently ignore if endpoint fails
+    }, []);
+
     // Metadata
     const [meta, setMeta] = useState({
         title: '',
@@ -70,18 +96,21 @@ const CreateTest = () => {
 
     // Generator Config State
     const [sections, setSections] = useState({
-        video: { enabled: true, count: 1, marks: 15, label: "Video Analysis", icon: Video },
-        image: { enabled: true, count: 1, marks: 15, label: "Image Description", icon: ImageIcon },
-        // reading: { enabled: false, count: 1, marks: 15, label: "Reading Summary", icon: BookOpen }, // Hidden — no bank yet
-        jumble: { enabled: true, count: 20, marks: 1, label: "Jumble Sentences", icon: Type },
-        'mcq-grammar': { enabled: true, count: 12, marks: 1, label: "MCQ: Grammar", icon: CheckSquare },
-        'mcq-context': { enabled: true, count: 12, marks: 1, label: "MCQ: Context", icon: Layers },
-        'mcq-reading': { enabled: true, count: 11, marks: 1, label: "MCQ: Reading", icon: FileText },
-        'mcq-number-series': { enabled: false, count: 5, marks: 1, label: "Logical: Number Series", icon: CheckSquare },
-        'mcq-blood-relations': { enabled: false, count: 5, marks: 1, label: "Logical: Blood Relations", icon: CheckSquare },
-        'mcq-odd-one-out': { enabled: false, count: 5, marks: 1, label: "Logical: Odd One Out", icon: CheckSquare },
-        'typing-easy': { enabled: false, count: 1, marks: 10, label: "Typing: Easy (Speed)", icon: Keyboard },
-        'typing-advanced': { enabled: false, count: 1, marks: 15, label: "Typing: Advanced (Accuracy)", icon: Keyboard },
+        video:                  { enabled: true,  count: 1,  marks: 15, label: "Video Analysis",                    icon: Video        },
+        'video-robot':          { enabled: false, count: 1,  marks: 15, label: "Video: Robot Episodes",             icon: Video        },
+        image:                  { enabled: true,  count: 1,  marks: 15, label: "Image Description",                icon: ImageIcon    },
+        'image-count':          { enabled: false, count: 10, marks: 5,  label: "Image: Count Objects",             icon: ImageIcon    },
+        'mcq-image':            { enabled: false, count: 10, marks: 4,  label: "Image: Object Classification MCQ", icon: CheckSquare  },
+        'mcq-annotation':       { enabled: false, count: 21, marks: 4,  label: "Annotation: Guideline MCQ",        icon: CheckSquare  },
+        jumble:                 { enabled: true,  count: 20, marks: 1,  label: "Jumble Sentences",                 icon: Type         },
+        'mcq-grammar':          { enabled: true,  count: 12, marks: 1,  label: "MCQ: Grammar",                    icon: CheckSquare  },
+        'mcq-context':          { enabled: true,  count: 12, marks: 1,  label: "MCQ: Context",                    icon: Layers       },
+        'mcq-reading':          { enabled: true,  count: 11, marks: 1,  label: "MCQ: Reading",                    icon: FileText     },
+        'mcq-number-series':    { enabled: false, count: 5,  marks: 1,  label: "Logical: Number Series",          icon: CheckSquare  },
+        'mcq-blood-relations':  { enabled: false, count: 5,  marks: 1,  label: "Logical: Blood Relations",        icon: CheckSquare  },
+        'mcq-odd-one-out':      { enabled: false, count: 5,  marks: 1,  label: "Logical: Odd One Out",            icon: CheckSquare  },
+        'typing-easy':          { enabled: false, count: 1,  marks: 10, label: "Typing: Easy (Speed)",            icon: Keyboard     },
+        'typing-advanced':      { enabled: false, count: 1,  marks: 15, label: "Typing: Advanced (Accuracy)",     icon: Keyboard     },
     });
 
     // Calculated Total Marks

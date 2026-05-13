@@ -6,6 +6,19 @@ import { motion } from 'framer-motion';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
+const VISUAL_TYPES = ['video', 'video-robot', 'image'];
+const TYPING_TYPES = ['typing', 'typing-easy', 'typing-advanced'];
+
+const RankBadge = ({ rank }) => {
+    const cfg = {
+        Good:   { cls: 'bg-green-100 border-green-400 text-green-700', label: '🟢 Good' },
+        Medium: { cls: 'bg-amber-100 border-amber-400 text-amber-700', label: '🟡 Medium' },
+        Bad:    { cls: 'bg-red-100 border-red-400 text-red-700',       label: '🔴 Bad' },
+    };
+    const c = cfg[rank] || cfg.Bad;
+    return <span className={`px-4 py-1 rounded-full text-sm font-bold border ${c.cls}`}>{c.label}</span>;
+};
+
 const AdminDetailedResult = () => {
     const { resultId } = useParams();
     const [result, setResult] = useState(null);
@@ -189,18 +202,58 @@ const AdminDetailedResult = () => {
                             <p className="text-slate-500">{result.candidate?.email}</p>
                         </div>
                     </div>
-                    <div className="flex gap-6 text-sm">
+                    <div className="flex flex-wrap gap-4 text-sm">
                         <div className="text-center">
                             <p className="text-slate-400 font-medium">Test</p>
                             <p className="text-slate-700 font-semibold">{result.test?.title}</p>
                         </div>
-                        <div className="text-center">
-                            <p className="text-slate-400 font-medium">Score</p>
-                            <p className={`text-2xl font-bold ${(result.total_score / result.max_marks * 100) >= 60 ? 'text-green-600' : 'text-red-600'}`}>
-                                {result.total_score}/{result.max_marks}
-                            </p>
-                        </div>
-                        <div className="text-center">
+
+                        {/* ── New v2 section summary ── */}
+                        {result.section_summary?.mcq_jumble ? (<>
+                            <div className="text-center border-l border-slate-200 pl-4">
+                                <p className="text-slate-400 font-medium text-xs mb-1">MCQ / Jumble</p>
+                                <p className={`text-2xl font-bold ${result.section_summary.mcq_jumble.score_pct >= 60 ? 'text-green-600' : 'text-red-600'}`}>
+                                    {result.section_summary.mcq_jumble.score_pct}%
+                                </p>
+                                <p className="text-xs text-slate-400">
+                                    {result.section_summary.mcq_jumble.correct_marks}/{result.section_summary.mcq_jumble.max_marks} pts
+                                </p>
+                            </div>
+
+                            {result.section_summary.typing?.question_count > 0 && (
+                                <div className="text-center border-l border-slate-200 pl-4">
+                                    <p className="text-slate-400 font-medium text-xs mb-1">Typing</p>
+                                    <p className={`text-xl font-bold ${result.section_summary.typing.passed ? 'text-green-600' : 'text-red-600'}`}>
+                                        {result.section_summary.typing.passed ? '✓ Pass' : '✗ Fail'}
+                                    </p>
+                                    <p className="text-xs text-slate-400">
+                                        {result.section_summary.typing.avg_wpm} WPM · {result.section_summary.typing.avg_accuracy}% acc
+                                    </p>
+                                </div>
+                            )}
+
+                            {result.section_summary.visual?.question_count > 0 && (
+                                <div className="text-center border-l border-slate-200 pl-4">
+                                    <p className="text-slate-400 font-medium text-xs mb-1">Visual (Vid/Img)</p>
+                                    <p className={`text-2xl font-bold ${result.section_summary.visual.pass_pct >= 50 ? 'text-green-600' : 'text-red-600'}`}>
+                                        {result.section_summary.visual.pass_pct ?? 0}%
+                                    </p>
+                                    <p className="text-xs text-slate-400">
+                                        {result.section_summary.visual.passed_count}/{result.section_summary.visual.question_count} passed
+                                    </p>
+                                </div>
+                            )}
+                        </>) : (
+                            /* Old v1 result — show raw score */
+                            <div className="text-center border-l border-slate-200 pl-4">
+                                <p className="text-slate-400 font-medium">Score</p>
+                                <p className={`text-2xl font-bold ${(result.total_score / result.max_marks * 100) >= 60 ? 'text-green-600' : 'text-red-600'}`}>
+                                    {result.total_score}/{result.max_marks}
+                                </p>
+                            </div>
+                        )}
+
+                        <div className="text-center border-l border-slate-200 pl-4">
                             <p className="text-slate-400 font-medium">Tab Switches</p>
                             <p className={`text-2xl font-bold ${result.tab_switches > 0 ? 'text-amber-600' : 'text-green-600'}`}>
                                 {result.tab_switches}
@@ -259,28 +312,26 @@ const AdminDetailedResult = () => {
 
             <div className="space-y-6">
                 {result.breakdown?.map((item, index) => {
-                    // Determine the media URL - check multiple possible fields
                     const mediaUrl = item.content_url ||
                         (isMediaUrl(item.question_text) ? item.question_text : null);
 
-                    // Check if this is an image or video question (by type or by URL)
-                    const hasImage = item.type === 'image' || (mediaUrl && isImageUrl(mediaUrl));
-                    const hasVideo = item.type === 'video' || (mediaUrl && isVideoUrl(mediaUrl));
+                    const isVisual  = VISUAL_TYPES.includes(item.type);
+                    const isTyping  = TYPING_TYPES.includes(item.type);
+                    const hasImage  = item.type === 'image'  || (mediaUrl && isImageUrl(mediaUrl));
+                    const hasVideo  = VISUAL_TYPES.filter(t => t !== 'image').includes(item.type) || (mediaUrl && isVideoUrl(mediaUrl));
+                    const isMCQ     = item.type?.includes('mcq');
+                    const isJumble  = item.type === 'jumble';
 
-                    // Check if this is MCQ or Jumble
-                    const isMCQ = item.type?.includes('mcq');
-                    const isJumble = item.type === 'jumble';
-
-                    // Get options and jumble parts
-                    const options = item.options || {};
-                    const jumbleParts = item.jumble || {};
-                    const hasOptions = Object.keys(options).length > 0;
+                    const options      = item.options    || {};
+                    const jumbleParts  = item.jumble     || {};
+                    const hasOptions   = Object.keys(options).length > 0;
                     const hasJumbleParts = Object.keys(jumbleParts).length > 0;
 
-                    // Score display
                     const displayScore = getDisplayScore(item);
                     const isOverridden = item.override_score !== undefined;
-                    const isEditing = editingQuestion === item.question_id;
+                    const isEditing    = editingQuestion === item.question_id;
+                    const rank         = item.ai_feedback?.rank;
+                    const fb           = item.ai_feedback || {};
 
                     return (
                         <motion.div
@@ -304,60 +355,51 @@ const AdminDetailedResult = () => {
                                     )}
                                 </div>
 
-                                {/* SCORE SECTION - Editable */}
+                                {/* SCORE SECTION */}
                                 <div className="flex items-center gap-2">
-                                    {isEditing ? (
-                                        // Edit Mode
-                                        <div className="flex items-center gap-2">
-                                            <input
-                                                type="number"
-                                                value={editScore}
-                                                onChange={(e) => setEditScore(e.target.value)}
-                                                onKeyDown={(e) => handleKeyDown(e, item.question_id, item.max_marks)}
-                                                className="w-20 px-2 py-1 border border-blue-300 rounded text-center font-bold focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                                min="0"
-                                                max={item.max_marks}
-                                                step="0.5"
-                                                autoFocus
-                                                disabled={saving}
-                                            />
-                                            <span className="text-slate-500">/ {item.max_marks}</span>
-                                            <button
-                                                onClick={() => saveScore(item.question_id, item.max_marks)}
-                                                disabled={saving}
-                                                className="p-1 bg-green-500 text-white rounded hover:bg-green-600 disabled:opacity-50"
-                                                title="Save"
-                                            >
-                                                {saving ? <Loader2 size={16} className="animate-spin" /> : <Save size={16} />}
-                                            </button>
-                                            <button
-                                                onClick={cancelEditing}
-                                                disabled={saving}
-                                                className="p-1 bg-slate-400 text-white rounded hover:bg-slate-500 disabled:opacity-50"
-                                                title="Cancel (Esc)"
-                                            >
-                                                <X size={16} />
-                                            </button>
-                                        </div>
-                                    ) : (
-                                        // Display Mode
-                                        <div className="flex items-center gap-2">
-                                            <div className={`px-4 py-1 rounded-full text-sm font-bold ${displayScore >= item.max_marks * 0.7
-                                                ? 'bg-green-100 text-green-700 border border-green-200'
-                                                : displayScore >= item.max_marks * 0.4
-                                                    ? 'bg-amber-100 text-amber-700 border border-amber-200'
-                                                    : 'bg-red-100 text-red-700 border border-red-200'
-                                                }`}>
-                                                {displayScore} / {item.max_marks} Marks
+                                    {/* Visual: rank badge only */}
+                                    {isVisual && <RankBadge rank={rank || 'Bad'} />}
+
+                                    {/* Typing: pass/fail only */}
+                                    {isTyping && (
+                                        <span className={`px-4 py-1 rounded-full text-sm font-bold border ${
+                                            fb.passed ? 'bg-green-100 border-green-400 text-green-700' : 'bg-red-100 border-red-400 text-red-700'
+                                        }`}>{fb.passed ? '✓ Pass' : '✗ Fail'} — Accuracy {fb.accuracy ?? '—'}%</span>
+                                    )}
+
+                                    {/* MCQ / Jumble / Reading: editable marks */}
+                                    {!isVisual && !isTyping && (
+                                        isEditing ? (
+                                            <div className="flex items-center gap-2">
+                                                <input type="number" value={editScore}
+                                                    onChange={e => setEditScore(e.target.value)}
+                                                    onKeyDown={e => handleKeyDown(e, item.question_id, item.max_marks)}
+                                                    className="w-20 px-2 py-1 border border-blue-300 rounded text-center font-bold focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                                    min="0" max={item.max_marks} step="0.5" autoFocus disabled={saving} />
+                                                <span className="text-slate-500">/ {item.max_marks}</span>
+                                                <button onClick={() => saveScore(item.question_id, item.max_marks)} disabled={saving}
+                                                    className="p-1 bg-green-500 text-white rounded hover:bg-green-600 disabled:opacity-50">
+                                                    {saving ? <Loader2 size={16} className="animate-spin" /> : <Save size={16} />}
+                                                </button>
+                                                <button onClick={cancelEditing} disabled={saving}
+                                                    className="p-1 bg-slate-400 text-white rounded hover:bg-slate-500 disabled:opacity-50">
+                                                    <X size={16} />
+                                                </button>
                                             </div>
-                                            <button
-                                                onClick={() => startEditing(item.question_id, displayScore)}
-                                                className="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded transition-colors"
-                                                title="Edit Score"
-                                            >
-                                                <Edit3 size={16} />
-                                            </button>
-                                        </div>
+                                        ) : (
+                                            <div className="flex items-center gap-2">
+                                                <div className={`px-4 py-1 rounded-full text-sm font-bold border ${
+                                                    displayScore >= item.max_marks * 0.7 ? 'bg-green-100 text-green-700 border-green-200'
+                                                    : displayScore >= item.max_marks * 0.4 ? 'bg-amber-100 text-amber-700 border-amber-200'
+                                                    : 'bg-red-100 text-red-700 border-red-200'}`}>
+                                                    {displayScore} / {item.max_marks} Marks
+                                                </div>
+                                                <button onClick={() => startEditing(item.question_id, displayScore)}
+                                                    className="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded transition-colors" title="Edit Score">
+                                                    <Edit3 size={16} />
+                                                </button>
+                                            </div>
+                                        )
                                     )}
                                 </div>
                             </div>
@@ -511,7 +553,7 @@ const AdminDetailedResult = () => {
                                 )}
 
                                 {/* ========== TYPING SPEED TEST RESULTS ========== */}
-                                {item.type === 'typing' && item.ai_feedback && (
+                                {isTyping && item.ai_feedback && (
                                     <div className="mb-6">
                                         <h4 className="text-xs font-bold text-purple-600 uppercase tracking-wider mb-3 flex items-center gap-1">
                                             ⌨️ Typing Speed Results
@@ -612,37 +654,26 @@ const AdminDetailedResult = () => {
                                         </div>
                                     </div>
 
-                                    {/* AI Feedback (for image/video/reading — NOT typing, it has its own display above) */}
-                                    {item.ai_feedback && !isMCQ && !isJumble && item.type !== 'typing' && (
+                                    {/* AI Evaluation panel */}
+                                    {item.ai_feedback && !isMCQ && !isJumble && !isTyping && (
                                         <div className="lg:col-span-2">
                                             <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">AI Evaluation</h4>
                                             <div className="bg-slate-50 border border-slate-200 rounded-lg p-4">
-                                                {/* Rubric Scores */}
-                                                {item.ai_feedback.grammar_structure_score !== undefined && (
-                                                    <div className="grid grid-cols-2 md:grid-cols-5 gap-2 mb-4">
-                                                        <div className="text-center p-2 bg-white rounded border">
-                                                            <p className="text-xs text-slate-400">Grammar</p>
-                                                            <p className="font-bold text-slate-700">{item.ai_feedback.grammar_structure_score}/4</p>
+                                                {/* Visual: show rank + internal score + feedback */}
+                                                {isVisual ? (
+                                                    <div className="space-y-3">
+                                                        <div className="flex items-center gap-3">
+                                                            <RankBadge rank={rank || 'Bad'} />
+                                                            {fb.internal_score !== undefined && (
+                                                                <span className="text-xs text-slate-400">Internal score: {fb.internal_score}/15 — Good≥12 · Medium 7-11 · Bad&lt;7</span>
+                                                            )}
                                                         </div>
-                                                        <div className="text-center p-2 bg-white rounded border">
-                                                            <p className="text-xs text-slate-400">Vocabulary</p>
-                                                            <p className="font-bold text-slate-700">{item.ai_feedback.vocabulary_word_choice_score}/4</p>
-                                                        </div>
-                                                        <div className="text-center p-2 bg-white rounded border">
-                                                            <p className="text-xs text-slate-400">Clarity</p>
-                                                            <p className="font-bold text-slate-700">{item.ai_feedback.clarity_meaning_score}/3</p>
-                                                        </div>
-                                                        <div className="text-center p-2 bg-white rounded border">
-                                                            <p className="text-xs text-slate-400">Compliance</p>
-                                                            <p className="font-bold text-slate-700">{item.ai_feedback.instruction_compliance_score}/2</p>
-                                                        </div>
-                                                        <div className="text-center p-2 bg-white rounded border">
-                                                            <p className="text-xs text-slate-400">Spelling</p>
-                                                            <p className="font-bold text-slate-700">{item.ai_feedback.spelling_formatting_score}/2</p>
-                                                        </div>
+                                                        <p className="text-slate-600 text-sm">{fb.feedback || 'No feedback.'}</p>
                                                     </div>
+                                                ) : (
+                                                    /* Reading: show feedback text */
+                                                    <p className="text-slate-600 text-sm">{fb.feedback || 'No additional feedback.'}</p>
                                                 )}
-                                                <p className="text-slate-600 text-sm">{item.ai_feedback.feedback || "No additional feedback."}</p>
                                             </div>
                                         </div>
                                     )}

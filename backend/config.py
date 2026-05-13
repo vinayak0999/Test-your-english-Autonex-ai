@@ -8,7 +8,7 @@ class Settings(BaseSettings):
     APP_NAME: str = "Autonex AI Evaluator"
     SECRET_KEY: str  # Required - no default, must be set in .env
     ALGORITHM: str = "HS256"
-    ACCESS_TOKEN_EXPIRE_MINUTES: int = 120
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = 1440   # 24 hours (was 120 = 2 hrs)
     
     # Admin Credentials (from environment)
     ADMIN_EMAIL: str = "admin@autonex.com"

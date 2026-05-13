@@ -46,7 +46,11 @@ class QuestionBankService:
         """
         bank_map = {
             "video": "video.json",
+            "video-robot": "video_robot.json",
             "image": "image.json",
+            "image-count": "woven_test.json",      # counting questions from woven bank
+            "mcq-image": "woven_test.json",         # image MCQ questions from woven bank
+            "mcq-annotation": "woven2_test.json",     # annotation guideline MCQ (woven2)
             "reading": "reading.json",
             "jumble": "jumble.json",
             "mcq-grammar": "mcq_grammar.json",
@@ -67,8 +71,13 @@ class QuestionBankService:
 
         # Load bank data
         all_items = QuestionBankService.load_bank(filename)
-        if not all_items:
-            return []
+
+        # For woven banks: filter by the 'type' field
+        if section_type in ('image-count', 'mcq-image'):
+            all_items = [q for q in all_items if q.get('type') == section_type]
+        elif section_type == 'mcq-annotation':
+            # woven2_test.json items are all mcq-image type; no filter needed
+            pass
 
         # Random Selection
         # If requested count > available, take all available (or duplicate if really needed? No, let's max out at available)
@@ -91,18 +100,21 @@ class QuestionBankService:
             
             # Map specific bank fields to standard JSONB columns
             
-            # 1. Video
-            if section_type == "video":
+            # 1. Video (both legacy and robot episode types)
+            if section_type in ("video", "video-robot"):
                 q_structure["content"] = {
                     "url": item.get("video_url"),
-                    "title": item.get("title") or item.get("prompt", "Video description task")  # Fallback to prompt
+                    "title": item.get("title") or item.get("prompt", "Video description task")
                 }
                 q_structure["grading_config"] = {
-                    "reference": item.get("reference_context") or item.get("correct_answer", ""),  # Fallback to correct_answer
-                    "key_ideas": item.get("key_ideas") or list(item.get("key_elements", {}).values()) or []
+                    "reference": item.get("reference_context") or item.get("correct_answer", ""),
+                    "key_ideas": item.get("key_ideas") or list(item.get("key_elements", {}).values()) or [],
+                    "alternative_answers": item.get("alternative_answers", []),
+                    "acceptable_synonyms": item.get("acceptable_synonyms", {}),
+                    "marks_distribution": item.get("marks_distribution", {})
                 }
                 
-            # 2. Image
+            # 2. Image (AI-description)
             elif section_type == "image":
                 q_structure["content"] = {
                     "url": item.get("image_url") or item.get("video_url"),  # Fallback in case of wrong field
@@ -112,7 +124,82 @@ class QuestionBankService:
                     "reference": item.get("reference_context") or item.get("correct_answer", ""),  # Fallback to correct_answer
                     "key_ideas": item.get("key_ideas") or list(item.get("key_elements", {}).values()) or []
                 }
-                
+
+            # 2b. Image-Count (type a number, exact match grading)
+            elif section_type == "image-count":
+                q_structure["content"] = {
+                    "url": item.get("image_url"),
+                    "title": item.get("title"),
+                    "question": item.get("title"),
+                }
+                q_structure["grading_config"] = {
+                    "correct_answer": item.get("correct_answer"),
+                    "tolerance": item.get("tolerance", 0)
+                }
+
+            # 2c. MCQ-Image (image shown + shuffled MCQ options)
+            elif section_type in ("mcq-image", "mcq-annotation"):
+                # Handle mcq-multi-image items that end up in this section
+                if item.get("type") == "mcq-multi-image":
+                    # Shuffle options once for the whole question
+                    original_options = item.get("options", {})
+                    option_keys  = sorted(original_options.keys())
+                    option_texts = [original_options[k] for k in option_keys]
+                    random.shuffle(option_texts)
+                    new_options = {k: option_texts[i] for i, k in enumerate(option_keys)}
+                    text_to_key = {v: k for k, v in new_options.items()}
+
+                    # Remap each sub-image's correct answer to shuffled positions
+                    sub_images = []
+                    for sub in item.get("sub_images", []):
+                        orig_correct_text = original_options.get(sub["correct_answer"], "")
+                        new_correct = text_to_key.get(orig_correct_text, sub["correct_answer"])
+                        sub_images.append({
+                            "url": sub["url"],
+                            "correct_answer": new_correct,
+                            "correct_answer_text": orig_correct_text
+                        })
+
+                    q_structure["question_type"] = "mcq-multi-image"
+                    q_structure["marks"] = marks_per_question * len(sub_images)
+                    q_structure["content"] = {
+                        "guideline": item.get("guideline"),
+                        "scenario" : item.get("scenario"),
+                        "question" : item.get("title"),
+                        "note"     : item.get("note"),
+                        "options"  : new_options,
+                        "sub_images": sub_images
+                    }
+                    q_structure["grading_config"] = {
+                        "sub_images": sub_images,   # each has correct_answer
+                        "marks_per_image": marks_per_question
+                    }
+                else:
+                    original_options = item.get("options", {})
+                    original_correct  = item.get("correct_answer", "")
+                    correct_text = original_options.get(original_correct, "")
+
+                    option_keys   = sorted(original_options.keys())
+                    option_texts  = [original_options[k] for k in option_keys]
+                    random.shuffle(option_texts)
+                    new_options = {}
+                    new_correct = original_correct
+                    for i, key in enumerate(option_keys):
+                        new_options[key] = option_texts[i]
+                        if option_texts[i] == correct_text:
+                            new_correct = key
+
+                    q_structure["content"] = {
+                        "url"     : item.get("image_url"),
+                        "guideline": item.get("guideline"),
+                        "scenario": item.get("scenario"),
+                        "question": item.get("title"),
+                        "options" : new_options
+                    }
+                    q_structure["grading_config"] = {
+                        "correct_answer": new_correct
+                    }
+
             # 3. Reading (Summary)
             elif section_type == "reading":
                  q_structure["content"] = {

@@ -1,0 +1,79 @@
+{
+  "section_1": [
+    {
+      "id": 1,
+      "question": "Count number of Brown Guitar",
+      "answer": 4,
+      "image_filename": "image1.png"
+    },
+    {
+      "id": 2,
+      "question": "Count number of Pineapple",
+      "answer": 6,
+      "image_filename": "image2.png"
+    },
+    {
+      "id": 3,
+      "question": "Count number of shoe",
+      "answer": 10,
+      "image_filename": "image3.png"
+    },
+    {
+      "id": 4,
+      "question": "Count number of clock",
+      "answer": 8,
+      "image_filename": "image4.png"
+    },
+    {
+      "id": 5,
+      "question": "Count number of ice cream",
+      "answer": 14,
+      "image_filename": "image5.png"
+    },
+    {
+      "id": 6,
+      "question": "Count number of gift",
+      "answer": 12,
+      "image_filename": "image6.png"
+    },
+    {
+      "id": 7,
+      "question": "Count number of Blue fish",
+      "answer": 13,
+      "image_filename": "image7.png"
+    },
+    {
+      "id": 8,
+      "question": "How many circles have a visible dot in their centre? Count circles where the dot is still partially visible even if the circle is occluded.",
+      "answer": 39,
+      "image_filename": ""
+    },
+    {
+      "id": 9,
+      "question": "How many triangles have their apex pointing upward? Only count triangles that are fully visible. Do not count triangles that are partially occluded, pointing in any other direction, or diamond shapes.",
+      "answer": 40,
+      "image_filename": ""
+    },
+    {
+      "id": 10,
+      "question": "How many red apples can you count? Count apples that are partially hidden if the red colour is still visible. Do not count any red apple that has a 'SALE' sticker on it.",
+      "answer": 14,
+      "image_filename": ""
+    }
+  ],
+  "section_2": [
+    {
+      "id": 1,
+      "question": "Which object class best describes the image below?",
+      "options": {
+        "a": "large vehicle",
+        "b": "small vehicle",
+        "c": "pedestrian",
+        "d": "motorcycle"
+      },
+      "correct_answer": "b",
+      "correct_answer_text": "small vehicle",
+      "image_filename": ""
+    }
+  ]
+}
