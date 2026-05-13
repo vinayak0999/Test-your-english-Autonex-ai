@@ -253,8 +253,8 @@ const ResultPage = () => {
                                         </div>
                                     )}
 
-                                    {/* ══ MCQ / JUMBLE ══ */}
-                                    {(item.type === 'jumble' || (item.type || '').includes('mcq')) && (
+                                    {/* ══ MCQ / JUMBLE / IMAGE-COUNT ══ */}
+                                    {(item.type === 'jumble' || (item.type || '').includes('mcq') || item.type === 'image-count') && (
                                         <div className="flex items-center justify-between">
                                             <div>
                                                 <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-2">Outcome</h4>
@@ -266,8 +266,13 @@ const ResultPage = () => {
                                             <div className="text-right">
                                                 <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-1">Your Answer</h4>
                                                 <p className="text-slate-700 font-mono bg-slate-100 px-3 py-1 rounded">
-                                                    {fb.student_answer || fb.selected || item.student_answer || 'No answer'}
+                                                    {item.type === 'image-count'
+                                                        ? (item.student_answer || <span className="text-slate-400 italic">No answer</span>)
+                                                        : (fb.student_answer || fb.selected || item.student_answer || 'No answer')}
                                                 </p>
+                                                {item.type === 'image-count' && (
+                                                    <p className="text-xs text-slate-400 mt-1">Correct count: {item.correct_answer}</p>
+                                                )}
                                             </div>
                                         </div>
                                     )}

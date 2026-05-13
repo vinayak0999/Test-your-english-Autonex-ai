@@ -195,6 +195,9 @@ async def get_test_paper(test_id: int, db: AsyncSession = Depends(get_db), user:
                 marks_per_question=marks
             )
             
+            # Shuffle questions within this section (keeps sections in order)
+            random.shuffle(section_questions)
+
             # Add temp_id for tracking
             for q in section_questions:
                 q["temp_id"] = temp_id
@@ -205,13 +208,6 @@ async def get_test_paper(test_id: int, db: AsyncSession = Depends(get_db), user:
                     q["type"] = q.get("question_type", section_type)
                 generated_questions.append(q)
                 temp_id += 1
-        
-        # Shuffle all questions so they appear in random order regardless of section
-        random.shuffle(generated_questions)
-
-        # Re-assign temp_ids after shuffle so they stay sequential
-        for idx, q in enumerate(generated_questions, 1):
-            q["temp_id"] = idx
 
         # Create exam session with the generated questions
         new_session = ExamSession(
