@@ -253,8 +253,42 @@ const ResultPage = () => {
                                         </div>
                                     )}
 
-                                    {/* ══ MCQ / JUMBLE / IMAGE-COUNT ══ */}
-                                    {(item.type === 'jumble' || (item.type || '').includes('mcq') || item.type === 'image-count') && (
+                                    {/* ══ MCQ-MULTI-IMAGE ══ */}
+                                    {item.type === 'mcq-multi-image' && item.sub_images_breakdown && (
+                                        <div className="space-y-4">
+                                            <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-3">
+                                                <p className="text-sm font-semibold text-indigo-700">{item.question_text}</p>
+                                            </div>
+                                            {item.sub_images_breakdown.map((sub, si) => (
+                                                <div key={si} className={`border rounded-xl overflow-hidden ${sub.is_correct ? 'border-green-300' : 'border-red-300'}`}>
+                                                    <div className={`px-4 py-2 flex justify-between items-center ${sub.is_correct ? 'bg-green-50' : 'bg-red-50'}`}>
+                                                        <span className="text-sm font-bold text-slate-600">Image {si + 1}</span>
+                                                        <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${sub.is_correct ? 'bg-green-200 text-green-800' : 'bg-red-200 text-red-800'}`}>
+                                                            {sub.score}/{sub.max_marks} Marks
+                                                        </span>
+                                                    </div>
+                                                    {sub.image_url && (
+                                                        <div className="bg-slate-100 p-2">
+                                                            <img src={getMediaUrl(sub.image_url)} alt={`Sub-image ${si+1}`} className="w-full max-h-48 object-contain rounded" />
+                                                        </div>
+                                                    )}
+                                                    <div className="p-4 grid grid-cols-2 gap-3">
+                                                        <div className="bg-green-50 border border-green-200 rounded-lg p-3">
+                                                            <p className="text-xs font-bold text-green-600 uppercase mb-1">✓ Correct</p>
+                                                            <p className="text-sm text-slate-700 font-medium">{sub.correct_answer_text} ({sub.correct_answer})</p>
+                                                        </div>
+                                                        <div className={`border rounded-lg p-3 ${sub.is_correct ? 'bg-green-50 border-green-200' : 'bg-red-50 border-red-200'}`}>
+                                                            <p className={`text-xs font-bold uppercase mb-1 ${sub.is_correct ? 'text-green-600' : 'text-red-600'}`}>Your Answer</p>
+                                                            <p className="text-sm text-slate-700 font-medium">{sub.student_answer_text} ({sub.student_answer})</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+
+                                    {/* ══ MCQ / JUMBLE / IMAGE-COUNT (non-multi-image) ══ */}
+                                    {item.type !== 'mcq-multi-image' && (item.type === 'jumble' || (item.type || '').includes('mcq') || item.type === 'image-count') && (
                                         <div className="flex items-center justify-between">
                                             <div>
                                                 <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-2">Outcome</h4>

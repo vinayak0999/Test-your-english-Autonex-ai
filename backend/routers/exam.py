@@ -100,8 +100,16 @@ async def get_my_results(db: AsyncSession = Depends(get_db), user: User = Depend
             "test_title": r.test.title if r.test else "Deleted Test",
             "test_active": r.test.is_active if r.test else False,
             "total_score": round(r.total_score, 1) if r.total_score else 0,
-            "max_marks": r.test.total_marks if r.test else 100,
-            "percentage": round((r.total_score / r.test.total_marks) * 100) if r.test and r.test.total_marks else 0,
+            "max_marks": (
+                (r.ai_breakdown or {}).get("section_summary", {}).get("mcq_jumble", {}).get("max_marks")
+                or (r.test.total_marks if r.test else 100)
+            ),
+            "percentage": round(
+                (r.total_score / (
+                    (r.ai_breakdown or {}).get("section_summary", {}).get("mcq_jumble", {}).get("max_marks")
+                    or r.test.total_marks
+                )) * 100
+            ) if r.test else 0,
             "completed_at": r.completed_at.strftime("%Y-%m-%d %H:%M") if r.completed_at else "N/A"
         }
         for r in results
@@ -457,12 +465,6 @@ async def finish_exam(
                     grading_config.get("correct_answer", ""),
                     q["marks"]
                 )
-            elif question_type.startswith('mcq') or question_type == 'mcq-annotation':
-                grade_data = await grade_mcq_question(
-                    student_text,
-                    grading_config.get("correct_answer", ""),
-                    q["marks"]
-                )
             elif question_type == 'mcq-multi-image':
                 # student_text is JSON: {"0": "c", "1": "d", "2": "b"}
                 import json as _json
@@ -472,17 +474,23 @@ async def finish_exam(
                     answers = {}
                 sub_images   = grading_config.get("sub_images", [])
                 mpi          = grading_config.get("marks_per_image", 4)
-                total_score  = 0
-                breakdown    = {}
+                total_score_mi  = 0
+                mi_breakdown    = {}
                 for i, sub in enumerate(sub_images):
                     given  = str(answers.get(str(i), "")).strip().lower()
                     expect = str(sub.get("correct_answer", "")).strip().lower()
                     if given == expect:
-                        total_score += mpi
-                        breakdown[f"image_{i+1}"] = {"score": mpi, "correct": True}
+                        total_score_mi += mpi
+                        mi_breakdown[f"image_{i+1}"] = {"score": mpi, "correct": True}
                     else:
-                        breakdown[f"image_{i+1}"] = {"score": 0, "correct": False, "expected": expect, "given": given}
-                grade_data = {"score": total_score, "breakdown": breakdown}
+                        mi_breakdown[f"image_{i+1}"] = {"score": 0, "correct": False, "expected": expect, "given": given}
+                grade_data = {"score": total_score_mi, "breakdown": mi_breakdown}
+            elif question_type.startswith('mcq') or question_type == 'mcq-annotation':
+                grade_data = await grade_mcq_question(
+                    student_text,
+                    grading_config.get("correct_answer", ""),
+                    q["marks"]
+                )
             elif question_type in ('typing', 'typing-easy', 'typing-advanced'):
                 import json as json_lib
                 print(f"[TYPING DEBUG] temp_id={temp_id}, raw student_text='{student_text[:200] if student_text else 'EMPTY'}'")
@@ -526,40 +534,73 @@ async def finish_exam(
                 grade_data = {"score": 0, "breakdown": {"error": "Manual review needed"}}
 
             question_score = grade_data.get('score', 0)
-            # Only MCQ and Jumble questions contribute to the raw score accumulation.
-            # Typing and Visual scores are always 0 (handled in section_summary).
             total_score += question_score
-            
-            correct_answer = grading_config.get("reference", grading_config.get("correct_answer", grading_config.get("original_passage", "N/A")))
+
             content = q.get("content") or {}
             question_text = content.get("question", content.get("text", content.get("content", "")))
-            
-            # Get content URL for media (video/image)
-            content_url = content.get("url", "")
-            
-            # Get passage for reading questions
-            passage = content.get("passage", "")
-            
-            # Get options for MCQ questions
-            options = content.get("options", {})
-            
-            # Get jumble parts for Jumble questions
-            jumble_parts = content.get("jumble", {})
-            
-            breakdown.append({
+            content_url   = content.get("url", "")
+            passage       = content.get("passage", "")
+            options       = content.get("options", {})
+            jumble_parts  = content.get("jumble", {})
+
+            # Build human-readable correct_answer and student_answer for multi-image
+            sub_images_breakdown = None
+            if question_type == 'mcq-multi-image':
+                import json as _json
+                sub_images_gc = grading_config.get("sub_images", [])
+                content_sub_images = content.get("sub_images", [])
+                try:
+                    raw_answers = _json.loads(student_text) if student_text else {}
+                except:
+                    raw_answers = {}
+                correct_answer = " | ".join(
+                    f"Image {i+1}: {sub.get('correct_answer_text', sub.get('correct_answer', '?'))} ({sub.get('correct_answer', '?')})"
+                    for i, sub in enumerate(sub_images_gc)
+                )
+                student_display_parts = []
+                sub_images_breakdown = []
+                mpi = grading_config.get("marks_per_image", 4)
+                for i, sub in enumerate(sub_images_gc):
+                    chosen_key = raw_answers.get(str(i), "")
+                    chosen_text = options.get(chosen_key, "") if chosen_key else "No answer"
+                    correct_key = sub.get("correct_answer", "")
+                    correct_text = sub.get("correct_answer_text", options.get(correct_key, ""))
+                    is_correct = chosen_key.strip().lower() == correct_key.strip().lower() if chosen_key else False
+                    # Get image URL from content sub_images (has the actual URL)
+                    img_url = content_sub_images[i]["url"] if i < len(content_sub_images) else sub.get("url", "")
+                    sub_images_breakdown.append({
+                        "image_url": img_url,
+                        "correct_answer": correct_key,
+                        "correct_answer_text": correct_text,
+                        "student_answer": chosen_key or "—",
+                        "student_answer_text": chosen_text,
+                        "is_correct": is_correct,
+                        "score": mpi if is_correct else 0,
+                        "max_marks": mpi
+                    })
+                    student_display_parts.append(f"Image {i+1}: {chosen_text} ({chosen_key or '—'})")
+                student_display = " | ".join(student_display_parts)
+            else:
+                correct_answer = grading_config.get("reference", grading_config.get("correct_answer", grading_config.get("original_passage", "N/A")))
+                student_display = student_text[:500] if student_text else "No answer provided"
+
+            bd_entry = {
                 "question_id": q["temp_id"],
                 "type": question_type,
-                "content_url": content_url,  # For video/image display
-                "passage": passage,  # For reading questions
+                "content_url": content_url,
+                "passage": passage,
                 "question_text": question_text[:500] if question_text else "",
-                "options": options,  # For MCQ questions (A, B, C options)
-                "jumble": jumble_parts,  # For Jumble questions (A, B, C, D parts)
+                "options": options,
+                "jumble": jumble_parts,
                 "correct_answer": correct_answer[:500] if isinstance(correct_answer, str) else str(correct_answer),
-                "student_answer": student_text[:500] if student_text else "No answer provided",
+                "student_answer": student_display,
                 "max_marks": q["marks"],
                 "student_score": question_score,
                 "ai_feedback": grade_data.get('breakdown', {})
-            })
+            }
+            if sub_images_breakdown:
+                bd_entry["sub_images_breakdown"] = sub_images_breakdown
+            breakdown.append(bd_entry)
         
         # Mark session as completed
         session.is_completed = True
@@ -775,9 +816,8 @@ async def finish_exam(
         'overall_passed': typing_passed and visual_passed
     }
 
-    # total_score = raw MCQ+Jumble correct marks (NOT a percentage)
-    # percentage is computed on-the-fly from correct_marks / mcq_max
-    total_score = mcq_correct
+    # total_score = raw MCQ+Jumble correct marks; capped at actual max to prevent >100%
+    total_score = min(mcq_correct, mcq_max)
 
 
     try:

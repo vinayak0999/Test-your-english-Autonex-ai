@@ -452,8 +452,72 @@ const AdminDetailedResult = () => {
                                     </div>
                                 )}
 
-                                {/* ========== MCQ QUESTION WITH OPTIONS ========== */}
-                                {isMCQ && (
+                                {/* ========== MCQ-MULTI-IMAGE ========== */}
+                                {item.type === 'mcq-multi-image' && item.sub_images_breakdown && (
+                                    <div className="mb-6">
+                                        {/* Question Text */}
+                                        {item.question_text && (
+                                            <div className="mb-4">
+                                                <h4 className="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-2 flex items-center gap-1">
+                                                    <List size={14} /> Question
+                                                </h4>
+                                                <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
+                                                    <p className="text-slate-700">{item.question_text}</p>
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        {/* Options reference */}
+                                        {hasOptions && (
+                                            <div className="mb-4">
+                                                <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Options</h4>
+                                                <div className="flex flex-wrap gap-2">
+                                                    {Object.entries(options).map(([key, value]) => (
+                                                        <span key={key} className="bg-slate-50 border border-slate-200 px-3 py-1 rounded text-sm">
+                                                            <span className="font-bold text-slate-600 mr-1">{key}</span>
+                                                            <span className="text-slate-700">{value}</span>
+                                                        </span>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        {/* Per-image breakdown */}
+                                        <div className="space-y-3">
+                                            {item.sub_images_breakdown.map((sub, si) => (
+                                                <div key={si} className={`border rounded-xl overflow-hidden ${sub.is_correct ? 'border-green-300' : 'border-red-300'}`}>
+                                                    <div className={`px-4 py-2 flex justify-between items-center ${sub.is_correct ? 'bg-green-50' : 'bg-red-50'}`}>
+                                                        <span className="text-sm font-bold text-slate-600">Image {si + 1}</span>
+                                                        <div className="flex items-center gap-2">
+                                                            {sub.is_correct ? <CheckCircle size={16} className="text-green-600" /> : <XCircle size={16} className="text-red-600" />}
+                                                            <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${sub.is_correct ? 'bg-green-200 text-green-800' : 'bg-red-200 text-red-800'}`}>
+                                                                {sub.score}/{sub.max_marks}
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    {sub.image_url && (
+                                                        <div className="bg-slate-100 p-2">
+                                                            <img src={`${API_URL}${sub.image_url}`} alt={`Sub-image ${si+1}`} className="w-full max-h-48 object-contain rounded" />
+                                                        </div>
+                                                    )}
+                                                    <div className="p-3 grid grid-cols-2 gap-3">
+                                                        <div className="bg-green-50 border border-green-200 rounded-lg p-2">
+                                                            <p className="text-xs font-bold text-green-600 uppercase mb-1">✓ Correct Answer</p>
+                                                            <p className="text-sm text-slate-700 font-medium">{sub.correct_answer_text} ({sub.correct_answer})</p>
+                                                        </div>
+                                                        <div className={`border rounded-lg p-2 ${sub.is_correct ? 'bg-green-50 border-green-200' : 'bg-red-50 border-red-200'}`}>
+                                                            <p className={`text-xs font-bold uppercase mb-1 ${sub.is_correct ? 'text-green-600' : 'text-red-600'}`}>User's Answer</p>
+                                                            <p className="text-sm text-slate-700 font-medium">{sub.student_answer_text} ({sub.student_answer})</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+
+                                {/* ========== MCQ QUESTION WITH OPTIONS (non-multi-image) ========== */}
+                                {isMCQ && item.type !== 'mcq-multi-image' && (
                                     <div className="mb-6">
                                         {/* Question Text */}
                                         {item.question_text && !isMediaUrl(item.question_text) && (

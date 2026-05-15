@@ -256,8 +256,8 @@
       "c": "9",
       "d": "10"
     },
-    "correct_answer": "d",
-    "correct_answer_text": "10",
+    "correct_answer": "b",
+    "correct_answer_text": "12",
     "difficulty": "medium",
     "tags": [
       "object-class",
@@ -318,6 +318,7 @@
     "image_url": "/static/images/section2/image8.png",
     "guideline": null,
     "scenario": null,
+    "Note": "(Note: Traffic_Flagger: Indicates whether a pedestrian is performing traffic control duties, such as directing vehicles or managing road flow).",
     "title": "What should the Traffic_Flagger attribute be?",
     "options": {
       "a": "True",
