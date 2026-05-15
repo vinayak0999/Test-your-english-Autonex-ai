@@ -190,11 +190,12 @@ class QuestionBankService:
                             new_correct = key
 
                     q_structure["content"] = {
-                        "url"     : item.get("image_url"),
+                        "url"      : item.get("image_url"),
                         "guideline": item.get("guideline"),
-                        "scenario": item.get("scenario"),
-                        "question": item.get("title"),
-                        "options" : new_options
+                        "scenario" : item.get("scenario"),
+                        "note"     : item.get("Note") or item.get("note"),
+                        "question" : item.get("title"),
+                        "options"  : new_options
                     }
                     q_structure["grading_config"] = {
                         "correct_answer": new_correct

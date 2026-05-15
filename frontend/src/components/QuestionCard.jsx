@@ -169,9 +169,16 @@ const QuestionCard = ({ question, answer, onAnswerChange, onTypingComplete, onAu
 
                         {/* MCQ Question Text — skip for multi-image (header handles it) */}
                         {(question.type.includes('mcq') || question.type === 'mcq-annotation') && !contentData.sub_images?.length && (
-                            <p className="text-lg font-semibold text-slate-800">
-                                {contentData.question || contentData.text || contentData.content}
-                            </p>
+                            <>
+                                <p className="text-lg font-semibold text-slate-800">
+                                    {contentData.question || contentData.text || contentData.content}
+                                </p>
+                                {contentData.note && (
+                                    <div className="bg-blue-50 border border-blue-200 rounded-lg px-4 py-2 mt-2">
+                                        <p className="text-xs text-blue-700 italic">{contentData.note}</p>
+                                    </div>
+                                )}
+                            </>
                         )}
                     </div>
                 )}
