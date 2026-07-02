@@ -97,7 +97,6 @@ const CreateTest = () => {
     // Generator Config State
     const [sections, setSections] = useState({
         video:                  { enabled: true,  count: 1,  marks: 15, label: "Video Analysis",                    icon: Video        },
-        'video-robot':          { enabled: false, count: 1,  marks: 15, label: "Video: Robot Episodes",             icon: Video        },
         image:                  { enabled: true,  count: 1,  marks: 15, label: "Image Description",                icon: ImageIcon    },
         'image-count':          { enabled: false, count: 10, marks: 5,  label: "Image: Count Objects",             icon: ImageIcon    },
         'mcq-image':            { enabled: false, count: 10, marks: 4,  label: "Image: Object Classification MCQ", icon: CheckSquare  },
