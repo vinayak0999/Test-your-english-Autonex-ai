@@ -1,3 +1,4 @@
+# v2026.07.02 - video-robot bank enabled for Annotator PoC test
 import os
 import traceback
 from fastapi import FastAPI, Request
